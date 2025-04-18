@@ -4,16 +4,16 @@ import { useState, useEffect } from 'react';
 import { useRouter, usePathname } from 'next/navigation';
 import TopBar from '../../components/topbar';
 import Sidebar from '../../components/sidebar';
-import DashboardHome from '@/components/dashboardhome';
-import MobileDeviceSecurity from '@/components/sections/mobiledevicesecurity';
-import { WiFiSecurity } from '@/components/sections/wifisecurity';
-import HomeNetworkSecurity from '@/components/sections/homesecurity';
-import CommunicationSecurity from '@/components/sections/communicationsecurity';
-import SocialMediaSecurity from '@/components/sections/socialmediasecurity';
-import EmailSecurity from '@/components/sections/emailsecurity';
-import IdentityProtection from '@/components/sections/identityprotection';
-import RecommendedSolutions from '@/components/sections/recommendedsolutions';
-import ImplementationStrategy from '@/components/sections/implementationstrategy';
+import DashboardHome from '../../components/dashboardhome';
+import MobileDeviceSecurity from '../../components/sections/mobiledevicesecurity';
+import { WiFiSecurity } from '../../components/sections/wifisecurity';
+import HomeNetworkSecurity from '../../components/sections/homesecurity';
+import CommunicationSecurity from '../../components/sections/communicationsecurity';
+import SocialMediaSecurity from '../../components/sections/socialmediasecurity';
+import EmailSecurity from '../../components/sections/emailsecurity';
+import IdentityProtection from '../../components/sections/identityprotection';
+import RecommendedSolutions from '../../components/sections/recommendedsolutions';
+import ImplementationStrategy from '../../components/sections/implementationstrategy';
 
 export default function BlogLayout({ children }: { children: React.ReactNode }) {
   const router = useRouter();
