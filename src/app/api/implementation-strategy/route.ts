@@ -1,0 +1,57 @@
+import { NextRequest, NextResponse } from 'next/server';
+import { getServerSession } from 'next-auth/next';
+import { authOptions } from '@/lib/auth';
+import connectDB from '@/dbConfig/mongodb';
+import UserImplementationStrategyProgress from '@/models/ImplementationStrategy';
+
+export async function GET() {
+  const session = await getServerSession(authOptions);
+  
+  if (!session || !session.user) {
+    return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
+  }
+  
+  try {
+    await connectDB();
+    const userId = session.user.id;
+    
+    const userStrategyData = await UserImplementationStrategyProgress.findOne({ userId });
+    
+    return NextResponse.json(userStrategyData || { completedCategories: [] });
+  } catch (error) {
+    console.error('Error fetching implementation strategy data:', error);
+    return NextResponse.json({ error: 'Failed to fetch implementation strategy data' }, { status: 500 });
+  }
+}
+
+export async function POST(req: NextRequest) {
+  const session = await getServerSession(authOptions);
+  
+  if (!session || !session.user) {
+    return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
+  }
+  
+  try {
+    await connectDB();
+    const { completedCategories } = await req.json();
+    const userId = session.user.id;
+    
+    // Update or create user implementation strategy completion data
+    const updatedData = await UserImplementationStrategyProgress.findOneAndUpdate(
+      { userId },
+      { 
+        completedCategories,
+        lastUpdated: new Date()
+      },
+      { 
+        new: true, // Return the updated document
+        upsert: true // Create if it doesn't exist
+      }
+    );
+    
+    return NextResponse.json(updatedData);
+  } catch (error) {
+    console.error('Error updating implementation strategy data:', error);
+    return NextResponse.json({ error: 'Failed to update implementation strategy data' }, { status: 500 });
+  }
+}
