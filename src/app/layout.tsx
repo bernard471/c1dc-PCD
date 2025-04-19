@@ -6,9 +6,10 @@ import { getServerSession } from 'next-auth/next';
 import { authOptions } from "@/lib/auth";
 import { Toaster } from "@/components/ui/sonner";
 
-// Use a more widely supported font temporarily
+// Update the font configuration
 const inter = Inter({
   subsets: ["latin"],
+  display: 'swap',
   variable: "--font-inter",
 });
 
@@ -25,8 +26,8 @@ export default async function RootLayout({
   const session = await getServerSession(authOptions);
   return (
     <html lang="en">
-      <body className={`${inter.variable} antialiased`}>
-      <NextAuthSessionProvider session={session}>
+      <body className={`${inter.className} antialiased`}>
+        <NextAuthSessionProvider session={session}>
           {children}
           <Toaster />
         </NextAuthSessionProvider>
