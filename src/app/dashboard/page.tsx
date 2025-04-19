@@ -2,19 +2,19 @@
 'use client';
 
 import { useState, useEffect } from 'react';
-import Sidebar from '@/components/sidebar';
-import TopBar from '@/components/topbar';
-import MobileMenu from '@/components/mobilemenu';
-import DashboardHome from '@/components/dashboardhome';
-import MobileDeviceSecurity from '@/components/sections/mobiledevicesecurity';
-import  { WiFiSecurity } from '@/components/sections/wifisecurity';
-import HomeNetworkSecurity from '@/components/sections/homesecurity';
-import CommunicationSecurity from '@/components/sections/communicationsecurity';
-import SocialMediaSecurity from '@/components/sections/socialmediasecurity';
-import EmailSecurity from '@/components/sections/emailsecurity';
-import IdentityProtection from '@/components/sections/identityprotection';
-import RecommendedSolutions from '@/components/sections/recommendedsolutions';
-import ImplementationStrategy from '@/components/sections/implementationstrategy';
+import Sidebar from '../../components/sidebar';
+import TopBar from '../../components/topbar';
+import MobileMenu from '../../components/mobilemenu';
+import DashboardHome from '../../components/dashboardhome';
+import MobileDeviceSecurity from '../../components/sections/mobiledevicesecurity';
+import  { WiFiSecurity } from '../../components/sections/wifisecurity';
+import HomeNetworkSecurity from '../../components/sections/homesecurity';
+import CommunicationSecurity from '../../components/sections/communicationsecurity';
+import SocialMediaSecurity from '../../components/sections/socialmediasecurity';
+import EmailSecurity from '../../components/sections/emailsecurity';
+import IdentityProtection from '../../components/sections/identityprotection';
+import RecommendedSolutions from '../../components/sections/recommendedsolutions';
+import ImplementationStrategy from '../../components/sections/implementationstrategy';
 
 export default function Dashboard() {
   const [activeSection, setActiveSection] = useState('dashboard');
