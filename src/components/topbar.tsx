@@ -7,7 +7,6 @@ import {
   Bell, 
   ChevronLeft, 
   ChevronRight, 
-  Settings,
   Shield,
   LogOut
 } from 'lucide-react';
@@ -102,8 +101,8 @@ export default function TopBar({ toggleSidebar, toggleMobileMenu, isSidebarOpen,
             {/* Title - always visible when sidebar is closed or on tablet/mobile */}
             {(!isSidebarOpen || isTabletOrMobile) && (
               <div className="ml-2 flex items-center">
-                <Shield className="h-8 w-8 text-blue-600" />
-                <h1 className="ml-2 text-xl font-semibold text-gray-900">PCD System</h1>
+                <Shield className="h-6 w-6 text-blue-600" />
+                <h1 className="ml-2 text-s font-semibold text-gray-900">PCD System</h1>
               </div>
             )}
           </div>
@@ -127,11 +126,6 @@ export default function TopBar({ toggleSidebar, toggleMobileMenu, isSidebarOpen,
               <Bell className="h-6 w-6" aria-hidden="true" />
             </button>
             
-            {/* Settings */}
-            <button className="p-1 rounded-full text-gray-400 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500">
-              <span className="sr-only">Settings</span>
-              <Settings className="h-6 w-6" aria-hidden="true" />
-            </button>
             
             {/* User profile */}
             <div className="ml-3 relative user-menu-container">

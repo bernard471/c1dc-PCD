@@ -112,7 +112,7 @@ export default function Navbar() {
               Contact
             </Link>
             <Link 
-              href="#get-started" 
+              href="/auth/login"  
               className="block px-3 py-2 rounded-md text-base font-medium bg-blue-600 text-white hover:bg-blue-700"
               onClick={() => setIsMenuOpen(false)}
             >

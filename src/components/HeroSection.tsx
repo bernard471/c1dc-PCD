@@ -53,13 +53,13 @@ export default function HeroSection() {
             </p>
             <div className="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
               <Link
-                href="#get-started"
+                href="/auth/login" 
                 className="bg-blue-600 text-white px-8 py-3 rounded-lg text-lg font-semibold shadow-md hover:bg-blue-700 transition-all duration-300 hover:scale-105 text-center"
               >
                 Get Started
               </Link>
               <Link
-                href="#learn-more"
+                href="#about"
                 className="bg-white text-blue-600 border border-blue-600 px-8 py-3 rounded-lg text-lg font-semibold hover:bg-blue-50 transition-all duration-300 hover:scale-105 text-center"
               >
                 Learn More
@@ -94,7 +94,7 @@ export default function HeroSection() {
               transition={{ duration: 0.6, delay: 0.6 }}
             >
               <p className="text-sm text-center text-gray-500">Trusted by</p>
-              <p className="text-xl font-bold text-blue-600">500+ Companies</p>
+              <p className="text-xl font-bold text-blue-600">50+ Companies</p>
             </motion.div>
           </motion.div>
         </div>

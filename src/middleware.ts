@@ -14,6 +14,7 @@ const publicPaths = [
   '/api/verify-payment',
   '/payment/success',
   '/payment/cancel',
+  '/legal',
 ];
 
 // Function to check if the path is public

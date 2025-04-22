@@ -10,6 +10,7 @@ import {
   Package 
 } from 'lucide-react';
 import backgroundImage from '@/images/cyber-security-concept.png'; // Adjust the path as needed
+import Link from 'next/link';
 
 
 // Remove any direct font imports that might be causing issues
@@ -160,12 +161,12 @@ export default function FeaturesSection() {
                 <span>Curated security tools and recommendations</span>
               </li>
             </ul>
-            <button className="text-blue-600 font-medium flex items-center hover:text-blue-800 transition-colors">
+            <Link href="/dashboard" className="text-blue-600 font-medium flex items-center hover:text-blue-800 transition-colors">
               Explore our security dashboard
               <svg className="ml-2 h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5l7 7-7 7"></path>
               </svg>
-            </button>
+            </Link>
           </div>
           <div className="lg:w-1/2 relative">
             {/* Background image for this section only */}
