@@ -15,6 +15,9 @@ import {
     FaSearchPlus
   } from 'react-icons/fa';
   import { IconType } from 'react-icons';
+  import hero1 from '../images/hero1.jpg';
+  import hero from '../images/hero.webp';
+  import freepik from '../images/freepik.jpeg';
   
   export interface SecurityItem {
     title: string;
@@ -24,6 +27,7 @@ import {
       details: string[];
     }[];
     icon: IconType;
+    images?: string[]; // Array of image paths
   }
   
   export interface SecurityCategory {
@@ -43,6 +47,13 @@ import {
           title: "Authentication Security",
           description: "Strengthen login security for your social media accounts",
           icon: FaShieldAlt,
+          images: [
+            hero1.src,
+            hero.src,
+            freepik.src,
+            hero.src,
+            freepik.src,
+          ],
           steps: [
             {
               name: "Strong authentication setup",
@@ -68,6 +79,13 @@ import {
           title: "Login Monitoring",
           description: "Track and manage active sessions on your accounts",
           icon: FaSignInAlt,
+          images: [
+            hero1.src,
+            hero.src,
+            freepik.src,
+            hero.src,
+            freepik.src,
+          ],
           steps: [
             {
               name: "Regular session audits",
@@ -96,6 +114,13 @@ import {
           title: "Third-Party App Connections",
           description: "Manage applications connected to your social media accounts",
           icon: FaPuzzlePiece,
+          images: [
+            hero1.src,
+            hero.src,
+            freepik.src,
+            hero.src,
+            freepik.src,
+          ],
           steps: [
             {
               name: "Audit connected applications",
@@ -124,6 +149,13 @@ import {
           title: "Account Recovery Preparation",
           description: "Prepare for potential account lockouts or compromise",
           icon: FaKey,
+          images: [
+            hero1.src,
+            hero.src,
+            freepik.src,
+            hero.src,
+            freepik.src,
+          ],
           steps: [
             {
               name: "Proactive measures",
@@ -156,6 +188,13 @@ import {
           title: "Information Visibility Control",
           description: "Manage who can see your profile and content",
           icon: FaEyeSlash,
+          images: [
+            hero1.src,
+            hero.src,
+            freepik.src,
+            hero.src,
+            freepik.src,
+          ],
           steps: [
             {
               name: "Profile privacy optimization",
@@ -182,6 +221,13 @@ import {
           title: "Data Sharing Settings",
           description: "Control how platforms use and share your data",
           icon: FaShareAlt,
+          images: [
+            hero1.src,
+            hero.src,
+            freepik.src,
+            hero.src,
+            freepik.src,
+          ],
           steps: [
             {
               name: "Control platform data usage",
@@ -207,6 +253,13 @@ import {
           title: "Location Privacy",
           description: "Manage location data in social media",
           icon: FaMapMarkerAlt,
+          images: [
+            hero1.src,
+            hero.src,
+            freepik.src,
+            hero.src,
+            freepik.src,
+          ],
           steps: [
             {
               name: "Location sharing management",
@@ -239,6 +292,13 @@ import {
           title: "Post and Content Audit",
           description: "Review and secure your social media content",
           icon: FaHistory,
+          images: [
+            hero1.src,
+            hero.src,
+            freepik.src,
+            hero.src,
+            freepik.src,
+          ],
           steps: [
             {
               name: "Historical content review",
@@ -273,6 +333,13 @@ import {
           title: "Digital Footprint Management",
           description: "Monitor and control your online presence",
           icon: FaGlobe,
+          images: [
+            hero1.src,
+            hero.src,
+            freepik.src,
+            hero.src,
+            freepik.src,
+          ],
           steps: [
             {
               name: "Search presence audit",
@@ -298,6 +365,13 @@ import {
           title: "Secure Messaging Within Platforms",
           description: "Protect private communications on social media",
           icon: FaComments,
+          images: [
+            hero1.src,
+            hero.src,
+            freepik.src,
+            hero.src,
+            freepik.src,
+          ],
           steps: [
             {
               name: "Direct message security",
@@ -330,6 +404,13 @@ import {
           title: "Signs of Account Compromise",
           description: "Recognize when your account may be compromised",
           icon: FaSearchPlus,
+          images: [
+            hero1.src,
+            hero.src,
+            freepik.src,
+            hero.src,
+            freepik.src,
+          ],
           steps: [
             {
               name: "Monitoring for unusual activity",
@@ -356,6 +437,13 @@ import {
           title: "Immediate Response Plan",
           description: "Steps to take when your account is compromised",
           icon: FaClipboardCheck,
+          images: [
+            hero1.src,
+            hero.src,
+            freepik.src,
+            hero.src,
+            freepik.src,
+          ],
           steps: [
             {
               name: "Step-by-step recovery",
@@ -383,6 +471,13 @@ import {
           title: "Ongoing Monitoring",
           description: "Maintain vigilance after a security incident",
           icon: FaShieldAlt,
+          images: [
+            hero1.src,
+            hero.src,
+            freepik.src,
+            hero.src,
+            freepik.src,
+          ],
           steps: [
             {
               name: "Post-recovery vigilance",

@@ -17,6 +17,9 @@ import {
   FaSearchPlus
 } from 'react-icons/fa';
 import { IconType } from 'react-icons';
+import hero1 from '../images/hero1.jpg';
+import hero from '../images/hero.webp';
+import freepik from '../images/freepik.jpeg';
 
 export interface SecurityItem {
   title: string;
@@ -26,6 +29,7 @@ export interface SecurityItem {
     details: string[];
   }[];
   icon: IconType;
+  images?: string[]; // Array of image paths
 }
 
 export interface SecurityCategory {
@@ -45,6 +49,13 @@ export const identityProtectionData: SecurityCategory[] = [
         title: "Data Minimization",
         description: "Reduce your digital footprint and limit information sharing",
         icon: FaIdCard,
+        images: [
+          hero1.src,
+          hero.src,
+          freepik.src,
+          hero.src,
+          freepik.src,
+        ],
         steps: [
           {
             name: "Information sharing limits",
@@ -74,6 +85,13 @@ export const identityProtectionData: SecurityCategory[] = [
         title: "Document Security",
         description: "Secure physical and digital documents containing personal information",
         icon: FaFileAlt,
+        images: [
+          hero1.src,
+          hero.src,
+          freepik.src,
+          hero.src,
+          freepik.src,
+        ],
         steps: [
           {
             name: "Physical document protection",
@@ -99,6 +117,13 @@ export const identityProtectionData: SecurityCategory[] = [
         title: "Social Security Number Protection",
         description: "Safeguard your Social Security Number from theft and misuse",
         icon: FaIdBadge,
+        images: [
+          hero1.src,
+          hero.src,
+          freepik.src,
+          hero.src,
+          freepik.src,
+        ],
         steps: [
           {
             name: "SSN security measures",
@@ -131,6 +156,13 @@ export const identityProtectionData: SecurityCategory[] = [
         title: "Credit Monitoring",
         description: "Track and review your credit reports and scores",
         icon: FaSearchPlus,
+        images: [
+          hero1.src,
+          hero.src,
+          freepik.src,
+          hero.src,
+          freepik.src,
+        ],
         steps: [
           {
             name: "Regular credit checks",
@@ -159,6 +191,13 @@ export const identityProtectionData: SecurityCategory[] = [
         title: "Financial Account Security",
         description: "Protect your bank accounts and credit cards",
         icon: FaUniversity,
+        images: [
+          hero1.src,
+          hero.src,
+          freepik.src,
+          hero.src,
+          freepik.src,
+        ],
         steps: [
           {
             name: "Bank account protection",
@@ -188,6 +227,13 @@ export const identityProtectionData: SecurityCategory[] = [
         title: "Preventative Measures",
         description: "Implement proactive steps to prevent financial identity theft",
         icon: FaShieldAlt,
+        images: [
+          hero1.src,
+          hero.src,
+          freepik.src,
+          hero.src,
+          freepik.src,
+        ],
         steps: [
           {
             name: "Credit freezes",
@@ -220,6 +266,13 @@ export const identityProtectionData: SecurityCategory[] = [
         title: "Online Presence Management",
         description: "Control your personal information online",
         icon: FaGlobe,
+        images: [
+          hero1.src,
+          hero.src,
+          freepik.src,
+          hero.src,
+          freepik.src,
+        ],
         steps: [
           {
             name: "Personal information audit",
@@ -245,6 +298,13 @@ export const identityProtectionData: SecurityCategory[] = [
         title: "Credential Security",
         description: "Secure your passwords and login information",
         icon: FaKey,
+        images: [
+          hero1.src,
+          hero.src,
+          freepik.src,
+          hero.src,
+          freepik.src,
+        ],
         steps: [
           {
             name: "Password management",
@@ -270,6 +330,13 @@ export const identityProtectionData: SecurityCategory[] = [
         title: "Authentication Strategy",
         description: "Develop a comprehensive approach to account security",
         icon: FaFingerprint,
+        images: [
+          hero1.src,
+          hero.src,
+          freepik.src,
+          hero.src,
+          freepik.src,
+        ],
         steps: [
           {
             name: "Identity verification hierarchy",
@@ -302,6 +369,13 @@ export const identityProtectionData: SecurityCategory[] = [
         title: "Warning Signs Detection",
         description: "Identify potential indicators of identity theft",
         icon: FaExclamationTriangle,
+        images: [
+          hero1.src,
+          hero.src,
+          freepik.src,
+          hero.src,
+          freepik.src,
+        ],
         steps: [
           {
             name: "Financial red flags",
@@ -329,6 +403,13 @@ export const identityProtectionData: SecurityCategory[] = [
         title: "Medical Identity Protection",
         description: "Safeguard your healthcare information",
         icon: FaHospital,
+        images: [
+          hero1.src,
+          hero.src,
+          freepik.src,
+          hero.src,
+          freepik.src,
+        ],
         steps: [
           {
             name: "Healthcare information security",
@@ -354,6 +435,13 @@ export const identityProtectionData: SecurityCategory[] = [
         title: "Child Identity Protection",
         description: "Protect children from identity theft",
         icon: FaChild,
+        images: [
+          hero1.src,
+          hero.src,
+          freepik.src,
+          hero.src,
+          freepik.src,
+        ],
         steps: [
           {
             name: "Proactive measures",
@@ -386,6 +474,13 @@ export const identityProtectionData: SecurityCategory[] = [
         title: "Immediate Containment",
         description: "First steps to take after discovering identity theft",
         icon: FaLock,
+        images: [
+          hero1.src,
+          hero.src,
+          freepik.src,
+          hero.src,
+          freepik.src,
+        ],
         steps: [
           {
             name: "First steps after discovering theft",
@@ -411,6 +506,13 @@ export const identityProtectionData: SecurityCategory[] = [
         title: "Mitigation Process",
         description: "Limit damage and begin recovery",
         icon: FaClipboardList,
+        images: [
+          hero1.src,
+          hero.src,
+          freepik.src,
+          hero.src,
+          freepik.src,
+        ],
         steps: [
           {
             name: "Credit bureau procedures",
@@ -436,6 +538,13 @@ export const identityProtectionData: SecurityCategory[] = [
         title: "Long-term Recovery",
         description: "Ongoing monitoring and follow-up",
         icon: FaSearchPlus,
+        images: [
+          hero1.src,
+          hero.src,
+          freepik.src,
+          hero.src,
+          freepik.src,
+        ],
         steps: [
           {
             name: "Ongoing monitoring",

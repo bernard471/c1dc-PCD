@@ -119,24 +119,42 @@ export default function MobileDeviceSecurity() {
   }, []);
 
   const toggleSection = (section: string) => {
-    setExpandedSections(prev => ({
-      ...prev,
-      [section]: !prev[section]
-    }));
+    setExpandedSections(prev => {
+      // Create a new object with all sections set to false
+      const newState: Record<string, boolean> = {};
+      Object.keys(prev).forEach(key => {
+        newState[key] = false;
+      });
+      // Set the clicked section to the opposite of its current state
+      newState[section] = !prev[section];
+      return newState;
+    });
   };
   
   const toggleCategory = (category: string) => {
-    setExpandedCategories(prev => ({
-      ...prev,
-      [category]: !prev[category]
-    }));
+    setExpandedCategories(prev => {
+      // Create a new object with all categories set to false
+      const newState: Record<string, boolean> = {};
+      Object.keys(prev).forEach(key => {
+        newState[key] = false;
+      });
+      // Set the clicked category to the opposite of its current state
+      newState[category] = !prev[category];
+      return newState;
+    });
   };
   
   const toggleItem = (item: string) => {
-    setExpandedItems(prev => ({
-      ...prev,
-      [item]: !prev[item]
-    }));
+    setExpandedItems(prev => {
+      // Create a new object with all items set to false
+      const newState: Record<string, boolean> = {};
+      Object.keys(prev).forEach(key => {
+        newState[key] = false;
+      });
+      // Set the clicked item to the opposite of its current state
+      newState[item] = !prev[item];
+      return newState;
+    });
   };
   
   const toggleCategoryCompletion = (categoryId: string, event: React.MouseEvent) => {

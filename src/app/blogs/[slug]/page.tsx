@@ -14,6 +14,7 @@ import BackToTopButton from '../../../components/BackToTopButton';
 import CommentSection from '../../../components/CommentSection';
 import { Document, Block, Inline, Text, Mark } from '@contentful/rich-text-types';
 import { Options } from '@contentful/rich-text-react-renderer';
+import { BubbleLoader } from '@/components/ui/loaders';
 
 // Define proper types for your blog data
 interface BlogData {
@@ -75,7 +76,10 @@ export default function BlogPost() {
     fetchData();
   }, [slug]);
   
-  if (loading) return <div>Loading...</div>;
+  if (loading) {
+    return <BubbleLoader message="Loading blog data..." size="medium" />;
+  }
+
   if (!data) return notFound();
   
   const { post, filteredRelatedPosts } = data;

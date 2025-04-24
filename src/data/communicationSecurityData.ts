@@ -14,6 +14,9 @@ import {
     FaFile
   } from 'react-icons/fa';
   import { IconType } from 'react-icons';
+  import hero1 from '../images/hero1.jpg';
+  import hero from '../images/hero.webp';
+  import freepik from '../images/freepik.jpeg';
   
   export interface SecurityItem {
     title: string;
@@ -23,6 +26,7 @@ import {
       details: string[];
     }[];
     icon: IconType;
+    images?: string[]; // Array of image paths
   }
   
   export interface SecurityCategory {
@@ -42,6 +46,13 @@ import {
           title: "Physical Space Assessment",
           description: "Evaluate and secure the physical meeting environment",
           icon: FaShieldAlt,
+          images: [
+            hero1.src,
+            hero.src,
+            freepik.src,
+            hero.src,
+            freepik.src,
+          ],
           steps: [
             {
               name: "Room security sweep",
@@ -67,6 +78,13 @@ import {
           title: "Electronic Device Management",
           description: "Control electronic devices during sensitive meetings",
           icon: FaMobileAlt,
+          images: [
+            hero1.src,
+            hero.src,
+            freepik.src,
+            hero.src,
+            freepik.src,
+          ],
           steps: [
             {
               name: "Mobile device policies",
@@ -91,6 +109,13 @@ import {
           title: "Meeting Materials",
           description: "Secure physical and digital meeting materials",
           icon: FaFile,
+          images: [
+            hero1.src,
+            hero.src,
+            freepik.src,
+            hero.src,
+            freepik.src,
+          ],
           steps: [
             {
               name: "Document security",
@@ -122,6 +147,13 @@ import {
           title: "Voice Call Security",
           description: "Protect voice conversations from interception",
           icon: FaMicrophone,
+          images: [
+            hero1.src,
+            hero.src,
+            freepik.src,
+            hero.src,
+            freepik.src,
+          ],
           steps: [
             {
               name: "Secure calling practices",
@@ -147,6 +179,13 @@ import {
           title: "Messaging Security",
           description: "Secure text and multimedia messages",
           icon: FaEnvelope,
+          images: [
+            hero1.src,
+            hero.src,
+            freepik.src,
+            hero.src,
+            freepik.src,
+          ],
           steps: [
             {
               name: "Secure messaging configuration",
@@ -172,6 +211,13 @@ import {
           title: "Device Tracking Detection",
           description: "Identify if your device is being tracked or monitored",
           icon: FaMapMarkerAlt,
+          images: [
+            hero1.src,
+            hero.src,
+            freepik.src,
+            hero.src,
+            freepik.src,
+          ],
           steps: [
             {
               name: "Physical inspection",
@@ -197,6 +243,13 @@ import {
           title: "Travel Communication Security",
           description: "Maintain secure communications while traveling",
           icon: FaMapMarkerAlt,
+          images: [
+            hero1.src,
+            hero.src,
+            freepik.src,
+            hero.src,
+            freepik.src,
+          ],
           steps: [
             {
               name: "Pre-travel preparation",
@@ -229,6 +282,13 @@ import {
           title: "Car Privacy Assessment",
           description: "Evaluate and improve privacy in modern vehicles",
           icon: FaShieldAlt,
+          images: [
+            hero1.src,
+            hero.src,
+            freepik.src,
+            hero.src,
+            freepik.src,
+          ],
           steps: [
             {
               name: "Modern vehicle security",
@@ -254,6 +314,13 @@ import {
           title: "Bluetooth and Wi-Fi Security",
           description: "Secure wireless connections in vehicles",
           icon: FaBluetooth,
+          images: [
+            hero1.src,
+            hero.src,
+            freepik.src,
+            hero.src,
+            freepik.src,
+          ],
           steps: [
             {
               name: "Connection management",
@@ -278,6 +345,13 @@ import {
           title: "Audio Privacy",
           description: "Protect conversations within vehicles",
           icon: FaMicrophone,
+          images: [
+            hero1.src,
+            hero.src,
+            freepik.src,
+            hero.src,
+            freepik.src,
+          ],
           steps: [
             {
               name: "Conversation security",
@@ -309,6 +383,13 @@ import {
           title: "Platform Selection and Configuration",
           description: "Choose and configure secure video conferencing platforms",
           icon: FaCog,
+          images: [
+            hero1.src,
+            hero.src,
+            freepik.src,
+            hero.src,
+            freepik.src,
+          ],
           steps: [
             {
               name: "Security features to require",
@@ -335,6 +416,13 @@ import {
           title: "Meeting Management",
           description: "Securely manage video conference sessions",
           icon: FaUserFriends,
+          images: [
+            hero1.src,
+            hero.src,
+            freepik.src,
+            hero.src,
+            freepik.src,
+          ],
           steps: [
             {
               name: "Before meeting",
@@ -368,6 +456,13 @@ import {
           title: "Physical and Environmental Security",
           description: "Secure your physical environment during video conferences",
           icon: FaHome,
+          images: [
+            hero1.src,
+            hero.src,
+            freepik.src,
+            hero.src,
+            freepik.src,
+          ],
           steps: [
             {
               name: "Home office security",
@@ -400,6 +495,13 @@ import {
           title: "Secure Email Practices",
           description: "Protect email communications from interception and compromise",
           icon: FaEnvelope,
+          images: [
+            hero1.src,
+            hero.src,
+            freepik.src,
+            hero.src,
+            freepik.src,
+          ],
           steps: [
             {
               name: "Basic email hygiene",
@@ -425,6 +527,13 @@ import {
           title: "Document Tracking and Protection",
           description: "Secure documents during sharing and distribution",
           icon: FaFile,
+          images: [
+            hero1.src,
+            hero.src,
+            freepik.src,
+            hero.src,
+            freepik.src,
+          ],
           steps: [
             {
               name: "Document security",

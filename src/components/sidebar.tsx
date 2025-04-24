@@ -22,7 +22,8 @@ export default function Sidebar({ isOpen, activeSection, setActiveSection, isTab
     'social-media-security': false,
     'email-security': false,
     'identity-protection': false,
-    'recommended-solutions': false
+    'recommended-solutions': false,
+    'implementation-strategy': false,
   });
 
   const toggleSubMenu = (section: string) => {

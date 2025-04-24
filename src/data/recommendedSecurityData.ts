@@ -23,6 +23,9 @@ import {
     FaTrashAlt
   } from 'react-icons/fa';
   import { IconType } from 'react-icons';
+  import hero1 from '../images/hero1.jpg';
+  import hero from '../images/hero.webp';
+  import freepik from '../images/freepik.jpeg';
   
   export interface SecurityItem {
     title: string;
@@ -32,6 +35,7 @@ import {
       details: string[];
     }[];
     icon: IconType;
+    images?: string[]; // Array of image paths
   }
   
   export interface SecurityCategory {
@@ -51,6 +55,13 @@ import {
           title: "Consumer Antivirus Solutions",
           description: "Comprehensive protection suites for personal devices",
           icon: FaLaptop,
+          images: [
+            hero1.src,
+            hero.src,
+            freepik.src,
+            hero.src,
+            freepik.src,
+          ],
           steps: [
             {
               name: "Recommended options",
@@ -84,6 +95,13 @@ import {
           title: "Advanced Endpoint Protection",
           description: "Next-generation security solutions with AI and behavioral analysis",
           icon: FaRobot,
+          images: [
+            hero1.src,
+            hero.src,
+            freepik.src,
+            hero.src,
+            freepik.src,
+          ],
           steps: [
             {
               name: "Next-generation solutions",
@@ -114,6 +132,13 @@ import {
           title: "Free Antivirus Options",
           description: "No-cost solutions for basic malware protection",
           icon: FaDownload,
+          images: [
+            hero1.src,
+            hero.src,
+            freepik.src,
+            hero.src,
+            freepik.src,
+          ],
           steps: [
             {
               name: "Reputable free solutions",
@@ -154,6 +179,13 @@ import {
           title: "Premium VPN Services",
           description: "Paid VPN solutions with advanced features and strong privacy protections",
           icon: FaLock,
+          images: [
+            hero1.src,
+            hero.src,
+            freepik.src,
+            hero.src,
+            freepik.src,
+          ],
           steps: [
             {
               name: "Top recommendations",
@@ -188,6 +220,13 @@ import {
           title: "VPN Configuration Best Practices",
           description: "Optimize your VPN setup for maximum security and performance",
           icon: FaLock,
+          images: [
+            hero1.src,
+            hero.src,
+            freepik.src,
+            hero.src,
+            freepik.src,
+          ],
           steps: [
             {
               name: "Security optimization",
@@ -214,6 +253,13 @@ import {
           title: "Self-Hosted VPN Options",
           description: "Set up and manage your own VPN infrastructure",
           icon: FaServer,
+          images: [
+            hero1.src,
+            hero.src,
+            freepik.src,
+            hero.src,
+            freepik.src,
+          ],
           steps: [
             {
               name: "DIY solutions",
@@ -251,6 +297,13 @@ import {
           title: "Cloud-Based Password Managers",
           description: "Password management solutions with cross-device synchronization",
           icon: FaCloud,
+          images: [
+            hero1.src,
+            hero.src,
+            freepik.src,
+            hero.src,
+            freepik.src,
+          ],
           steps: [
             {
               name: "Leading solutions",
@@ -284,6 +337,13 @@ import {
           title: "Local Password Managers",
           description: "Offline password solutions without cloud dependencies",
           icon: FaDatabase,
+          images: [
+            hero1.src,
+            hero.src,
+            freepik.src,
+            hero.src,
+            freepik.src,
+          ],
           steps: [
             {
               name: "Offline options",
@@ -311,6 +371,13 @@ import {
           title: "Hardware Password Solutions",
           description: "Physical devices for secure credential storage and authentication",
           icon: FaUsb,
+          images: [
+            hero1.src,
+            hero.src,
+            freepik.src,
+            hero.src,
+            freepik.src,
+          ],
           steps: [
             {
               name: "Physical security devices",
@@ -348,6 +415,13 @@ import {
           title: "Encrypted Messaging Apps",
           description: "Applications for private and secure text messaging",
           icon: FaComments,
+          images: [
+            hero1.src,
+            hero.src,
+            freepik.src,
+            hero.src,
+            freepik.src,
+          ],
           steps: [
             {
               name: "Recommended applications",
@@ -381,6 +455,13 @@ import {
           title: "Secure Email Providers",
           description: "Privacy-focused email services with enhanced security",
           icon: FaEnvelope,
+          images: [
+            hero1.src,
+            hero.src,
+            freepik.src,
+            hero.src,
+            freepik.src,
+          ],
           steps: [
             {
               name: "Privacy-focused email",
@@ -414,6 +495,13 @@ import {
           title: "Voice and Video Communication",
           description: "Secure solutions for calls and video conferences",
           icon: FaVideo,
+          images: [
+            hero1.src,
+            hero.src,
+            freepik.src,
+            hero.src,
+            freepik.src,
+          ],
           steps: [
             {
               name: "Secure calling options",
@@ -451,6 +539,13 @@ import {
             title: "Home Network Security Devices",
             description: "Dedicated hardware to protect all devices on your network",
             icon: FaNetworkWired,
+            images: [
+              hero1.src,
+              hero.src,
+              freepik.src,
+              hero.src,
+              freepik.src,
+            ],
             steps: [
               {
                 name: "Dedicated security hardware",
@@ -484,6 +579,13 @@ import {
             title: "DNS Protection",
             description: "Secure DNS services to filter malicious domains and enhance privacy",
             icon: FaDna,
+            images: [
+              hero1.src,
+              hero.src,
+              freepik.src,
+              hero.src,
+              freepik.src,
+            ],
             steps: [
               {
                 name: "Secure DNS services",
@@ -517,6 +619,13 @@ import {
             title: "Traffic Analysis Tools",
             description: "Monitor and analyze network traffic for security and performance",
             icon: FaChartLine,
+            images: [
+              hero1.src,
+              hero.src,
+              freepik.src,
+              hero.src,
+              freepik.src,
+            ],
             steps: [
               {
                 name: "Network monitoring solutions",
@@ -557,6 +666,13 @@ import {
             title: "Browser Privacy Extensions",
             description: "Add-ons to enhance privacy and security while browsing",
             icon: FaChrome,
+            images: [
+              hero1.src,
+              hero.src,
+              freepik.src,
+              hero.src,
+              freepik.src,
+            ],
             steps: [
               {
                 name: "Essential add-ons",
@@ -590,6 +706,13 @@ import {
             title: "Privacy-Focused Browsers",
             description: "Alternative browsers designed with privacy and security in mind",
             icon: FaFirefoxBrowser,
+            images: [
+              hero1.src,
+              hero.src,
+              freepik.src,
+              hero.src,
+              freepik.src,
+            ],
             steps: [
               {
                 name: "Alternative browser options",
@@ -623,6 +746,13 @@ import {
             title: "System-Wide Privacy Tools",
             description: "Comprehensive solutions for privacy across your entire system",
             icon: FaUserSecret,
+            images: [
+              hero1.src,
+              hero.src,
+              freepik.src,
+              hero.src,
+              freepik.src,
+            ],
             steps: [
               {
                 name: "Comprehensive privacy solutions",
@@ -663,6 +793,13 @@ import {
             title: "File Encryption Solutions",
             description: "Tools to encrypt your files and storage devices",
             icon: FaLock,
+            images: [
+              hero1.src,
+              hero.src,
+              freepik.src,
+              hero.src,
+              freepik.src,
+            ],
             steps: [
               {
                 name: "Full-disk encryption",
@@ -696,6 +833,13 @@ import {
             title: "Secure File Storage",
             description: "Encrypted storage solutions for sensitive files",
             icon: FaHdd,
+            images: [
+              hero1.src,
+              hero.src,
+              freepik.src,
+              hero.src,
+              freepik.src,
+            ],
             steps: [
               {
                 name: "Encrypted cloud storage",
@@ -729,6 +873,13 @@ import {
             title: "Secure Deletion Tools",
             description: "Solutions to permanently erase sensitive data",
             icon: FaTrashAlt,
+            images: [
+              hero1.src,
+              hero.src,
+              freepik.src,
+              hero.src,
+              freepik.src,
+            ],
             steps: [
               {
                 name: "Data wiping solutions",

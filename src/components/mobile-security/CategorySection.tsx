@@ -1,8 +1,9 @@
-import React, { JSX } from 'react';
+import React, { JSX, useState } from 'react';
 import { 
   CheckCircle, ChevronDown, ChevronUp} from 'lucide-react';
 import { SecurityCategory } from '@/data/mobileSecurityData';
 import { toast } from "sonner";
+import Image from 'next/image';
 
 interface CategorySectionProps {
   category: SecurityCategory;
@@ -39,6 +40,10 @@ const CategorySection: React.FC<CategorySectionProps> = ({
   setConfirmDialogOpen,
   setCategoryToComplete
 }) => {
+  // State for image gallery and zoom modal
+  const [selectedImageItem, setSelectedImageItem] = useState<{sectionId: string, imageIndex: number} | null>(null);
+  const [isImageZoomed, setIsImageZoomed] = useState(false);
+
   // Function to handle initiating the completion process
   const handleCategoryCompletion = (categoryId: string, e: React.MouseEvent) => {
     // Prevent the category from expanding/collapsing when clicking the button
@@ -63,6 +68,36 @@ const CategorySection: React.FC<CategorySectionProps> = ({
     setCategoryToComplete(categoryId);
     setConfirmDialogOpen(true);
   };
+
+  // Function to handle image click for zooming
+  const handleImageClick = (sectionId: string, imageIndex: number) => {
+    setSelectedImageItem({ sectionId, imageIndex });
+    setIsImageZoomed(true);
+  };
+  
+  // Function to close the zoomed image modal
+  const handleCloseZoom = () => {
+    setIsImageZoomed(false);
+    // Reset selected image after animation completes
+    setTimeout(() => setSelectedImageItem(null), 300);
+  };
+
+// Handle category toggle
+const handleCategoryToggle = (categoryId: string) => {
+  toggleCategory(categoryId);
+};
+
+// Handle section toggle
+const handleSectionToggle = (sectionId: string) => {
+  toggleSection(sectionId);
+};
+
+// Handle item toggle
+const handleItemToggle = (itemId: string) => {
+  toggleItem(itemId);
+};
+
+
 
   return (
     <div className="">
@@ -104,7 +139,7 @@ const CategorySection: React.FC<CategorySectionProps> = ({
           className={`flex items-center justify-between p-4 cursor-pointer ${
             expandedCategories[category.id] ? 'bg-blue-50' : 'bg-gray-50'
           }`}
-          onClick={() => toggleCategory(category.id)}
+          onClick={() => handleCategoryToggle(category.id)}
         >
           <div className="flex items-center space-x-3">
             {getCategoryIcon(category.id)}
@@ -115,9 +150,9 @@ const CategorySection: React.FC<CategorySectionProps> = ({
           </div>
           <div className="flex items-center">
             {expandedCategories[category.id] ? (
-              <ChevronDown className="text-blue-500 h-5 w-5" />
-            ) : (
               <ChevronUp className="text-blue-500 h-5 w-5" />
+            ) : (
+              <ChevronDown className="text-blue-500 h-5 w-5" />
             )}
             {/* Mark Complete Button */}
             <button 
@@ -147,7 +182,7 @@ const CategorySection: React.FC<CategorySectionProps> = ({
                     className={`flex items-center justify-between p-3 cursor-pointer ${
                       expandedSections[section.id] ? 'bg-blue-100' : 'bg-gray-50'
                     }`}
-                    onClick={() => toggleSection(section.id)}
+                    onClick={() => handleSectionToggle(section.id)}
                   >
                     <div className="flex items-center space-x-3">
                       {getSectionIcon(section.id)}
@@ -170,7 +205,7 @@ const CategorySection: React.FC<CategorySectionProps> = ({
                           <div key={item.id} className="border-l-2 border-blue-200 pl-4 py-1">
                             <div 
                               className="flex items-center justify-between cursor-pointer"
-                              onClick={() => toggleItem(item.id)}
+                              onClick={() => handleItemToggle(item.id)}
                             >
                               <h4 className="font-medium text-gray-700 flex items-center">
                                 <span className="w-6 h-6 rounded-full bg-blue-100 text-blue-600 flex items-center justify-center text-xs mr-2">
@@ -179,9 +214,9 @@ const CategorySection: React.FC<CategorySectionProps> = ({
                                 {item.title}
                               </h4>
                               {expandedItems[item.id] ? (
-                                <ChevronDown className="text-blue-500 text-sm h-4 w-4" />
+                                <ChevronUp className="text-blue-500 text-sm h-4 w-4" />
                               ) : (
-                                <ChevronUp className="text-gray-400 text-sm h-4 w-4" />
+                                <ChevronDown className="text-gray-400 text-sm h-4 w-4" />
                               )}
                             </div>
                             
@@ -204,6 +239,57 @@ const CategorySection: React.FC<CategorySectionProps> = ({
                           </div>
                         ))}
                       </div>
+
+                      {/* Image gallery - only show if section has images */}
+                      {section.images && section.images.length > 0 && (
+                        <div className="mt-4 mb-6">
+                          <h4 className="text-sm font-medium text-gray-700 mb-2">Reference Images:</h4>
+                          
+                          {/* Stacked Image Gallery */}
+                          <div className="relative h-64 mb-4">
+                            <div className="absolute inset-0 overflow-x-auto pb-4 hide-scrollbar">
+                              <div className="flex space-x-4 px-2 py-2">
+                                {section.images.map((image, imageIndex) => (
+                                  <div 
+                                    key={imageIndex} 
+                                    className={`
+                                      relative flex-shrink-0 w-56 h-56 rounded-lg overflow-hidden 
+                                      border-2 cursor-pointer transform transition-all duration-300
+                                      ${selectedImageItem?.sectionId === section.id && selectedImageItem?.imageIndex === imageIndex 
+                                        ? 'border-blue-500 scale-105' 
+                                        : 'border-gray-200 hover:border-blue-300'}
+                                      ${imageIndex === 0 ? 'shadow-md' : 'shadow-sm'}
+                                    `}
+                                    style={{
+                                      transform: `translateY(${imageIndex * 8}px) rotate(${imageIndex % 2 === 0 ? -2 : 2}deg)`,
+                                      zIndex: section.images ? section.images.length - imageIndex : 0
+                                    }}
+                                    onClick={() => handleImageClick(section.id, imageIndex)}
+                                  >
+                                    <Image
+                                      src={image}
+                                      alt={`${section.title} reference image ${imageIndex + 1}`}
+                                      width={300}
+                                      height={300}
+                                      className="object-cover w-full h-full"
+                                    />
+                                    <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent p-2">
+                                      <span className="text-white text-xs font-medium">Image {imageIndex + 1}</span>
+                                    </div>
+                                  </div>
+                                ))}
+                              </div>
+                            </div>
+                            
+                            {/* Scroll hint animation */}
+                            <div className="absolute right-0 top-1/2 transform -translate-y-1/2 bg-gradient-to-l from-white to-transparent w-12 h-12 flex items-center justify-center rounded-full animate-pulse">
+                              <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-blue-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                              </svg>
+                            </div>
+                          </div>
+                        </div>
+                      )}
                     </div>
                   )}
                 </div>
@@ -212,6 +298,96 @@ const CategorySection: React.FC<CategorySectionProps> = ({
           </div>
         )}
       </div>
+
+      {/* Zoomed Image Modal */}
+      {selectedImageItem !== null && (
+        <div 
+          className={`fixed inset-0 bg-black/80 z-50 flex items-center justify-center transition-opacity duration-300 ${isImageZoomed ? 'opacity-100' : 'opacity-0 pointer-events-none'}`}
+          onClick={handleCloseZoom}
+        >
+          {(() => {
+            // Find the current section
+            const currentSection = category.sections.find(section => section.id === selectedImageItem.sectionId);
+            
+            if (!currentSection?.images) return null;
+            
+            const currentImage = currentSection.images[selectedImageItem.imageIndex];
+            
+            return (
+              <div 
+                className={`relative max-w-4xl max-h-[90vh] transition-transform duration-300 ${isImageZoomed ? 'scale-100' : 'scale-90'}`}
+                onClick={(e) => e.stopPropagation()}
+              >
+                <Image
+                  src={currentImage}
+                  alt={`${currentSection.title} reference image ${selectedImageItem.imageIndex + 1}`}
+                  width={1200}
+                  height={800}
+                  className="object-contain max-h-[90vh] rounded-lg"
+                />
+                
+                {/* Navigation controls */}
+                <div className="absolute top-1/2 left-0 right-0 -translate-y-1/2 flex justify-between px-4">
+                  <button 
+                    className="bg-white/20 hover:bg-white/40 rounded-full p-2 backdrop-blur-sm transition-colors"
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      const newIndex = selectedImageItem.imageIndex === 0 
+                        ? (currentSection?.images?.length ?? 1) - 1 
+                        : selectedImageItem.imageIndex - 1;
+                      setSelectedImageItem({...selectedImageItem, imageIndex: newIndex});
+                    }}
+                  >
+                    <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+                    </svg>
+                  </button>
+                  <button 
+                    className="bg-white/20 hover:bg-white/40 rounded-full p-2 backdrop-blur-sm transition-colors"
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      const newIndex = selectedImageItem.imageIndex === (currentSection?.images?.length ?? 1) - 1 
+                        ? 0 
+                        : selectedImageItem.imageIndex + 1;
+                      setSelectedImageItem({...selectedImageItem, imageIndex: newIndex});
+                    }}
+                  >
+                    <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                    </svg>
+                  </button>
+                </div>
+                
+                {/* Close button */}
+                <button 
+                  className="absolute top-4 right-4 bg-white/20 hover:bg-white/40 rounded-full p-2 backdrop-blur-sm transition-colors"
+                  onClick={handleCloseZoom}
+                >
+                  <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                  </svg>
+                </button>
+                
+                {/* Image counter */}
+                <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 bg-black/50 text-white px-3 py-1 rounded-full text-sm backdrop-blur-sm">
+                  {selectedImageItem.imageIndex + 1} / {currentSection.images.length}
+                </div>
+              </div>
+            );
+          })()}
+        </div>
+      )}
+
+      {/* CSS for hiding scrollbars */}
+      <style jsx global>{`
+        .hide-scrollbar::-webkit-scrollbar {
+          display: none;
+        }
+        .hide-scrollbar {
+          -ms-overflow-style: none;
+          scrollbar-width: none;
+        }
+      `}</style>
     </div>
   );
 };

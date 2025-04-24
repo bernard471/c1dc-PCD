@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import { Clock, AlertTriangle, ShieldAlert } from 'lucide-react';
+import Link from 'next/link';
+import { recommendedActionsData } from '@/data/recommendedActionsData';
 
 interface RecommendedAction {
   id: number;
@@ -9,27 +11,12 @@ interface RecommendedAction {
 }
 
 const RecommendedActions: React.FC = () => {
-  // Move the actions data into the component
-  const [actions] = useState<RecommendedAction[]>([
-    { 
-      id: 1, 
-      title: 'Update mobile device passwords', 
-      description: 'Recommended to change every 90 days',
-      icon: 'clock'
-    },
-    { 
-      id: 2, 
-      title: 'Enable two-factor auth for email', 
-      description: 'Increases account security by 99%',
-      icon: 'alert'
-    },
-    { 
-      id: 3, 
-      title: 'Update router firmware', 
-      description: 'Current version is 3 months old',
-      icon: 'shield'
-    }
-  ]);
+  // Get only the first 3 actions for the dashboard widget
+  const [actions] = useState<RecommendedAction[]>(
+    recommendedActionsData.slice(0, 3).map(({ id, title, description, icon }) => ({
+      id, title, description, icon
+    }))
+  );
 
   const getActionIcon = (icon: string) => {
     switch(icon) {
@@ -49,7 +36,7 @@ const RecommendedActions: React.FC = () => {
       <div className="flex justify-between items-center mb-4">
         <h2 className="text-lg font-medium text-gray-900">Recommended Actions</h2>
         <span className="px-2 py-1 bg-blue-100 text-blue-800 text-xs font-semibold rounded-full">
-          {actions.length} actions
+          {recommendedActionsData.length} actions
         </span>
       </div>
       
@@ -67,9 +54,9 @@ const RecommendedActions: React.FC = () => {
         ))}
       </ul>
       
-      <button className="mt-4 w-full py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500">
+      <Link href="/recommended-actions" className="mt-4 w-full py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 inline-block text-center">
         Review All Actions
-      </button>
+      </Link>
     </div>
   );
 };

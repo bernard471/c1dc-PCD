@@ -18,6 +18,9 @@ import {
     FaClipboardCheck
   } from 'react-icons/fa';
   import { IconType } from 'react-icons';
+  import hero1 from '../images/hero1.jpg';
+  import hero from '../images/hero.webp';
+  import freepik from '../images/freepik.jpeg';
   
   export interface SecurityItem {
     title: string;
@@ -27,6 +30,7 @@ import {
       details: string[];
     }[];
     icon: IconType;
+    images?: string[]; // Array of image paths
   }
   
   export interface SecurityCategory {
@@ -46,6 +50,13 @@ import {
           title: "Email Authentication",
           description: "Strengthen login security for your email accounts",
           icon: FaShieldAlt,
+          images: [
+            hero1.src,
+            hero.src,
+            freepik.src,
+            hero.src,
+            freepik.src,
+          ],
           steps: [
             {
               name: "Secure account credentials",
@@ -74,6 +85,13 @@ import {
           title: "Access Control",
           description: "Manage active sessions and device access to your email",
           icon: FaSignInAlt,
+          images: [
+            hero1.src,
+            hero.src,
+            freepik.src,
+            hero.src,
+            freepik.src,
+          ],
           steps: [
             {
               name: "Session management",
@@ -102,6 +120,13 @@ import {
           title: "Account Monitoring",
           description: "Track and review email account activity for suspicious behavior",
           icon: FaEye,
+          images: [
+            hero1.src,
+            hero.src,
+            freepik.src,
+            hero.src,
+            freepik.src,
+          ],
           steps: [
             {
               name: "Audit account activity",
@@ -134,6 +159,13 @@ import {
           title: "Email Encryption",
           description: "Secure the contents of your email communications",
           icon: FaLock,
+          images: [
+            hero1.src,
+            hero.src,
+            freepik.src,
+            hero.src,
+            freepik.src,
+          ],
           steps: [
             {
               name: "End-to-end encryption options",
@@ -165,6 +197,13 @@ import {
           title: "Attachment and Link Safety",
           description: "Safely handle email attachments and links",
           icon: FaPaperclip,
+          images: [
+            hero1.src,
+            hero.src,
+            freepik.src,
+            hero.src,
+            freepik.src,
+          ],
           steps: [
             {
               name: "Safe attachment handling",
@@ -193,6 +232,13 @@ import {
           title: "Sensitive Content Practices",
           description: "Protect confidential information in emails",
           icon: FaFileAlt,
+          images: [
+            hero1.src,
+            hero.src,
+            freepik.src,
+            hero.src,
+            freepik.src,
+          ],
           steps: [
             {
               name: "Information protection",
@@ -227,6 +273,13 @@ import {
           title: "Spam and Phishing Protection",
           description: "Defend against unwanted and malicious emails",
           icon: FaBan,
+          images: [
+            hero1.src,
+            hero.src,
+            freepik.src,
+            hero.src,
+            freepik.src,
+          ],
           steps: [
             {
               name: "Filter configuration",
@@ -255,6 +308,13 @@ import {
           title: "Email Header Analysis",
           description: "Examine email headers to identify suspicious messages",
           icon: FaCode,
+          images: [
+            hero1.src,
+            hero.src,
+            freepik.src,
+            hero.src,
+            freepik.src,
+          ],
           steps: [
             {
               name: "Header examination techniques",
@@ -282,6 +342,13 @@ import {
           title: "Advanced Protection Features",
           description: "Implement additional security measures for email",
           icon: FaShieldAlt,
+          images: [
+            hero1.src,
+            hero.src,
+            freepik.src,
+            hero.src,
+            freepik.src,
+          ],
           steps: [
             {
               name: "Provider security options",
@@ -316,6 +383,13 @@ import {
           title: "Email Separation Strategy",
           description: "Organize email accounts by purpose and security level",
           icon: FaClipboardList,
+          images: [
+            hero1.src,
+            hero.src,
+            freepik.src,
+            hero.src,
+            freepik.src,
+          ],
           steps: [
             {
               name: "Purpose-based accounts",
@@ -341,6 +415,13 @@ import {
           title: "Account Management",
           description: "Track and maintain multiple email accounts",
           icon: FaKey,
+          images: [
+            hero1.src,
+            hero.src,
+            freepik.src,
+            hero.src,
+            freepik.src,
+          ],
           steps: [
             {
               name: "Organization system",
@@ -373,6 +454,13 @@ import {
           title: "Detection of Compromise",
           description: "Recognize when your email account may be compromised",
           icon: FaSearchPlus,
+          images: [
+            hero1.src,
+            hero.src,
+            freepik.src,
+            hero.src,
+            freepik.src,
+          ],
           steps: [
             {
               name: "Warning signs",
@@ -400,6 +488,13 @@ import {
           title: "Immediate Response Protocol",
           description: "Steps to take when your email account is compromised",
           icon: FaClipboardCheck,
+          images: [
+            hero1.src,
+            hero.src,
+            freepik.src,
+            hero.src,
+            freepik.src,
+          ],
           steps: [
             {
               name: "Containment steps",
@@ -427,6 +522,13 @@ import {
           title: "Account Recovery Process",
           description: "Regain access to and secure a compromised email account",
           icon: FaKey,
+          images: [
+            hero1.src,
+            hero.src,
+            freepik.src,
+            hero.src,
+            freepik.src,
+          ],
           steps: [
             {
               name: "Service-specific recovery",

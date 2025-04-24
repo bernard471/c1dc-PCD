@@ -15,6 +15,9 @@ import {
     FaBatteryFull 
   } from 'react-icons/fa';
   import { IconType } from 'react-icons';
+  import hero1 from '../images/hero1.jpg';
+  import hero from '../images/hero.webp';
+  import freepik from '../images/freepik.jpeg';
   
   export interface SecurityItem {
     title: string;
@@ -24,6 +27,7 @@ import {
       details: string[];
     }[];
     icon: IconType;
+    images?: string[]; // Array of image paths
   }
   
   export interface SecurityCategory {
@@ -43,6 +47,13 @@ import {
           title: "Network Discovery and Mapping",
           description: "Identify and document all devices on your network",
           icon: FaNetworkWired,
+          images: [
+            hero1.src,
+            hero.src,
+            freepik.src,
+            hero.src,
+            freepik.src,
+          ],
           steps: [
             {
               name: "Perform regular network scan",
@@ -60,11 +71,19 @@ import {
               ]
             }
           ]
-        },
+        }
+        ,
         {
           title: "Vulnerability Scanning",
           description: "Regularly scan your network for security vulnerabilities",
           icon: FaShieldAlt,
+          images: [
+            hero1.src,
+            hero.src,
+            freepik.src,
+            hero.src,
+            freepik.src,
+          ],
           steps: [
             {
               name: "Basic home vulnerability scan",
@@ -88,6 +107,13 @@ import {
           title: "Traffic Monitoring",
           description: "Monitor network traffic for unusual patterns and potential threats",
           icon: FaChartLine,
+          images: [
+            hero1.src,
+            hero.src,
+            freepik.src,
+            hero.src,
+            freepik.src,
+          ],
           steps: [
             {
               name: "Analyze network traffic",
@@ -116,6 +142,13 @@ import {
           title: "Pre-Purchase Security Assessment",
           description: "Evaluate security before buying IoT devices",
           icon: FaShieldAlt,
+          images: [
+            hero1.src,
+            hero.src,
+            freepik.src,
+            hero.src,
+            freepik.src,
+          ],
           steps: [
             {
               name: "Research before buying",
@@ -141,6 +174,13 @@ import {
           title: "Initial Device Setup",
           description: "Securely set up new IoT devices",
           icon: FaCogs,
+          images: [
+            hero1.src,
+            hero.src,
+            freepik.src,
+            hero.src,
+            freepik.src,
+          ],
           steps: [
             {
               name: "Secure onboarding process",
@@ -165,6 +205,13 @@ import {
           title: "Network Segmentation for IoT",
           description: "Isolate IoT devices from your main network",
           icon: FaNetwork,
+          images: [
+            hero1.src,
+            hero.src,
+            freepik.src,
+            hero.src,
+            freepik.src,
+          ],
           steps: [
             {
               name: "Create dedicated IoT network",
@@ -188,6 +235,13 @@ import {
           title: "Ongoing Maintenance",
           description: "Keep your IoT devices secure over time",
           icon: FaCogs,
+          images: [
+            hero1.src,
+            hero.src,
+            freepik.src,
+            hero.src,
+            freepik.src,
+          ],
           steps: [
             {
               name: "Update schedule",
@@ -211,6 +265,13 @@ import {
           title: "Device-Specific Security",
           description: "Security measures for specific types of IoT devices",
           icon: FaMicrochip,
+          images: [
+            hero1.src,
+            hero.src,
+            freepik.src,
+            hero.src,
+            freepik.src,
+          ],
           steps: [
             {
               name: "Smart speakers and assistants",
@@ -251,6 +312,13 @@ import {
           title: "Defensive Layers",
           description: "Implement multiple security layers for better protection",
           icon: FaShieldAlt,
+          images: [
+            hero1.src,
+            hero.src,
+            freepik.src,
+            hero.src,
+            freepik.src,
+          ],
           steps: [
             {
               name: "Hardware firewall",
@@ -281,6 +349,13 @@ import {
           title: "Advanced Router Configuration",
           description: "Optimize your router settings for better security",
           icon: FaServer,
+          images: [
+            hero1.src,
+            hero.src,
+            freepik.src,
+            hero.src,
+            freepik.src,
+          ],
           steps: [
             {
               name: "DMZ (demilitarized zone)",
@@ -310,6 +385,13 @@ import {
           title: "Network Encryption",
           description: "Encrypt your network communications",
           icon: FaLock,
+          images: [
+            hero1.src,
+            hero.src,
+            freepik.src,
+            hero.src,
+            freepik.src,
+          ],
           steps: [
             {
               name: "Secure internal communications",
@@ -340,6 +422,13 @@ import {
           title: "Hub and Controller Security",
           description: "Secure your smart home hubs and controllers",
           icon: FaServer,
+          images: [
+            hero1.src,
+            hero.src,
+            freepik.src,
+            hero.src,
+            freepik.src,
+          ],
           steps: [
             {
               name: "Secure central systems",
@@ -364,6 +453,13 @@ import {
           title: "Automation and Rule Security",
           description: "Secure your smart home automation rules",
           icon: FaCogs,
+          images: [
+            hero1.src,
+            hero.src,
+            freepik.src,
+            hero.src,
+            freepik.src,
+          ],
           steps: [
             {
               name: "Secure automation rules",
@@ -387,6 +483,13 @@ import {
           title: "Voice Control Security",
           description: "Secure voice-controlled smart home features",
           icon: FaMicrophoneAlt,
+          images: [
+            hero1.src,
+            hero.src,
+            freepik.src,
+            hero.src,
+            freepik.src,
+          ],
           steps: [
             {
               name: "Secure assistant configuration",
@@ -416,6 +519,13 @@ import {
           title: "Camera and Surveillance Systems",
           description: "Secure your home surveillance systems",
           icon: FaVideo,
+          images: [
+            hero1.src,
+            hero.src,
+            freepik.src,
+            hero.src,
+            freepik.src,
+          ],
           steps: [
             {
               name: "Security camera best practices",
@@ -441,6 +551,13 @@ import {
           title: "Access Control Systems",
           description: "Secure your smart locks and access control systems",
           icon: FaKey,
+          images: [
+            hero1.src,
+            hero.src,
+            freepik.src,
+            hero.src,
+            freepik.src,
+          ],
           steps: [
             {
               name: "Smart lock configuration",
@@ -466,6 +583,13 @@ import {
           title: "Backup Power Planning",
           description: "Ensure security during power outages",
           icon: FaBatteryFull,
+          images: [
+            hero1.src,
+            hero.src,
+            freepik.src,
+            hero.src,
+            freepik.src,
+          ],
           steps: [
             {
               name: "Secure during outages",

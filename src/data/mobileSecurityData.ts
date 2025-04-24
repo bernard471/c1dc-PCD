@@ -1,4 +1,7 @@
 // Mobile Device Security Data Structure
+import hero1 from '../images/hero1.jpg';
+import hero from '../images/hero.webp';
+import freepik from '../images/freepik.jpeg';
 
 export interface SecurityItem {
     id: string;
@@ -11,6 +14,7 @@ export interface SecurityItem {
     id: string;
     title: string;
     items: SecurityItem[];
+    images?: string[]; // Array of image paths
   }
   
   export interface SecurityCategory {
@@ -37,6 +41,13 @@ export interface SecurityItem {
           {
             id: 'screen-lock',
             title: 'Screen Lock Configuration',
+            images: [
+              hero1.src,
+              hero.src,
+              freepik.src,
+              hero.src,
+              freepik.src,
+            ],
             items: [
               {
                 id: 'screen-lock-settings',
@@ -68,6 +79,13 @@ export interface SecurityItem {
           {
             id: 'biometric-security',
             title: 'Biometric Security',
+            images: [
+              hero1.src,
+              hero.src,
+              freepik.src,
+              hero.src,
+              freepik.src,
+            ],
             items: [
               {
                 id: 'fingerprint',
@@ -93,6 +111,13 @@ export interface SecurityItem {
           {
             id: 'google-account',
             title: 'Google Account Protection',
+            images: [
+              hero1.src,
+              hero.src,
+              freepik.src,
+              hero.src,
+              freepik.src,
+            ],
             items: [
               {
                 id: 'two-step',
@@ -119,6 +144,13 @@ export interface SecurityItem {
           {
             id: 'find-device',
             title: 'Find My Device',
+            images: [
+              hero1.src,
+              hero.src,
+              freepik.src,
+              hero.src,
+              freepik.src,
+            ],
             items: [
               {
                 id: 'enable-find',
@@ -152,6 +184,13 @@ export interface SecurityItem {
           {
             id: 'encryption',
             title: 'Encryption',
+            images: [
+              hero1.src,
+              hero.src,
+              freepik.src,
+              hero.src,
+              freepik.src,
+            ],
             items: [
               {
                 id: 'verify-encryption',
@@ -172,6 +211,13 @@ export interface SecurityItem {
           {
             id: 'app-permissions',
             title: 'App Permissions Management',
+            images: [
+              hero1.src,
+              hero.src,
+              freepik.src,
+              hero.src,
+              freepik.src,
+            ],
             items: [
               {
                 id: 'review-permissions',
@@ -210,6 +256,13 @@ export interface SecurityItem {
           {
             id: 'developer-options',
             title: 'Developer Options and USB Debugging',
+            images: [
+              hero1.src,
+              hero.src,
+              freepik.src,
+              hero.src,
+              freepik.src,
+            ],
             items: [
               {
                 id: 'disable-dev',
@@ -234,6 +287,13 @@ export interface SecurityItem {
           {
             id: 'network-security',
             title: 'Network Security',
+            images: [
+              hero1.src,
+              hero.src,
+              freepik.src,
+              hero.src,
+              freepik.src,
+            ],
             items: [
               {
                 id: 'wifi-autoconnect',
@@ -258,6 +318,13 @@ export interface SecurityItem {
           {
             id: 'system-updates',
             title: 'System Updates',
+            images: [
+              hero1.src,
+              hero.src,
+              freepik.src,
+              hero.src,
+              freepik.src,
+            ],
             items: [
               {
                 id: 'auto-updates',
@@ -289,6 +356,13 @@ export interface SecurityItem {
           {
             id: 'play-protect',
             title: 'Google Play Protect',
+            images: [
+              hero1.src,
+              hero.src,
+              freepik.src,
+              hero.src,
+              freepik.src,
+            ],
             items: [
               {
                 id: 'enable-protect',
@@ -305,6 +379,13 @@ export interface SecurityItem {
           {
             id: 'app-installation',
             title: 'App Installation Security',
+            images: [
+              hero1.src,
+              hero.src,
+              freepik.src,
+              hero.src,
+              freepik.src,
+            ],
             items: [
               {
                 id: 'restrict-sources',
@@ -331,6 +412,13 @@ export interface SecurityItem {
           {
             id: 'app-updates',
             title: 'App Updates',
+            images: [
+              hero1.src,
+              hero.src,
+              freepik.src,
+              hero.src,
+              freepik.src,
+            ],
             items: [
               {
                 id: 'auto-app-updates',
@@ -351,6 +439,13 @@ export interface SecurityItem {
           {
             id: 'app-vetting',
             title: 'App Vetting Process',
+            images: [
+              hero1.src,
+              hero.src,
+              freepik.src,
+              hero.src,
+              freepik.src,
+            ],
             items: [
               {
                 id: 'app-research',
@@ -374,6 +469,13 @@ export interface SecurityItem {
           {
             id: 'google-backup',
             title: 'Google Backup',
+            images: [
+              hero1.src,
+              hero.src,
+              freepik.src,
+              hero.src,
+              freepik.src,
+            ],
             items: [
               {
                 id: 'configure-backup',
@@ -390,6 +492,13 @@ export interface SecurityItem {
           {
             id: 'local-backup',
             title: 'Local Backups',
+            images: [
+              hero1.src,
+              hero.src,
+              freepik.src,
+              hero.src,
+              freepik.src,
+            ],
             items: [
               {
                 id: 'create-local',
@@ -410,6 +519,13 @@ export interface SecurityItem {
           {
             id: 'secure-folders',
             title: 'Secure Folders/Spaces',
+            images: [
+              hero1.src,
+              hero.src,
+              freepik.src,
+              hero.src,
+              freepik.src,
+            ],
             items: [
               {
                 id: 'use-secure-folder',
@@ -432,6 +548,13 @@ export interface SecurityItem {
           {
             id: 'lock-screen-info',
             title: 'Lock Screen Information',
+            images: [
+              hero1.src,
+              hero.src,
+              freepik.src,
+              hero.src,
+              freepik.src,
+            ],
             items: [
               {
                 id: 'owner-info',
@@ -447,6 +570,13 @@ export interface SecurityItem {
           {
             id: 'anti-theft-apps',
             title: 'Anti-theft Apps',
+            images: [
+              hero1.src,
+              hero.src,
+              freepik.src,
+              hero.src,
+              freepik.src,
+            ],
             items: [
               {
                 id: 'dedicated-solutions',
@@ -465,59 +595,7 @@ export interface SecurityItem {
     ]
   }; 
  
-  // This simulates the checklist data that would be imported from a data file
-  export const androidChecklist = [
-    { 
-      id: 'screen-lock', 
-      title: 'Screen Lock Configured', 
-      description: 'Set strong screen lock with PIN, pattern, or password',
-      completed: true
-    },
-    { 
-      id: 'biometric', 
-      title: 'Biometric Security Setup', 
-      description: 'Configure fingerprint authentication',
-      completed: true
-    },
-    { 
-      id: 'google-2fa', 
-      title: 'Google Account 2FA Enabled', 
-      description: 'Enable 2-Step Verification for Google account',
-      completed: false
-    },
-    { 
-      id: 'find-device', 
-      title: 'Find My Device Active', 
-      description: 'Enable device tracking and remote wipe capabilities',
-      completed: true
-    },
-    { 
-      id: 'encryption', 
-      title: 'Device Encryption Verified', 
-      description: 'Ensure device encryption is enabled',
-      completed: true
-    },
-    { 
-      id: 'app-permissions', 
-      title: 'App Permissions Reviewed', 
-      description: 'Audit app permissions, especially for location and contacts',
-      completed: false
-    },
-    { 
-      id: 'usb-debugging', 
-      title: 'Developer Options Secured', 
-      description: 'Disable USB debugging when not in use',
-      completed: true
-    },
-    { 
-      id: 'auto-updates', 
-      title: 'Automatic Updates Enabled', 
-      description: 'Configure auto-updates for OS and apps',
-      completed: false
-    }
-  ];
   
-
  // iOS Security Data
 export const iosSecurityData: DeviceSecurityData = {
     id: 'ios',
@@ -530,6 +608,13 @@ export const iosSecurityData: DeviceSecurityData = {
           {
             id: 'passcode-touchid',
             title: 'Passcode and Face/Touch ID',
+            images: [
+              hero1.src,
+              hero.src,
+              freepik.src,
+              hero.src,
+              freepik.src,
+            ],
             items: [
               {
                 id: 'strong-passcode',
@@ -560,6 +645,13 @@ export const iosSecurityData: DeviceSecurityData = {
           {
             id: 'auto-lock-restrictions',
             title: 'Auto-Lock and Restrictions',
+            images: [
+              hero1.src,
+              hero.src,
+              freepik.src,
+              hero.src,
+              freepik.src,
+            ],
             items: [
               {
                 id: 'auto-lock-setting',
@@ -584,6 +676,13 @@ export const iosSecurityData: DeviceSecurityData = {
           {
             id: 'icloud-security',
             title: 'iCloud Security',
+            images: [
+              hero1.src,
+              hero.src,
+              freepik.src,
+              hero.src,
+              freepik.src,
+            ],
             items: [
               {
                 id: 'icloud-2fa',
@@ -618,6 +717,13 @@ export const iosSecurityData: DeviceSecurityData = {
           {
             id: 'find-my-iphone',
             title: 'Find My iPhone',
+            images: [
+              hero1.src,
+              hero.src,
+              freepik.src,
+              hero.src,
+              freepik.src,
+            ],
             items: [
               {
                 id: 'enable-find-my',
@@ -655,6 +761,13 @@ export const iosSecurityData: DeviceSecurityData = {
           {
             id: 'system-updates-ios',
             title: 'System Updates',
+            images: [
+              hero1.src,
+              hero.src,
+              freepik.src,
+              hero.src,
+              freepik.src,
+            ],
             items: [
               {
                 id: 'auto-updates-ios',
@@ -678,6 +791,13 @@ export const iosSecurityData: DeviceSecurityData = {
           {
             id: 'privacy-controls',
             title: 'Privacy Controls',
+            images: [
+              hero1.src,
+              hero.src,
+              freepik.src,
+              hero.src,
+              freepik.src,
+            ],
             items: [
               {
                 id: 'location-management',
@@ -713,6 +833,13 @@ export const iosSecurityData: DeviceSecurityData = {
           {
             id: 'safari-security',
             title: 'Safari Security',
+            images: [
+              hero1.src,
+              hero.src,
+              freepik.src,
+              hero.src,
+              freepik.src,
+            ],
             items: [
               {
                 id: 'safari-privacy',
@@ -738,6 +865,13 @@ export const iosSecurityData: DeviceSecurityData = {
           {
             id: 'network-security-ios',
             title: 'Network Security',
+            images: [
+              hero1.src,
+              hero.src,
+              freepik.src,
+              hero.src,
+              freepik.src,
+            ],
             items: [
               {
                 id: 'private-wifi',
@@ -769,6 +903,13 @@ export const iosSecurityData: DeviceSecurityData = {
           {
             id: 'app-security-ios',
             title: 'App Security',
+            images: [
+              hero1.src,
+              hero.src,
+              freepik.src,
+              hero.src,
+              freepik.src,
+            ],
             items: [
               {
                 id: 'app-permissions-ios',
@@ -799,6 +940,13 @@ export const iosSecurityData: DeviceSecurityData = {
           {
             id: 'icloud-backup',
             title: 'iCloud Backup',
+            images: [
+              hero1.src,
+              hero.src,
+              freepik.src,
+              hero.src,
+              freepik.src,
+            ],
             items: [
               {
                 id: 'secure-backups',
@@ -823,6 +971,13 @@ export const iosSecurityData: DeviceSecurityData = {
           {
             id: 'local-backup-ios',
             title: 'Local Backup',
+            images: [
+              hero1.src,
+              hero.src,
+              freepik.src,
+              hero.src,
+              freepik.src,
+            ],
             items: [
               {
                 id: 'encrypted-backup',
@@ -840,6 +995,13 @@ export const iosSecurityData: DeviceSecurityData = {
           {
             id: 'secure-notes',
             title: 'Secure Notes and Personal Data',
+            images: [
+              hero1.src,
+              hero.src,
+              freepik.src,
+              hero.src,
+              freepik.src,
+            ],
             items: [
               {
                 id: 'locked-notes',
@@ -870,6 +1032,13 @@ export const iosSecurityData: DeviceSecurityData = {
           {
             id: 'imessage-facetime',
             title: 'iMessage and FaceTime',
+            images: [
+              hero1.src,
+              hero.src,
+              freepik.src,
+              hero.src,
+              freepik.src,
+            ],
             items: [
               {
                 id: 'verify-encryption',
@@ -900,6 +1069,13 @@ export const iosSecurityData: DeviceSecurityData = {
           {
             id: 'mail-settings',
             title: 'Mail Settings',
+            images: [
+              hero1.src,
+              hero.src,
+              freepik.src,
+              hero.src,
+              freepik.src,
+            ],
             items: [
               {
                 id: 'remote-content',
@@ -929,6 +1105,13 @@ export const iosSecurityData: DeviceSecurityData = {
           {
             id: 'lockdown-mode',
             title: 'Lockdown Mode (iOS 16+)',
+            images: [
+              hero1.src,
+              hero.src,
+              freepik.src,
+              hero.src,
+              freepik.src,
+            ],
             items: [
               {
                 id: 'high-risk',
@@ -945,6 +1128,13 @@ export const iosSecurityData: DeviceSecurityData = {
           {
             id: 'hide-email',
             title: 'Hide My Email',
+            images: [
+              hero1.src,
+              hero.src,
+              freepik.src,
+              hero.src,
+              freepik.src,
+            ],
             items: [
               {
                 id: 'unique-email',
@@ -961,6 +1151,13 @@ export const iosSecurityData: DeviceSecurityData = {
           {
             id: 'app-tracking',
             title: 'App Tracking Transparency',
+            images: [
+              hero1.src,
+              hero.src,
+              freepik.src,
+              hero.src,
+              freepik.src,
+            ],
             items: [
               {
                 id: 'control-tracking',
