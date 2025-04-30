@@ -28,9 +28,9 @@ import {
     steps: {
       name: string;
       details: string[];
+      images?: string[]; // Array of image paths
     }[];
     icon: IconType;
-    images?: string[]; // Array of image paths
   }
   
   export interface SecurityCategory {
@@ -50,13 +50,6 @@ import {
           title: "Email Authentication",
           description: "Strengthen login security for your email accounts",
           icon: FaShieldAlt,
-          images: [
-            hero1.src,
-            hero.src,
-            freepik.src,
-            hero.src,
-            freepik.src,
-          ],
           steps: [
             {
               name: "Secure account credentials",
@@ -68,6 +61,13 @@ import {
                 "Yahoo: Account security > Two-step verification",
                 "ProtonMail: Settings > Password & recovery > Two-factor authentication",
                 "Use hardware security keys for highest protection"
+              ],
+              images: [
+                hero1.src,
+                hero.src,
+                freepik.src,
+                hero.src,
+                freepik.src,
               ]
             },
             {
@@ -77,6 +77,13 @@ import {
                 "Set up recovery email on different provider",
                 "Securely store backup codes",
                 "Update recovery information yearly"
+              ],
+              images: [
+                hero1.src,
+                hero.src,
+                freepik.src,
+                hero.src,
+                freepik.src,
               ]
             }
           ]
@@ -85,13 +92,6 @@ import {
           title: "Access Control",
           description: "Manage active sessions and device access to your email",
           icon: FaSignInAlt,
-          images: [
-            hero1.src,
-            hero.src,
-            freepik.src,
-            hero.src,
-            freepik.src,
-          ],
           steps: [
             {
               name: "Session management",
@@ -103,6 +103,13 @@ import {
                 "Log out remote sessions",
                 "Set automatic logout after inactivity",
                 "Check for unauthorized app access"
+              ],
+              images: [
+                hero1.src,
+                hero.src,
+                freepik.src,
+                hero.src,
+                freepik.src,
               ]
             },
             {
@@ -112,6 +119,13 @@ import {
                 "Remove old devices from approved list",
                 "Require re-authentication periodically",
                 "Use email client security features (app lock)"
+              ],
+              images: [
+                hero1.src,
+                hero.src,
+                freepik.src,
+                hero.src,
+                freepik.src,
               ]
             }
           ]
@@ -120,13 +134,6 @@ import {
           title: "Account Monitoring",
           description: "Track and review email account activity for suspicious behavior",
           icon: FaEye,
-          images: [
-            hero1.src,
-            hero.src,
-            freepik.src,
-            hero.src,
-            freepik.src,
-          ],
           steps: [
             {
               name: "Audit account activity",
@@ -135,6 +142,13 @@ import {
                 "Review \"sent items\" folder for unauthorized emails",
                 "Monitor for unexpected password reset requests",
                 "Watch for unusual forwarding or filtering rules"
+              ],
+              images: [
+                hero1.src,
+                hero.src,
+                freepik.src,
+                hero.src,
+                freepik.src,
               ]
             },
             {
@@ -144,6 +158,13 @@ import {
                 "Set up alerts for suspicious activity",
                 "Configure email or SMS for security events",
                 "Review notification settings after provider updates"
+              ],
+              images: [
+                hero1.src,
+                hero.src,
+                freepik.src,
+                hero.src,
+                freepik.src,
               ]
             }
           ]
@@ -159,13 +180,6 @@ import {
           title: "Email Encryption",
           description: "Secure the contents of your email communications",
           icon: FaLock,
-          images: [
-            hero1.src,
-            hero.src,
-            freepik.src,
-            hero.src,
-            freepik.src,
-          ],
           steps: [
             {
               name: "End-to-end encryption options",
@@ -180,7 +194,14 @@ import {
                 "Obtain certificate from trusted authority",
                 "Install on email clients",
                 "Exchange certificates with contacts"
-              ]
+              ],
+              images: [
+                hero1.src,
+                hero.src,
+                freepik.src,
+                hero.src,
+                freepik.src,
+              ],
             },
             {
               name: "Everyday encryption practices",
@@ -189,6 +210,13 @@ import {
                 "Verify TLS connection (lock icon in webmail)",
                 "Password-protect sensitive attachments",
                 "Send passwords via different channel (SMS, call)"
+              ],
+              images: [
+                hero1.src,
+                hero.src,
+                freepik.src,
+                hero.src,
+                freepik.src,
               ]
             }
           ]
@@ -197,13 +225,6 @@ import {
           title: "Attachment and Link Safety",
           description: "Safely handle email attachments and links",
           icon: FaPaperclip,
-          images: [
-            hero1.src,
-            hero.src,
-            freepik.src,
-            hero.src,
-            freepik.src,
-          ],
           steps: [
             {
               name: "Safe attachment handling",
@@ -212,6 +233,13 @@ import {
                 "Don't open unexpected attachments",
                 "Use document viewers instead of full applications when possible",
                 "Consider sandbox environments for suspicious files"
+              ],
+              images: [
+                hero1.src,
+                hero.src,
+                freepik.src,
+                hero.src,
+                freepik.src,
               ]
             },
             {
@@ -224,6 +252,13 @@ import {
                 "Google Safe Browsing",
                 "Type URLs directly rather than clicking",
                 "Be cautious of shortened URLs (use unshorteners)"
+              ],
+              images: [
+                hero1.src,
+                hero.src,
+                freepik.src,
+                hero.src,
+                freepik.src,
               ]
             }
           ]
@@ -232,13 +267,6 @@ import {
           title: "Sensitive Content Practices",
           description: "Protect confidential information in emails",
           icon: FaFileAlt,
-          images: [
-            hero1.src,
-            hero.src,
-            freepik.src,
-            hero.src,
-            freepik.src,
-          ],
           steps: [
             {
               name: "Information protection",
@@ -247,6 +275,13 @@ import {
                 "Use secure sharing platforms for confidential documents",
                 "Consider secure document destruction after use",
                 "Implement information classification system"
+              ],
+              images: [
+                hero1.src,
+                hero.src,
+                freepik.src,
+                hero.src,
+                freepik.src,
               ]
             },
             {
@@ -258,6 +293,13 @@ import {
                 "Confidential mode in Gmail",
                 "Set appropriate expiration timeframes",
                 "Verify recipient understands expiration limitations"
+              ],
+              images: [
+                hero1.src,
+                hero.src,
+                freepik.src,
+                hero.src,
+                freepik.src,
               ]
             }
           ]
@@ -273,13 +315,6 @@ import {
           title: "Spam and Phishing Protection",
           description: "Defend against unwanted and malicious emails",
           icon: FaBan,
-          images: [
-            hero1.src,
-            hero.src,
-            freepik.src,
-            hero.src,
-            freepik.src,
-          ],
           steps: [
             {
               name: "Filter configuration",
@@ -291,6 +326,13 @@ import {
                 "Create custom filters for persistent spam",
                 "Use \"plus addressing\" for signups (username+service@domain.com)",
                 "Regularly empty spam folder"
+              ],
+              images: [
+                hero1.src,
+                hero.src,
+                freepik.src,
+                hero.src,
+                freepik.src,
               ]
             },
             {
@@ -300,6 +342,13 @@ import {
                 "Never provide credentials from email links",
                 "Verify sender email address carefully",
                 "Be suspicious of urgency or threats in messages"
+              ],
+              images: [
+                hero1.src,
+                hero.src,
+                freepik.src,
+                hero.src,
+                freepik.src,
               ]
             }
           ]
@@ -308,13 +357,6 @@ import {
           title: "Email Header Analysis",
           description: "Examine email headers to identify suspicious messages",
           icon: FaCode,
-          images: [
-            hero1.src,
-            hero.src,
-            freepik.src,
-            hero.src,
-            freepik.src,
-          ],
           steps: [
             {
               name: "Header examination techniques",
@@ -325,6 +367,13 @@ import {
                 "Check \"Received\" fields for unusual servers",
                 "Verify SPF, DKIM, and DMARC status",
                 "Look for mismatched display name and email address"
+              ],
+              images: [
+                hero1.src,
+                hero.src,
+                freepik.src,
+                hero.src,
+                freepik.src,
               ]
             },
             {
@@ -334,6 +383,13 @@ import {
                 "Multiple forwarding hops through unusual servers",
                 "Failed authentication checks",
                 "Suspicious originating IP addresses"
+              ],
+              images: [
+                hero1.src,
+                hero.src,
+                freepik.src,
+                hero.src,
+                freepik.src,
               ]
             }
           ]
@@ -342,13 +398,6 @@ import {
           title: "Advanced Protection Features",
           description: "Implement additional security measures for email",
           icon: FaShieldAlt,
-          images: [
-            hero1.src,
-            hero.src,
-            freepik.src,
-            hero.src,
-            freepik.src,
-          ],
           steps: [
             {
               name: "Provider security options",
@@ -357,6 +406,13 @@ import {
                 "Microsoft Defender for Office 365 (business accounts)",
                 "Domain-based protections (SPF, DKIM, DMARC)",
                 "Email gateway security solutions"
+              ],
+              images: [
+                hero1.src,
+                hero.src,
+                freepik.src,
+                hero.src,
+                freepik.src,
               ]
             },
             {
@@ -368,6 +424,13 @@ import {
                 "Use text-only email when possible",
                 "Consider email privacy tools (Ugly Email, PixelBlock)",
                 "Be cautious with read receipts"
+              ],
+              images: [
+                hero1.src,
+                hero.src,
+                freepik.src,
+                hero.src,
+                freepik.src,
               ]
             }
           ]
@@ -383,13 +446,6 @@ import {
           title: "Email Separation Strategy",
           description: "Organize email accounts by purpose and security level",
           icon: FaClipboardList,
-          images: [
-            hero1.src,
-            hero.src,
-            freepik.src,
-            hero.src,
-            freepik.src,
-          ],
           steps: [
             {
               name: "Purpose-based accounts",
@@ -398,6 +454,13 @@ import {
                 "Secondary account (online services, shopping)",
                 "Professional email (work communications)",
                 "Throwaway accounts (temporary signups)"
+              ],
+              images: [
+                hero1.src,
+                hero.src,
+                freepik.src,
+                hero.src,
+                freepik.src,
               ]
             },
             {
@@ -407,6 +470,13 @@ import {
                 "Consider separate devices for highest security",
                 "Don't forward between security levels",
                 "Implement different security measures by account type"
+              ],
+              images: [
+                hero1.src,
+                hero.src,
+                freepik.src,
+                hero.src,
+                freepik.src,
               ]
             }
           ]
@@ -415,13 +485,6 @@ import {
           title: "Account Management",
           description: "Track and maintain multiple email accounts",
           icon: FaKey,
-          images: [
-            hero1.src,
-            hero.src,
-            freepik.src,
-            hero.src,
-            freepik.src,
-          ],
           steps: [
             {
               name: "Organization system",
@@ -430,6 +493,13 @@ import {
                 "Use password manager to track credentials",
                 "Schedule regular security reviews by account",
                 "Consider account deletion for unused emails"
+              ],
+              images: [
+                hero1.src,
+                hero.src,
+                freepik.src,
+                hero.src,
+                freepik.src,
               ]
             },
             {
@@ -439,6 +509,13 @@ import {
                 "Prevent daisy-chaining compromises",
                 "Use non-email recovery options when possible",
                 "Create unique security questions for each account"
+              ],
+              images: [
+                hero1.src,
+                hero.src,
+                freepik.src,
+                hero.src,
+                freepik.src,
               ]
             }
           ]
@@ -454,13 +531,6 @@ import {
           title: "Detection of Compromise",
           description: "Recognize when your email account may be compromised",
           icon: FaSearchPlus,
-          images: [
-            hero1.src,
-            hero.src,
-            freepik.src,
-            hero.src,
-            freepik.src,
-          ],
           steps: [
             {
               name: "Warning signs",
@@ -471,6 +541,13 @@ import {
                 "Contacts receiving emails you didn't send",
                 "Unusual account settings or filters",
                 "Being locked out of your account"
+              ],
+              images: [
+                hero1.src,
+                hero.src,
+                freepik.src,
+                hero.src,
+                freepik.src,
               ]
             },
             {
@@ -480,6 +557,13 @@ import {
                 "Review account activity logs",
                 "Set up alerts for forwarding rules",
                 "Test account access periodically"
+              ],
+              images: [
+                hero1.src,
+                hero.src,
+                freepik.src,
+                hero.src,
+                freepik.src,
               ]
             }
           ]
@@ -488,13 +572,6 @@ import {
           title: "Immediate Response Protocol",
           description: "Steps to take when your email account is compromised",
           icon: FaClipboardCheck,
-          images: [
-            hero1.src,
-            hero.src,
-            freepik.src,
-            hero.src,
-            freepik.src,
-          ],
           steps: [
             {
               name: "Containment steps",
@@ -504,7 +581,14 @@ import {
                 "Check and remove forwarding rules",
                 "Review and remove unauthorized filters",
                 "Scan for and remove malware on all devices",
-                "Log out of all sessions"
+                "Log out of all sessions",
+              ],
+              images: [
+                hero1.src,
+                hero.src,
+                freepik.src,
+                hero.src,
+                freepik.src,
               ]
             },
             {
@@ -514,6 +598,13 @@ import {
                 "Save suspicious emails with full headers",
                 "Document timeline of events",
                 "Preserve login history if available"
+              ],
+              images: [
+                hero1.src,
+                hero.src,
+                freepik.src,
+                hero.src,
+                freepik.src,
               ]
             }
           ]
@@ -522,13 +613,6 @@ import {
           title: "Account Recovery Process",
           description: "Regain access to and secure a compromised email account",
           icon: FaKey,
-          images: [
-            hero1.src,
-            hero.src,
-            freepik.src,
-            hero.src,
-            freepik.src,
-          ],
           steps: [
             {
               name: "Service-specific recovery",
@@ -536,7 +620,14 @@ import {
                 "Gmail: account recovery page with verification",
                 "Outlook: account recovery with proof of identity",
                 "Yahoo: account recovery with alternate email/phone",
-                "Follow provider-specific procedures exactly"
+                "Follow provider-specific procedures exactly",
+              ],
+              images: [
+                hero1.src,
+                hero.src,
+                freepik.src,
+                hero.src,
+                freepik.src,
               ]
             },
             {
@@ -547,6 +638,13 @@ import {
                 "Update all recovery information",
                 "Change passwords on linked accounts",
                 "Consider migration to new email if heavily compromised"
+              ],
+              images: [
+                hero1.src,
+                hero.src,
+                freepik.src,
+                hero.src,
+                freepik.src,
               ]
             }
           ]

@@ -25,9 +25,9 @@ export interface SecurityItem {
   steps: {
     name: string;
     details: string[];
+    images?: string[]; // Array of image paths
   }[];
   icon: IconType;
-  images?: string[]; // Array of image paths
 }
 
 export interface SecurityCategory {
@@ -47,13 +47,6 @@ export const wifiSecurityData: SecurityCategory[] = [
         title: "Admin Access Security",
         description: "Secure the administrative access to your router",
         icon: FaLock,
-        images: [
-          hero1.src,
-          hero.src,
-          freepik.src,
-          hero.src,
-          freepik.src,
-        ],
         steps: [
           {
             name: "Change default admin credentials",
@@ -61,6 +54,13 @@ export const wifiSecurityData: SecurityCategory[] = [
               "Access router admin interface (typically 192.168.0.1 or 192.168.1.1)",
               "Replace default username/password with strong alternatives",
               "Store these credentials in password manager"
+            ],
+            images: [
+              hero1.src,
+              hero.src,
+              freepik.src,
+              hero.src,
+              freepik.src,
             ]
           },
           {
@@ -69,6 +69,13 @@ export const wifiSecurityData: SecurityCategory[] = [
               "Check manufacturer website for latest firmware",
               "Enable automatic updates if available",
               "Schedule quarterly manual checks"
+            ],
+            images: [
+              hero1.src,
+              hero.src,
+              freepik.src,
+              hero.src,
+              freepik.src,
             ]
           },
           {
@@ -76,7 +83,14 @@ export const wifiSecurityData: SecurityCategory[] = [
             details: [
               "Find \"Remote Management\" or \"Remote Administration\" settings",
               "Ensure this feature is turned off"
-            ]
+            ],
+            images: [
+              hero1.src,
+              hero.src,
+              freepik.src,
+              hero.src,
+              freepik.src,
+            ],
           }
         ]
       },
@@ -84,19 +98,19 @@ export const wifiSecurityData: SecurityCategory[] = [
         title: "Network Name and Password",
         description: "Configure secure network identification and access",
         icon: FaWifi,
-        images: [
-          hero1.src,
-          hero.src,
-          freepik.src,
-          hero.src,
-          freepik.src,
-        ],
         steps: [
           {
             name: "Change default SSID (network name)",
             details: [
               "Don't include personal information or router model",
               "Create neutral name that doesn't stand out"
+            ],
+            images: [
+              hero1.src,
+              hero.src,
+              freepik.src,
+              hero.src,
+              freepik.src,
             ]
           },
           {
@@ -106,13 +120,27 @@ export const wifiSecurityData: SecurityCategory[] = [
               "Mix of uppercase, lowercase, numbers, and symbols",
               "Avoid dictionary words or personal information",
               "Change password every 6-12 months"
-            ]
+            ],
+            images: [
+              hero1.src,
+              hero.src,
+              freepik.src,
+              hero.src,
+              freepik.src,
+            ],
           },
           {
             name: "Hide network SSID (optional, provides minimal security)",
             details: [
               "Disable SSID broadcast in router settings",
               "Note: This requires manual network setup on devices"
+            ],
+            images: [
+              hero1.src,
+              hero.src,
+              freepik.src,
+              hero.src,
+              freepik.src,
             ]
           }
         ]
@@ -121,19 +149,19 @@ export const wifiSecurityData: SecurityCategory[] = [
         title: "Encryption Standards",
         description: "Implement secure encryption for your wireless network",
         icon: FaShieldAlt,
-        images: [
-          hero1.src,
-          hero.src,
-          freepik.src,
-          hero.src,
-          freepik.src,
-        ],
         steps: [
           {
             name: "Use WPA3 encryption if available",
             details: [
               "Check router security settings",
               "Select WPA3-Personal or WPA3/WPA2-Mixed if devices are compatible"
+            ],
+            images: [
+              hero1.src,
+              hero.src,
+              freepik.src,
+              hero.src,
+              freepik.src,
             ]
           },
           {
@@ -141,6 +169,13 @@ export const wifiSecurityData: SecurityCategory[] = [
             details: [
               "Avoid TKIP or WEP encryption (obsolete and insecure)",
               "Disable WPS (Wi-Fi Protected Setup)"
+            ],
+            images: [
+              hero1.src,
+              hero.src,
+              freepik.src,
+              hero.src,
+              freepik.src,
             ]
           }
         ]
@@ -149,13 +184,6 @@ export const wifiSecurityData: SecurityCategory[] = [
         title: "Network Segmentation",
         description: "Separate your network for different purposes and security levels",
         icon: FaNetworkWired,
-        images: [
-          hero1.src,
-          hero.src,
-          freepik.src,
-          hero.src,
-          freepik.src,
-        ],
         steps: [
           {
             name: "Create guest network",
@@ -163,6 +191,13 @@ export const wifiSecurityData: SecurityCategory[] = [
               "Enable guest network feature in router settings",
               "Use different password from main network",
               "Disable guest access to local network resources"
+            ],
+            images: [
+              hero1.src,
+              hero.src,
+              freepik.src,
+              hero.src,
+              freepik.src,
             ]
           },
           {
@@ -170,14 +205,28 @@ export const wifiSecurityData: SecurityCategory[] = [
             details: [
               "Create separate VLAN or network for smart devices",
               "Isolate from network with personal data"
-            ]
+            ],
+            images: [
+              hero1.src,
+              hero.src,
+              freepik.src,
+              hero.src,
+              freepik.src,
+            ],
           },
           {
             name: "Enable AP isolation",
             details: [
               "Prevents devices on same network from communicating",
               "Found in \"Wireless\" or \"Advanced\" settings"
-            ]
+            ],
+            images: [
+              hero1.src,
+              hero.src,
+              freepik.src,
+              hero.src,
+              freepik.src,
+            ],
           }
         ]
       }
@@ -192,13 +241,6 @@ export const wifiSecurityData: SecurityCategory[] = [
         title: "MAC Address Filtering",
         description: "Control network access based on device hardware addresses",
         icon: FaKey,
-        images: [
-          hero1.src,
-          hero.src,
-          freepik.src,
-          hero.src,
-          freepik.src,
-        ],
         steps: [
           {
             name: "Enable MAC filtering",
@@ -206,21 +248,42 @@ export const wifiSecurityData: SecurityCategory[] = [
               "Locate \"MAC filtering\" or \"Access control\" in router settings",
               "Add MAC addresses of all trusted devices",
               "Set to \"allow only listed devices\""
-            ]
+            ],
+            images: [
+              hero1.src,
+              hero.src,
+              freepik.src,
+              hero.src,
+              freepik.src,
+            ],
           },
           {
             name: "Record all device MAC addresses",
             details: [
               "Create spreadsheet of all household devices and their MAC addresses",
               "Update when adding new devices"
-            ]
+            ],
+            images: [
+              hero1.src,
+              hero.src,
+              freepik.src,
+              hero.src,
+              freepik.src,
+            ],
           },
           {
             name: "Note limitations",
             details: [
               "MAC addresses can be spoofed",
               "Use as supplementary security measure, not primary"
-            ]
+            ],
+            images: [
+              hero1.src,
+              hero.src,
+              freepik.src,
+              hero.src,
+              freepik.src,
+            ],
           }
         ]
       },
@@ -228,20 +291,20 @@ export const wifiSecurityData: SecurityCategory[] = [
         title: "Disable Unnecessary Services",
         description: "Minimize attack surface by turning off unneeded features",
         icon: FaServer,
-        images: [
-          hero1.src,
-          hero.src,
-          freepik.src,
-          hero.src,
-          freepik.src,
-        ],
         steps: [
           {
             name: "Disable Universal Plug and Play (UPnP)",
             details: [
               "Find in \"Advanced\" or \"Security\" settings",
               "Turn off unless specifically needed for gaming or media servers"
-            ]
+            ],
+            images: [
+              hero1.src,
+              hero.src,
+              freepik.src,
+              hero.src,
+              freepik.src,
+            ],
           },
           {
             name: "Turn off unused features",
@@ -249,7 +312,14 @@ export const wifiSecurityData: SecurityCategory[] = [
               "Disable file sharing if not used",
               "Turn off printer sharing if not needed",
               "Disable DLNA media streaming if unused"
-            ]
+            ],
+            images: [
+              hero1.src,
+              hero.src,
+              freepik.src,
+              hero.src,
+              freepik.src,
+            ],
           }
         ]
       },
@@ -257,20 +327,20 @@ export const wifiSecurityData: SecurityCategory[] = [
         title: "Firewall Configuration",
         description: "Configure router firewall for optimal protection",
         icon: FaShieldAlt,
-        images: [
-          hero1.src,
-          hero.src,
-          freepik.src,
-          hero.src,
-          freepik.src,
-        ],
         steps: [
           {
             name: "Enable router firewall",
             details: [
               "Located in \"Security\" or \"Firewall\" settings",
               "Use medium or high security setting"
-            ]
+            ],
+            images: [
+              hero1.src,
+              hero.src,
+              freepik.src,
+              hero.src,
+              freepik.src,
+            ],
           },
           {
             name: "Configure port forwarding carefully",
@@ -278,14 +348,28 @@ export const wifiSecurityData: SecurityCategory[] = [
               "Only open necessary ports",
               "Document any opened ports",
               "Regularly review and close unused ports"
-            ]
+            ],
+            images: [
+              hero1.src,
+              hero.src,
+              freepik.src,
+              hero.src,
+              freepik.src,
+            ],
           },
           {
             name: "Enable DoS protection",
             details: [
               "Find in \"Security\" or \"Firewall\" settings",
               "Protects against denial-of-service attacks"
-            ]
+            ],
+            images: [
+              hero1.src,
+              hero.src,
+              freepik.src,
+              hero.src,
+              freepik.src,
+            ],
           }
         ]
       }
@@ -300,13 +384,7 @@ export const wifiSecurityData: SecurityCategory[] = [
         title: "Connected Device Monitoring",
         description: "Keep track of devices connected to your network",
         icon: FaDesktop,
-        images: [
-          hero1.src,
-          hero.src,
-          freepik.src,
-          hero.src,
-          freepik.src,
-        ],
+
         steps: [
           {
             name: "Regularly check connected devices",
@@ -314,7 +392,14 @@ export const wifiSecurityData: SecurityCategory[] = [
               "Access router client list",
               "Verify all connected devices are recognized",
               "Note unusual connection patterns or unknown devices"
-            ]
+            ],
+            images: [
+              hero1.src,
+              hero.src,
+              freepik.src,
+              hero.src,
+              freepik.src,
+            ],
           },
           {
             name: "Consider third-party tools",
@@ -322,7 +407,14 @@ export const wifiSecurityData: SecurityCategory[] = [
               "Fing (app for network scanning)",
               "Advanced IP Scanner (Windows)",
               "LanScan (Mac)"
-            ]
+            ],
+            images: [
+              hero1.src,
+              hero.src,
+              freepik.src,
+              hero.src,
+              freepik.src,
+            ],
           }
         ]
       },
@@ -330,34 +422,48 @@ export const wifiSecurityData: SecurityCategory[] = [
         title: "Traffic Analysis",
         description: "Monitor network traffic for unusual patterns",
         icon: FaGlobe,
-        images: [
-          hero1.src,
-          hero.src,
-          freepik.src,
-          hero.src,
-          freepik.src,
-        ],
         steps: [
           {
             name: "Enable traffic monitoring if available",
             details: [
               "Check router settings for bandwidth monitoring",
               "Look for unusual spikes in usage"
-            ]
+            ],
+            images: [
+              hero1.src,
+              hero.src,
+              freepik.src,
+              hero.src,
+              freepik.src,
+            ],
           },
           {
             name: "Configure QoS (Quality of Service)",
             details: [
               "Prioritize traffic for important applications",
               "Limit bandwidth for less critical services"
-            ]
+            ],
+            images: [
+              hero1.src,
+              hero.src,
+              freepik.src,
+              hero.src,
+              freepik.src,
+            ],
           },
           {
             name: "Consider advanced monitoring solutions",
             details: [
               "Glasswire (visualizes network activity)",
-              "Wireshark (for technical users)"
-            ]
+              "Wireshark (for technical users)",
+            ],
+            images: [
+              hero1.src,
+              hero.src,
+              freepik.src,
+              hero.src,
+              freepik.src,
+            ],
           }
         ]
       },
@@ -365,13 +471,6 @@ export const wifiSecurityData: SecurityCategory[] = [
         title: "DNS Security",
         description: "Secure your domain name resolution",
         icon: FaNetworkWired,
-        images: [
-          hero1.src,
-          hero.src,
-          freepik.src,
-          hero.src,
-          freepik.src,
-        ],
         steps: [
           {
             name: "Change DNS servers",
@@ -380,21 +479,42 @@ export const wifiSecurityData: SecurityCategory[] = [
               "Cloudflare: 1.1.1.1 and 1.0.0.1",
               "Google: 8.8.8.8 and 8.8.4.4",
               "Quad9: 9.9.9.9 and 149.112.112.112"
-            ]
+            ],
+            images: [
+              hero1.src,
+              hero.src,
+              freepik.src,
+              hero.src,
+              freepik.src,
+            ],
           },
           {
             name: "Enable DNS over HTTPS if router supports it",
             details: [
               "Provides encrypted DNS queries",
               "Prevents ISP from monitoring DNS requests"
-            ]
+            ],
+            images: [
+              hero1.src,
+              hero.src,
+              freepik.src,
+              hero.src,
+              freepik.src,
+            ],
           },
           {
             name: "Consider Pi-hole or AdGuard Home",
             details: [
               "Network-wide ad and tracker blocking",
               "Provides additional DNS security"
-            ]
+            ],
+            images: [
+              hero1.src,
+              hero.src,
+              freepik.src,
+              hero.src,
+              freepik.src,
+            ],
           }
         ]
       }
@@ -409,13 +529,6 @@ export const wifiSecurityData: SecurityCategory[] = [
         title: "Router Placement",
         description: "Optimize router location for security and performance",
         icon: FaWifi,
-        images: [
-          hero1.src,
-          hero.src,
-          freepik.src,
-          hero.src,
-          freepik.src,
-        ],
         steps: [
           {
             name: "Optimal location",
@@ -423,14 +536,28 @@ export const wifiSecurityData: SecurityCategory[] = [
               "Central location for coverage",
               "Away from windows to minimize signal leakage",
               "In secure area not accessible to visitors"
-            ]
+            ],
+            images: [
+              hero1.src,
+              hero.src,
+              freepik.src,
+              hero.src,
+              freepik.src,
+            ],
           },
           {
             name: "Signal strength management",
             details: [
               "Adjust transmit power if possible (reduce to minimum needed)",
               "Use directional antennas if appropriate for your space"
-            ]
+            ],
+            images: [
+              hero1.src,
+              hero.src,
+              freepik.src,
+              hero.src,
+              freepik.src,
+            ],
           }
         ]
       },
@@ -438,27 +565,34 @@ export const wifiSecurityData: SecurityCategory[] = [
         title: "Reset Protection",
         description: "Prevent unauthorized physical reset of your router",
         icon: FaLock,
-        images: [
-          hero1.src,
-          hero.src,
-          freepik.src,
-          hero.src,
-          freepik.src,
-        ],
         steps: [
           {
             name: "Physically secure router",
             details: [
               "Place in cabinet or secure area",
               "Prevent easy access to reset button"
-            ]
+            ],
+            images: [
+              hero1.src,
+              hero.src,
+              freepik.src,
+              hero.src,
+              freepik.src,
+            ],
           },
           {
             name: "Document network settings",
             details: [
               "Keep secure backup of all router configurations",
               "Store in encrypted document or password manager"
-            ]
+            ],
+            images: [
+              hero1.src,
+              hero.src,
+              freepik.src,
+              hero.src,
+              freepik.src,
+            ],
           }
         ]
       }
@@ -473,19 +607,19 @@ export const wifiSecurityData: SecurityCategory[] = [
         title: "Public Wi-Fi Safety",
         description: "Stay secure when using public networks",
         icon: FaGlobe,
-        images: [
-          hero1.src,
-          hero.src,
-          freepik.src,
-          hero.src,
-          freepik.src,
-        ],
         steps: [
           {
             name: "Avoid sensitive transactions",
             details: [
               "No banking or financial activities",
               "Don't enter passwords for critical accounts"
+            ],
+            images: [
+              hero1.src,
+              hero.src,
+              freepik.src,
+              hero.src,
+              freepik.src,
             ]
           },
           {
@@ -493,6 +627,13 @@ export const wifiSecurityData: SecurityCategory[] = [
             details: [
               "Enable \"Always-on VPN\" in device settings",
               "Confirm VPN is connected before browsing"
+            ],
+            images: [
+              hero1.src,
+              hero.src,
+              freepik.src,
+              hero.src,
+              freepik.src,
             ]
           },
           {
@@ -500,6 +641,13 @@ export const wifiSecurityData: SecurityCategory[] = [
             details: [
               "Turn off \"Auto-join\" for public networks",
               "Manually select networks when needed"
+            ],
+            images: [
+              hero1.src,
+              hero.src,
+              freepik.src,
+              hero.src,
+              freepik.src,
             ]
           }
         ]
@@ -508,13 +656,6 @@ export const wifiSecurityData: SecurityCategory[] = [
         title: "Mobile Hotspot Security",
         description: "Secure your personal hotspots",
         icon: FaMobileAlt,
-        images: [
-          hero1.src,
-          hero.src,
-          freepik.src,
-          hero.src,
-          freepik.src,
-        ],
         steps: [
           {
             name: "Secure personal hotspots",
@@ -522,7 +663,14 @@ export const wifiSecurityData: SecurityCategory[] = [
               "Use WPA2/WPA3 encryption",
               "Set strong, unique password",
               "Change default hotspot name"
-            ]
+            ],
+            images: [
+              hero1.src,
+              hero.src,
+              freepik.src,
+              hero.src,
+              freepik.src,
+            ],
           },
           {
             name: "Limit connections",
@@ -530,7 +678,14 @@ export const wifiSecurityData: SecurityCategory[] = [
               "Set maximum number of devices",
               "Disable when not in use",
               "Monitor connected devices"
-            ]
+            ],
+            images: [
+              hero1.src,
+              hero.src,
+              freepik.src,
+              hero.src,
+              freepik.src,
+            ],
           }
         ]
       },
@@ -538,13 +693,6 @@ export const wifiSecurityData: SecurityCategory[] = [
         title: "Regular Security Audits",
         description: "Periodically review and update your network security",
         icon: FaClipboardCheck,
-        images: [
-          hero1.src,
-          hero.src,
-          freepik.src,
-          hero.src,
-          freepik.src,
-        ],
         steps: [
           {
             name: "Quarterly router checkup",
@@ -553,14 +701,28 @@ export const wifiSecurityData: SecurityCategory[] = [
               "Review connected devices",
               "Check for unusual activity",
               "Update passwords"
-            ]
+            ],
+            images: [
+              hero1.src,
+              hero.src,
+              freepik.src,
+              hero.src,
+              freepik.src,
+            ],
           },
           {
             name: "Test network security",
             details: [
               "Use tools like Wireshark or Aircrack-ng (advanced)",
               "Run vulnerability scanners like Nessus (basic home edition)"
-            ]
+            ],
+            images: [
+              hero1.src,
+              hero.src,
+              freepik.src,
+              hero.src,
+              freepik.src,
+            ],
           }
         ]
       }

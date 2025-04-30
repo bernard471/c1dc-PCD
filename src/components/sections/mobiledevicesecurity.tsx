@@ -363,7 +363,7 @@ export default function MobileDeviceSecurity() {
   const iosPercentage = calculateIOSPercentage();
   
   if (isLoading) {
-    return <BubbleLoader message="Loading security data..." size="medium" />;
+    return <BubbleLoader message="Loading Mobile Device security data..." size="medium" />;
   }
   
   return (

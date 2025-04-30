@@ -10,6 +10,8 @@ import UserSocialMediaSecurityProgress from '@/models/SocialMediaSecurity';
 import UserIdentitySecurityProgress from '@/models/IdentityProtection';
 import UserWiFiSecurityProgress from '@/models/WifiSecurity';
 import UserSecurityCompletion from '@/models/UserSecurityCompletion';
+import UserRecommendedSolutionsProgress from '@/models/RecommendedSecurity';
+import UserImplementationStrategyProgress from '@/models/ImplementationStrategy';
 
 
 // Import other security progress models as needed
@@ -40,7 +42,9 @@ export async function GET() {
           { id: 'communication', name: 'Communication', score: 0, status: 'danger' },
           { id: 'social', name: 'Social Media', score: 0, status: 'danger' },
           { id: 'email', name: 'Email Security', score: 0, status: 'danger' },
-          { id: 'identity', name: 'Identity Protection', score: 0, status: 'danger' }
+          { id: 'identity', name: 'Identity Protection', score: 0, status: 'danger' },
+          { id: 'recommended', name: 'Recommended Solutions', score: 0, status: 'danger' },
+          { id: 'implementation', name: 'Implementation Strategy', score: 0, status: 'danger' },
         ],
         lastUpdated: new Date()
       };
@@ -181,7 +185,40 @@ export async function GET() {
       }
     }
 
+    // Calculate recommended solutions score
+    const recommendedSolutionsData = await UserRecommendedSolutionsProgress.findOne({ userId });
+    if (recommendedSolutionsData) {
+      const completedRecommendedSolutions = recommendedSolutionsData.completedSolutions || [];
+      const totalRecommendedSolutions = 5; // Adjust based on your actual total solutions
+      const recommendedSolutionsScore = Math.round((completedRecommendedSolutions.length / totalRecommendedSolutions) * 100);
+      
+      // Update recommended solutions domain
+      const recommendedSolutionsDomainIndex = securityScore.securityDomains.findIndex((domain: { id: string; }) => domain.id === 'recommended');
+      if (recommendedSolutionsDomainIndex !== -1) {
+        securityScore.securityDomains[recommendedSolutionsDomainIndex].score = recommendedSolutionsScore;
+        securityScore.securityDomains[recommendedSolutionsDomainIndex].status =
+          recommendedSolutionsScore >= 80 ? 'good' : 
+          recommendedSolutionsScore >= 60 ? 'warning' : 'danger';
+      }
+    }
 
+
+    // Calculate implementation strategy score
+    const implementationStrategyData = await UserImplementationStrategyProgress.findOne({ userId });
+    if (implementationStrategyData) {
+      const completedImplementationStrategy = implementationStrategyData.completedImplementationStrategy || [];
+      const totalImplementationStrategy = 5; // Adjust based on your actual total implementation strategy
+      const implementationStrategyScore = Math.round((completedImplementationStrategy.length / totalImplementationStrategy) * 100);
+      
+      // Update implementation strategy domain
+      const implementationStrategyDomainIndex = securityScore.securityDomains.findIndex((domain: { id: string; }) => domain.id === 'implementation');
+      if (implementationStrategyDomainIndex !== -1) {
+        securityScore.securityDomains[implementationStrategyDomainIndex].score = implementationStrategyScore;
+        securityScore.securityDomains[implementationStrategyDomainIndex].status =
+          implementationStrategyScore >= 80 ? 'good' : 
+          implementationStrategyScore >= 60 ? 'warning' : 'danger';
+      }
+    }
     // Add similar calculations for other security domains
     // ...
     

@@ -21,8 +21,9 @@ export function CommunicationSecurity() {
   const [isLoading, setIsLoading] = useState(true);
   const [confirmDialogOpen, setConfirmDialogOpen] = useState(false);
   const [categoryToComplete, setCategoryToComplete] = useState<number | null>(null);
-  const [selectedImageItem, setSelectedImageItem] = useState<{itemIndex: number, imageIndex: number} | null>(null);
+  const [selectedImageItem, setSelectedImageItem] = useState<{itemIndex: number, stepIndex: number, imageIndex: number} | null>(null);
   const [isImageZoomed, setIsImageZoomed] = useState(false);
+  const [expandedImageGallery, setExpandedImageGallery] = useState<{category: number, item: number, step: number} | null>(null);
   const { data: session } = useSession();
 
   // Fetch user's completed categories on component mount
@@ -185,10 +186,11 @@ export function CommunicationSecurity() {
     return completedCategories.includes(categoryIndex);
   };
 
-  const handleImageClick = (itemIndex: number, imageIndex: number) => {
-    setSelectedImageItem({ itemIndex, imageIndex });
-    setIsImageZoomed(true);
-  };
+// Update the handler function
+const handleImageClick = (itemIndex: number, stepIndex: number, imageIndex: number) => {
+  setSelectedImageItem({ itemIndex, stepIndex, imageIndex });
+  setIsImageZoomed(true);
+};
   
   const handleCloseZoom = () => {
     setIsImageZoomed(false);
@@ -198,7 +200,7 @@ export function CommunicationSecurity() {
 
 
   if (isLoading) {
-    return <BubbleLoader message="Loading security data..." size="medium" />;
+    return <BubbleLoader message="Loading Communication security data..." size="medium" />;
   }
 
   return (
@@ -351,60 +353,84 @@ export function CommunicationSecurity() {
                                     ))}
                                   </ul>
                                 )}
+                                 {/* Image gallery */}
+                                {step.images && step.images.length > 0 && (
+                                  <div className="mt-4 mb-6">
+                                    <div 
+                                      className="flex items-center cursor-pointer hover:text-blue-600 transition-colors"
+                                      onClick={(e) => {
+                                        e.stopPropagation(); // Prevent step toggle from firing
+                                        // Toggle the image visibility state for this specific step
+                                        setExpandedImageGallery(prev => 
+                                          prev?.category === categoryIndex && 
+                                          prev?.item === itemIndex &&
+                                          prev?.step === stepIndex ? null : { category: categoryIndex, item: itemIndex, step: stepIndex }
+                                        );
+                                      }}
+                                    >
+                                      <FaChevronRight className={`text-blue-500 mr-2 transition-transform ${
+                                        expandedImageGallery?.category === categoryIndex && 
+                                        expandedImageGallery?.item === itemIndex &&
+                                        expandedImageGallery?.step === stepIndex ? 'transform rotate-90' : ''
+                                      }`} />
+                                      <h4 className="text-sm font-medium text-gray-700">
+                                        Reference Images ({step.images.length})
+                                      </h4>
+                                    </div>
+                                    
+                                    {/* Stacked Image Gallery - Only shown when expanded for this specific step */}
+                                    {expandedImageGallery?.category === categoryIndex && 
+                                     expandedImageGallery?.item === itemIndex &&
+                                     expandedImageGallery?.step === stepIndex && (
+                                      <div className="relative h-64 mt-3 mb-4">
+                                        <div className="absolute inset-0 overflow-x-auto pb-4 hide-scrollbar">
+                                          <div className="flex space-x-4 px-2 py-2">
+                                            {step.images.map((image, imageIndex) => (
+                                              <div 
+                                                key={imageIndex} 
+                                                className={`
+                                                  relative flex-shrink-0 w-56 h-56 rounded-lg overflow-hidden 
+                                                  border-2 cursor-pointer transform transition-all duration-300
+                                                  ${selectedImageItem?.stepIndex === stepIndex && selectedImageItem?.imageIndex === imageIndex 
+                                                    ? 'border-blue-500 scale-105' 
+                                                    : 'border-gray-200 hover:border-blue-300'}
+                                                  ${imageIndex === 0 ? 'shadow-md' : 'shadow-sm'}
+                                                `}
+                                                style={{
+                                                  transform: `translateY(${imageIndex * 8}px) rotate(${imageIndex % 2 === 0 ? -2 : 2}deg)`,
+                                                  zIndex: step.images ? step.images.length - imageIndex : 0
+                                                }}
+                                                onClick={() => handleImageClick(itemIndex, stepIndex, imageIndex)}
+                                              >
+                                                <div className="absolute inset-0 flex items-center justify-center bg-black/10 opacity-0 hover:opacity-100 transition-opacity">
+                                                  <FaChevronRight className="text-white text-2xl transform scale-150" />
+                                                </div>
+                                                <Image
+                                                  src={image}
+                                                  alt={`${step.name} reference image ${imageIndex + 1}`}
+                                                  width={300}
+                                                  height={300}
+                                                  className="object-cover w-full h-full"
+                                                />
+                                                <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent p-2">
+                                                  <span className="text-white text-xs font-medium">Image {imageIndex + 1}</span>
+                                                </div>
+                                              </div>
+                                            ))}
+                                          </div>
+                                        </div>
+                                        
+                                        {/* Improved scroll hint animation with chevron */}
+                                        <div className="absolute right-0 top-1/2 transform -translate-y-1/2 bg-gradient-to-l from-white to-transparent w-12 h-12 flex items-center justify-center rounded-full animate-pulse">
+                                          <FaChevronRight className="h-6 w-6 text-blue-500" />
+                                        </div>
+                                      </div>
+                                    )}
+                                  </div>
+                                )}                                 
                               </div>
                             ))}
                           </div>
-  
-                            {/* Image gallery */}
-                            {item.images && item.images.length > 0 && (
-                              <div className="mt-4 mb-6">
-                                <h4 className="text-sm font-medium text-gray-700 mb-2">Reference Images:</h4>
-                                
-                                {/* Stacked Image Gallery */}
-                                <div className="relative h-64 mb-4">
-                                  <div className="absolute inset-0 overflow-x-auto pb-4 hide-scrollbar">
-                                    <div className="flex space-x-4 px-2 py-2">
-                                      {item.images.map((image, imageIndex) => (
-                                        <div 
-                                          key={imageIndex} 
-                                          className={`
-                                            relative flex-shrink-0 w-56 h-56 rounded-lg overflow-hidden 
-                                            border-2 cursor-pointer transform transition-all duration-300
-                                            ${selectedImageItem?.itemIndex === itemIndex && selectedImageItem?.imageIndex === imageIndex 
-                                              ? 'border-blue-500 scale-105' 
-                                              : 'border-gray-200 hover:border-blue-300'}
-                                            ${imageIndex === 0 ? 'shadow-md' : 'shadow-sm'}
-                                          `}
-                                          style={{
-                                            transform: `translateY(${imageIndex * 8}px) rotate(${imageIndex % 2 === 0 ? -2 : 2}deg)`,
-                                            zIndex: item.images ? item.images.length - imageIndex : 0
-                                          }}
-                                          onClick={() => handleImageClick(itemIndex, imageIndex)}
-                                        >
-                                          <Image
-                                            src={image}
-                                            alt={`${item.title} reference image ${imageIndex + 1}`}
-                                            width={300}
-                                            height={300}
-                                            className="object-cover w-full h-full"
-                                          />
-                                          <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent p-2">
-                                            <span className="text-white text-xs font-medium">Image {imageIndex + 1}</span>
-                                          </div>
-                                        </div>
-                                      ))}
-                                    </div>
-                                  </div>
-                                  
-                                  {/* Scroll hint animation */}
-                                  <div className="absolute right-0 top-1/2 transform -translate-y-1/2 bg-gradient-to-l from-white to-transparent w-12 h-12 flex items-center justify-center rounded-full animate-pulse">
-                                    <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-blue-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                                    </svg>
-                                  </div>
-                                </div>
-                              </div>
-                            )}
                         </div>
                       )}
                     </div>
@@ -416,86 +442,90 @@ export function CommunicationSecurity() {
         ))}
       </div>
 
-
-      {/* Zoomed Image Modal */}
-      {selectedImageItem !== null && (
-        <div 
-          className={`fixed inset-0 bg-black/80 z-50 flex items-center justify-center transition-opacity duration-300 ${isImageZoomed ? 'opacity-100' : 'opacity-0 pointer-events-none'}`}
-          onClick={handleCloseZoom}
-        >
-          {(() => {
-            // Get the current item and image
-            const currentCategory = expandedCategory !== null ? communicationSecurityData[expandedCategory] : null;
-            const currentItem = currentCategory && expandedItem 
-              ? currentCategory.items[expandedItem.item] 
-              : null;
-            
-            if (!currentItem?.images) return null;
-            
-            const currentImage = currentItem.images[selectedImageItem.imageIndex];
-            
-            return (
-              <div 
-                className={`relative max-w-4xl max-h-[90vh] transition-transform duration-300 ${isImageZoomed ? 'scale-100' : 'scale-90'}`}
-                onClick={(e) => e.stopPropagation()}
-              >
-                <Image
-                  src={currentImage}
-                  alt={`${currentItem.title} reference image ${selectedImageItem.imageIndex + 1}`}
-                  width={1200}
-                  height={800}
-                  className="object-contain max-h-[90vh] rounded-lg"
-                />
-                
-                {/* Navigation controls */}
-                <div className="absolute top-1/2 left-0 right-0 -translate-y-1/2 flex justify-between px-4">
-                  <button 
-                    className="bg-white/20 hover:bg-white/40 rounded-full p-2 backdrop-blur-sm transition-colors"
-                    onClick={(e) => {
-                      e.stopPropagation();
-                      const newIndex = selectedImageItem.imageIndex === 0 
-                        ? (currentItem?.images?.length ?? 1) - 1 
-                        : selectedImageItem.imageIndex - 1;
-                      setSelectedImageItem({...selectedImageItem, imageIndex: newIndex});
-                    }}                  >
-                    <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
-                    </svg>
-                  </button>
-                  <button 
-                    className="bg-white/20 hover:bg-white/40 rounded-full p-2 backdrop-blur-sm transition-colors"
-                    onClick={(e) => {
-                      e.stopPropagation();
-                      const newIndex = selectedImageItem.imageIndex === (currentItem?.images?.length ?? 1) - 1 
-                        ? 0 
-                        : selectedImageItem.imageIndex + 1;
-                      setSelectedImageItem({...selectedImageItem, imageIndex: newIndex});
-                    }}                  >
-                    <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                    </svg>
-                  </button>
-                </div>
-                
-                {/* Close button */}
+    {/* Zoomed Image Modal */}
+    {selectedImageItem !== null && (
+      <div 
+        className={`fixed inset-0 bg-black/80 z-50 flex items-center justify-center transition-opacity duration-300 ${isImageZoomed ? 'opacity-100' : 'opacity-0 pointer-events-none'}`}
+        onClick={handleCloseZoom}
+      >
+        {(() => {
+          // Get the current item and step
+          const currentCategory = expandedCategory !== null ? communicationSecurityData[expandedCategory] : null;
+          const currentItem = currentCategory && expandedItem 
+            ? currentCategory.items[expandedItem.item] 
+            : null;
+          
+          if (!currentItem) return null;
+          
+          const currentStep = currentItem.steps[selectedImageItem.stepIndex];
+          if (!currentStep?.images) return null;
+          
+          const currentImage = currentStep.images[selectedImageItem.imageIndex];
+          
+          return (
+            <div 
+              className={`relative max-w-4xl max-h-[90vh] transition-transform duration-300 ${isImageZoomed ? 'scale-100' : 'scale-90'}`}
+              onClick={(e) => e.stopPropagation()}
+            >
+              <Image
+                src={currentImage}
+                alt={`${currentStep.name} reference image ${selectedImageItem.imageIndex + 1}`}
+                width={1200}
+                height={800}
+                className="object-contain max-h-[90vh] rounded-lg"
+              />
+              
+              {/* Navigation controls */}
+              <div className="absolute top-1/2 left-0 right-0 -translate-y-1/2 flex justify-between px-4">
                 <button 
-                  className="absolute top-4 right-4 bg-white/20 hover:bg-white/40 rounded-full p-2 backdrop-blur-sm transition-colors"
-                  onClick={handleCloseZoom}
+                  className="bg-white/20 hover:bg-white/40 rounded-full p-2 backdrop-blur-sm transition-colors"
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    const newIndex = selectedImageItem.imageIndex === 0 
+                      ? (currentStep?.images?.length ?? 1) - 1 
+                      : selectedImageItem.imageIndex - 1;
+                    setSelectedImageItem({...selectedImageItem, imageIndex: newIndex});
+                  }}
                 >
                   <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
                   </svg>
                 </button>
-                
-                {/* Image counter */}
-                <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 bg-black/50 text-white px-3 py-1 rounded-full text-sm backdrop-blur-sm">
-                  {selectedImageItem.imageIndex + 1} / {currentItem.images.length}
-                </div>
+                <button 
+                  className="bg-white/20 hover:bg-white/40 rounded-full p-2 backdrop-blur-sm transition-colors"
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    const newIndex = selectedImageItem.imageIndex === (currentStep?.images?.length ?? 1) - 1 
+                      ? 0 
+                      : selectedImageItem.imageIndex + 1;
+                    setSelectedImageItem({...selectedImageItem, imageIndex: newIndex});
+                  }}
+                >
+                  <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                  </svg>
+                </button>
               </div>
-            );
-          })()}
-        </div>
-      )}
+              
+              {/* Close button */}
+              <button 
+                className="absolute top-4 right-4 bg-white/20 hover:bg-white/40 rounded-full p-2 backdrop-blur-sm transition-colors"
+                onClick={handleCloseZoom}
+              >
+                <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                </svg>
+              </button>
+              
+              {/* Image counter */}
+              <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 bg-black/50 text-white px-3 py-1 rounded-full text-sm backdrop-blur-sm">
+                {selectedImageItem.imageIndex + 1} / {currentStep.images.length}
+              </div>
+            </div>
+          );
+        })()}
+      </div>
+    )}
 
       {/* CSS for hiding scrollbars */}
       <style jsx global>{`

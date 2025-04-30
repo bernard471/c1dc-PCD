@@ -25,9 +25,9 @@ import {
     steps: {
       name: string;
       details: string[];
+      images?: string[]; // Array of image paths
     }[];
     icon: IconType;
-    images?: string[]; // Array of image paths
   }
   
   export interface SecurityCategory {
@@ -47,13 +47,6 @@ import {
           title: "Network Discovery and Mapping",
           description: "Identify and document all devices on your network",
           icon: FaNetworkWired,
-          images: [
-            hero1.src,
-            hero.src,
-            freepik.src,
-            hero.src,
-            freepik.src,
-          ],
           steps: [
             {
               name: "Perform regular network scan",
@@ -61,6 +54,13 @@ import {
                 "Use Fing app (mobile) or Advanced IP Scanner (desktop)",
                 "Identify all connected devices on network",
                 "Create inventory document with device name, IP address, MAC address, manufacturer, and purpose"
+              ],
+              images: [
+                hero1.src,
+                hero.src,
+                freepik.src,
+                hero.src,
+                freepik.src,
               ]
             },
             {
@@ -68,6 +68,13 @@ import {
               details: [
                 "Document how devices connect (wired vs. wireless)",
                 "Identify critical infrastructure devices"
+              ],
+              images: [
+                hero1.src,
+                hero.src,
+                freepik.src,
+                hero.src,
+                freepik.src,
               ]
             }
           ]
@@ -77,13 +84,6 @@ import {
           title: "Vulnerability Scanning",
           description: "Regularly scan your network for security vulnerabilities",
           icon: FaShieldAlt,
-          images: [
-            hero1.src,
-            hero.src,
-            freepik.src,
-            hero.src,
-            freepik.src,
-          ],
           steps: [
             {
               name: "Basic home vulnerability scan",
@@ -91,6 +91,13 @@ import {
                 "Use Nessus Home (free for up to 16 IP addresses)",
                 "Run monthly scans on router and critical devices",
                 "Focus on critical and high-severity findings"
+              ],
+              images: [
+                hero1.src,
+                hero.src,
+                freepik.src,
+                hero.src,
+                freepik.src,
               ]
             },
             {
@@ -99,6 +106,13 @@ import {
                 "Configure scheduled scans where possible",
                 "Document and track findings over time",
                 "Create remediation plan for discovered issues"
+              ],
+              images: [
+                hero1.src,
+                hero.src,
+                freepik.src,
+                hero.src,
+                freepik.src,
               ]
             }
           ]
@@ -107,19 +121,19 @@ import {
           title: "Traffic Monitoring",
           description: "Monitor network traffic for unusual patterns and potential threats",
           icon: FaChartLine,
-          images: [
-            hero1.src,
-            hero.src,
-            freepik.src,
-            hero.src,
-            freepik.src,
-          ],
           steps: [
             {
               name: "Analyze network traffic",
               details: [
                 "Check router traffic logs if available",
                 "Look for unusual patterns like unexpected outbound connections, large data transfers at odd hours, or connections to unknown IP addresses"
+              ],
+              images: [
+                hero1.src,
+                hero.src,
+                freepik.src,
+                hero.src,
+                freepik.src,
               ]
             },
             {
@@ -127,6 +141,13 @@ import {
               details: [
                 "Consider dedicated hardware like Firewalla or Bitdefender Box",
                 "Set up alerts for suspicious activities"
+              ],
+              images: [
+                hero1.src,
+                hero.src,
+                freepik.src,
+                hero.src,
+                freepik.src,
               ]
             }
           ]
@@ -142,13 +163,6 @@ import {
           title: "Pre-Purchase Security Assessment",
           description: "Evaluate security before buying IoT devices",
           icon: FaShieldAlt,
-          images: [
-            hero1.src,
-            hero.src,
-            freepik.src,
-            hero.src,
-            freepik.src,
-          ],
           steps: [
             {
               name: "Research before buying",
@@ -157,6 +171,13 @@ import {
                 "Verify device receives regular updates",
                 "Look for security certifications",
                 "Read privacy policy thoroughly"
+              ],
+              images: [
+                hero1.src,
+                hero.src,
+                freepik.src,
+                hero.src,
+                freepik.src,
               ]
             },
             {
@@ -166,6 +187,13 @@ import {
                 "Two-factor authentication",
                 "Data encryption",
                 "Local processing (vs. cloud dependency)"
+              ],
+              images: [
+                hero1.src,
+                hero.src,
+                freepik.src,
+                hero.src,
+                freepik.src,
               ]
             }
           ]
@@ -174,13 +202,6 @@ import {
           title: "Initial Device Setup",
           description: "Securely set up new IoT devices",
           icon: FaCogs,
-          images: [
-            hero1.src,
-            hero.src,
-            freepik.src,
-            hero.src,
-            freepik.src,
-          ],
           steps: [
             {
               name: "Secure onboarding process",
@@ -189,6 +210,13 @@ import {
                 "Update firmware before full deployment",
                 "Disable unnecessary features and services",
                 "Register devices with manufacturer for update notifications"
+              ],
+              images: [
+                hero1.src,
+                hero.src,
+                freepik.src,
+                hero.src,
+                freepik.src,
               ]
             },
             {
@@ -197,6 +225,13 @@ import {
                 "Use unique password for each device",
                 "Store credentials in password manager",
                 "Set up 2FA where available"
+              ],
+              images: [
+                hero1.src,
+                hero.src,
+                freepik.src,
+                hero.src,
+                freepik.src,
               ]
             }
           ]
@@ -205,13 +240,6 @@ import {
           title: "Network Segmentation for IoT",
           description: "Isolate IoT devices from your main network",
           icon: FaNetwork,
-          images: [
-            hero1.src,
-            hero.src,
-            freepik.src,
-            hero.src,
-            freepik.src,
-          ],
           steps: [
             {
               name: "Create dedicated IoT network",
@@ -219,6 +247,13 @@ import {
                 "Set up separate VLAN or guest network",
                 "Configure router to isolate from main network",
                 "Prevent IoT devices from accessing personal computers"
+              ],
+              images: [
+                hero1.src,
+                hero.src,
+                freepik.src,
+                hero.src,
+                freepik.src,
               ]
             },
             {
@@ -227,6 +262,13 @@ import {
                 "Restrict IoT devices to only necessary internet access",
                 "Block inbound connections to IoT devices",
                 "Configure firewall rules to limit communication"
+              ],
+              images: [
+                hero1.src,
+                hero.src,
+                freepik.src,
+                hero.src,
+                freepik.src,
               ]
             }
           ]
@@ -235,13 +277,6 @@ import {
           title: "Ongoing Maintenance",
           description: "Keep your IoT devices secure over time",
           icon: FaCogs,
-          images: [
-            hero1.src,
-            hero.src,
-            freepik.src,
-            hero.src,
-            freepik.src,
-          ],
           steps: [
             {
               name: "Update schedule",
@@ -249,6 +284,13 @@ import {
                 "Enable automatic updates where available",
                 "Create monthly calendar reminder for manual updates",
                 "Check manufacturer websites quarterly for security bulletins"
+              ],
+              images: [
+                hero1.src,
+                hero.src,
+                freepik.src,
+                hero.src,
+                freepik.src,
               ]
             },
             {
@@ -257,6 +299,13 @@ import {
                 "Test device connections (who they talk to)",
                 "Verify security settings haven't changed",
                 "Remove or reset unused devices"
+              ],
+              images: [
+                hero1.src,
+                hero.src,
+                freepik.src,
+                hero.src,
+                freepik.src,
               ]
             }
           ]
@@ -265,13 +314,6 @@ import {
           title: "Device-Specific Security",
           description: "Security measures for specific types of IoT devices",
           icon: FaMicrochip,
-          images: [
-            hero1.src,
-            hero.src,
-            freepik.src,
-            hero.src,
-            freepik.src,
-          ],
           steps: [
             {
               name: "Smart speakers and assistants",
@@ -279,6 +321,13 @@ import {
                 "Disable unnecessary listening features",
                 "Review and delete voice recordings regularly",
                 "Mute microphones when not in use"
+              ],
+              images: [
+                hero1.src,
+                hero.src,
+                freepik.src,
+                hero.src,
+                freepik.src,
               ]
             },
             {
@@ -288,6 +337,13 @@ import {
                 "Use two-factor authentication",
                 "Position to avoid sensitive areas",
                 "Consider local storage over cloud"
+              ],
+              images: [
+                hero1.src,
+                hero.src,
+                freepik.src,
+                hero.src,
+                freepik.src,
               ]
             },
             {
@@ -297,6 +353,13 @@ import {
                 "Create individual access codes for different people",
                 "Enable tampering alerts",
                 "Disable remote unlock if not needed"
+              ],
+              images: [
+                hero1.src,
+                hero.src,
+                freepik.src,
+                hero.src,
+                freepik.src,
               ]
             }
           ]
@@ -312,13 +375,6 @@ import {
           title: "Defensive Layers",
           description: "Implement multiple security layers for better protection",
           icon: FaShieldAlt,
-          images: [
-            hero1.src,
-            hero.src,
-            freepik.src,
-            hero.src,
-            freepik.src,
-          ],
           steps: [
             {
               name: "Hardware firewall",
@@ -326,6 +382,13 @@ import {
                 "Enable and configure router firewall",
                 "Consider dedicated hardware firewall for enhanced protection",
                 "Set to block inbound connections by default"
+              ],
+              images: [
+                hero1.src,
+                hero.src,
+                freepik.src,
+                hero.src,
+                freepik.src,
               ]
             },
             {
@@ -334,6 +397,13 @@ import {
                 "Enable on all computers and mobile devices",
                 "Configure application-specific rules",
                 "Block unnecessary outbound connections"
+              ],
+              images: [
+                hero1.src,
+                hero.src,
+                freepik.src,
+                hero.src,
+                freepik.src,
               ]
             },
             {
@@ -341,6 +411,13 @@ import {
               details: [
                 "Consider Suricata or Snort for advanced users",
                 "Look for router models with built-in IDS/IPS"
+              ],
+              images: [
+                hero1.src,
+                hero.src,
+                freepik.src,
+                hero.src,
+                freepik.src,
               ]
             }
           ]
@@ -349,19 +426,19 @@ import {
           title: "Advanced Router Configuration",
           description: "Optimize your router settings for better security",
           icon: FaServer,
-          images: [
-            hero1.src,
-            hero.src,
-            freepik.src,
-            hero.src,
-            freepik.src,
-          ],
           steps: [
             {
               name: "DMZ (demilitarized zone)",
               details: [
                 "Configure for internet-facing services if needed",
                 "Never place personal computers in DMZ"
+              ],
+              images: [
+                hero1.src,
+                hero.src,
+                freepik.src,
+                hero.src,
+                freepik.src,
               ]
             },
             {
@@ -369,6 +446,13 @@ import {
               details: [
                 "Ensure NAT is enabled",
                 "Use as additional security layer"
+              ],
+              images: [
+                hero1.src,
+                hero.src,
+                freepik.src,
+                hero.src,
+                freepik.src,
               ]
             },
             {
@@ -377,6 +461,13 @@ import {
                 "Use Pi-hole or AdGuard Home",
                 "Block malicious domains",
                 "Implement family-friendly filtering if needed"
+              ],
+              images: [
+                hero1.src,
+                hero.src,
+                freepik.src,
+                hero.src,
+                freepik.src,
               ]
             }
           ]
@@ -385,13 +476,6 @@ import {
           title: "Network Encryption",
           description: "Encrypt your network communications",
           icon: FaLock,
-          images: [
-            hero1.src,
-            hero.src,
-            freepik.src,
-            hero.src,
-            freepik.src,
-          ],
           steps: [
             {
               name: "Secure internal communications",
@@ -399,6 +483,13 @@ import {
                 "Use HTTPS for all web interfaces",
                 "Configure devices to require encrypted connections",
                 "Disable HTTP access to devices where possible"
+              ],  
+              images: [
+                hero1.src,
+                hero.src,
+                freepik.src,
+                hero.src,
+                freepik.src,
               ]
             },
             {
@@ -407,6 +498,13 @@ import {
                 "Set up VPN server on router if supported",
                 "Use for secure remote access to home network",
                 "Configure split tunneling appropriately"
+              ],
+              images: [
+                hero1.src,
+                hero.src,
+                freepik.src,
+                hero.src,
+                freepik.src,
               ]
             }
           ]
@@ -422,13 +520,6 @@ import {
           title: "Hub and Controller Security",
           description: "Secure your smart home hubs and controllers",
           icon: FaServer,
-          images: [
-            hero1.src,
-            hero.src,
-            freepik.src,
-            hero.src,
-            freepik.src,
-          ],
           steps: [
             {
               name: "Secure central systems",
@@ -436,6 +527,13 @@ import {
                 "Apply all security updates immediately",
                 "Use strong authentication",
                 "Limit admin access to necessary users only"
+              ],
+              images: [
+                hero1.src,
+                hero.src,
+                freepik.src,
+                hero.src,
+                freepik.src,
               ]
             },
             {
@@ -445,6 +543,13 @@ import {
                 "Encryption standards",
                 "Privacy policy transparency",
                 "Local control options (vs. cloud-only)"
+              ],
+              images: [
+                hero1.src,
+                hero.src,
+                freepik.src,
+                hero.src,
+                freepik.src,
               ]
             }
           ]
@@ -453,13 +558,6 @@ import {
           title: "Automation and Rule Security",
           description: "Secure your smart home automation rules",
           icon: FaCogs,
-          images: [
-            hero1.src,
-            hero.src,
-            freepik.src,
-            hero.src,
-            freepik.src,
-          ],
           steps: [
             {
               name: "Secure automation rules",
@@ -467,6 +565,13 @@ import {
                 "Review all automations for security implications",
                 "Prevent rules that could compromise physical security",
                 "Test fail-safe mechanisms for critical systems"
+              ],
+              images: [
+                hero1.src,
+                hero.src,
+                freepik.src,
+                hero.src,
+                freepik.src,
               ]
             },
             {
@@ -475,6 +580,13 @@ import {
                 "Implement role-based access",
                 "Limit guest access to viewing, not changing",
                 "Review access permissions quarterly"
+              ],
+              images: [
+                hero1.src,
+                hero.src,
+                freepik.src,
+                hero.src,
+                freepik.src,
               ]
             }
           ]
@@ -483,13 +595,6 @@ import {
           title: "Voice Control Security",
           description: "Secure voice-controlled smart home features",
           icon: FaMicrophoneAlt,
-          images: [
-            hero1.src,
-            hero.src,
-            freepik.src,
-            hero.src,
-            freepik.src,
-          ],
           steps: [
             {
               name: "Secure assistant configuration",
@@ -497,6 +602,13 @@ import {
                 "Require voice match or PIN for sensitive actions",
                 "Disable purchasing by voice",
                 "Review third-party skill/action permissions"
+              ],
+              images: [
+                hero1.src,
+                hero.src,
+                freepik.src,
+                hero.src,
+                freepik.src,
               ]
             },
             {
@@ -504,6 +616,13 @@ import {
               details: [
                 "Implement mute function when away",
                 "Consider unplugging in highly sensitive situations"
+              ],
+              images: [
+                hero1.src,
+                hero.src,
+                freepik.src,
+                hero.src,
+                freepik.src,
               ]
             }
           ]
@@ -519,13 +638,6 @@ import {
           title: "Camera and Surveillance Systems",
           description: "Secure your home surveillance systems",
           icon: FaVideo,
-          images: [
-            hero1.src,
-            hero.src,
-            freepik.src,
-            hero.src,
-            freepik.src,
-          ],
           steps: [
             {
               name: "Security camera best practices",
@@ -534,6 +646,13 @@ import {
                 "Enable encryption for all video streams",
                 "Disable remote access if not needed",
                 "Update firmware regularly"
+              ],
+              images: [
+                hero1.src,
+                hero.src,
+                freepik.src,
+                hero.src,
+                freepik.src,
               ]
             },
             {
@@ -543,6 +662,13 @@ import {
                 "Use local storage with backup",
                 "If using cloud, enable two-factor authentication",
                 "Set appropriate retention periods"
+              ],
+              images: [
+                hero1.src,
+                hero.src,
+                freepik.src,
+                hero.src,
+                freepik.src,
               ]
             }
           ]
@@ -551,13 +677,6 @@ import {
           title: "Access Control Systems",
           description: "Secure your smart locks and access control systems",
           icon: FaKey,
-          images: [
-            hero1.src,
-            hero.src,
-            freepik.src,
-            hero.src,
-            freepik.src,
-          ],
           steps: [
             {
               name: "Smart lock configuration",
@@ -566,6 +685,13 @@ import {
                 "Use auto-lock features",
                 "Maintain backup physical key",
                 "Disable remote unlock if not needed"
+              ],
+              images: [
+                hero1.src,
+                hero.src,
+                freepik.src,
+                hero.src,
+                freepik.src,
               ]
             },
             {
@@ -575,6 +701,13 @@ import {
                 "Set time-limited access for temporary visitors",
                 "Review access logs monthly",
                 "Revoke access immediately when no longer needed"
+              ],
+              images: [
+                hero1.src,
+                hero.src,
+                freepik.src,
+                hero.src,
+                freepik.src,
               ]
             }
           ]
@@ -583,13 +716,6 @@ import {
           title: "Backup Power Planning",
           description: "Ensure security during power outages",
           icon: FaBatteryFull,
-          images: [
-            hero1.src,
-            hero.src,
-            freepik.src,
-            hero.src,
-            freepik.src,
-          ],
           steps: [
             {
               name: "Secure during outages",
@@ -597,6 +723,13 @@ import {
                 "Ensure security systems have battery backup",
                 "Configure fail-secure vs. fail-safe appropriately",
                 "Test backup systems quarterly"
+              ],
+              images: [
+                hero1.src,
+                hero.src,
+                freepik.src,
+                hero.src,
+                freepik.src,
               ]
             },
             {
@@ -604,6 +737,13 @@ import {
               details: [
                 "Document steps to restore security after power loss",
                 "Test restoration process semi-annually"
+              ],
+              images: [
+                hero1.src,
+                hero.src,
+                freepik.src,
+                hero.src,
+                freepik.src,
               ]
             }
           ]

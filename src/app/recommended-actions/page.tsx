@@ -1,32 +1,56 @@
 'use client';
 
 import { useState, useEffect } from 'react';
-import { Clock, AlertTriangle, ShieldAlert, ArrowUpDown, Calendar, Tag, ChevronRight } from 'lucide-react';
+import { Clock, AlertTriangle, ShieldAlert, ArrowUpDown, Calendar, Tag, ChevronRight, CheckCircle } from 'lucide-react';
 import { recommendedActionsData, RecommendedAction } from '@/data/recommendedActionsData';
+
+// Add interface for action with completion status
+interface ActionWithCompletionStatus extends RecommendedAction {
+  isCompleted?: boolean;
+  completedAt?: Date | null;
+}
 
 export default function RecommendedActionsPage() {
   const [filter, setFilter] = useState('all');
   const [sortBy, setSortBy] = useState('priority');
-  const [actions, setActions] = useState<RecommendedAction[]>(recommendedActionsData);
+  const [actions, setActions] = useState<ActionWithCompletionStatus[]>([]);
+  const [filteredActions, setFilteredActions] = useState<ActionWithCompletionStatus[]>([]);
   const [expandedAction, setExpandedAction] = useState<number | null>(null);
   const [categoryFilter, setCategoryFilter] = useState('all');
+  const [loading, setLoading] = useState(false);
 
-  // Filter and sort actions
+  // Fetch actions with completion status
   useEffect(() => {
-    let filteredActions = [...recommendedActionsData];
+    const fetchCompletionStatus = async () => {
+      try {
+        const response = await fetch('/api/recommended-actions');
+        if (response.ok) {
+          const { data } = await response.json();
+          setActions(data);
+        } else {
+          // If API fails, use the original data
+          setActions(recommendedActionsData);
+        }
+      } catch (error) {
+        console.error('Error fetching completion status:', error);
+        setActions(recommendedActionsData);
+      }
+    };
     
-    // Apply status filter
-    if (filter !== 'all') {
-      filteredActions = filteredActions.filter(action => action.status === filter);
-    }
-    
+    fetchCompletionStatus();
+  }, []);
+
+  // Filter and sort actions - separate from the state update
+  useEffect(() => {
+    let result = [...actions];
+      
     // Apply category filter
     if (categoryFilter !== 'all') {
-      filteredActions = filteredActions.filter(action => action.category === categoryFilter);
+      result = result.filter(action => action.category === categoryFilter);
     }
     
     // Apply sorting
-    filteredActions.sort((a, b) => {
+    result.sort((a, b) => {
       if (sortBy === 'priority') {
         const priorityOrder = { high: 0, medium: 1, low: 2 };
         return priorityOrder[a.priority] - priorityOrder[b.priority];
@@ -38,8 +62,42 @@ export default function RecommendedActionsPage() {
       return 0;
     });
     
-    setActions(filteredActions);
-  }, [filter, sortBy, categoryFilter]);
+    setFilteredActions(result);
+  }, [filter, sortBy, categoryFilter, actions]); // actions is fine here since we're not updating it
+
+  // Handle action completion
+  const handleActionCompletion = async (actionId: number, isCompleted: boolean) => {
+    setLoading(true);
+    try {
+      const response = await fetch('/api/recommended-actions', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          actionId,
+          isCompleted
+        })
+      });
+      
+      if (response.ok) {
+        // Update local state
+        setActions(prevActions => 
+          prevActions.map(action => 
+            action.id === actionId 
+              ? { ...action, isCompleted, completedAt: isCompleted ? new Date() : null } 
+              : action
+          )
+        );
+      } else {
+        console.error('Failed to update action status');
+      }
+    } catch (error) {
+      console.error('Error updating action status:', error);
+    } finally {
+      setLoading(false);
+    }
+  };
 
   const getActionIcon = (icon: string) => {
     switch(icon) {
@@ -193,71 +251,99 @@ export default function RecommendedActionsPage() {
         </div>
       </div>
 
-          {/* Actions list */}
-          <div className="space-y-4">
-            {actions.length === 0 ? (
-              <div className="bg-white rounded-lg shadow-sm p-8 text-center">
-                <p className="text-gray-500">No actions match your current filters.</p>
-                <button 
-                  onClick={() => {
-                    setFilter('all');
-                    setCategoryFilter('all');
-                  }}
-                  className="mt-4 px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700 transition-colors"
-                >
-                  Reset Filters
-                </button>
-              </div>
-            ) : (
-              actions.map(action => (
-                <div key={action.id} className="bg-white rounded-lg shadow-sm overflow-hidden">
-                  <div 
-                    className="p-4 cursor-pointer hover:bg-gray-50 transition-colors"
-                    onClick={() => toggleActionExpand(action.id)}
-                  >
-                    <div className="flex items-start justify-between">
-                      <div className="flex items-start space-x-3">
-                        <div className="mt-0.5">
-                          {getActionIcon(action.icon)}
-                        </div>
-                        <div>
-                          <h3 className="font-medium text-gray-900">{action.title}</h3>
-                          <p className="mt-1 text-sm text-gray-600">{action.description}</p>
-                          
-                          <div className="mt-2 flex flex-wrap gap-2">
-                            {getPriorityBadge(action.priority)}
-                            {getCategoryBadge(action.category)}
-                            {action.dueDate && (
-                              <span className="flex items-center px-2 py-1 text-xs font-medium rounded-full bg-gray-100 text-gray-800">
-                                <Calendar className="h-3 w-3 mr-1" />
-                                {formatDate(action.dueDate)}
-                              </span>
-                            )}
-                          </div>
-                        </div>
-                      </div>
+      {/* Actions list */}
+      <div className="space-y-4">
+        {filteredActions.length === 0 ? (
+          <div className="bg-white rounded-lg shadow-sm p-8 text-center">
+            <p className="text-gray-500">No actions match your current filters.</p>
+            <button 
+              onClick={() => {
+                setFilter('all');
+                setCategoryFilter('all');
+              }}
+              className="mt-4 px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700 transition-colors"
+            >
+              Reset Filters
+            </button>
+          </div>
+        ) : (
+          filteredActions.map(action => (
+            <div key={action.id} className={`bg-white rounded-lg shadow-sm overflow-hidden ${action.isCompleted ? 'border-l-4 border-green-500' : ''}`}>
+              <div 
+                className="p-4 cursor-pointer hover:bg-gray-50 transition-colors"
+                onClick={() => toggleActionExpand(action.id)}
+              >
+                <div className="flex items-start justify-between">
+                  <div className="flex items-start space-x-3">
+                    <div className="mt-0.5">
+                      {action.isCompleted ? 
+                        <CheckCircle className="h-5 w-5 text-green-600" /> : 
+                        getActionIcon(action.icon)}
+                    </div>
+                    <div>
+                      <h3 className={`font-medium ${action.isCompleted ? 'text-gray-500' : 'text-gray-900'}`}>
+                        {action.title}
+                      </h3>
                       
-                      <ChevronRight className={`h-5 w-5 text-gray-400 transition-transform ${expandedAction === action.id ? 'rotate-90' : ''}`} />
+                      <div className="mt-2 flex flex-wrap gap-2">
+                        {getPriorityBadge(action.priority)}
+                        {getCategoryBadge(action.category)}
+                        {action.dueDate && (
+                          <span className="flex items-center px-2 py-1 text-xs font-medium rounded-full bg-gray-100 text-gray-800">
+                            <Calendar className="h-3 w-3 mr-1" />
+                            {formatDate(action.dueDate)}
+                          </span>
+                        )}
+                        {action.isCompleted && (
+                          <span className="px-2 py-1 text-xs font-medium rounded-full bg-green-100 text-green-800">
+                            Completed
+                          </span>
+                        )}
+                      </div>
                     </div>
                   </div>
-                  
-                  {/* Expanded content */}
-                  {expandedAction === action.id && action.steps && (
-                    <div className="px-4 pb-4 border-t border-gray-100 pt-3">
-                      <h4 className="text-sm font-medium text-gray-700 mb-2">Steps to complete:</h4>
-                      <ol className="space-y-2 pl-5 list-decimal">
-                        {action.steps.map((step, index) => (
-                          <li key={index} className="text-sm text-gray-600">
-                            {step}
-                          </li>
-                        ))}
-                      </ol>
-                    </div>
-                  )}
+                  <ChevronRight className={`h-5 w-5 text-gray-400 transition-transform ${expandedAction === action.id ? 'rotate-90' : ''}`} />
                 </div>
-              ))
-            )}
-          </div>
+              </div>
+              
+              {/* Expanded content */}
+              {expandedAction === action.id && action.steps && (
+                <div className="px-4 pb-4 border-t border-gray-100 pt-3">
+                  <p className="mt-1 text-sm text-gray-600">{action.description}</p>
+
+                  <h4 className="text-sm font-medium text-gray-700 mb-2">Steps to complete:</h4>
+                  <ol className="space-y-2 pl-5 list-decimal">
+                    {action.steps.map((step, index) => (
+                      <li key={index} className="text-sm text-gray-600">
+                        {step}
+                      </li>
+                    ))}
+                  </ol>
+                  <div className="mt-3 flex items-center space-x-2">
+                  <button 
+                    onClick={(e) => {
+                      e.stopPropagation(); // Prevent toggling the expanded state
+                      if (!action.isCompleted) {
+                        handleActionCompletion(action.id, true);
+                      }
+                    }}
+                    disabled={loading || action.isCompleted}
+                    className={`px-4 py-2 text-white rounded-md transition-colors ${
+                      action.isCompleted 
+                        ? 'bg-green-600 cursor-not-allowed opacity-80' 
+                        : 'bg-green-600 hover:bg-green-700'
+                    } ${loading ? 'opacity-70 cursor-not-allowed' : ''}`}
+                  >
+                    {loading ? 'Processing...' : action.isCompleted ? 'Completed' : 'Mark as Complete'}
+                  </button>
+
+                  </div>
+                </div>
+              )}
+            </div>
+          ))
+        )}
+      </div>
     </div>
   );
 }

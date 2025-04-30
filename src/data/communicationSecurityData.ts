@@ -24,9 +24,9 @@ import {
     steps: {
       name: string;
       details: string[];
+      images?: string[]; // Array of image paths
     }[];
     icon: IconType;
-    images?: string[]; // Array of image paths
   }
   
   export interface SecurityCategory {
@@ -46,13 +46,6 @@ import {
           title: "Physical Space Assessment",
           description: "Evaluate and secure the physical meeting environment",
           icon: FaShieldAlt,
-          images: [
-            hero1.src,
-            hero.src,
-            freepik.src,
-            hero.src,
-            freepik.src,
-          ],
           steps: [
             {
               name: "Room security sweep",
@@ -61,7 +54,14 @@ import {
                 "Inspect smoke detectors, wall outlets, and air vents",
                 "Use RF detector to identify transmitting devices",
                 "Consider professional TSCM (Technical Surveillance Countermeasures) for high-security needs"
-              ]
+              ],
+              images: [
+                hero1.src,
+                hero.src,
+                freepik.src,
+                hero.src,
+                freepik.src,
+              ],
             },
             {
               name: "Environmental security",
@@ -70,7 +70,14 @@ import {
                 "Check for windows that could allow visual surveillance",
                 "Consider sound-masking devices for sensitive discussions",
                 "Implement clean desk policy during meetings"
-              ]
+              ],
+              images: [
+                hero1.src,
+                hero.src,
+                freepik.src,
+                hero.src,
+                freepik.src,
+              ],
             }
           ]
         },
@@ -78,13 +85,6 @@ import {
           title: "Electronic Device Management",
           description: "Control electronic devices during sensitive meetings",
           icon: FaMobileAlt,
-          images: [
-            hero1.src,
-            hero.src,
-            freepik.src,
-            hero.src,
-            freepik.src,
-          ],
           steps: [
             {
               name: "Mobile device policies",
@@ -93,7 +93,14 @@ import {
                 "Collect devices in Faraday bags or designated areas",
                 "Disable smart assistants in meeting room",
                 "Turn off Bluetooth and Wi-Fi when not needed"
-              ]
+              ],
+              images: [
+                hero1.src,
+                hero.src,
+                freepik.src,
+                hero.src,
+                freepik.src,
+              ],
             },
             {
               name: "Jamming considerations",
@@ -101,6 +108,13 @@ import {
                 "Signal jammers for highly sensitive discussions (where legal)",
                 "Faraday room shielding for critical infrastructure",
                 "Note: Verify legality in your jurisdiction before implementing"
+              ],
+              images: [
+                hero1.src,
+                hero.src,
+                freepik.src,
+                hero.src,
+                freepik.src,
               ]
             }
           ]
@@ -109,13 +123,6 @@ import {
           title: "Meeting Materials",
           description: "Secure physical and digital meeting materials",
           icon: FaFile,
-          images: [
-            hero1.src,
-            hero.src,
-            freepik.src,
-            hero.src,
-            freepik.src,
-          ],
           steps: [
             {
               name: "Document security",
@@ -124,6 +131,13 @@ import {
                 "Collect all materials after meeting",
                 "Use watermarks on sensitive documents",
                 "Implement information classification system"
+              ],
+              images: [
+                hero1.src,
+                hero.src,
+                freepik.src,
+                hero.src,
+                freepik.src,
               ]
             },
             {
@@ -132,6 +146,13 @@ import {
                 "Disable screen sharing in virtual meetings when not required",
                 "Use secure presentation modes that hide notifications",
                 "Avoid connecting to unknown projectors/displays"
+              ],
+              images: [
+                hero1.src,
+                hero.src,
+                freepik.src,
+                hero.src,
+                freepik.src,
               ]
             }
           ]
@@ -147,13 +168,6 @@ import {
           title: "Voice Call Security",
           description: "Protect voice conversations from interception",
           icon: FaMicrophone,
-          images: [
-            hero1.src,
-            hero.src,
-            freepik.src,
-            hero.src,
-            freepik.src,
-          ],
           steps: [
             {
               name: "Secure calling practices",
@@ -162,7 +176,14 @@ import {
                 "Be aware of background noise and surroundings",
                 "Avoid discussing highly sensitive information on any call",
                 "Verify recipient identity before sharing sensitive information"
-              ]
+              ],
+              images: [
+                hero1.src,
+                hero.src,
+                freepik.src,
+                hero.src,
+                freepik.src,
+              ],
             },
             {
               name: "Signs of compromise",
@@ -171,7 +192,14 @@ import {
                 "Battery draining unusually quickly",
                 "Phone heating up when not in use",
                 "Unexpected screen lighting up"
-              ]
+              ],
+              images: [
+                hero1.src,
+                hero.src,
+                freepik.src,
+                hero.src,
+                freepik.src,
+              ],
             }
           ]
         },
@@ -179,13 +207,6 @@ import {
           title: "Messaging Security",
           description: "Secure text and multimedia messages",
           icon: FaEnvelope,
-          images: [
-            hero1.src,
-            hero.src,
-            freepik.src,
-            hero.src,
-            freepik.src,
-          ],
           steps: [
             {
               name: "Secure messaging configuration",
@@ -194,7 +215,14 @@ import {
                 "Enable disappearing messages for sensitive conversations",
                 "Verify security codes/keys with important contacts",
                 "Disable cloud backups of messages"
-              ]
+              ],
+              images: [
+                hero1.src,
+                hero.src,
+                freepik.src,
+                hero.src,
+                freepik.src,
+              ],
             },
             {
               name: "Best practices",
@@ -211,13 +239,6 @@ import {
           title: "Device Tracking Detection",
           description: "Identify if your device is being tracked or monitored",
           icon: FaMapMarkerAlt,
-          images: [
-            hero1.src,
-            hero.src,
-            freepik.src,
-            hero.src,
-            freepik.src,
-          ],
           steps: [
             {
               name: "Physical inspection",
@@ -226,7 +247,14 @@ import {
                 "Look for unusual hardware additions",
                 "Verify battery compartment is clean",
                 "Inspect SIM card slot for manipulation"
-              ]
+              ],
+              images: [
+                hero1.src,
+                hero.src,
+                freepik.src,
+                hero.src,
+                freepik.src,
+              ],
             },
             {
               name: "Electronic detection",
@@ -235,6 +263,13 @@ import {
                 "Monitor for unusual network traffic",
                 "Check for unknown apps or processes",
                 "Observe battery performance"
+              ],
+              images: [
+                hero1.src,
+                hero.src,
+                freepik.src,
+                hero.src,
+                freepik.src,
               ]
             }
           ]
@@ -243,13 +278,6 @@ import {
           title: "Travel Communication Security",
           description: "Maintain secure communications while traveling",
           icon: FaMapMarkerAlt,
-          images: [
-            hero1.src,
-            hero.src,
-            freepik.src,
-            hero.src,
-            freepik.src,
-          ],
           steps: [
             {
               name: "Pre-travel preparation",
@@ -258,7 +286,14 @@ import {
                 "Back up and then wipe sensitive data if traveling to high-risk areas",
                 "Set up travel-specific accounts if needed",
                 "Consider temporary/burner devices for high-risk travel"
-              ]
+              ],
+              images: [
+                hero1.src,
+                hero.src,
+                freepik.src,
+                hero.src,
+                freepik.src,
+              ],
             },
             {
               name: "During travel",
@@ -267,6 +302,13 @@ import {
                 "Use VPN for all connections",
                 "Disable Bluetooth and Wi-Fi when not in use",
                 "Avoid public charging stations (use power banks)"
+              ],
+              images: [
+                hero1.src,
+                hero.src,
+                freepik.src,
+                hero.src,
+                freepik.src,
               ]
             }
           ]
@@ -282,13 +324,6 @@ import {
           title: "Car Privacy Assessment",
           description: "Evaluate and improve privacy in modern vehicles",
           icon: FaShieldAlt,
-          images: [
-            hero1.src,
-            hero.src,
-            freepik.src,
-            hero.src,
-            freepik.src,
-          ],
           steps: [
             {
               name: "Modern vehicle security",
@@ -297,6 +332,13 @@ import {
                 "Review privacy settings in vehicle infotainment system",
                 "Disable unnecessary connectivity features",
                 "Clear paired devices when selling vehicle"
+              ],
+              images: [
+                hero1.src,
+                hero.src,
+                freepik.src,
+                hero.src,
+                freepik.src,
               ]
             },
             {
@@ -306,6 +348,13 @@ import {
                 "Inspect inside wheel wells and behind bumpers",
                 "Look inside interior panels for tracking devices",
                 "Use GPS/RF detector for more thorough checks"
+              ],
+              images: [
+                hero1.src,
+                hero.src,
+                freepik.src,
+                hero.src,
+                freepik.src,
               ]
             }
           ]
@@ -314,13 +363,6 @@ import {
           title: "Bluetooth and Wi-Fi Security",
           description: "Secure wireless connections in vehicles",
           icon: FaBluetooth,
-          images: [
-            hero1.src,
-            hero.src,
-            freepik.src,
-            hero.src,
-            freepik.src,
-          ],
           steps: [
             {
               name: "Connection management",
@@ -329,6 +371,13 @@ import {
                 "Remove unused paired devices",
                 "Use \"invisible\" or \"non-discoverable\" mode",
                 "Update infotainment system regularly"
+              ],
+              images: [
+                hero1.src,
+                hero.src,
+                freepik.src,
+                hero.src,
+                freepik.src,
               ]
             },
             {
@@ -337,6 +386,13 @@ import {
                 "Avoid pairing with rental cars or unknown vehicles",
                 "Be cautious about what data you sync to car systems",
                 "Use guest mode for passengers when available"
+              ],
+              images: [
+                hero1.src,
+                hero.src,
+                freepik.src,
+                hero.src,
+                freepik.src,
               ]
             }
           ]
@@ -345,13 +401,6 @@ import {
           title: "Audio Privacy",
           description: "Protect conversations within vehicles",
           icon: FaMicrophone,
-          images: [
-            hero1.src,
-            hero.src,
-            freepik.src,
-            hero.src,
-            freepik.src,
-          ],
           steps: [
             {
               name: "Conversation security",
@@ -360,6 +409,13 @@ import {
                 "Disable voice assistants if not needed",
                 "Remember that passengers may be recording",
                 "Have sensitive conversations outside the vehicle"
+              ],
+              images: [
+                hero1.src,
+                hero.src,
+                freepik.src,
+                hero.src,
+                freepik.src,
               ]
             },
             {
@@ -368,6 +424,13 @@ import {
                 "Use white noise generators for sensitive discussions",
                 "Conduct regular sweeps for unauthorized devices",
                 "Be aware of cameras in rideshare vehicles"
+              ],
+              images: [
+                hero1.src,
+                hero.src,
+                freepik.src,
+                hero.src,
+                freepik.src,
               ]
             }
           ]
@@ -383,13 +446,6 @@ import {
           title: "Platform Selection and Configuration",
           description: "Choose and configure secure video conferencing platforms",
           icon: FaCog,
-          images: [
-            hero1.src,
-            hero.src,
-            freepik.src,
-            hero.src,
-            freepik.src,
-          ],
           steps: [
             {
               name: "Security features to require",
@@ -399,6 +455,13 @@ import {
                 "Waiting rooms/lobbies",
                 "Host controls for screen sharing",
                 "Ability to remove participants"
+              ],
+              images: [
+                hero1.src,
+                hero.src,
+                freepik.src,
+                hero.src,
+                freepik.src,
               ]
             },
             {
@@ -408,6 +471,13 @@ import {
                 "Enable two-factor authentication",
                 "Don't reuse meeting IDs for sensitive meetings",
                 "Review third-party app permissions"
+              ],
+              images: [
+                hero1.src,
+                hero.src,
+                freepik.src,
+                hero.src,
+                freepik.src,
               ]
             }
           ]
@@ -416,13 +486,6 @@ import {
           title: "Meeting Management",
           description: "Securely manage video conference sessions",
           icon: FaUserFriends,
-          images: [
-            hero1.src,
-            hero.src,
-            freepik.src,
-            hero.src,
-            freepik.src,
-          ],
           steps: [
             {
               name: "Before meeting",
@@ -431,6 +494,13 @@ import {
                 "Enable waiting room",
                 "Disable \"join before host\"",
                 "Test security settings before important meetings"
+              ],
+              images: [
+                hero1.src,
+                hero.src,
+                freepik.src,
+                hero.src,
+                freepik.src,
               ]
             },
             {
@@ -440,6 +510,13 @@ import {
                 "Lock meeting once all participants have joined",
                 "Control screen sharing permissions",
                 "Monitor participant list for unexpected users"
+              ],
+              images: [
+                hero1.src,
+                hero.src,
+                freepik.src,
+                hero.src,
+                freepik.src,
               ]
             },
             {
@@ -448,6 +525,13 @@ import {
                 "End meeting for all participants",
                 "Delete any recorded content after use",
                 "Review meeting logs if available"
+              ],
+              images: [
+                hero1.src,
+                hero.src,
+                freepik.src,
+                hero.src,
+                freepik.src,
               ]
             }
           ]
@@ -456,13 +540,6 @@ import {
           title: "Physical and Environmental Security",
           description: "Secure your physical environment during video conferences",
           icon: FaHome,
-          images: [
-            hero1.src,
-            hero.src,
-            freepik.src,
-            hero.src,
-            freepik.src,
-          ],
           steps: [
             {
               name: "Home office security",
@@ -471,6 +548,13 @@ import {
                 "Check for reflective surfaces that may reveal screens",
                 "Consider who can overhear your conversation",
                 "Use headphones for sensitive discussions"
+              ],
+              images: [
+                hero1.src,
+                hero.src,
+                freepik.src,
+                hero.src,
+                freepik.src,
               ]
             },
             {
@@ -480,6 +564,13 @@ import {
                 "Test what's visible in virtual backgrounds",
                 "Mute microphone when not speaking",
                 "Enable in-meeting notifications for recording"
+              ],  
+              images: [
+                hero1.src,
+                hero.src,
+                freepik.src,
+                hero.src,
+                freepik.src,
               ]
             }
           ]
@@ -495,13 +586,6 @@ import {
           title: "Secure Email Practices",
           description: "Protect email communications from interception and compromise",
           icon: FaEnvelope,
-          images: [
-            hero1.src,
-            hero.src,
-            freepik.src,
-            hero.src,
-            freepik.src,
-          ],
           steps: [
             {
               name: "Basic email hygiene",
@@ -510,6 +594,13 @@ import {
                 "Create email aliases for online services",
                 "Disable automatic loading of remote content",
                 "Be cautious with attachments and links"
+              ],
+              images: [
+                hero1.src,
+                hero.src,
+                freepik.src,
+                hero.src,
+                freepik.src,
               ]
             },
             {
@@ -519,6 +610,13 @@ import {
                 "Use secure email services for confidential matters (ProtonMail, Tutanota)",
                 "Configure anti-spoofing protections (SPF, DKIM, DMARC)",
                 "Consider secure email gateways for business use"
+              ],
+              images: [
+                hero1.src,
+                hero.src,
+                freepik.src,
+                hero.src,
+                freepik.src,
               ]
             }
           ]
@@ -527,13 +625,6 @@ import {
           title: "Document Tracking and Protection",
           description: "Secure documents during sharing and distribution",
           icon: FaFile,
-          images: [
-            hero1.src,
-            hero.src,
-            freepik.src,
-            hero.src,
-            freepik.src,
-          ],
           steps: [
             {
               name: "Document security",
@@ -542,6 +633,13 @@ import {
                 "Encrypt important documents before sending",
                 "Add watermarks to track distribution",
                 "Consider digital rights management for highly sensitive content"
+              ],
+              images: [
+                hero1.src,
+                hero.src,
+                freepik.src,
+                hero.src,
+                freepik.src,
               ]
             },
             {
@@ -551,6 +649,13 @@ import {
                 "Use tools like ExifTool or Metadata Anonymization Toolkit",
                 "Verify removal before distribution",
                 "Be aware of hidden tracking in PDFs and other documents"
+              ],
+              images: [
+                hero1.src,
+                hero.src,
+                freepik.src,
+                hero.src,
+                freepik.src,
               ]
             }
           ]

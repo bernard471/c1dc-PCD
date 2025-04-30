@@ -417,20 +417,22 @@ return (
           </ul>
         </nav>
         
-        {/* User profile at bottom (optional) */}
-        {(isOpen || isTabletOrMobile) && (
-          <div className="p-4 border-t border-gray-200">
-            <div className="flex items-center">
-              <div className="w-8 h-8 rounded-full bg-gray-300 flex items-center justify-center">
-                <UserCheck className="w-4 h-4 text-gray-600" />
-              </div>
-              <div className="ml-3">
-                <p className="text-sm font-medium text-gray-700">User Profile</p>
-                <p className="text-xs font-medium text-gray-500">Security Settings</p>
-              </div>
+          {(isOpen || isTabletOrMobile) && (
+            <div className="p-4 border-t border-gray-200">
+              <Link href="/profile">
+                <div className="flex items-center cursor-pointer hover:bg-gray-50 p-2 rounded-md">
+                  <div className="w-8 h-8 rounded-full bg-gray-300 flex items-center justify-center">
+                    <UserCheck className="w-4 h-4 text-gray-600" />
+                  </div>
+                  <div className="ml-3">
+                    <p className="text-sm font-medium text-gray-700">User Profile</p>
+                    <p className="text-xs font-medium text-gray-500">Security Settings</p>
+                  </div>
+                </div>
+              </Link>
             </div>
-          </div>
-        )}
+          )}
+
       </div>
     </aside>
   );

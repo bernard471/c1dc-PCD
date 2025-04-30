@@ -13,6 +13,7 @@ import {
   UserCheck, 
   Package
 } from 'lucide-react';
+import Link from 'next/link';
 
 interface MobileMenuProps {
   isOpen: boolean;
@@ -87,15 +88,17 @@ export default function MobileMenu({ isOpen, onClose, activeSection, setActiveSe
         
         {/* User profile at bottom */}
         <div className="flex-shrink-0 p-4 border-t border-gray-200">
-          <div className="flex items-center">
-            <div className="w-10 h-10 rounded-full bg-gray-300 flex items-center justify-center">
-              <UserCheck className="w-5 h-5 text-gray-600" />
-            </div>
-            <div className="ml-3">
-              <p className="text-base font-medium text-gray-700">User Profile</p>
-              <p className="text-sm font-medium text-gray-500">Security Settings</p>
-            </div>
-          </div>
+        <Link href="/profile">
+      <div className="flex items-center cursor-pointer hover:bg-gray-50 p-2 rounded-md">
+        <div className="w-8 h-8 rounded-full bg-gray-300 flex items-center justify-center">
+          <UserCheck className="w-4 h-4 text-gray-600" />
+        </div>
+        <div className="ml-3">
+          <p className="text-sm font-medium text-gray-700">User Profile</p>
+          <p className="text-xs font-medium text-gray-500">Security Settings</p>
+        </div>
+      </div>
+        </Link>
         </div>
       </div>
     </div>

@@ -27,9 +27,9 @@ export interface SecurityItem {
   steps: {
     name: string;
     details: string[];
+    images?: string[]; // Array of image paths
   }[];
   icon: IconType;
-  images?: string[]; // Array of image paths
 }
 
 export interface SecurityCategory {
@@ -49,13 +49,6 @@ export const identityProtectionData: SecurityCategory[] = [
         title: "Data Minimization",
         description: "Reduce your digital footprint and limit information sharing",
         icon: FaIdCard,
-        images: [
-          hero1.src,
-          hero.src,
-          freepik.src,
-          hero.src,
-          freepik.src,
-        ],
         steps: [
           {
             name: "Information sharing limits",
@@ -64,7 +57,14 @@ export const identityProtectionData: SecurityCategory[] = [
               "Question requests for sensitive data",
               "Use minimal details for online accounts",
               "Consider alternative information when possible (e.g., business address instead of home)"
-            ]
+            ],
+            images: [
+              hero1.src,
+              hero.src,
+              freepik.src,
+              hero.src,
+              freepik.src,
+            ],
           },
           {
             name: "Digital footprint reduction",
@@ -77,7 +77,14 @@ export const identityProtectionData: SecurityCategory[] = [
               "Manual opt-out procedures",
               "Check and remove information from people finder sites",
               "Use GDPR/CCPA rights for data deletion where applicable"
-            ]
+            ],
+            images: [
+              hero1.src,
+              hero.src,
+              freepik.src,
+              hero.src,
+              freepik.src,
+            ],
           }
         ]
       },
@@ -85,13 +92,6 @@ export const identityProtectionData: SecurityCategory[] = [
         title: "Document Security",
         description: "Secure physical and digital documents containing personal information",
         icon: FaFileAlt,
-        images: [
-          hero1.src,
-          hero.src,
-          freepik.src,
-          hero.src,
-          freepik.src,
-        ],
         steps: [
           {
             name: "Physical document protection",
@@ -100,7 +100,14 @@ export const identityProtectionData: SecurityCategory[] = [
               "Shred documents containing personal information",
               "Consider RFID-blocking wallet for credit cards and ID",
               "Limit what you carry in physical wallet"
-            ]
+            ],
+            images: [
+              hero1.src,
+              hero.src,
+              freepik.src,
+              hero.src,
+              freepik.src,
+            ],
           },
           {
             name: "Digital document safeguards",
@@ -109,7 +116,14 @@ export const identityProtectionData: SecurityCategory[] = [
               "Use secure cloud storage with two-factor authentication",
               "Password-protect sensitive PDFs",
               "Consider digital document vault (1Password, LastPass)"
-            ]
+            ],
+            images: [
+              hero1.src,
+              hero.src,
+              freepik.src,
+              hero.src,
+              freepik.src,
+            ],
           }
         ]
       },
@@ -117,13 +131,6 @@ export const identityProtectionData: SecurityCategory[] = [
         title: "Social Security Number Protection",
         description: "Safeguard your Social Security Number from theft and misuse",
         icon: FaIdBadge,
-        images: [
-          hero1.src,
-          hero.src,
-          freepik.src,
-          hero.src,
-          freepik.src,
-        ],
         steps: [
           {
             name: "SSN security measures",
@@ -132,7 +139,14 @@ export const identityProtectionData: SecurityCategory[] = [
               "Question when asked for SSN and provide alternatives when possible",
               "Provide only last 4 digits when feasible",
               "Monitor for SSN usage in credit reports"
-            ]
+            ],
+            images: [
+              hero1.src,
+              hero.src,
+              freepik.src,
+              hero.src,
+              freepik.src,
+            ],
           },
           {
             name: "SSN compromise response",
@@ -141,7 +155,14 @@ export const identityProtectionData: SecurityCategory[] = [
               "Consider credit freeze",
               "File identity theft report with FTC",
               "Report to Social Security Administration"
-            ]
+            ],
+            images: [
+              hero1.src,
+              hero.src,
+              freepik.src,
+              hero.src,
+              freepik.src,
+            ],
           }
         ]
       }
@@ -156,13 +177,6 @@ export const identityProtectionData: SecurityCategory[] = [
         title: "Credit Monitoring",
         description: "Track and review your credit reports and scores",
         icon: FaSearchPlus,
-        images: [
-          hero1.src,
-          hero.src,
-          freepik.src,
-          hero.src,
-          freepik.src,
-        ],
         steps: [
           {
             name: "Regular credit checks",
@@ -174,7 +188,14 @@ export const identityProtectionData: SecurityCategory[] = [
               "Stagger requests every four months",
               "Check for unauthorized accounts or inquiries",
               "Dispute inaccuracies promptly"
-            ]
+             ],
+            images: [
+              hero1.src,
+              hero.src,
+              freepik.src,
+              hero.src,
+              freepik.src,
+            ],
           },
           {
             name: "Credit monitoring services",
@@ -183,7 +204,14 @@ export const identityProtectionData: SecurityCategory[] = [
               "Use free monitoring through credit card companies",
               "Set up fraud alerts with credit bureaus",
               "Evaluate identity theft insurance options"
-            ]
+            ],
+            images: [
+              hero1.src,
+              hero.src,
+              freepik.src,
+              hero.src,
+              freepik.src,
+            ],
           }
         ]
       },
@@ -191,13 +219,6 @@ export const identityProtectionData: SecurityCategory[] = [
         title: "Financial Account Security",
         description: "Protect your bank accounts and credit cards",
         icon: FaUniversity,
-        images: [
-          hero1.src,
-          hero.src,
-          freepik.src,
-          hero.src,
-          freepik.src,
-        ],
         steps: [
           {
             name: "Bank account protection",
@@ -210,7 +231,14 @@ export const identityProtectionData: SecurityCategory[] = [
               "Password changes",
               "New payees",
               "Monitor accounts weekly for unauthorized transactions"
-            ]
+            ],
+            images: [
+              hero1.src,
+              hero.src,
+              freepik.src,
+              hero.src,
+              freepik.src,
+            ],
           },
           {
             name: "Credit card security",
@@ -219,7 +247,14 @@ export const identityProtectionData: SecurityCategory[] = [
               "Consider dedicated card for automatic payments",
               "Enable purchase notifications",
               "Periodically audit recurring charges"
-            ]
+            ],
+            images: [
+              hero1.src,
+              hero.src,
+              freepik.src,
+              hero.src,
+              freepik.src,
+            ],
           }
         ]
       },
@@ -227,13 +262,6 @@ export const identityProtectionData: SecurityCategory[] = [
         title: "Preventative Measures",
         description: "Implement proactive steps to prevent financial identity theft",
         icon: FaShieldAlt,
-        images: [
-          hero1.src,
-          hero.src,
-          freepik.src,
-          hero.src,
-          freepik.src,
-        ],
         steps: [
           {
             name: "Credit freezes",
@@ -242,7 +270,14 @@ export const identityProtectionData: SecurityCategory[] = [
               "Understand temporary thaw procedures",
               "Consider freezes for vulnerable family members",
               "Document freeze PINs securely"
-            ]
+            ],
+            images: [
+              hero1.src,
+              hero.src,
+              freepik.src,
+              hero.src,
+              freepik.src,
+            ],
           },
           {
             name: "Financial identity monitoring",
@@ -251,7 +286,14 @@ export const identityProtectionData: SecurityCategory[] = [
               "Monitor medical insurance claims",
               "Check Social Security benefits statement annually",
               "Review investment account activity regularly"
-            ]
+            ],
+            images: [
+              hero1.src,
+              hero.src,
+              freepik.src,
+              hero.src,
+              freepik.src,
+            ],
           }
         ]
       }
@@ -266,13 +308,6 @@ export const identityProtectionData: SecurityCategory[] = [
         title: "Online Presence Management",
         description: "Control your personal information online",
         icon: FaGlobe,
-        images: [
-          hero1.src,
-          hero.src,
-          freepik.src,
-          hero.src,
-          freepik.src,
-        ],
         steps: [
           {
             name: "Personal information audit",
@@ -281,7 +316,14 @@ export const identityProtectionData: SecurityCategory[] = [
               "Check image search results",
               "Review social media profiles for oversharing",
               "Use privacy tools to scan for exposed information"
-            ]
+            ],
+            images: [
+              hero1.src,
+              hero.src,
+              freepik.src,
+              hero.src,
+              freepik.src,
+            ],
           },
           {
             name: "Data removal process",
@@ -290,7 +332,14 @@ export const identityProtectionData: SecurityCategory[] = [
               "Use Google's removal request process for sensitive info",
               "Submit opt-out requests to data brokers",
               "Consider professional removal services"
-            ]
+            ],
+            images: [
+              hero1.src,
+              hero.src,
+              freepik.src,
+              hero.src,
+              freepik.src,
+            ],
           }
         ]
       },
@@ -298,13 +347,6 @@ export const identityProtectionData: SecurityCategory[] = [
         title: "Credential Security",
         description: "Secure your passwords and login information",
         icon: FaKey,
-        images: [
-          hero1.src,
-          hero.src,
-          freepik.src,
-          hero.src,
-          freepik.src,
-        ],
         steps: [
           {
             name: "Password management",
@@ -313,7 +355,14 @@ export const identityProtectionData: SecurityCategory[] = [
               "Generate unique credentials for every site",
               "Implement maximum-length passwords",
               "Change passwords for critical accounts quarterly"
-            ]
+            ],
+            images: [
+              hero1.src,
+              hero.src,
+              freepik.src,
+              hero.src,
+              freepik.src,
+            ],
           },
           {
             name: "Multi-factor everywhere",
@@ -322,7 +371,14 @@ export const identityProtectionData: SecurityCategory[] = [
               "Prefer authenticator apps over SMS",
               "Consider hardware security keys",
               "Backup recovery codes securely"
-            ]
+            ],
+            images: [
+              hero1.src,
+              hero.src,
+              freepik.src,
+              hero.src,
+              freepik.src,
+            ],
           }
         ]
       },
@@ -330,13 +386,6 @@ export const identityProtectionData: SecurityCategory[] = [
         title: "Authentication Strategy",
         description: "Develop a comprehensive approach to account security",
         icon: FaFingerprint,
-        images: [
-          hero1.src,
-          hero.src,
-          freepik.src,
-          hero.src,
-          freepik.src,
-        ],
         steps: [
           {
             name: "Identity verification hierarchy",
@@ -345,7 +394,14 @@ export const identityProtectionData: SecurityCategory[] = [
               "Use medium security for email and social media",
               "Apply basic security for non-sensitive accounts",
               "Consider account deletion for unused services"
-            ]
+            ],
+            images: [
+              hero1.src,
+              hero.src,
+              freepik.src,
+              hero.src,
+              freepik.src,
+            ],
           },
           {
             name: "Biometric security",
@@ -354,7 +410,14 @@ export const identityProtectionData: SecurityCategory[] = [
               "Use biometrics for convenience with fallback methods",
               "Be aware of legal implications of biometric use",
               "Consider privacy implications before enrolling biometrics"
-            ]
+            ],
+            images: [
+              hero1.src,
+              hero.src,
+              freepik.src,
+              hero.src,
+              freepik.src,
+            ],
           }
         ]
       }
@@ -369,13 +432,6 @@ export const identityProtectionData: SecurityCategory[] = [
         title: "Warning Signs Detection",
         description: "Identify potential indicators of identity theft",
         icon: FaExclamationTriangle,
-        images: [
-          hero1.src,
-          hero.src,
-          freepik.src,
-          hero.src,
-          freepik.src,
-        ],
         steps: [
           {
             name: "Financial red flags",
@@ -385,7 +441,14 @@ export const identityProtectionData: SecurityCategory[] = [
               "Unrecognized credit inquiries",
               "Bills or statements stop arriving",
               "Debt collection calls for unknown accounts"
-            ]
+            ],
+            images: [
+              hero1.src,
+              hero.src,
+              freepik.src,
+              hero.src,
+              freepik.src,
+            ],
           },
           {
             name: "Digital indicators",
@@ -395,7 +458,14 @@ export const identityProtectionData: SecurityCategory[] = [
               "Notifications about profile changes",
               "Unfamiliar account activity",
               "Two-factor codes you didn't request"
-            ]
+            ],
+            images: [
+              hero1.src,
+              hero.src,
+              freepik.src,
+              hero.src,
+              freepik.src,
+            ],
           }
         ]
       },
@@ -403,13 +473,6 @@ export const identityProtectionData: SecurityCategory[] = [
         title: "Medical Identity Protection",
         description: "Safeguard your healthcare information",
         icon: FaHospital,
-        images: [
-          hero1.src,
-          hero.src,
-          freepik.src,
-          hero.src,
-          freepik.src,
-        ],
         steps: [
           {
             name: "Healthcare information security",
@@ -418,7 +481,14 @@ export const identityProtectionData: SecurityCategory[] = [
               "Request annual benefits paid summary",
               "Check medical records for accuracy",
               "Secure physical medical cards"
-            ]
+            ],
+            images: [
+              hero1.src,
+              hero.src,
+              freepik.src,
+              hero.src,
+              freepik.src,
+            ],
           },
           {
             name: "Medical identity theft response",
@@ -427,7 +497,14 @@ export const identityProtectionData: SecurityCategory[] = [
               "Correct inaccurate medical records",
               "File complaints with HHS for HIPAA violations",
               "Report to FTC and law enforcement"
-            ]
+            ],        
+            images: [
+              hero1.src,
+              hero.src,
+              freepik.src,
+              hero.src,
+              freepik.src,
+            ],
           }
         ]
       },
@@ -435,13 +512,6 @@ export const identityProtectionData: SecurityCategory[] = [
         title: "Child Identity Protection",
         description: "Protect children from identity theft",
         icon: FaChild,
-        images: [
-          hero1.src,
-          hero.src,
-          freepik.src,
-          hero.src,
-          freepik.src,
-        ],
         steps: [
           {
             name: "Proactive measures",
@@ -450,7 +520,14 @@ export const identityProtectionData: SecurityCategory[] = [
               "Consider credit freeze for minors",
               "Be careful with children's SSNs",
               "Teach children about information privacy"
-            ]
+            ],
+            images: [
+              hero1.src,
+              hero.src,
+              freepik.src,
+              hero.src,
+              freepik.src,
+            ],
           },
           {
             name: "Warning signs for child identity theft",
@@ -459,7 +536,14 @@ export const identityProtectionData: SecurityCategory[] = [
               "Collection calls for your child",
               "Tax notices regarding your child",
               "Health insurance claim denials for reaching limits"
-            ]
+            ],
+            images: [
+              hero1.src,
+              hero.src,
+              freepik.src,
+              hero.src,
+              freepik.src,
+            ],
           }
         ]
       }
@@ -474,13 +558,6 @@ export const identityProtectionData: SecurityCategory[] = [
         title: "Immediate Containment",
         description: "First steps to take after discovering identity theft",
         icon: FaLock,
-        images: [
-          hero1.src,
-          hero.src,
-          freepik.src,
-          hero.src,
-          freepik.src,
-        ],
         steps: [
           {
             name: "First steps after discovering theft",
@@ -489,7 +566,14 @@ export const identityProtectionData: SecurityCategory[] = [
               "Order credit reports from all three bureaus",
               "Create identity theft report with FTC (IdentityTheft.gov)",
               "File police report with local law enforcement"
-            ]
+            ],
+            images: [
+              hero1.src,
+              hero.src,
+              freepik.src,
+              hero.src,
+              freepik.src,
+            ],
           },
           {
             name: "Account security",
@@ -498,7 +582,14 @@ export const identityProtectionData: SecurityCategory[] = [
               "Enable highest security settings",
               "Notify financial institutions of fraud",
               "Close compromised accounts"
-            ]
+            ],
+            images: [
+              hero1.src,
+              hero.src,
+              freepik.src,
+              hero.src,
+              freepik.src,
+            ],
           }
         ]
       },
@@ -506,13 +597,6 @@ export const identityProtectionData: SecurityCategory[] = [
         title: "Mitigation Process",
         description: "Limit damage and begin recovery",
         icon: FaClipboardList,
-        images: [
-          hero1.src,
-          hero.src,
-          freepik.src,
-          hero.src,
-          freepik.src,
-        ],
         steps: [
           {
             name: "Credit bureau procedures",
@@ -521,7 +605,14 @@ export const identityProtectionData: SecurityCategory[] = [
               "Request credit freezes at all three bureaus",
               "Dispute fraudulent information in writing",
               "Request fraud victim statements in your file"
-            ]
+            ],
+            images: [
+              hero1.src,
+              hero.src,
+              freepik.src,
+              hero.src,
+              freepik.src,
+            ],
           },
           {
             name: "Creditor notifications",
@@ -530,7 +621,14 @@ export const identityProtectionData: SecurityCategory[] = [
               "Request fraudulent account information",
               "Ask for removal of fraudulent charges",
               "Document all communications"
-            ]
+            ],
+            images: [
+              hero1.src,
+              hero.src,
+              freepik.src,
+              hero.src,
+              freepik.src,
+            ],
           }
         ]
       },
@@ -538,13 +636,6 @@ export const identityProtectionData: SecurityCategory[] = [
         title: "Long-term Recovery",
         description: "Ongoing monitoring and follow-up",
         icon: FaSearchPlus,
-        images: [
-          hero1.src,
-          hero.src,
-          freepik.src,
-          hero.src,
-          freepik.src,
-        ],
         steps: [
           {
             name: "Ongoing monitoring",
@@ -553,7 +644,14 @@ export const identityProtectionData: SecurityCategory[] = [
               "Review account statements monthly",
               "Watch for signs of new fraudulent activity",
               "Follow up on unresolved disputes"
-            ]
+            ],
+            images: [
+              hero1.src,
+              hero.src,
+              freepik.src,
+              hero.src,
+              freepik.src,
+            ],
           },
           {
             name: "Legal considerations",
@@ -562,7 +660,14 @@ export const identityProtectionData: SecurityCategory[] = [
               "Consider attorney consultation for serious cases",
               "Maintain records for statute of limitations period",
               "Report to appropriate regulatory agencies"
-            ]
+            ],
+            images: [
+              hero1.src,
+              hero.src,
+              freepik.src,
+              hero.src,
+              freepik.src,
+            ],
           }
         ]
       }

@@ -5,7 +5,6 @@ export interface RecommendedAction {
   title: string;
   description: string;
   icon: 'clock' | 'alert' | 'shield';
-  status: 'pending' | 'in-progress' | 'completed';
   priority: 'high' | 'medium' | 'low';
   dueDate?: string;
   category: 'mobile' | 'network' | 'account' | 'data' | 'privacy';
@@ -18,7 +17,6 @@ export const recommendedActionsData: RecommendedAction[] = [
     title: 'Update mobile device passwords', 
     description: 'Recommended to change every 90 days',
     icon: 'clock',
-    status: 'pending',
     priority: 'high',
     category: 'mobile',
     dueDate: '2023-12-30',
@@ -34,7 +32,6 @@ export const recommendedActionsData: RecommendedAction[] = [
     title: 'Enable two-factor auth for email', 
     description: 'Increases account security by 99%',
     icon: 'alert',
-    status: 'in-progress',
     priority: 'high',
     category: 'account',
     dueDate: '2023-12-15',
@@ -51,7 +48,6 @@ export const recommendedActionsData: RecommendedAction[] = [
     title: 'Update router firmware', 
     description: 'Current version is 3 months old',
     icon: 'shield',
-    status: 'pending',
     priority: 'medium',
     category: 'network',
     dueDate: '2024-01-10',
@@ -69,7 +65,6 @@ export const recommendedActionsData: RecommendedAction[] = [
     title: 'Review app permissions', 
     description: 'Check which apps have access to sensitive data',
     icon: 'alert',
-    status: 'completed',
     priority: 'medium',
     category: 'privacy',
     dueDate: '2023-12-05',
@@ -86,7 +81,6 @@ export const recommendedActionsData: RecommendedAction[] = [
     title: 'Set up a password manager', 
     description: 'Consolidate and secure all your passwords',
     icon: 'shield',
-    status: 'pending',
     priority: 'high',
     category: 'account',
     dueDate: '2023-12-20',
@@ -104,7 +98,6 @@ export const recommendedActionsData: RecommendedAction[] = [
     title: 'Configure automatic backups', 
     description: 'Protect your data from loss or ransomware',
     icon: 'clock',
-    status: 'in-progress',
     priority: 'medium',
     category: 'data',
     dueDate: '2024-01-05',
@@ -122,7 +115,6 @@ export const recommendedActionsData: RecommendedAction[] = [
     title: 'Update antivirus definitions', 
     description: 'Ensure protection against latest threats',
     icon: 'shield',
-    status: 'completed',
     priority: 'high',
     category: 'data',
     dueDate: '2023-12-01',
@@ -139,7 +131,6 @@ export const recommendedActionsData: RecommendedAction[] = [
     title: 'Secure your home Wi-Fi network', 
     description: 'Update Wi-Fi password and security settings',
     icon: 'alert',
-    status: 'pending',
     priority: 'high',
     category: 'network',
     dueDate: '2023-12-18',
@@ -157,7 +148,6 @@ export const recommendedActionsData: RecommendedAction[] = [
     title: 'Review social media privacy settings', 
     description: 'Check and update who can see your information',
     icon: 'clock',
-    status: 'pending',
     priority: 'medium',
     category: 'privacy',
     dueDate: '2023-12-22',
@@ -175,7 +165,6 @@ export const recommendedActionsData: RecommendedAction[] = [
     title: 'Enable encryption on mobile devices', 
     description: 'Protect data if your device is lost or stolen',
     icon: 'shield',
-    status: 'pending',
     priority: 'high',
     category: 'mobile',
     dueDate: '2023-12-25',

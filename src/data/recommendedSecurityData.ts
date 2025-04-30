@@ -33,9 +33,9 @@ import {
     steps: {
       name: string;
       details: string[];
+      images?: string[]; // Array of image paths
     }[];
     icon: IconType;
-    images?: string[]; // Array of image paths
   }
   
   export interface SecurityCategory {
@@ -55,13 +55,6 @@ import {
           title: "Consumer Antivirus Solutions",
           description: "Comprehensive protection suites for personal devices",
           icon: FaLaptop,
-          images: [
-            hero1.src,
-            hero.src,
-            freepik.src,
-            hero.src,
-            freepik.src,
-          ],
           steps: [
             {
               name: "Recommended options",
@@ -78,6 +71,13 @@ import {
                 "ESET Smart Security Premium",
                 "Strengths: Light system footprint, advanced heuristics",
                 "Features: Password manager, secure file encryption"
+              ],
+              images: [
+                hero1.src,
+                hero.src,
+                freepik.src,
+                hero.src,
+                freepik.src,
               ]
             },
             {
@@ -87,6 +87,13 @@ import {
                 "Schedule weekly full system scans",
                 "Keep definition databases updated",
                 "Configure heuristic detection levels appropriately"
+              ],
+              images: [
+                hero1.src,
+                hero.src,
+                freepik.src,
+                hero.src,
+                freepik.src,
               ]
             }
           ]
@@ -95,13 +102,6 @@ import {
           title: "Advanced Endpoint Protection",
           description: "Next-generation security solutions with AI and behavioral analysis",
           icon: FaRobot,
-          images: [
-            hero1.src,
-            hero.src,
-            freepik.src,
-            hero.src,
-            freepik.src,
-          ],
           steps: [
             {
               name: "Next-generation solutions",
@@ -115,6 +115,13 @@ import {
                 "Malwarebytes Premium",
                 "Strengths: Excellent for malware removal, ransomware protection",
                 "Features: Exploit protection, malicious website blocking"
+              ],
+              images: [
+                hero1.src,
+                hero.src,
+                freepik.src,
+                hero.src,
+                freepik.src,
               ]
             },
             {
@@ -124,6 +131,13 @@ import {
                 "Configure for your threat profile",
                 "Enable exploit protection features",
                 "Understand performance implications"
+              ],
+              images: [
+                hero1.src,
+                hero.src,
+                freepik.src,
+                hero.src,
+                freepik.src,
               ]
             }
           ]
@@ -132,13 +146,6 @@ import {
           title: "Free Antivirus Options",
           description: "No-cost solutions for basic malware protection",
           icon: FaDownload,
-          images: [
-            hero1.src,
-            hero.src,
-            freepik.src,
-            hero.src,
-            freepik.src,
-          ],
           steps: [
             {
               name: "Reputable free solutions",
@@ -155,6 +162,13 @@ import {
                 "Bitdefender Antivirus Free",
                 "Strengths: Lightweight, excellent detection rates",
                 "Limitations: Minimal configuration options"
+              ],
+              images: [
+                hero1.src,
+                hero.src,
+                freepik.src,
+                hero.src,
+                freepik.src,
               ]
             },
             {
@@ -164,6 +178,13 @@ import {
                 "Reduced feature sets",
                 "Possible privacy concerns",
                 "More frequent upsell prompts"
+              ],
+              images: [
+                hero1.src,
+                hero.src,
+                freepik.src,
+                hero.src,
+                freepik.src,
               ]
             }
           ]
@@ -179,13 +200,6 @@ import {
           title: "Premium VPN Services",
           description: "Paid VPN solutions with advanced features and strong privacy protections",
           icon: FaLock,
-          images: [
-            hero1.src,
-            hero.src,
-            freepik.src,
-            hero.src,
-            freepik.src,
-          ],
           steps: [
             {
               name: "Top recommendations",
@@ -202,7 +216,14 @@ import {
                 "ProtonVPN",
                 "Strengths: Strong privacy focus, transparent security",
                 "Features: Secure Core servers, built-in Tor support"
-              ]
+              ],
+              images: [
+                hero1.src,
+                hero.src,
+                freepik.src,
+                hero.src,
+                freepik.src,
+              ],
             },
             {
               name: "Selection criteria",
@@ -212,7 +233,14 @@ import {
                 "Kill switch functionality",
                 "DNS leak protection",
                 "Jurisdiction (outside 14 Eyes alliance ideal)"
-              ]
+              ],
+              images: [
+                hero1.src,
+                hero.src,
+                freepik.src,
+                hero.src,
+                freepik.src,
+              ],
             }
           ]
         },
@@ -220,13 +248,6 @@ import {
           title: "VPN Configuration Best Practices",
           description: "Optimize your VPN setup for maximum security and performance",
           icon: FaLock,
-          images: [
-            hero1.src,
-            hero.src,
-            freepik.src,
-            hero.src,
-            freepik.src,
-          ],
           steps: [
             {
               name: "Security optimization",
@@ -236,7 +257,14 @@ import {
                 "Enable DNS leak protection",
                 "Consider disabling IPv6 if not protected",
                 "Use strongest available encryption"
-              ]
+              ],
+              images: [
+                hero1.src,
+                hero.src,
+                freepik.src,
+                hero.src,
+                freepik.src,
+              ],
             },
             {
               name: "Usage recommendations",
@@ -253,13 +281,6 @@ import {
           title: "Self-Hosted VPN Options",
           description: "Set up and manage your own VPN infrastructure",
           icon: FaServer,
-          images: [
-            hero1.src,
-            hero.src,
-            freepik.src,
-            hero.src,
-            freepik.src,
-          ],
           steps: [
             {
               name: "DIY solutions",
@@ -273,7 +294,14 @@ import {
                 "Algo VPN",
                 "Strengths: Simplified deployment, security-focused",
                 "Considerations: Limited customization options"
-              ]
+              ],
+              images: [
+                hero1.src,
+                hero.src,
+                freepik.src,
+                hero.src,
+                freepik.src,
+              ],
             },
             {
               name: "Implementation considerations",
@@ -282,7 +310,14 @@ import {
                 "Hardware requirements",
                 "Maintenance responsibility",
                 "Technical expertise needed"
-              ]
+              ],
+              images: [
+                hero1.src,
+                hero.src,
+                freepik.src,
+                hero.src,
+                freepik.src,
+              ],
             }
           ]
         }
@@ -297,13 +332,6 @@ import {
           title: "Cloud-Based Password Managers",
           description: "Password management solutions with cross-device synchronization",
           icon: FaCloud,
-          images: [
-            hero1.src,
-            hero.src,
-            freepik.src,
-            hero.src,
-            freepik.src,
-          ],
           steps: [
             {
               name: "Leading solutions",
@@ -320,7 +348,14 @@ import {
                 "Dashlane",
                 "Strengths: Beautiful design, integrated VPN",
                 "Features: Dark web monitoring, automatic password changing"
-              ]
+              ],
+              images: [
+                hero1.src,
+                hero.src,
+                freepik.src,
+                hero.src,
+                freepik.src,
+              ],
             },
             {
               name: "Security considerations",
@@ -329,6 +364,13 @@ import {
                 "Create strong master password",
                 "Use biometric unlock on devices",
                 "Keep recovery options current"
+              ],
+              images: [
+                hero1.src,
+                hero.src,
+                freepik.src,
+                hero.src,
+                freepik.src,
               ]
             }
           ]
@@ -337,13 +379,6 @@ import {
           title: "Local Password Managers",
           description: "Offline password solutions without cloud dependencies",
           icon: FaDatabase,
-          images: [
-            hero1.src,
-            hero.src,
-            freepik.src,
-            hero.src,
-            freepik.src,
-          ],
           steps: [
             {
               name: "Offline options",
@@ -354,7 +389,14 @@ import {
                 "Password Safe",
                 "Strengths: Designed by security expert Bruce Schneier",
                 "Features: Simple interface, YubiKey support"
-              ]
+              ],
+              images: [
+                hero1.src,
+                hero.src,
+                freepik.src,
+                hero.src,
+                freepik.src,
+              ],
             },
             {
               name: "Implementation tips",
@@ -363,6 +405,13 @@ import {
                 "Develop sync strategy if using multiple devices",
                 "Consider encrypted cloud storage for backups",
                 "Test recovery process periodically"
+              ],
+              images: [
+                hero1.src,
+                hero.src,
+                freepik.src,
+                hero.src,
+                freepik.src,
               ]
             }
           ]
@@ -371,13 +420,6 @@ import {
           title: "Hardware Password Solutions",
           description: "Physical devices for secure credential storage and authentication",
           icon: FaUsb,
-          images: [
-            hero1.src,
-            hero.src,
-            freepik.src,
-            hero.src,
-            freepik.src,
-          ],
           steps: [
             {
               name: "Physical security devices",
@@ -391,6 +433,13 @@ import {
                 "Mooltipass",
                 "Strengths: Offline password management",
                 "Features: Touch unlock, encrypted backup"
+              ],
+              images: [
+                hero1.src,
+                hero.src,
+                freepik.src,
+                hero.src,
+                freepik.src,
               ]
             },
             {
@@ -400,6 +449,13 @@ import {
                 "Master password alternative",
                 "FIDO2 authentication for supported sites",
                 "Phishing-resistant authentication"
+              ],
+              images: [
+                hero1.src,
+                hero.src,
+                freepik.src,
+                hero.src,
+                freepik.src,
               ]
             }
           ]
@@ -415,13 +471,6 @@ import {
           title: "Encrypted Messaging Apps",
           description: "Applications for private and secure text messaging",
           icon: FaComments,
-          images: [
-            hero1.src,
-            hero.src,
-            freepik.src,
-            hero.src,
-            freepik.src,
-          ],
           steps: [
             {
               name: "Recommended applications",
@@ -438,6 +487,13 @@ import {
                 "Session",
                 "Strengths: No phone number required, decentralized",
                 "Features: Onion routing, group encryption"
+              ],
+              images: [
+                hero1.src,
+                hero.src,
+                freepik.src,
+                hero.src,
+                freepik.src,
               ]
             },
             {
@@ -447,6 +503,13 @@ import {
                 "Screen security (anti-screenshot)",
                 "Secondary authentication (app lock)",
                 "Message verification codes"
+              ],
+              images: [
+                hero1.src,
+                hero.src,
+                freepik.src,
+                hero.src,
+                freepik.src,
               ]
             }
           ]
@@ -455,13 +518,6 @@ import {
           title: "Secure Email Providers",
           description: "Privacy-focused email services with enhanced security",
           icon: FaEnvelope,
-          images: [
-            hero1.src,
-            hero.src,
-            freepik.src,
-            hero.src,
-            freepik.src,
-          ],
           steps: [
             {
               name: "Privacy-focused email",
@@ -478,7 +534,14 @@ import {
                 "Posteo",
                 "Strengths: Sustainable focus, privacy commitment",
                 "Features: No tracking, anonymous payment"
-              ]
+              ],
+              images: [
+                hero1.src,
+                hero.src,
+                freepik.src,
+                hero.src,
+                freepik.src,
+              ],
             },
             {
               name: "Implementation approach",
@@ -495,13 +558,6 @@ import {
           title: "Voice and Video Communication",
           description: "Secure solutions for calls and video conferences",
           icon: FaVideo,
-          images: [
-            hero1.src,
-            hero.src,
-            freepik.src,
-            hero.src,
-            freepik.src,
-          ],
           steps: [
             {
               name: "Secure calling options",
@@ -515,7 +571,14 @@ import {
                 "Wickr",
                 "Strengths: Ephemeral messaging, secure rooms",
                 "Features: Video calling, file sharing"
-              ]
+              ],
+              images: [
+                hero1.src,
+                hero.src,
+                freepik.src,
+                hero.src,
+                freepik.src,
+              ],
             },
             {
               name: "Security best practices",
@@ -524,7 +587,14 @@ import {
                 "Use meeting passwords for group calls",
                 "Be aware of metadata collection",
                 "Consider background privacy during video calls"
-              ]
+              ],
+              images: [
+                hero1.src,
+                hero.src,
+                freepik.src,
+                hero.src,
+                freepik.src,
+              ],
             }
           ]
         },
@@ -539,13 +609,6 @@ import {
             title: "Home Network Security Devices",
             description: "Dedicated hardware to protect all devices on your network",
             icon: FaNetworkWired,
-            images: [
-              hero1.src,
-              hero.src,
-              freepik.src,
-              hero.src,
-              freepik.src,
-            ],
             steps: [
               {
                 name: "Dedicated security hardware",
@@ -562,7 +625,14 @@ import {
                   "Gryphon Guardian",
                   "Strengths: Mesh capability, advanced parental controls",
                   "Features: Malware filtering, content filtering"
-                ]
+                ],
+                images: [
+                  hero1.src,
+                  hero.src,
+                  freepik.src,
+                  hero.src,
+                  freepik.src,
+                ],
               },
               {
                 name: "Implementation considerations",
@@ -571,7 +641,14 @@ import {
                   "Subscription requirements",
                   "Technical expertise needed",
                   "Integration with existing equipment"
-                ]
+                ],
+                images: [
+                  hero1.src,
+                  hero.src,
+                  freepik.src,
+                  hero.src,
+                  freepik.src,
+                ],
               }
             ]
           },
@@ -579,13 +656,6 @@ import {
             title: "DNS Protection",
             description: "Secure DNS services to filter malicious domains and enhance privacy",
             icon: FaDna,
-            images: [
-              hero1.src,
-              hero.src,
-              freepik.src,
-              hero.src,
-              freepik.src,
-            ],
             steps: [
               {
                 name: "Secure DNS services",
@@ -602,7 +672,14 @@ import {
                   "Cloudflare 1.1.1.1 with WARP",
                   "Strengths: Speed, privacy commitment",
                   "Features: Malware blocking, WARP+ VPN"
-                ]
+                ],
+                images: [
+                  hero1.src,
+                  hero.src,
+                  freepik.src,
+                  hero.src,
+                  freepik.src,
+                ],
               },
               {
                 name: "Setup guidance",
@@ -611,6 +688,13 @@ import {
                   "Device-specific settings as alternative",
                   "Test for DNS leaks after configuration",
                   "Implement DoH (DNS over HTTPS) where possible"
+                 ],
+                images: [
+                  hero1.src,
+                  hero.src,
+                  freepik.src,
+                  hero.src,
+                  freepik.src,
                 ]
               }
             ]
@@ -619,13 +703,6 @@ import {
             title: "Traffic Analysis Tools",
             description: "Monitor and analyze network traffic for security and performance",
             icon: FaChartLine,
-            images: [
-              hero1.src,
-              hero.src,
-              freepik.src,
-              hero.src,
-              freepik.src,
-            ],
             steps: [
               {
                 name: "Network monitoring solutions",
@@ -642,6 +719,13 @@ import {
                   "NetLimiter (Windows)",
                   "Strengths: Traffic control, application rules",
                   "Features: Connection monitoring, bandwidth limiting"
+                ],
+                images: [
+                  hero1.src,
+                  hero.src,
+                  freepik.src,
+                  hero.src,
+                  freepik.src,
                 ]
               },
               {
@@ -651,6 +735,13 @@ import {
                   "Baseline normal activity patterns",
                   "Configure alerts for anomalies",
                   "Document authorized applications and connections"
+                ],
+                images: [
+                  hero1.src,
+                  hero.src,
+                  freepik.src,
+                  hero.src,
+                  freepik.src,
                 ]
               }
             ]
@@ -666,13 +757,6 @@ import {
             title: "Browser Privacy Extensions",
             description: "Add-ons to enhance privacy and security while browsing",
             icon: FaChrome,
-            images: [
-              hero1.src,
-              hero.src,
-              freepik.src,
-              hero.src,
-              freepik.src,
-            ],
             steps: [
               {
                 name: "Essential add-ons",
@@ -689,7 +773,14 @@ import {
                   "Decentraleyes",
                   "Strengths: Local CDN emulation",
                   "Features: Reduces third-party requests"
-                ]
+                ],
+                images: [
+                  hero1.src,
+                  hero.src,
+                  freepik.src,
+                  hero.src,
+                  freepik.src,
+                ],
               },
               {
                 name: "Configuration recommendations",
@@ -698,6 +789,13 @@ import {
                   "Whitelist trusted sites as needed",
                   "Regular updates essential",
                   "Test for fingerprinting protection"
+                ],
+                images: [
+                  hero1.src,
+                  hero.src,
+                  freepik.src,
+                  hero.src,
+                  freepik.src,
                 ]
               }
             ]
@@ -706,13 +804,6 @@ import {
             title: "Privacy-Focused Browsers",
             description: "Alternative browsers designed with privacy and security in mind",
             icon: FaFirefoxBrowser,
-            images: [
-              hero1.src,
-              hero.src,
-              freepik.src,
-              hero.src,
-              freepik.src,
-            ],
             steps: [
               {
                 name: "Alternative browser options",
@@ -729,7 +820,14 @@ import {
                   "Ungoogled Chromium",
                   "Strengths: Google services removed, privacy focus",
                   "Features: Chrome compatibility, reduced tracking"
-                ]
+                ],
+                images: [
+                  hero1.src,
+                  hero.src,
+                  freepik.src,
+                  hero.src,
+                  freepik.src,
+                ],
               },
               {
                 name: "Implementation approach",
@@ -738,6 +836,13 @@ import {
                   "Separate browsers for different purposes",
                   "Regular privacy settings audit",
                   "Private browsing mode usage strategy"
+                ],
+                images: [
+                  hero1.src,
+                  hero.src,
+                  freepik.src,
+                  hero.src,
+                  freepik.src,
                 ]
               }
             ]
@@ -746,13 +851,6 @@ import {
             title: "System-Wide Privacy Tools",
             description: "Comprehensive solutions for privacy across your entire system",
             icon: FaUserSecret,
-            images: [
-              hero1.src,
-              hero.src,
-              freepik.src,
-              hero.src,
-              freepik.src,
-            ],
             steps: [
               {
                 name: "Comprehensive privacy solutions",
@@ -769,7 +867,14 @@ import {
                   "PrivacyTools (collection of privacy resources)",
                   "Strengths: Curated recommendations",
                   "Features: Comprehensive tools by category"
-                ]
+                ],
+                images: [
+                  hero1.src,
+                  hero.src,
+                  freepik.src,
+                  hero.src,
+                  freepik.src,
+                ],
               },
               {
                 name: "Implementation considerations",
@@ -778,6 +883,13 @@ import {
                   "Consider operating system compatibility",
                   "Evaluate performance impacts",
                   "Test functionality after setup"
+                ],
+                images: [
+                  hero1.src,
+                  hero.src,
+                  freepik.src,
+                  hero.src,
+                  freepik.src,
                 ]
               }
             ]
@@ -793,13 +905,6 @@ import {
             title: "File Encryption Solutions",
             description: "Tools to encrypt your files and storage devices",
             icon: FaLock,
-            images: [
-              hero1.src,
-              hero.src,
-              freepik.src,
-              hero.src,
-              freepik.src,
-            ],
             steps: [
               {
                 name: "Full-disk encryption",
@@ -816,7 +921,14 @@ import {
                   "LUKS (Linux)",
                   "Strengths: Integrated with many distributions",
                   "Features: Multiple key slots, hibernation protection"
-                ]
+                ],
+                images: [
+                  hero1.src,
+                  hero.src,
+                  freepik.src,
+                  hero.src,
+                  freepik.src,
+                ],
               },
               {
                 name: "Usage recommendations",
@@ -825,7 +937,14 @@ import {
                   "Store recovery keys securely",
                   "Consider performance implications",
                   "Test recovery procedures"
-                ]
+                ],
+                images: [
+                  hero1.src,
+                  hero.src,
+                  freepik.src,
+                  hero.src,
+                  freepik.src,
+                ],
               }
             ]
           },
@@ -833,13 +952,6 @@ import {
             title: "Secure File Storage",
             description: "Encrypted storage solutions for sensitive files",
             icon: FaHdd,
-            images: [
-              hero1.src,
-              hero.src,
-              freepik.src,
-              hero.src,
-              freepik.src,
-            ],
             steps: [
               {
                 name: "Encrypted cloud storage",
@@ -856,7 +968,14 @@ import {
                   "Cryptomator (works with any cloud service)",
                   "Strengths: Open-source, transparent operation",
                   "Features: Virtual disk mounting, filename encryption"
-                ]
+                ],
+                images: [
+                  hero1.src,
+                  hero.src,
+                  freepik.src,
+                  hero.src,
+                  freepik.src,
+                ],
               },
               {
                 name: "Implementation approach",
@@ -865,7 +984,14 @@ import {
                   "Enable two-factor authentication",
                   "Understand recovery limitations",
                   "Test synchronization across devices"
-                ]
+                ],
+                images: [
+                  hero1.src,
+                  hero.src,
+                  freepik.src,
+                  hero.src,
+                  freepik.src,
+                ],
               }
             ]
           },
@@ -873,13 +999,6 @@ import {
             title: "Secure Deletion Tools",
             description: "Solutions to permanently erase sensitive data",
             icon: FaTrashAlt,
-            images: [
-              hero1.src,
-              hero.src,
-              freepik.src,
-              hero.src,
-              freepik.src,
-            ],
             steps: [
               {
                 name: "Data wiping solutions",
@@ -896,7 +1015,14 @@ import {
                   "BleachBit (cross-platform)",
                   "Strengths: Open-source, system cleaner",
                   "Features: Multiple shredding methods, batch processing"
-                ]
+                ],
+                images: [
+                  hero1.src,
+                  hero.src,
+                  freepik.src,
+                  hero.src,
+                  freepik.src,
+                ],
               },
               {
                 name: "Usage guidelines",
@@ -905,7 +1031,14 @@ import {
                   "Select appropriate wiping standards",
                   "Verify deletion when critical",
                   "Consider full-disk encryption as complementary strategy"
-                ]
+                ],
+                images: [
+                  hero1.src,
+                  hero.src,
+                  freepik.src,
+                  hero.src,
+                  freepik.src,
+                ],
               }
             ]
           }

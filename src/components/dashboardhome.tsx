@@ -10,8 +10,8 @@ import {
   Users,
   Mail,
   UserCheck,
-  Package
-} from 'lucide-react';
+  Package,
+  ShieldCheck} from 'lucide-react';
 import { useSession } from 'next-auth/react';
 import { BubbleLoader } from '@/components/ui/loaders';
 import RecentSecurityEvents from '@/components/dashboard/RecentSecurityEvents';
@@ -126,6 +126,8 @@ export default function DashboardHome() {
                   {domain.id === 'social' && <Users className="w-5 h-5 text-gray-500 mr-2" />}
                   {domain.id === 'email' && <Mail className="w-5 h-5 text-gray-500 mr-2" />}
                   {domain.id === 'identity' && <UserCheck className="w-5 h-5 text-gray-500 mr-2" />}
+                  {domain.id === 'recommended' && <Package className="w-5 h-5 text-gray-500 mr-2" />}
+                  {domain.id === 'implementation' && <ShieldCheck className="w-5 h-5 text-gray-500 mr-2" />}
                   <span className="text-sm font-medium">{domain.name}</span>
                 </div>
                 <div className="flex items-center">

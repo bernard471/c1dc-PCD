@@ -4,6 +4,7 @@ import { useState, useEffect } from 'react';
 import { useRouter, usePathname } from 'next/navigation';
 import TopBar from '../../components/topbar';
 import Sidebar from '../../components/sidebar';
+import MobileMenu from '../../components/mobilemenu';
 import DashboardHome from '../../components/dashboardhome';
 import MobileDeviceSecurity from '../../components/sections/mobiledevicesecurity';
 import { WiFiSecurity } from '../../components/sections/wifisecurity';
@@ -28,8 +29,14 @@ export default function BlogLayout({ children }: { children: React.ReactNode }) 
   
   useEffect(() => {
     const handleResize = () => {
-      setIsTabletOrMobile(window.innerWidth < 1024);
-      if (window.innerWidth < 768) {
+      const isSmaller = window.innerWidth < 1024;
+      setIsTabletOrMobile(isSmaller);
+      
+      // Set sidebar open by default on desktop (large screens)
+      // Keep it closed by default on tablet and mobile
+      if (window.innerWidth >= 1024) {
+        setIsSidebarOpen(true);
+      } else {
         setIsSidebarOpen(false);
       }
     };
@@ -46,9 +53,6 @@ export default function BlogLayout({ children }: { children: React.ReactNode }) 
   
   const toggleMobileMenu = () => {
     setIsMobileMenuOpen(!isMobileMenuOpen);
-    if (!isMobileMenuOpen) {
-      setIsSidebarOpen(true);
-    }
   };
 
   const handleSectionChange = (section: string) => {
@@ -96,16 +100,33 @@ export default function BlogLayout({ children }: { children: React.ReactNode }) 
         setActiveSection={handleSectionChange}
       />
       
-      <div className="flex">
-        <Sidebar 
-          isOpen={isSidebarOpen || isMobileMenuOpen} 
-          activeSection={activeSection}
-          setActiveSection={handleSectionChange}
-          isTabletOrMobile={isTabletOrMobile}
-          toggleSidebar={toggleSidebar}
+      {/* Sidebar for larger screens */}
+      <Sidebar 
+        isOpen={isSidebarOpen} 
+        activeSection={activeSection}
+        setActiveSection={handleSectionChange}
+        isTabletOrMobile={isTabletOrMobile}
+        toggleSidebar={toggleSidebar}
+      />
+      
+      {/* Overlay for tablet/mobile when sidebar is open */}
+      {isTabletOrMobile && isSidebarOpen && (
+        <div 
+          className="fixed inset-0 bg-gray-900 opacity-60 z-20 transition-opacity duration-300"
+          onClick={toggleSidebar}
         />
-        
-        <main className={`flex-1 transition-all duration-300 ${isSidebarOpen ? 'md:ml-64' : 'md:ml-20'}`}>
+      )}
+      
+      {/* Mobile menu overlay */}
+      <MobileMenu 
+        isOpen={isMobileMenuOpen} 
+        onClose={toggleMobileMenu}
+        activeSection={activeSection}
+        setActiveSection={handleSectionChange}
+      />
+      
+      <div className={`flex transition-all duration-300`}>
+        <main className={`flex-1 transition-all duration-300 ${!isTabletOrMobile && isSidebarOpen ? 'md:ml-64' : 'md:ml-0'}`}>
           {/* If we're on a blog page, render the blog content, otherwise render the section content */}
           {isBlogPage ? (
             children

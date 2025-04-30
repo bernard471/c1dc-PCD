@@ -1,20 +1,47 @@
 // Mobile Device Security Data Structure
-import hero1 from '../images/hero1.jpg';
-import hero from '../images/hero.webp';
-import freepik from '../images/freepik.jpeg';
+import freepik from '../images/freebik.jpg';
+import pattern from '../images/pattern.jpg';
+import pin from '../images/pincode.jpg'
+import hero from '../images/lockscreen.jpg';
+import hero1 from '../images/settins.jpg';
+import hero2 from '../images/screenlocktypes.jpg';
+import hero3 from '../images/screentimeout.jpg';
+import hero4 from '../images/screentimeout1.jpg';
+import hero5 from '../images/smartlock.jpg';
+import hero6 from '../images/smartlock1.jpg';
+import hero7 from '../images/smartlock2.jpg';
+import hero8 from '../images/smartlock3.jpg';
+import hero9 from '../images/biometrics.jpg';
+import hero10 from '../images/biometrics1.jpg';
+import hero11 from '../images/biometrics2.jpg';
+import hero12 from '../images/biometrics3.jpg';
+import hero13 from '../images/faceid.jpg';
+import hero14 from '../images/faceid1.jpg';
+import hero15 from '../images/google.jpg';
+import hero16 from '../images/google1.jpg';
+import hero17 from '../images/google2.jpg';
+import hero18 from '../images/google3.jpg';
+import hero19 from '../images/google4.jpg';
+import hero20 from '../images/google5.jpg';
+import hero21 from '../images/google6.jpg';
+import hero22 from '../images/google7.jpg';
+import hero23 from '../images/google8.jpg';
+import hero24 from '../images/google9.jpg';
+import hero25 from '../images/google10.jpg';
+
 
 export interface SecurityItem {
     id: string;
     title: string;
     description: string;
     steps?: string[];
+    images?: string[]; // Array of image paths
   }
   
   export interface SecuritySection {
     id: string;
     title: string;
     items: SecurityItem[];
-    images?: string[]; // Array of image paths
   }
   
   export interface SecurityCategory {
@@ -41,18 +68,15 @@ export interface SecurityItem {
           {
             id: 'screen-lock',
             title: 'Screen Lock Configuration',
-            images: [
-              hero1.src,
-              hero.src,
-              freepik.src,
-              hero.src,
-              freepik.src,
-            ],
             items: [
               {
                 id: 'screen-lock-settings',
                 title: 'Navigate to Settings > Security > Screen lock',
-                description: 'Configure a secure screen lock method to protect your device'
+                description: 'Configure a secure screen lock method to protect your device',
+                images: [
+                  hero1.src,
+                  hero.src,
+                ],
               },
               {
                 id: 'auth-method',
@@ -62,30 +86,43 @@ export interface SecurityItem {
                   'PIN (minimum 6 digits, avoid simple patterns like 123456)',
                   'Pattern (use complex patterns with at least 6 points)',
                   'Password (mix of uppercase, lowercase, numbers, and symbols)'
-                ]
+                ],
+                images: [
+                  hero2.src,
+                  pin.src,
+                  pattern.src,
+                ],
               },
               {
                 id: 'screen-timeout',
                 title: 'Set screen timeout to 30 seconds or less',
-                description: 'Navigate to Settings > Display > Screen timeout'
+                description: 'Navigate to Settings > Display > Screen timeout',
+                images: [
+                  hero1.src,
+                  hero3.src,
+                  hero4.src,
+                ],
               },
+
               {
                 id: 'smart-lock',
                 title: 'Enable Smart Lock only for trusted locations',
-                description: 'Only use Smart Lock features in secure environments like home'
+                description: 'Only use Smart Lock features in secure environments like home',
+                images: [
+                  hero1.src,
+                  hero.src,
+                  hero5.src,
+                  hero6.src,
+                  hero7.src,
+                  hero8.src,
+                ],
               }
             ]
           },
           {
             id: 'biometric-security',
             title: 'Biometric Security',
-            images: [
-              hero1.src,
-              hero.src,
-              freepik.src,
-              hero.src,
-              freepik.src,
-            ],
+
             items: [
               {
                 id: 'fingerprint',
@@ -95,7 +132,14 @@ export interface SecurityItem {
                   'Settings > Security > Fingerprint',
                   'Register multiple fingers for convenience',
                   'Use fingerprint + PIN/password for critical apps'
-                ]
+                ],
+                images: [
+                  hero1.src,
+                  hero9.src,
+                  hero10.src,
+                  hero11.src,
+                  hero12.src,
+                ],
               },
               {
                 id: 'face-unlock',
@@ -104,20 +148,19 @@ export interface SecurityItem {
                 steps: [
                   'Ensure it requires eyes to be open',
                   'Disable "Faster Recognition" which reduces security'
-                ]
+                ],
+                images: [
+                  hero1.src,
+                  hero9.src,
+                  hero13.src,
+                  hero14.src,
+                ],
               }
             ]
           },
           {
             id: 'google-account',
             title: 'Google Account Protection',
-            images: [
-              hero1.src,
-              hero.src,
-              freepik.src,
-              hero.src,
-              freepik.src,
-            ],
             items: [
               {
                 id: 'two-step',
@@ -127,7 +170,15 @@ export interface SecurityItem {
                   'Go to Settings > Google > Manage your Google Account > Security',
                   'Turn on 2-Step Verification',
                   'Configure backup methods (SMS, Authenticator app, backup codes)'
-                ]
+                ],
+                images: [
+                  hero1.src,
+                  hero15.src,
+                  hero16.src,
+                  hero17.src,
+                  hero18.src,
+                  hero19.src,
+                ],
               },
               {
                 id: 'security-checkup',
@@ -137,30 +188,48 @@ export interface SecurityItem {
                   'Review devices with account access',
                   'Remove unrecognized or unused devices',
                   'Check third-party access to your account'
-                ]
+                ],
+                images: [
+                  hero15.src,
+                  hero16.src,
+                  hero17.src,
+                  hero20.src,
+                  hero21.src,
+                  hero22.src,
+                  hero23.src,
+                  hero24.src,
+                  hero25.src,
+                ],
               }
             ]
           },
           {
             id: 'find-device',
             title: 'Find My Device',
-            images: [
-              hero1.src,
-              hero.src,
-              freepik.src,
-              hero.src,
-              freepik.src,
-            ],
             items: [
               {
                 id: 'enable-find',
                 title: 'Enable in Settings > Security > Find My Device',
-                description: 'Activate device tracking features'
+                description: 'Activate device tracking features',
+                images: [
+                  hero1.src,
+                  hero9.src,
+                  freepik.src,
+                  hero.src,
+                  freepik.src,
+                ],
               },
               {
                 id: 'verify-find',
                 title: 'Verify it works by testing at android.com/find',
-                description: 'Ensure the feature is properly configured'
+                description: 'Ensure the feature is properly configured',
+                images: [
+                  hero1.src,
+                  hero.src,
+                  freepik.src,
+                  hero.src,
+                  freepik.src,
+                ],
               },
               {
                 id: 'configure-find',
@@ -171,7 +240,14 @@ export interface SecurityItem {
                   'Play sound',
                   'Lock device remotely',
                   'Erase data in emergency situations'
-                ]
+                ],
+                images: [
+                  hero1.src,
+                  hero.src,
+                  freepik.src,
+                  hero.src,
+                  freepik.src,
+                ],
               }
             ]
           }
@@ -184,13 +260,7 @@ export interface SecurityItem {
           {
             id: 'encryption',
             title: 'Encryption',
-            images: [
-              hero1.src,
-              hero.src,
-              freepik.src,
-              hero.src,
-              freepik.src,
-            ],
+
             items: [
               {
                 id: 'verify-encryption',
@@ -198,26 +268,33 @@ export interface SecurityItem {
                 description: 'Check encryption status in device settings',
                 steps: [
                   'Settings > Security > Encryption & credentials',
-                  'Modern Android devices are encrypted by default'
-                ]
+                  'Modern Android devices are encrypted by default. Ensure encryption is enabled.',
+                ],
+                images: [
+                  hero1.src,
+                  hero.src,
+                  freepik.src,
+                  hero.src,
+                  freepik.src,
+                ],
               },
               {
                 id: 'enable-encryption',
                 title: 'Enable storage encryption if not already active',
-                description: 'Encrypt your device data for additional protection'
+                description: 'Encrypt your device data for additional protection',
+                images: [
+                  hero1.src,
+                  hero.src,
+                  freepik.src,
+                  hero.src,
+                  freepik.src,
+                ],
               }
             ]
           },
           {
             id: 'app-permissions',
             title: 'App Permissions Management',
-            images: [
-              hero1.src,
-              hero.src,
-              freepik.src,
-              hero.src,
-              freepik.src,
-            ],
             items: [
               {
                 id: 'review-permissions',
@@ -225,7 +302,14 @@ export interface SecurityItem {
                 description: 'Regularly check what apps can access on your device',
                 steps: [
                   'Settings > Apps > [App name] > Permissions'
-                ]
+                ],
+                images: [
+                  hero1.src,
+                  hero.src,
+                  freepik.src,
+                  hero.src,
+                  freepik.src,
+                ],
               },
               {
                 id: 'sensitive-permissions',
@@ -236,12 +320,26 @@ export interface SecurityItem {
                   'Camera and Microphone (deny when not needed)',
                   'Contacts, SMS, Call logs (restrict access)',
                   'Body sensors and activity recognition'
-                ]
+                ],
+                images: [
+                  hero1.src,
+                  hero.src,
+                  freepik.src,
+                  hero.src,
+                  freepik.src,
+                ],
               },
               {
                 id: 'audit-permissions',
                 title: 'Regularly audit permissions (monthly)',
-                description: 'Set a schedule to review app permissions'
+                description: 'Set a schedule to review app permissions',
+                images: [
+                  hero1.src,
+                  hero.src,
+                  freepik.src,
+                  hero.src,
+                  freepik.src,
+                ],
               },
               {
                 id: 'permission-manager',
@@ -249,20 +347,20 @@ export interface SecurityItem {
                 description: 'Access the centralized permission control panel',
                 steps: [
                   'Settings > Privacy > Permission Manager'
-                ]
+                ],
+                images: [
+                  hero1.src,
+                  hero.src,
+                  freepik.src,
+                  hero.src,
+                  freepik.src,
+                ],
               }
             ]
           },
           {
             id: 'developer-options',
             title: 'Developer Options and USB Debugging',
-            images: [
-              hero1.src,
-              hero.src,
-              freepik.src,
-              hero.src,
-              freepik.src,
-            ],
             items: [
               {
                 id: 'disable-dev',
@@ -270,7 +368,14 @@ export interface SecurityItem {
                 description: 'Turn off advanced settings when not in use',
                 steps: [
                   'Settings > System > Developer options > toggle off'
-                ]
+                ],
+                images: [
+                  hero1.src,
+                  hero.src,
+                  freepik.src,
+                  hero.src,
+                  freepik.src,
+                ],
               },
               {
                 id: 'secure-dev',
@@ -280,20 +385,20 @@ export interface SecurityItem {
                   'Disable USB debugging when not in use',
                   'Enable "Revoke USB debugging authorizations"',
                   'Set "Select USB Configuration" to "Charging"'
-                ]
+                ],
+                images: [
+                  hero1.src,
+                  hero.src,
+                  freepik.src,
+                  hero.src,
+                  freepik.src,
+                ],
               }
             ]
           },
           {
             id: 'network-security',
             title: 'Network Security',
-            images: [
-              hero1.src,
-              hero.src,
-              freepik.src,
-              hero.src,
-              freepik.src,
-            ],
             items: [
               {
                 id: 'wifi-autoconnect',
@@ -302,7 +407,14 @@ export interface SecurityItem {
                 steps: [
                   'Settings > Network & internet > Wi-Fi > Wi-Fi preferences',
                   'Turn off "Connect to open networks"'
-                ]
+                ],
+                images: [
+                  hero1.src,
+                  hero.src,
+                  freepik.src,
+                  hero.src,
+                  freepik.src,
+                ],
               },
               {
                 id: 'private-dns',
@@ -311,20 +423,20 @@ export interface SecurityItem {
                 steps: [
                   'Settings > Network & internet > Advanced > Private DNS',
                   'Set to "Private DNS provider hostname" and use "dns.google" or "1dot1dot1dot1.cloudflare-dns.com"'
-                ]
+                ],
+                images: [
+                  hero1.src,
+                  hero.src,
+                  freepik.src,
+                  hero.src,
+                  freepik.src,
+                ],
               }
             ]
           },
           {
             id: 'system-updates',
             title: 'System Updates',
-            images: [
-              hero1.src,
-              hero.src,
-              freepik.src,
-              hero.src,
-              freepik.src,
-            ],
             items: [
               {
                 id: 'auto-updates',
@@ -333,17 +445,38 @@ export interface SecurityItem {
                 steps: [
                   'Settings > System > Advanced > System update',
                   'Set to download and install automatically'
+                ],
+                images: [
+                  hero1.src,
+                  hero.src,
+                  freepik.src,
+                  hero.src,
+                  freepik.src,
                 ]
               },
               {
                 id: 'manual-updates',
                 title: 'Check for updates manually monthly',
-                description: 'Regularly verify your device has the latest updates'
+                description: 'Regularly verify your device has the latest updates',
+                images: [
+                  hero1.src,
+                  hero.src,
+                  freepik.src,
+                  hero.src,
+                  freepik.src,
+                ]
               },
               {
                 id: 'security-patches',
                 title: 'Install security patches immediately when available',
-                description: 'Apply security fixes as soon as they are released'
+                description: 'Apply security fixes as soon as they are released',
+                images: [
+                  hero1.src,
+                  hero.src,
+                  freepik.src,
+                  hero.src,
+                  freepik.src,
+                ]
               }
             ]
           }
@@ -356,13 +489,6 @@ export interface SecurityItem {
           {
             id: 'play-protect',
             title: 'Google Play Protect',
-            images: [
-              hero1.src,
-              hero.src,
-              freepik.src,
-              hero.src,
-              freepik.src,
-            ],
             items: [
               {
                 id: 'enable-protect',
@@ -372,6 +498,13 @@ export interface SecurityItem {
                   'Open Google Play Store > Profile > Play Protect',
                   'Verify "Scan apps with Play Protect" is on',
                   'Enable "Improve harmful app detection"'
+                ],
+                images: [
+                  hero1.src,
+                  hero.src,
+                  freepik.src,
+                  hero.src,
+                  freepik.src,
                 ]
               }
             ]
@@ -379,13 +512,6 @@ export interface SecurityItem {
           {
             id: 'app-installation',
             title: 'App Installation Security',
-            images: [
-              hero1.src,
-              hero.src,
-              freepik.src,
-              hero.src,
-              freepik.src,
-            ],
             items: [
               {
                 id: 'restrict-sources',
@@ -394,6 +520,13 @@ export interface SecurityItem {
                 steps: [
                   'Settings > Apps > Special app access > Install unknown apps',
                   'Disable for all apps except trusted ones'
+                ],
+                images: [
+                  hero1.src,
+                  hero.src,
+                  freepik.src,
+                  hero.src,
+                  freepik.src,
                 ]
               },
               {
@@ -405,6 +538,13 @@ export interface SecurityItem {
                   'Verify developer reputation',
                   'Review permissions requested',
                   'Check privacy policy'
+                ],
+                images: [
+                  hero1.src,
+                  hero.src,
+                  freepik.src,
+                  hero.src,
+                  freepik.src,
                 ]
               }
             ]
@@ -412,13 +552,6 @@ export interface SecurityItem {
           {
             id: 'app-updates',
             title: 'App Updates',
-            images: [
-              hero1.src,
-              hero.src,
-              freepik.src,
-              hero.src,
-              freepik.src,
-            ],
             items: [
               {
                 id: 'auto-app-updates',
@@ -427,25 +560,32 @@ export interface SecurityItem {
                 steps: [
                   'Google Play Store > Settings > Network preferences',
                   'Set "Auto-update apps" to "Over Wi-Fi only"'
+                ],
+                images: [
+                  hero1.src,
+                  hero.src,
+                  freepik.src,
+                  hero.src,
+                  freepik.src,
                 ]
               },
               {
                 id: 'manual-app-review',
                 title: 'Manually review updates for critical apps',
-                description: 'Pay special attention to updates for sensitive applications'
+                description: 'Pay special attention to updates for sensitive applications',
+                images: [
+                  hero1.src,
+                  hero.src,
+                  freepik.src,
+                  hero.src,
+                  freepik.src,
+                ]
               }
             ]
           },
           {
             id: 'app-vetting',
             title: 'App Vetting Process',
-            images: [
-              hero1.src,
-              hero.src,
-              freepik.src,
-              hero.src,
-              freepik.src,
-            ],
             items: [
               {
                 id: 'app-research',
@@ -456,6 +596,13 @@ export interface SecurityItem {
                   'Read privacy policy for data collection practices',
                   'Check required permissions against app functionality',
                   'Review recent user feedback for security concerns'
+                ],
+                images: [
+                  hero1.src,
+                  hero.src,
+                  freepik.src,
+                  hero.src,
+                  freepik.src,
                 ]
               }
             ]
@@ -469,13 +616,6 @@ export interface SecurityItem {
           {
             id: 'google-backup',
             title: 'Google Backup',
-            images: [
-              hero1.src,
-              hero.src,
-              freepik.src,
-              hero.src,
-              freepik.src,
-            ],
             items: [
               {
                 id: 'configure-backup',
@@ -485,6 +625,13 @@ export interface SecurityItem {
                   'Settings > System > Backup',
                   'Enable "Back up to Google Drive"',
                   'Verify what data is being backed up'
+                ],
+                images: [
+                  hero1.src,
+                  hero.src,
+                  freepik.src,
+                  hero.src,
+                  freepik.src,
                 ]
               }
             ]
@@ -492,13 +639,6 @@ export interface SecurityItem {
           {
             id: 'local-backup',
             title: 'Local Backups',
-            images: [
-              hero1.src,
-              hero.src,
-              freepik.src,
-              hero.src,
-              freepik.src,
-            ],
             items: [
               {
                 id: 'create-local',
@@ -507,25 +647,32 @@ export interface SecurityItem {
                 steps: [
                   'Connect to computer via USB in file transfer mode',
                   'Copy important files to secure external storage'
+                ],
+                images: [
+                  hero1.src,
+                  hero.src,
+                  freepik.src,
+                  hero.src,
+                  freepik.src,
                 ]
               },
               {
                 id: 'encrypt-backup',
                 title: 'Encrypt backup files with tools like 7-Zip',
-                description: 'Add password protection to your backup archives'
+                description: 'Add password protection to your backup archives',
+                images: [
+                  hero1.src,
+                  hero.src,
+                  freepik.src,
+                  hero.src,
+                  freepik.src,
+                ],
               }
             ]
           },
           {
             id: 'secure-folders',
             title: 'Secure Folders/Spaces',
-            images: [
-              hero1.src,
-              hero.src,
-              freepik.src,
-              hero.src,
-              freepik.src,
-            ],
             items: [
               {
                 id: 'use-secure-folder',
@@ -535,7 +682,14 @@ export interface SecurityItem {
                   'Settings > Biometrics and security > Secure Folder',
                   'Configure separate authentication',
                   'Move sensitive apps and data inside'
-                ]
+                ],
+                images: [
+                  hero1.src,
+                  hero.src,
+                  freepik.src,
+                  hero.src,
+                  freepik.src,
+                ],
               }
             ]
           }
@@ -548,13 +702,6 @@ export interface SecurityItem {
           {
             id: 'lock-screen-info',
             title: 'Lock Screen Information',
-            images: [
-              hero1.src,
-              hero.src,
-              freepik.src,
-              hero.src,
-              freepik.src,
-            ],
             items: [
               {
                 id: 'owner-info',
@@ -563,20 +710,20 @@ export interface SecurityItem {
                 steps: [
                   'Settings > Display > Lock screen > Contact information',
                   'Include alternate contact method (not your main phone number)'
-                ]
+                ],
+                images: [
+                  hero1.src,
+                  hero.src,
+                  freepik.src,
+                  hero.src,
+                  freepik.src,
+                ],
               }
             ]
           },
           {
             id: 'anti-theft-apps',
             title: 'Anti-theft Apps',
-            images: [
-              hero1.src,
-              hero.src,
-              freepik.src,
-              hero.src,
-              freepik.src,
-            ],
             items: [
               {
                 id: 'dedicated-solutions',
@@ -586,7 +733,14 @@ export interface SecurityItem {
                   'Cerberus (advanced anti-theft features)',
                   'Prey Anti Theft (cross-platform tracking)',
                   'Configure to take photos after failed unlock attempts'
-                ]
+                ],
+                images: [
+                  hero1.src,
+                  hero.src,
+                  freepik.src,
+                  hero.src,
+                  freepik.src,
+                ],
               }
             ]
           }
@@ -608,13 +762,6 @@ export const iosSecurityData: DeviceSecurityData = {
           {
             id: 'passcode-touchid',
             title: 'Passcode and Face/Touch ID',
-            images: [
-              hero1.src,
-              hero.src,
-              freepik.src,
-              hero.src,
-              freepik.src,
-            ],
             items: [
               {
                 id: 'strong-passcode',
@@ -624,7 +771,14 @@ export const iosSecurityData: DeviceSecurityData = {
                   'Settings > Face ID & Passcode (or Touch ID & Passcode)',
                   'Use Custom Alphanumeric Code (strongest)',
                   'Minimum 8 characters with complexity'
-                ]
+                ],
+                images: [
+                  hero1.src,
+                  hero.src,
+                  freepik.src,
+                  hero.src,
+                  freepik.src,
+                ],
               },
               {
                 id: 'biometric-setup',
@@ -633,25 +787,32 @@ export const iosSecurityData: DeviceSecurityData = {
                 steps: [
                   'Register alternative appearance for Face ID',
                   'Set up multiple fingerprints for Touch ID'
-                ]
+                ],
+                images: [
+                  hero1.src,
+                  hero.src,
+                  freepik.src,
+                  hero.src,
+                  freepik.src,
+                ],
               },
               {
                 id: 'immediate-passcode',
                 title: 'Set "Require Passcode" to "Immediately"',
-                description: 'Ensure your device locks immediately when screen turns off'
+                description: 'Ensure your device locks immediately when screen turns off',
+                images: [
+                  hero1.src,
+                  hero.src,
+                  freepik.src,
+                  hero.src,
+                  freepik.src,
+                ],
               }
             ]
           },
           {
             id: 'auto-lock-restrictions',
             title: 'Auto-Lock and Restrictions',
-            images: [
-              hero1.src,
-              hero.src,
-              freepik.src,
-              hero.src,
-              freepik.src,
-            ],
             items: [
               {
                 id: 'auto-lock-setting',
@@ -659,7 +820,14 @@ export const iosSecurityData: DeviceSecurityData = {
                 description: 'Configure your device to lock quickly when not in use',
                 steps: [
                   'Settings > Display & Brightness > Auto-Lock'
-                ]
+                ],
+                images: [
+                  hero1.src,
+                  hero.src,
+                  freepik.src,
+                  hero.src,
+                  freepik.src,
+                ],
               },
               {
                 id: 'screen-time',
@@ -669,20 +837,20 @@ export const iosSecurityData: DeviceSecurityData = {
                   'Settings > Screen Time > Content & Privacy Restrictions',
                   'Limit sensitive features like location services',
                   'Password-protect changes'
-                ]
+                ],
+                images: [
+                  hero1.src,
+                  hero.src,
+                  freepik.src,
+                  hero.src,
+                  freepik.src,
+                ],
               }
             ]
           },
           {
             id: 'icloud-security',
             title: 'iCloud Security',
-            images: [
-              hero1.src,
-              hero.src,
-              freepik.src,
-              hero.src,
-              freepik.src,
-            ],
             items: [
               {
                 id: 'icloud-2fa',
@@ -692,7 +860,14 @@ export const iosSecurityData: DeviceSecurityData = {
                   'Settings > [your name] > Password & Security',
                   'Turn on Two-Factor Authentication',
                   'Set up trusted phone numbers and devices'
-                ]
+                ],
+                images: [
+                  hero1.src,
+                  hero.src,
+                  freepik.src,
+                  hero.src,
+                  freepik.src,
+                ],
               },
               {
                 id: 'review-devices',
@@ -701,7 +876,14 @@ export const iosSecurityData: DeviceSecurityData = {
                 steps: [
                   'Settings > [your name] > scroll to device list',
                   'Remove unrecognized devices'
-                ]
+                ],
+                images: [
+                  hero1.src,
+                  hero.src,
+                  freepik.src,
+                  hero.src,
+                  freepik.src,
+                ],
               },
               {
                 id: 'manage-icloud-access',
@@ -710,20 +892,20 @@ export const iosSecurityData: DeviceSecurityData = {
                 steps: [
                   'Settings > [your name] > iCloud',
                   'Toggle off access for unnecessary apps'
-                ]
+                ],
+                images: [
+                  hero1.src,
+                  hero.src,
+                  freepik.src,
+                  hero.src,
+                  freepik.src,
+                ],
               }
             ]
           },
           {
             id: 'find-my-iphone',
             title: 'Find My iPhone',
-            images: [
-              hero1.src,
-              hero.src,
-              freepik.src,
-              hero.src,
-              freepik.src,
-            ],
             items: [
               {
                 id: 'enable-find-my',
@@ -732,12 +914,26 @@ export const iosSecurityData: DeviceSecurityData = {
                 steps: [
                   'Settings > [your name] > Find My',
                   'Turn on Find My iPhone, Find My network, Send Last Location'
-                ]
+                ],
+                images: [
+                  hero1.src,
+                  hero.src,
+                  freepik.src,
+                  hero.src,
+                  freepik.src,
+                ],
               },
               {
                 id: 'test-find-my',
                 title: 'Test functionality at icloud.com/find',
-                description: 'Verify that Find My iPhone is working correctly'
+                description: 'Verify that Find My iPhone is working correctly',
+                images: [
+                  hero1.src,
+                  hero.src,
+                  freepik.src,
+                  hero.src,
+                  freepik.src,
+                ],
               },
               {
                 id: 'find-my-features',
@@ -748,7 +944,14 @@ export const iosSecurityData: DeviceSecurityData = {
                   'Play sound',
                   'Enable Lost Mode',
                   'Remotely erase if necessary'
-                ]
+                ],
+                images: [
+                  hero1.src,
+                  hero.src,
+                  freepik.src,
+                  hero.src,
+                  freepik.src,
+                ],
               }
             ]
           }
@@ -761,13 +964,6 @@ export const iosSecurityData: DeviceSecurityData = {
           {
             id: 'system-updates-ios',
             title: 'System Updates',
-            images: [
-              hero1.src,
-              hero.src,
-              freepik.src,
-              hero.src,
-              freepik.src,
-            ],
             items: [
               {
                 id: 'auto-updates-ios',
@@ -776,7 +972,14 @@ export const iosSecurityData: DeviceSecurityData = {
                 steps: [
                   'Settings > General > Software Update > Automatic Updates',
                   'Turn on "Download iOS Updates" and "Install iOS Updates"'
-                ]
+                ],
+                images: [
+                  hero1.src,
+                  hero.src,
+                  freepik.src,
+                  hero.src,
+                  freepik.src,
+                ],
               },
               {
                 id: 'check-updates',
@@ -784,20 +987,20 @@ export const iosSecurityData: DeviceSecurityData = {
                 description: 'Regularly verify your device has the latest updates',
                 steps: [
                   'Settings > General > Software Update'
-                ]
+                ],
+                images: [
+                  hero1.src,
+                  hero.src,
+                  freepik.src,
+                  hero.src,
+                  freepik.src,
+                ],
               }
             ]
           },
           {
             id: 'privacy-controls',
             title: 'Privacy Controls',
-            images: [
-              hero1.src,
-              hero.src,
-              freepik.src,
-              hero.src,
-              freepik.src,
-            ],
             items: [
               {
                 id: 'location-management',
@@ -807,7 +1010,14 @@ export const iosSecurityData: DeviceSecurityData = {
                   'Settings > Privacy > Location Services',
                   'Review app by app, set to "While Using" or "Ask Next Time"',
                   'Disable "Precise Location" for non-essential apps'
-                ]
+                ],
+                images: [
+                  hero1.src,
+                  hero.src,
+                  freepik.src,
+                  hero.src,
+                  freepik.src,
+                ],
               },
               {
                 id: 'mic-camera-access',
@@ -816,7 +1026,14 @@ export const iosSecurityData: DeviceSecurityData = {
                 steps: [
                   'Settings > Privacy > Microphone/Camera',
                   'Regularly audit app access'
-                ]
+                ],
+                images: [
+                  hero1.src,
+                  hero.src,
+                  freepik.src,
+                  hero.src,
+                  freepik.src,
+                ],
               },
               {
                 id: 'analytics-ads',
@@ -826,20 +1043,20 @@ export const iosSecurityData: DeviceSecurityData = {
                   'Settings > Privacy > Analytics & Improvements',
                   'Disable "Share iPhone Analytics"',
                   'Settings > Privacy > Apple Advertising > turn off "Personalized Ads"'
-                ]
+                ],
+                images: [
+                  hero1.src,
+                  hero.src,
+                  freepik.src,
+                  hero.src,
+                  freepik.src,
+                ],
               }
             ]
           },
           {
             id: 'safari-security',
             title: 'Safari Security',
-            images: [
-              hero1.src,
-              hero.src,
-              freepik.src,
-              hero.src,
-              freepik.src,
-            ],
             items: [
               {
                 id: 'safari-privacy',
@@ -850,7 +1067,14 @@ export const iosSecurityData: DeviceSecurityData = {
                   'Turn on "Prevent Cross-Site Tracking"',
                   'Enable "Fraudulent Website Warning"',
                   'Block all cookies or only from third parties'
-                ]
+                ],
+                images: [
+                  hero1.src,
+                  hero.src,
+                  freepik.src,
+                  hero.src,
+                  freepik.src,
+                ],
               },
               {
                 id: 'clear-browsing',
@@ -858,20 +1082,20 @@ export const iosSecurityData: DeviceSecurityData = {
                 description: 'Remove browsing history and website data',
                 steps: [
                   'Settings > Safari > Clear History and Website Data'
-                ]
+                ],
+                images: [
+                  hero1.src,
+                  hero.src,
+                  freepik.src,
+                  hero.src,
+                  freepik.src,
+                ],
               }
             ]
           },
           {
             id: 'network-security-ios',
             title: 'Network Security',
-            images: [
-              hero1.src,
-              hero.src,
-              freepik.src,
-              hero.src,
-              freepik.src,
-            ],
             items: [
               {
                 id: 'private-wifi',
@@ -880,7 +1104,14 @@ export const iosSecurityData: DeviceSecurityData = {
                 steps: [
                   'Settings > Wi-Fi > (i) next to network > Private Address',
                   'Enable for all networks'
-                ]
+                ],
+                images: [
+                  hero1.src,
+                  hero.src,
+                  freepik.src,
+                  hero.src,
+                  freepik.src,
+                ],
               },
               {
                 id: 'limit-ip-tracking',
@@ -888,7 +1119,14 @@ export const iosSecurityData: DeviceSecurityData = {
                 description: 'Prevent websites from tracking your IP address',
                 steps: [
                   'Settings > Safari > Hide IP Address > Turn on'
-                ]
+                ],
+                images: [
+                  hero1.src,
+                  hero.src,
+                  freepik.src,
+                  hero.src,
+                  freepik.src,
+                ],
               },
               {
                 id: 'private-relay',
@@ -896,20 +1134,20 @@ export const iosSecurityData: DeviceSecurityData = {
                 description: 'Route web traffic through two separate relays',
                 steps: [
                   'Settings > [your name] > iCloud > Private Relay'
-                ]
+                ],
+                images: [
+                  hero1.src,
+                  hero.src,
+                  freepik.src,
+                  hero.src,
+                  freepik.src,
+                ],
               }
             ]
           },
           {
             id: 'app-security-ios',
             title: 'App Security',
-            images: [
-              hero1.src,
-              hero.src,
-              freepik.src,
-              hero.src,
-              freepik.src,
-            ],
             items: [
               {
                 id: 'app-permissions-ios',
@@ -917,7 +1155,14 @@ export const iosSecurityData: DeviceSecurityData = {
                 description: 'Regularly check what apps can access on your device',
                 steps: [
                   'Settings > Privacy > review each category'
-                ]
+                ],
+                images: [
+                  hero1.src,
+                  hero.src,
+                  freepik.src,
+                  hero.src,
+                  freepik.src,
+                ],
               },
               {
                 id: 'app-restrictions',
@@ -927,7 +1172,14 @@ export const iosSecurityData: DeviceSecurityData = {
                   'Settings > Screen Time > Content & Privacy Restrictions',
                   'iTunes & App Store Purchases > set to "Don\'t Allow"',
                   'Require password for additional purchases'
-                ]
+                ],
+                images: [
+                  hero1.src,
+                  hero.src,
+                  freepik.src,
+                  hero.src,
+                  freepik.src,
+                ],
               }
             ]
           }
@@ -940,13 +1192,6 @@ export const iosSecurityData: DeviceSecurityData = {
           {
             id: 'icloud-backup',
             title: 'iCloud Backup',
-            images: [
-              hero1.src,
-              hero.src,
-              freepik.src,
-              hero.src,
-              freepik.src,
-            ],
             items: [
               {
                 id: 'secure-backups',
@@ -955,7 +1200,14 @@ export const iosSecurityData: DeviceSecurityData = {
                 steps: [
                   'Settings > [your name] > iCloud > iCloud Backup',
                   'Enable "iCloud Backup"'
-                ]
+                ],
+                images: [
+                  hero1.src,
+                  hero.src,
+                  freepik.src,
+                  hero.src,
+                  freepik.src,
+                ],
               },
               {
                 id: 'review-backup',
@@ -964,20 +1216,20 @@ export const iosSecurityData: DeviceSecurityData = {
                 steps: [
                   'Settings > [your name] > iCloud > Manage Storage',
                   'Review and adjust backup content'
-                ]
+                ],
+                images: [
+                  hero1.src,
+                  hero.src,
+                  freepik.src,
+                  hero.src,
+                  freepik.src,
+                ],
               }
             ]
           },
           {
             id: 'local-backup-ios',
             title: 'Local Backup',
-            images: [
-              hero1.src,
-              hero.src,
-              freepik.src,
-              hero.src,
-              freepik.src,
-            ],
             items: [
               {
                 id: 'encrypted-backup',
@@ -988,20 +1240,20 @@ export const iosSecurityData: DeviceSecurityData = {
                   'In iTunes/Finder, select your device',
                   'Check "Encrypt local backup" and set strong password',
                   'Store password in secure password manager'
-                ]
+                ],
+                images: [
+                  hero1.src,
+                  hero.src,
+                  freepik.src,
+                  hero.src,
+                  freepik.src,
+                ],
               }
             ]
           },
           {
             id: 'secure-notes',
             title: 'Secure Notes and Personal Data',
-            images: [
-              hero1.src,
-              hero.src,
-              freepik.src,
-              hero.src,
-              freepik.src,
-            ],
             items: [
               {
                 id: 'locked-notes',
@@ -1010,7 +1262,14 @@ export const iosSecurityData: DeviceSecurityData = {
                 steps: [
                   'In Notes app, swipe left on note > Lock icon',
                   'Set unique password different from device passcode'
-                ]
+                ],
+                images: [
+                  hero1.src,
+                  hero.src,
+                  freepik.src,
+                  hero.src,
+                  freepik.src,
+                ],
               },
               {
                 id: 'keychain',
@@ -1019,7 +1278,14 @@ export const iosSecurityData: DeviceSecurityData = {
                 steps: [
                   'Settings > Passwords',
                   'Enable AutoFill Passwords'
-                ]
+                ],
+                images: [
+                  hero1.src,
+                  hero.src,
+                  freepik.src,
+                  hero.src,
+                  freepik.src,
+                ],
               }
             ]
           }
@@ -1032,13 +1298,6 @@ export const iosSecurityData: DeviceSecurityData = {
           {
             id: 'imessage-facetime',
             title: 'iMessage and FaceTime',
-            images: [
-              hero1.src,
-              hero.src,
-              freepik.src,
-              hero.src,
-              freepik.src,
-            ],
             items: [
               {
                 id: 'verify-encryption',
@@ -1046,7 +1305,14 @@ export const iosSecurityData: DeviceSecurityData = {
                 description: 'Ensure secure messaging is enabled',
                 steps: [
                   'Settings > Messages > ensure iMessage is on'
-                ]
+                ],
+                images: [
+                  hero1.src,
+                  hero.src,
+                  freepik.src,
+                  hero.src,
+                  freepik.src,
+                ],
               },
               {
                 id: 'filter-senders',
@@ -1054,7 +1320,14 @@ export const iosSecurityData: DeviceSecurityData = {
                 description: 'Separate messages from unknown contacts',
                 steps: [
                   'Settings > Messages > Filter Unknown Senders'
-                ]
+                ],
+                images: [
+                  hero1.src,
+                  hero.src,
+                  freepik.src,
+                  hero.src,
+                  freepik.src,
+                ],
               },
               {
                 id: 'limit-facetime',
@@ -1062,20 +1335,20 @@ export const iosSecurityData: DeviceSecurityData = {
                 description: 'Control when FaceTime is active',
                 steps: [
                   'Settings > FaceTime > toggle off "FaceTime" when not in use'
-                ]
+                ],
+                images: [
+                  hero1.src,
+                  hero.src,
+                  freepik.src,
+                  hero.src,
+                  freepik.src,
+                ],
               }
             ]
           },
           {
             id: 'mail-settings',
             title: 'Mail Settings',
-            images: [
-              hero1.src,
-              hero.src,
-              freepik.src,
-              hero.src,
-              freepik.src,
-            ],
             items: [
               {
                 id: 'remote-content',
@@ -1083,7 +1356,14 @@ export const iosSecurityData: DeviceSecurityData = {
                 description: 'Prevent tracking through email images',
                 steps: [
                   'Settings > Mail > toggle off "Load Remote Images"'
-                ]
+                ],
+                images: [
+                  hero1.src,
+                  hero.src,
+                  freepik.src,
+                  hero.src,
+                  freepik.src,
+                ],
               },
               {
                 id: 'advanced-mail',
@@ -1092,7 +1372,14 @@ export const iosSecurityData: DeviceSecurityData = {
                 steps: [
                   'Set to fetch data manually or hourly',
                   'Don\'t use VIP or notifications for unknown senders'
-                ]
+                ],
+                images: [
+                  hero1.src,
+                  hero.src,
+                  freepik.src,
+                  hero.src,
+                  freepik.src,
+                ],
               }
             ]
           }
@@ -1105,13 +1392,6 @@ export const iosSecurityData: DeviceSecurityData = {
           {
             id: 'lockdown-mode',
             title: 'Lockdown Mode (iOS 16+)',
-            images: [
-              hero1.src,
-              hero.src,
-              freepik.src,
-              hero.src,
-              freepik.src,
-            ],
             items: [
               {
                 id: 'high-risk',
@@ -1121,20 +1401,20 @@ export const iosSecurityData: DeviceSecurityData = {
                   'Settings > Privacy & Security > Lockdown Mode',
                   'Understand limitations (blocks many features)',
                   'Enable only during high-risk periods'
-                ]
+                ],
+                images: [
+                  hero1.src,
+                  hero.src,
+                  freepik.src,
+                  hero.src,
+                  freepik.src,
+                ],
               }
             ]
           },
           {
             id: 'hide-email',
             title: 'Hide My Email',
-            images: [
-              hero1.src,
-              hero.src,
-              freepik.src,
-              hero.src,
-              freepik.src,
-            ],
             items: [
               {
                 id: 'unique-email',
@@ -1144,20 +1424,20 @@ export const iosSecurityData: DeviceSecurityData = {
                   'Settings > [your name] > iCloud > Hide My Email',
                   'Create unique addresses for each service',
                   'Deactivate addresses if compromised'
-                ]
+                ],
+                images: [
+                  hero1.src,
+                  hero.src,
+                  freepik.src,
+                  hero.src,
+                  freepik.src,
+                ],
               }
             ]
           },
           {
             id: 'app-tracking',
             title: 'App Tracking Transparency',
-            images: [
-              hero1.src,
-              hero.src,
-              freepik.src,
-              hero.src,
-              freepik.src,
-            ],
             items: [
               {
                 id: 'control-tracking',
@@ -1166,12 +1446,30 @@ export const iosSecurityData: DeviceSecurityData = {
                 steps: [
                   'Settings > Privacy > Tracking',
                   'Toggle off "Allow Apps to Request to Track"'
-                ]
+                ],
+                images: [
+                  hero1.src,
+                  hero.src,
+                  freepik.src,
+                  hero.src,
+                  freepik.src,
+                ],
               },
               {
                 id: 'review-tracking',
                 title: 'Review and revoke existing permissions',
-                description: 'Check which apps have tracking permissions'
+                description: 'Check which apps have tracking permissions',
+                steps: [
+                  'Settings > Privacy > Tracking',
+                  'Revoke permissions for apps you no longer use'
+                ],
+                images: [
+                  hero1.src,
+                  hero.src,
+                  freepik.src,
+                  hero.src,
+                  freepik.src,
+                ],
               }
             ]
           }

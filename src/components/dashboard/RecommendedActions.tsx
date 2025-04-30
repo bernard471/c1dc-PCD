@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Clock, AlertTriangle, ShieldAlert } from 'lucide-react';
 import Link from 'next/link';
 import { recommendedActionsData } from '@/data/recommendedActionsData';
@@ -10,13 +10,51 @@ interface RecommendedAction {
   icon: 'clock' | 'alert' | 'shield';
 }
 
+interface ActionWithCompletionStatus extends RecommendedAction {
+  isCompleted?: boolean;
+}
+
 const RecommendedActions: React.FC = () => {
-  // Get only the first 3 actions for the dashboard widget
-  const [actions] = useState<RecommendedAction[]>(
-    recommendedActionsData.slice(0, 3).map(({ id, title, description, icon }) => ({
-      id, title, description, icon
-    }))
-  );
+  // State for all actions with completion status
+  const [, setAllActions] = useState<ActionWithCompletionStatus[]>([]);
+  // State for dashboard actions (first 3)
+  const [dashboardActions, setDashboardActions] = useState<ActionWithCompletionStatus[]>([]);
+  // State for incomplete action count
+  const [incompleteCount, setIncompleteCount] = useState<number>(recommendedActionsData.length);
+  
+  // Fetch actions with completion status
+  useEffect(() => {
+    const fetchCompletionStatus = async () => {
+      try {
+        const response = await fetch('/api/recommended-actions');
+        if (response.ok) {
+          const { data } = await response.json();
+          setAllActions(data);
+          
+          // Get only the first 3 actions for the dashboard widget
+          setDashboardActions(data.slice(0, 3));
+          
+          // Count incomplete actions
+            const incomplete: number = data.filter((action: ActionWithCompletionStatus) => !action.isCompleted).length;
+          setIncompleteCount(incomplete);
+        } else {
+          // If API fails, use the original data
+          setDashboardActions(recommendedActionsData.slice(0, 3).map(({ id, title, description, icon }) => ({
+            id, title, description, icon
+          })));
+          setIncompleteCount(recommendedActionsData.length);
+        }
+      } catch (error) {
+        console.error('Error fetching completion status:', error);
+        setDashboardActions(recommendedActionsData.slice(0, 3).map(({ id, title, description, icon }) => ({
+          id, title, description, icon
+        })));
+        setIncompleteCount(recommendedActionsData.length);
+      }
+    };
+    
+    fetchCompletionStatus();
+  }, []);
 
   const getActionIcon = (icon: string) => {
     switch(icon) {
@@ -36,12 +74,12 @@ const RecommendedActions: React.FC = () => {
       <div className="flex justify-between items-center mb-4">
         <h2 className="text-lg font-medium text-gray-900">Recommended Actions</h2>
         <span className="px-2 py-1 bg-blue-100 text-blue-800 text-xs font-semibold rounded-full">
-          {recommendedActionsData.length} actions
+          {incompleteCount} {incompleteCount === 1 ? 'action' : 'actions'}
         </span>
       </div>
       
       <ul className="space-y-3">
-        {actions.map(action => (
+        {dashboardActions.map(action => (
           <li key={action.id} className="flex items-start">
             <div className="flex-shrink-0 h-5 w-5">
               {getActionIcon(action.icon)}

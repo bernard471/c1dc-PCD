@@ -1,7 +1,7 @@
 import React, { JSX, useState } from 'react';
 import { 
-  CheckCircle, ChevronDown, ChevronUp} from 'lucide-react';
-import { SecurityCategory } from '@/data/mobileSecurityData';
+  CheckCircle, ChevronDown, ChevronUp, ChevronRight} from 'lucide-react';
+import { SecurityCategory, SecurityItem } from '@/data/mobileSecurityData';
 import { toast } from "sonner";
 import Image from 'next/image';
 
@@ -41,8 +41,9 @@ const CategorySection: React.FC<CategorySectionProps> = ({
   setCategoryToComplete
 }) => {
   // State for image gallery and zoom modal
-  const [selectedImageItem, setSelectedImageItem] = useState<{sectionId: string, imageIndex: number} | null>(null);
+  const [selectedImageItem, setSelectedImageItem] = useState<{itemId: string, imageIndex: number} | null>(null);
   const [isImageZoomed, setIsImageZoomed] = useState(false);
+  const [expandedImageGallery, setExpandedImageGallery] = useState<string | null>(null);
 
   // Function to handle initiating the completion process
   const handleCategoryCompletion = (categoryId: string, e: React.MouseEvent) => {
@@ -70,8 +71,8 @@ const CategorySection: React.FC<CategorySectionProps> = ({
   };
 
   // Function to handle image click for zooming
-  const handleImageClick = (sectionId: string, imageIndex: number) => {
-    setSelectedImageItem({ sectionId, imageIndex });
+  const handleImageClick = (itemId: string, imageIndex: number) => {
+    setSelectedImageItem({ itemId, imageIndex });
     setIsImageZoomed(true);
   };
   
@@ -82,22 +83,23 @@ const CategorySection: React.FC<CategorySectionProps> = ({
     setTimeout(() => setSelectedImageItem(null), 300);
   };
 
-// Handle category toggle
-const handleCategoryToggle = (categoryId: string) => {
-  toggleCategory(categoryId);
-};
+  // Handle section toggle with exclusive behavior
+  const handleSectionToggle = (sectionId: string) => {
+    // This will close all other sections when opening a new one
+    toggleSection(sectionId);
+  };
 
-// Handle section toggle
-const handleSectionToggle = (sectionId: string) => {
-  toggleSection(sectionId);
-};
+  // Handle item toggle with exclusive behavior
+  const handleItemToggle = (itemId: string) => {
+    // This will close all other items when opening a new one
+    toggleItem(itemId);
+  };
 
-// Handle item toggle
-const handleItemToggle = (itemId: string) => {
-  toggleItem(itemId);
-};
-
-
+  // Toggle image gallery visibility
+  const toggleImageGallery = (itemId: string, e: React.MouseEvent) => {
+    e.stopPropagation(); // Prevent item toggle from firing
+    setExpandedImageGallery(expandedImageGallery === itemId ? null : itemId);
+  };
 
   return (
     <div className="">
@@ -139,7 +141,7 @@ const handleItemToggle = (itemId: string) => {
           className={`flex items-center justify-between p-4 cursor-pointer ${
             expandedCategories[category.id] ? 'bg-blue-50' : 'bg-gray-50'
           }`}
-          onClick={() => handleCategoryToggle(category.id)}
+          onClick={() => toggleCategory(category.id)}
         >
           <div className="flex items-center space-x-3">
             {getCategoryIcon(category.id)}
@@ -234,62 +236,75 @@ const handleItemToggle = (itemId: string) => {
                                     ))}
                                   </ul>
                                 )}
+                                
+                                {/* Image gallery - only show if item has images */}
+                                {item.images && item.images.length > 0 && (
+                                  <div className="mt-4 mb-6">
+                                    <div 
+                                      className="flex items-center cursor-pointer hover:text-blue-600 transition-colors"
+                                      onClick={(e) => toggleImageGallery(item.id, e)}
+                                    >
+                                      <ChevronRight className={`text-blue-500 mr-2 transition-transform ${
+                                        expandedImageGallery === item.id ? 'transform rotate-90' : ''
+                                      }`} />
+                                      <h4 className="text-sm font-medium text-gray-700">
+                                        Reference Images ({item.images.length})
+                                      </h4>
+                                    </div>
+                                    
+                                    {/* Stacked Image Gallery - Only shown when expanded for this specific item */}
+                                    {expandedImageGallery === item.id && (
+                                      <div className="relative h-64 mt-3 mb-4">
+                                        <div className="absolute inset-0 overflow-x-auto pb-4 hide-scrollbar">
+                                          <div className="flex space-x-4 px-2 py-2">
+                                            {item.images.map((image, imageIndex) => (
+                                              <div 
+                                                key={imageIndex} 
+                                                className={`
+                                                  relative flex-shrink-0 w-56 h-56 rounded-lg overflow-hidden 
+                                                  border-2 cursor-pointer transform transition-all duration-300
+                                                  ${selectedImageItem?.itemId === item.id && selectedImageItem?.imageIndex === imageIndex 
+                                                    ? 'border-blue-500 scale-105' 
+                                                    : 'border-gray-200 hover:border-blue-300'}
+                                                  ${imageIndex === 0 ? 'shadow-md' : 'shadow-sm'}
+                                                `}
+                                                style={{
+                                                  transform: `translateY(${imageIndex * 8}px) rotate(${imageIndex % 2 === 0 ? -2 : 2}deg)`,
+                                                  zIndex: item.images ? item.images.length - imageIndex : 0
+                                                }}
+                                                onClick={() => handleImageClick(item.id, imageIndex)}
+                                              >
+                                                <div className="absolute inset-0 flex items-center justify-center bg-black/10 opacity-0 hover:opacity-100 transition-opacity">
+                                                  <ChevronRight className="text-white text-2xl transform scale-150" />
+                                                </div>
+                                                <Image
+                                                  src={image}
+                                                  alt={`${item.title} reference image ${imageIndex + 1}`}
+                                                  width={300}
+                                                  height={300}
+                                                  className="object-cover w-full h-full"
+                                                />
+                                                <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent p-2">
+                                                  <span className="text-white text-xs font-medium">Image {imageIndex + 1}</span>
+                                                </div>
+                                              </div>
+                                            ))}
+                                          </div>
+                                        </div>
+                                        
+                                        {/* Improved scroll hint animation with chevron */}
+                                        <div className="absolute right-0 top-1/2 transform -translate-y-1/2 bg-gradient-to-l from-white to-transparent w-12 h-12 flex items-center justify-center rounded-full animate-pulse">
+                                          <ChevronRight className="h-6 w-6 text-blue-500" />
+                                        </div>
+                                      </div>
+                                    )}
+                                  </div>
+                                )}
                               </div>
                             )}
                           </div>
                         ))}
                       </div>
-
-                      {/* Image gallery - only show if section has images */}
-                      {section.images && section.images.length > 0 && (
-                        <div className="mt-4 mb-6">
-                          <h4 className="text-sm font-medium text-gray-700 mb-2">Reference Images:</h4>
-                          
-                          {/* Stacked Image Gallery */}
-                          <div className="relative h-64 mb-4">
-                            <div className="absolute inset-0 overflow-x-auto pb-4 hide-scrollbar">
-                              <div className="flex space-x-4 px-2 py-2">
-                                {section.images.map((image, imageIndex) => (
-                                  <div 
-                                    key={imageIndex} 
-                                    className={`
-                                      relative flex-shrink-0 w-56 h-56 rounded-lg overflow-hidden 
-                                      border-2 cursor-pointer transform transition-all duration-300
-                                      ${selectedImageItem?.sectionId === section.id && selectedImageItem?.imageIndex === imageIndex 
-                                        ? 'border-blue-500 scale-105' 
-                                        : 'border-gray-200 hover:border-blue-300'}
-                                      ${imageIndex === 0 ? 'shadow-md' : 'shadow-sm'}
-                                    `}
-                                    style={{
-                                      transform: `translateY(${imageIndex * 8}px) rotate(${imageIndex % 2 === 0 ? -2 : 2}deg)`,
-                                      zIndex: section.images ? section.images.length - imageIndex : 0
-                                    }}
-                                    onClick={() => handleImageClick(section.id, imageIndex)}
-                                  >
-                                    <Image
-                                      src={image}
-                                      alt={`${section.title} reference image ${imageIndex + 1}`}
-                                      width={300}
-                                      height={300}
-                                      className="object-cover w-full h-full"
-                                    />
-                                    <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent p-2">
-                                      <span className="text-white text-xs font-medium">Image {imageIndex + 1}</span>
-                                    </div>
-                                  </div>
-                                ))}
-                              </div>
-                            </div>
-                            
-                            {/* Scroll hint animation */}
-                            <div className="absolute right-0 top-1/2 transform -translate-y-1/2 bg-gradient-to-l from-white to-transparent w-12 h-12 flex items-center justify-center rounded-full animate-pulse">
-                              <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-blue-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                              </svg>
-                            </div>
-                          </div>
-                        </div>
-                      )}
                     </div>
                   )}
                 </div>
@@ -306,12 +321,21 @@ const handleItemToggle = (itemId: string) => {
           onClick={handleCloseZoom}
         >
           {(() => {
-            // Find the current section
-            const currentSection = category.sections.find(section => section.id === selectedImageItem.sectionId);
+            // Find the current item
+            let currentItem: SecurityItem | null = null;
             
-            if (!currentSection?.images) return null;
+            // Search through all sections to find the item
+            for (const section of category.sections) {
+              const foundItem = section.items.find(item => item.id === selectedImageItem.itemId);
+              if (foundItem) {
+                currentItem = foundItem;
+                break;
+              }
+            }
             
-            const currentImage = currentSection.images[selectedImageItem.imageIndex];
+            if (!currentItem?.images) return null;
+            
+            const currentImage = currentItem.images[selectedImageItem.imageIndex];
             
             return (
               <div 
@@ -320,7 +344,7 @@ const handleItemToggle = (itemId: string) => {
               >
                 <Image
                   src={currentImage}
-                  alt={`${currentSection.title} reference image ${selectedImageItem.imageIndex + 1}`}
+                  alt={`${currentItem.title} reference image ${selectedImageItem.imageIndex + 1}`}
                   width={1200}
                   height={800}
                   className="object-contain max-h-[90vh] rounded-lg"
@@ -333,7 +357,7 @@ const handleItemToggle = (itemId: string) => {
                     onClick={(e) => {
                       e.stopPropagation();
                       const newIndex = selectedImageItem.imageIndex === 0 
-                        ? (currentSection?.images?.length ?? 1) - 1 
+                        ? (currentItem?.images?.length ?? 1) - 1 
                         : selectedImageItem.imageIndex - 1;
                       setSelectedImageItem({...selectedImageItem, imageIndex: newIndex});
                     }}
@@ -346,7 +370,7 @@ const handleItemToggle = (itemId: string) => {
                     className="bg-white/20 hover:bg-white/40 rounded-full p-2 backdrop-blur-sm transition-colors"
                     onClick={(e) => {
                       e.stopPropagation();
-                      const newIndex = selectedImageItem.imageIndex === (currentSection?.images?.length ?? 1) - 1 
+                      const newIndex = selectedImageItem.imageIndex === (currentItem?.images?.length ?? 1) - 1 
                         ? 0 
                         : selectedImageItem.imageIndex + 1;
                       setSelectedImageItem({...selectedImageItem, imageIndex: newIndex});
@@ -370,7 +394,7 @@ const handleItemToggle = (itemId: string) => {
                 
                 {/* Image counter */}
                 <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 bg-black/50 text-white px-3 py-1 rounded-full text-sm backdrop-blur-sm">
-                  {selectedImageItem.imageIndex + 1} / {currentSection.images.length}
+                  {selectedImageItem.imageIndex + 1} / {currentItem.images.length}
                 </div>
               </div>
             );
@@ -393,3 +417,4 @@ const handleItemToggle = (itemId: string) => {
 };
 
 export default CategorySection;
+
