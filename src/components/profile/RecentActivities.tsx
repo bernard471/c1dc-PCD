@@ -1,5 +1,5 @@
-import { useState } from 'react';
-import { Shield, Lock, Key, Bell, History, UserCheck } from 'lucide-react';
+import { useState, useEffect } from 'react';
+import { Shield, Lock, Key, Bell, History, UserCheck, Users, MessageCircle, Star, ClipboardList, Mail } from 'lucide-react';
 
 type Activity = {
   id: string;
@@ -10,56 +10,33 @@ type Activity = {
   timestamp: string;
 };
 
-const defaultActivities: Activity[] = [
-  {
-    id: '1',
-    icon: 'shield',
-    iconColor: 'text-blue-600',
-    iconBgColor: 'bg-blue-100',
-    title: 'Completed Mobile Security Assessment',
-    timestamp: '2 days ago'
-  },
-  {
-    id: '2',
-    icon: 'lock',
-    iconColor: 'text-green-600',
-    iconBgColor: 'bg-green-100',
-    title: 'Updated Wi-Fi Security Settings',
-    timestamp: '5 days ago'
-  },
-  {
-    id: '3',
-    icon: 'key',
-    iconColor: 'text-purple-600',
-    iconBgColor: 'bg-purple-100',
-    title: 'Enabled Two-Factor Authentication',
-    timestamp: '1 week ago'
-  }
-];
+//change default activities to no activities recorded currently
+const defaultActivities: Activity[] = [];
 
 export function RecentActivities() {
-  const [activities] = useState<Activity[]>(defaultActivities);
-  const [isLoading] = useState(false);
+  const [activities, setActivities] = useState<Activity[]>(defaultActivities);
+  const [isLoading, setIsLoading] = useState(false);
 
-  // You can uncomment this to fetch real activities from an API endpoint
-  // useEffect(() => {
-  //   const fetchActivities = async () => {
-  //     setIsLoading(true);
-  //     try {
-  //       const response = await fetch('/api/user/activities');
-  //       if (response.ok) {
-  //         const data = await response.json();
-  //         setActivities(data.activities);
-  //       }
-  //     } catch (error) {
-  //       console.error('Error fetching activities:', error);
-  //     } finally {
-  //       setIsLoading(false);
-  //     }
-  //   };
-  //
-  //   fetchActivities();
-  // }, []);
+  useEffect(() => {
+    const fetchActivities = async () => {
+      setIsLoading(true);
+      try {
+        const response = await fetch('/api/user/activities');
+        if (response.ok) {
+          const data = await response.json();
+          if (data.activities && data.activities.length > 0) {
+            setActivities(data.activities);
+          }
+        }
+      } catch (error) {
+        console.error('Error fetching activities:', error);
+      } finally {
+        setIsLoading(false);
+      }
+    };
+
+    fetchActivities();
+  }, []);
 
   const getIconComponent = (iconName: string) => {
     switch (iconName) {
@@ -75,6 +52,16 @@ export function RecentActivities() {
         return <History className="w-4 h-4 text-indigo-600" />;
       case 'user-check':
         return <UserCheck className="w-4 h-4 text-teal-600" />;
+      case 'users':
+        return <Users className="w-4 h-4 text-purple-600" />;
+      case 'message-circle':
+        return <MessageCircle className="w-4 h-4 text-indigo-600" />;
+      case 'star':
+        return <Star className="w-4 h-4 text-amber-600" />;
+      case 'clipboard-list':
+        return <ClipboardList className="w-4 h-4 text-red-600" />;
+      case 'mail':
+        return <Mail className="w-4 h-4 text-yellow-600" />;
       default:
         return <Shield className="w-4 h-4 text-blue-600" />;
     }
@@ -84,16 +71,11 @@ export function RecentActivities() {
     <div className="bg-white rounded-lg border border-gray-200 p-4 mb-6">
       <h3 className="font-medium text-gray-800 mb-3">Recent Activity</h3>
       {isLoading ? (
-        <div className="flex justify-center py-4">
-          <div className="animate-pulse flex space-x-4">
-            <div className="rounded-full bg-gray-200 h-10 w-10"></div>
-            <div className="flex-1 space-y-2 py-1">
-              <div className="h-4 bg-gray-200 rounded w-3/4"></div>
-              <div className="h-3 bg-gray-200 rounded w-1/2"></div>
-            </div>
-          </div>
+        <div className="flex flex-col items-center justify-center py-6 space-y-4">
+          <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-blue-600"></div>
+          <p className="text-sm text-gray-500">Loading your recent activities...</p>
         </div>
-      ) : (
+      ) : activities.length > 0 ? (
         <div className="space-y-3">
           {activities.map((activity) => (
             <div key={activity.id} className="flex items-start">
@@ -106,6 +88,14 @@ export function RecentActivities() {
               </div>
             </div>
           ))}
+        </div>
+      ) : (
+        <div className="flex flex-col items-center justify-center py-8 text-center">
+          <History className="h-10 w-10 text-gray-300 mb-2" />
+          <p className="text-gray-500">No activities recorded yet</p>
+          <p className="text-xs text-gray-400 mt-1">
+            Complete security assessments to see your activity here
+          </p>
         </div>
       )}
     </div>

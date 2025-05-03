@@ -2,13 +2,15 @@ import { useState } from 'react';
 import { X } from 'lucide-react';
 import { toast } from "sonner";
 
+// Update the props to include a refresh function
 type PasswordChangeModalProps = {
   isOpen: boolean;
   onClose: () => void;
   email: string;
+  onPasswordChanged?: () => void; // Add this prop
 };
 
-export function PasswordChangeModal({ isOpen, onClose, email }: PasswordChangeModalProps) {
+export function PasswordChangeModal({ isOpen, onClose, email, onPasswordChanged }: PasswordChangeModalProps) {
   const [currentPassword, setCurrentPassword] = useState('');
   const [newPassword, setNewPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
@@ -58,6 +60,11 @@ export function PasswordChangeModal({ isOpen, onClose, email }: PasswordChangeMo
       
       toast.success("Password changed successfully");
       onClose();
+
+      // Call the refresh function if provided
+      if (onPasswordChanged) {
+        onPasswordChanged();
+      }
       
       // Clear form
       setCurrentPassword('');

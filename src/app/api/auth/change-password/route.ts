@@ -60,6 +60,8 @@ export async function POST(request: NextRequest) {
     
     // Update the password
     user.password = newPassword;
+    // Add the password updated timestamp
+    user.passwordUpdatedAt = new Date();
     await user.save(); // The pre-save hook in your model will hash the password
     
     return NextResponse.json(

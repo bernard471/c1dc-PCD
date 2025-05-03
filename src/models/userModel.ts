@@ -11,6 +11,7 @@ export interface IUser extends Document {
   subscriptionStatus: 'none' | 'active' | 'expired';
   subscriptionExpiry?: Date;
   hasCompletedPayment: boolean;
+  passwordUpdatedAt?: Date; // Add this field to the interface
   createdAt: Date;
   updatedAt: Date;
   comparePassword(candidatePassword: string): Promise<boolean>;
@@ -64,6 +65,10 @@ const userSchema = new Schema<IUser>(
       type: Boolean,
       default: false,
     },
+    passwordUpdatedAt: { // Add this field to the schema
+      type: Date,
+      default: null,
+    },
   },
   { timestamps: true }
 );
@@ -76,6 +81,12 @@ userSchema.pre('save', async function(next) {
   try {
     const salt = await bcrypt.genSalt(10);
     this.password = await bcrypt.hash(this.password, salt);
+    
+    // Update passwordUpdatedAt when password is changed
+    if (this.isModified('password')) {
+      this.passwordUpdatedAt = new Date();
+    }
+    
     next();
   } catch (error: Error | unknown) {
     next(error as mongoose.CallbackError);

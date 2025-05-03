@@ -1,5 +1,4 @@
 // Mobile Device Security Data Structure
-import freepik from '../images/freebik.jpg';
 import pattern from '../images/pattern.jpg';
 import pin from '../images/pincode.jpg'
 import hero from '../images/lockscreen.jpg';
@@ -28,6 +27,169 @@ import hero22 from '../images/google7.jpg';
 import hero23 from '../images/google8.jpg';
 import hero24 from '../images/google9.jpg';
 import hero25 from '../images/google10.jpg';
+import hero26 from '../images/find.jpg';
+import hero27 from '../images/find1.jpg';
+import hero28 from '../images/find2.jpg';
+import hero29 from '../images/find3.jpg';
+import hero30 from '../images/find4.jpg';
+import hero31 from '../images/find5.jpg';
+import hero32 from '../images/find6.jpg';
+import hero33 from '../images/find7.jpg';
+import hero34 from '../images/find8.jpg';
+import hero35 from '../images/find9.jpg';
+import hero36 from '../images/apps.jpg';
+import hero37 from '../images/apps1.jpg';
+import hero38 from '../images/apps2.jpg';
+import hero39 from '../images/apps3.jpg';
+import hero40 from '../images/apps4.jpg';
+import hero42 from '../images/apps6.jpg';
+import hero45 from '../images/permission.jpg';
+import hero46 from '../images/permission1.jpg';
+import hero47 from '../images/permmanager.jpg';
+import hero48 from '../images/devops.jpg';
+import hero49 from '../images/devops1.jpg';
+import hero50 from '../images/devops2.jpg';
+import hero51 from '../images/devops3.jpg';
+import hero52 from '../images/devops4.jpg';
+import hero53 from '../images/devops5.jpg';
+import hero54 from '../images/devops6.jpg';
+import hero55 from '../images/devops7.jpg';
+import hero56 from '../images/devops8.jpg';
+import hero57 from '../images/connect.jpg';
+import hero58 from '../images/connect1.jpg';
+import hero59 from '../images/connect2.jpg';
+import hero60 from '../images/connect3.jpg';
+import hero61 from '../images/connect4.jpg';
+import hero62 from '../images/connect5.jpg';
+import hero63 from '../images/connect6.jpg';
+import hero64 from '../images/connect7.jpg';
+import hero65 from '../images/connect8.jpg';
+import hero66 from '../images/updates.jpg';
+import hero67 from '../images/updates1.jpg';
+import hero68 from '../images/appsec.jpg';
+import hero69 from '../images/appsec1.jpg';
+import hero70 from '../images/appsec2.jpg';
+import hero71 from '../images/appsec3.jpg';
+import hero72 from '../images/appsec4.jpg';
+import hero73 from '../images/appinst.jpg';
+import hero74 from '../images/appinst1.jpg';
+import hero75 from '../images/appinst2.jpg';
+import hero76 from '../images/appinst3.jpg';
+import hero77 from '../images/appinst4.jpg';
+import hero78 from '../images/verifyapp.jpg';
+import hero79 from '../images/verifyapp1.jpg';
+import hero80 from '../images/verifyapp2.jpg';
+import hero81 from '../images/verifyapp3.jpg';
+import hero82 from '../images/verifyapp4.jpg';
+import hero83 from '../images/verifyapp5.jpg';
+import hero84 from '../images/verifyapp6.jpg';
+import hero85 from '../images/autoupdates.jpg';
+import hero86 from '../images/autoupdates1.jpg';
+import hero87 from '../images/autoupdates2.jpg';
+import hero88 from '../images/autoupdates3.jpg';
+import hero89 from '../images/autoupdates4.jpg';
+import hero90 from '../images/autoupdates5.jpg';
+import hero91 from '../images/whatsnew.jpg';
+import hero92 from '../images/whatsnew1.jpg';
+import hero93 from '../images/whatsnew2.jpg';
+import hero94 from '../images/devinfo.jpg';
+import hero95 from '../images/devinfo1.jpg';
+import hero96 from '../images/devinfo2.jpg';
+import hero97 from '../images/aboutapp.jpg';
+import hero98 from '../images/aboutapp1.jpg';
+import hero99 from '../images/aboutapp2.jpg';
+import hero100 from '../images/aboutapp3.jpg';
+import hero101 from '../images/googlebackup.jpg';
+import hero102 from '../images/googlebackup1.jpg';
+import hero103 from '../images/googlebackup2.jpg';
+import hero104 from '../images/ownerinfo.jpg';
+import hero105 from '../images/ownerinfo1.jpg';
+import hero106 from '../images/ownerinfo2.jpg';
+import hero107 from '../images/antitheft.jpg';
+import hero108 from '../images/antitheft1.jpg';
+import hero109 from '../images/antitheft2.jpg';
+import hero110 from '../images/antitheft3.jpg';
+import hero111 from '../images/antitheft4.jpg';
+import hero112 from '../images/antitheft5.jpg';
+import hero113 from '../images/antitheft6.jpg';
+import hero114 from '../images/antitheft7.jpg';
+import hero115 from '../images/antitheft8.jpg';
+import hero116 from '../images/antitheft9.jpg';
+import hero117 from '../images/iossettings.jpg';
+import hero118 from '../images/iosfaceid.jpg';
+import hero119 from '../images/iosfaceid1.jpg';
+import hero120 from '../images/iosfaceid2.jpg';
+import hero121 from '../images/iosfaceid3.jpg';
+import hero122 from '../images/iosfaceid4.jpg';
+import hero124 from '../images/facealte.jpg';
+import hero125 from '../images/facealte1.jpg';
+import hero126 from '../images/autolock.jpg';
+import hero127 from '../images/autolock1.jpg';
+import hero128 from '../images/screentime.jpg';
+import hero129 from '../images/screentime1.jpg';
+import hero130 from '../images/screentime2.jpg';
+import hero131 from '../images/screentime3.jpg';
+import hero132 from '../images/icloud.jpg';
+import hero133 from '../images/icloud1.jpg';
+import hero134 from '../images/icloud2.jpg';
+import hero135 from '../images/devicelist.jpg';
+import hero136 from '../images/manageicloud.jpg';
+import hero137 from '../images/manageicloud1.jpg';
+import hero138 from '../images/findmy.jpg';
+import hero139 from '../images/findmy1.jpg';
+import hero140 from '../images/advanceset.jpg';
+import hero141 from '../images/advanceset1.jpg';
+import hero142 from '../images/advanceset2.jpg';
+import hero143 from '../images/weeklyupdates.jpg';
+import hero144 from '../images/privacy.jpg';
+import hero145 from '../images/privacy1.jpg';
+import hero146 from '../images/privacy2.jpg';
+import hero147 from '../images/privacy3.jpg';
+import hero148 from '../images/privacy4.jpg';
+import hero149 from '../images/privacy5.jpg';
+import hero150 from '../images/privacy6.jpg';
+import hero151 from '../images/analytics.jpg';
+import hero152 from '../images/analytics1.jpg';
+import hero153 from '../images/analytics2.jpg';
+import hero154 from '../images/analytics3.jpg';
+import hero155 from '../images/safari.jpg';
+import hero156 from '../images/safari1.jpg';
+import hero157 from '../images/safari2.jpg';
+import hero158 from '../images/safari3.jpg';
+import hero159 from '../images/safari4.jpg';
+import hero160 from '../images/safari5.jpg';
+import hero161 from '../images/wifi.jpg';
+import hero162 from '../images/wifi1.jpg';
+import hero163 from '../images/wifi2.jpg';
+import hero164 from '../images/applerelay.jpg';
+import hero165 from '../images/perm.jpg';
+import hero166 from '../images/content.jpg';
+import hero167 from '../images/content1.jpg';
+import hero168 from '../images/content2.jpg';
+import hero169 from '../images/backup.jpg';
+import hero170 from '../images/managestorage.jpg';
+import hero171 from '../images/notes.jpg';
+import hero172 from '../images/notes1.jpg';
+import hero173 from '../images/notes2.jpg';
+import hero174 from '../images/passwords.jpg';
+import hero175 from '../images/passwords1.jpg';
+import hero176 from '../images/messages.jpg';
+import hero177 from '../images/messages1.jpg';
+import hero178 from '../images/unknown.jpg';
+import hero179 from '../images/facetime.jpg';
+import hero180 from '../images/facetime1.jpg';
+import hero181 from '../images/mail.jpg';
+import hero182 from '../images/mail1.jpg';
+import hero183 from '../images/accounts.jpg';
+import hero184 from '../images/accounts1.jpg';
+import hero185 from '../images/lockdown.jpg';
+import hero186 from '../images/lockdown1.jpg';
+import hero187 from '../images/hide.jpg';
+import hero188 from '../images/hide1.jpg';
+import hero189 from '../images/hide2.jpg';
+import hero190 from '../images/tracking.jpg';
+import hero191 from '../images/tracking1.jpg';
+import hero192 from '../images/tracking2.jpg';
 
 
 export interface SecurityItem {
@@ -214,9 +376,8 @@ export interface SecurityItem {
                 images: [
                   hero1.src,
                   hero9.src,
-                  freepik.src,
-                  hero.src,
-                  freepik.src,
+                  hero26.src,
+                  hero27.src,
                 ],
               },
               {
@@ -224,11 +385,8 @@ export interface SecurityItem {
                 title: 'Verify it works by testing at android.com/find',
                 description: 'Ensure the feature is properly configured',
                 images: [
-                  hero1.src,
-                  hero.src,
-                  freepik.src,
-                  hero.src,
-                  freepik.src,
+                  hero28.src,
+                  hero29.src,
                 ],
               },
               {
@@ -242,11 +400,13 @@ export interface SecurityItem {
                   'Erase data in emergency situations'
                 ],
                 images: [
-                  hero1.src,
-                  hero.src,
-                  freepik.src,
-                  hero.src,
-                  freepik.src,
+                  hero29.src,
+                  hero30.src,
+                  hero33.src,
+                  hero34.src,
+                  hero31.src,
+                  hero32.src,
+                  hero35.src,
                 ],
               }
             ]
@@ -257,41 +417,6 @@ export interface SecurityItem {
         id: 'advanced-security',
         title: 'Advanced Security Settings',
         sections: [
-          {
-            id: 'encryption',
-            title: 'Encryption',
-
-            items: [
-              {
-                id: 'verify-encryption',
-                title: 'Verify device encryption is enabled',
-                description: 'Check encryption status in device settings',
-                steps: [
-                  'Settings > Security > Encryption & credentials',
-                  'Modern Android devices are encrypted by default. Ensure encryption is enabled.',
-                ],
-                images: [
-                  hero1.src,
-                  hero.src,
-                  freepik.src,
-                  hero.src,
-                  freepik.src,
-                ],
-              },
-              {
-                id: 'enable-encryption',
-                title: 'Enable storage encryption if not already active',
-                description: 'Encrypt your device data for additional protection',
-                images: [
-                  hero1.src,
-                  hero.src,
-                  freepik.src,
-                  hero.src,
-                  freepik.src,
-                ],
-              }
-            ]
-          },
           {
             id: 'app-permissions',
             title: 'App Permissions Management',
@@ -305,10 +430,10 @@ export interface SecurityItem {
                 ],
                 images: [
                   hero1.src,
-                  hero.src,
-                  freepik.src,
-                  hero.src,
-                  freepik.src,
+                  hero36.src,
+                  hero37.src,
+                  hero38.src,
+                  hero39.src,
                 ],
               },
               {
@@ -322,24 +447,15 @@ export interface SecurityItem {
                   'Body sensors and activity recognition'
                 ],
                 images: [
-                  hero1.src,
-                  hero.src,
-                  freepik.src,
-                  hero.src,
-                  freepik.src,
+                  hero40.src,
+                  hero45.src,
+                  hero46.src,
                 ],
               },
               {
                 id: 'audit-permissions',
                 title: 'Regularly audit permissions (monthly)',
                 description: 'Set a schedule to review app permissions',
-                images: [
-                  hero1.src,
-                  hero.src,
-                  freepik.src,
-                  hero.src,
-                  freepik.src,
-                ],
               },
               {
                 id: 'permission-manager',
@@ -350,10 +466,9 @@ export interface SecurityItem {
                 ],
                 images: [
                   hero1.src,
-                  hero.src,
-                  freepik.src,
-                  hero.src,
-                  freepik.src,
+                  hero9.src,
+                  hero47.src,
+                  hero42.src,
                 ],
               }
             ]
@@ -371,10 +486,12 @@ export interface SecurityItem {
                 ],
                 images: [
                   hero1.src,
-                  hero.src,
-                  freepik.src,
-                  hero.src,
-                  freepik.src,
+                  hero48.src,
+                  hero49.src,
+                  hero50.src,
+                  hero51.src,
+                  hero52.src,
+                  hero53.src,
                 ],
               },
               {
@@ -387,11 +504,10 @@ export interface SecurityItem {
                   'Set "Select USB Configuration" to "Charging"'
                 ],
                 images: [
-                  hero1.src,
-                  hero.src,
-                  freepik.src,
-                  hero.src,
-                  freepik.src,
+                  hero53.src,
+                  hero54.src,
+                  hero55.src,
+                  hero56.src,
                 ],
               }
             ]
@@ -410,10 +526,12 @@ export interface SecurityItem {
                 ],
                 images: [
                   hero1.src,
-                  hero.src,
-                  freepik.src,
-                  hero.src,
-                  freepik.src,
+                  hero57.src,
+                  hero58.src,
+                  hero59.src,
+                  hero60.src,
+                  hero61.src,
+                  hero62.src,
                 ],
               },
               {
@@ -426,10 +544,10 @@ export interface SecurityItem {
                 ],
                 images: [
                   hero1.src,
-                  hero.src,
-                  freepik.src,
-                  hero.src,
-                  freepik.src,
+                  hero57.src,
+                  hero63.src,
+                  hero64.src,
+                  hero65.src,
                 ],
               }
             ]
@@ -448,35 +566,20 @@ export interface SecurityItem {
                 ],
                 images: [
                   hero1.src,
-                  hero.src,
-                  freepik.src,
-                  hero.src,
-                  freepik.src,
+                  hero48.src,
+                  hero66.src,
+                  hero67.src,
                 ]
               },
               {
                 id: 'manual-updates',
                 title: 'Check for updates manually monthly',
                 description: 'Regularly verify your device has the latest updates',
-                images: [
-                  hero1.src,
-                  hero.src,
-                  freepik.src,
-                  hero.src,
-                  freepik.src,
-                ]
               },
               {
                 id: 'security-patches',
                 title: 'Install security patches immediately when available',
                 description: 'Apply security fixes as soon as they are released',
-                images: [
-                  hero1.src,
-                  hero.src,
-                  freepik.src,
-                  hero.src,
-                  freepik.src,
-                ]
               }
             ]
           }
@@ -500,11 +603,11 @@ export interface SecurityItem {
                   'Enable "Improve harmful app detection"'
                 ],
                 images: [
-                  hero1.src,
-                  hero.src,
-                  freepik.src,
-                  hero.src,
-                  freepik.src,
+                  hero68.src,
+                  hero69.src,
+                  hero70.src,
+                  hero71.src,
+                  hero72.src,
                 ]
               }
             ]
@@ -523,10 +626,11 @@ export interface SecurityItem {
                 ],
                 images: [
                   hero1.src,
-                  hero.src,
-                  freepik.src,
-                  hero.src,
-                  freepik.src,
+                  hero73.src,
+                  hero74.src,
+                  hero75.src,
+                  hero76.src,
+                  hero77.src,
                 ]
               },
               {
@@ -540,11 +644,14 @@ export interface SecurityItem {
                   'Check privacy policy'
                 ],
                 images: [
-                  hero1.src,
-                  hero.src,
-                  freepik.src,
-                  hero.src,
-                  freepik.src,
+                  hero68.src,
+                  hero78.src,
+                  hero79.src,
+                  hero80.src,
+                  hero81.src,
+                  hero82.src,
+                  hero83.src,
+                  hero84.src,
                 ]
               }
             ]
@@ -562,11 +669,12 @@ export interface SecurityItem {
                   'Set "Auto-update apps" to "Over Wi-Fi only"'
                 ],
                 images: [
-                  hero1.src,
-                  hero.src,
-                  freepik.src,
-                  hero.src,
-                  freepik.src,
+                  hero85.src,
+                  hero86.src,
+                  hero87.src,
+                  hero88.src,
+                  hero89.src,
+                  hero90.src,
                 ]
               },
               {
@@ -574,11 +682,9 @@ export interface SecurityItem {
                 title: 'Manually review updates for critical apps',
                 description: 'Pay special attention to updates for sensitive applications',
                 images: [
-                  hero1.src,
-                  hero.src,
-                  freepik.src,
-                  hero.src,
-                  freepik.src,
+                  hero91.src,
+                  hero92.src,
+                  hero93.src,
                 ]
               }
             ]
@@ -598,11 +704,13 @@ export interface SecurityItem {
                   'Review recent user feedback for security concerns'
                 ],
                 images: [
-                  hero1.src,
-                  hero.src,
-                  freepik.src,
-                  hero.src,
-                  freepik.src,
+                  hero94.src,
+                  hero95.src,
+                  hero96.src,
+                  hero97.src,
+                  hero98.src,
+                  hero99.src,
+                  hero100.src,
                 ]
               }
             ]
@@ -622,16 +730,15 @@ export interface SecurityItem {
                 title: 'Configure automated backups',
                 description: 'Set up cloud backups of your device data',
                 steps: [
-                  'Settings > System > Backup',
+                  'Settings > google >Backup',
                   'Enable "Back up to Google Drive"',
                   'Verify what data is being backed up'
                 ],
                 images: [
                   hero1.src,
-                  hero.src,
-                  freepik.src,
-                  hero.src,
-                  freepik.src,
+                  hero101.src,
+                  hero102.src,
+                  hero103.src,
                 ]
               }
             ]
@@ -648,25 +755,11 @@ export interface SecurityItem {
                   'Connect to computer via USB in file transfer mode',
                   'Copy important files to secure external storage'
                 ],
-                images: [
-                  hero1.src,
-                  hero.src,
-                  freepik.src,
-                  hero.src,
-                  freepik.src,
-                ]
               },
               {
                 id: 'encrypt-backup',
                 title: 'Encrypt backup files with tools like 7-Zip',
                 description: 'Add password protection to your backup archives',
-                images: [
-                  hero1.src,
-                  hero.src,
-                  freepik.src,
-                  hero.src,
-                  freepik.src,
-                ],
               }
             ]
           },
@@ -676,19 +769,12 @@ export interface SecurityItem {
             items: [
               {
                 id: 'use-secure-folder',
-                title: 'Use Secure Folder (Samsung) or equivalent',
+                title: 'Use Secure Folder (Samsung current update) or equivalent',
                 description: 'Create an encrypted space for sensitive apps and data',
                 steps: [
                   'Settings > Biometrics and security > Secure Folder',
                   'Configure separate authentication',
                   'Move sensitive apps and data inside'
-                ],
-                images: [
-                  hero1.src,
-                  hero.src,
-                  freepik.src,
-                  hero.src,
-                  freepik.src,
                 ],
               }
             ]
@@ -708,15 +794,15 @@ export interface SecurityItem {
                 title: 'Add owner information to lock screen',
                 description: 'Display contact details in case device is lost',
                 steps: [
-                  'Settings > Display > Lock screen > Contact information',
+                  'Settings > Lock screen > Contact information',
                   'Include alternate contact method (not your main phone number)'
                 ],
                 images: [
                   hero1.src,
                   hero.src,
-                  freepik.src,
-                  hero.src,
-                  freepik.src,
+                  hero104.src,
+                  hero105.src,
+                  hero106.src,
                 ],
               }
             ]
@@ -735,11 +821,16 @@ export interface SecurityItem {
                   'Configure to take photos after failed unlock attempts'
                 ],
                 images: [
-                  hero1.src,
-                  hero.src,
-                  freepik.src,
-                  hero.src,
-                  freepik.src,
+                  hero107.src,
+                  hero108.src,
+                  hero109.src,
+                  hero110.src,
+                  hero111.src,
+                  hero112.src,
+                  hero113.src,
+                  hero114.src,
+                  hero115.src,
+                  hero116.src,
                 ],
               }
             ]
@@ -773,11 +864,12 @@ export const iosSecurityData: DeviceSecurityData = {
                   'Minimum 8 characters with complexity'
                 ],
                 images: [
-                  hero1.src,
-                  hero.src,
-                  freepik.src,
-                  hero.src,
-                  freepik.src,
+                  hero117.src,
+                  hero118.src,
+                  hero119.src,
+                  hero120.src,
+                  hero121.src,
+                  hero122.src,
                 ],
               },
               {
@@ -789,11 +881,10 @@ export const iosSecurityData: DeviceSecurityData = {
                   'Set up multiple fingerprints for Touch ID'
                 ],
                 images: [
-                  hero1.src,
-                  hero.src,
-                  freepik.src,
-                  hero.src,
-                  freepik.src,
+                  hero117.src,
+                  hero118.src,
+                  hero124.src,
+                  hero125.src,
                 ],
               },
               {
@@ -801,11 +892,7 @@ export const iosSecurityData: DeviceSecurityData = {
                 title: 'Set "Require Passcode" to "Immediately"',
                 description: 'Ensure your device locks immediately when screen turns off',
                 images: [
-                  hero1.src,
-                  hero.src,
-                  freepik.src,
-                  hero.src,
-                  freepik.src,
+                  hero122.src,
                 ],
               }
             ]
@@ -822,11 +909,9 @@ export const iosSecurityData: DeviceSecurityData = {
                   'Settings > Display & Brightness > Auto-Lock'
                 ],
                 images: [
-                  hero1.src,
-                  hero.src,
-                  freepik.src,
-                  hero.src,
-                  freepik.src,
+                  hero117.src,
+                  hero126.src,
+                  hero127.src,
                 ],
               },
               {
@@ -839,11 +924,11 @@ export const iosSecurityData: DeviceSecurityData = {
                   'Password-protect changes'
                 ],
                 images: [
-                  hero1.src,
-                  hero.src,
-                  freepik.src,
-                  hero.src,
-                  freepik.src,
+                  hero117.src,
+                  hero128.src,
+                  hero129.src,
+                  hero130.src,
+                  hero131.src,
                 ],
               }
             ]
@@ -862,11 +947,10 @@ export const iosSecurityData: DeviceSecurityData = {
                   'Set up trusted phone numbers and devices'
                 ],
                 images: [
-                  hero1.src,
-                  hero.src,
-                  freepik.src,
-                  hero.src,
-                  freepik.src,
+                  hero117.src,
+                  hero132.src,
+                  hero133.src,
+                  hero134.src,
                 ],
               },
               {
@@ -878,11 +962,9 @@ export const iosSecurityData: DeviceSecurityData = {
                   'Remove unrecognized devices'
                 ],
                 images: [
-                  hero1.src,
-                  hero.src,
-                  freepik.src,
-                  hero.src,
-                  freepik.src,
+                  hero117.src,
+                  hero132.src,
+                  hero135.src,
                 ],
               },
               {
@@ -894,11 +976,10 @@ export const iosSecurityData: DeviceSecurityData = {
                   'Toggle off access for unnecessary apps'
                 ],
                 images: [
-                  hero1.src,
-                  hero.src,
-                  freepik.src,
-                  hero.src,
-                  freepik.src,
+                  hero117.src,
+                  hero132.src,
+                  hero136.src,
+                  hero137.src,
                 ],
               }
             ]
@@ -916,24 +997,16 @@ export const iosSecurityData: DeviceSecurityData = {
                   'Turn on Find My iPhone, Find My network, Send Last Location'
                 ],
                 images: [
-                  hero1.src,
-                  hero.src,
-                  freepik.src,
-                  hero.src,
-                  freepik.src,
+                  hero117.src,
+                  hero132.src,
+                  hero138.src,
+                  hero139.src,
                 ],
               },
               {
                 id: 'test-find-my',
                 title: 'Test functionality at icloud.com/find',
                 description: 'Verify that Find My iPhone is working correctly',
-                images: [
-                  hero1.src,
-                  hero.src,
-                  freepik.src,
-                  hero.src,
-                  freepik.src,
-                ],
               },
               {
                 id: 'find-my-features',
@@ -944,13 +1017,6 @@ export const iosSecurityData: DeviceSecurityData = {
                   'Play sound',
                   'Enable Lost Mode',
                   'Remotely erase if necessary'
-                ],
-                images: [
-                  hero1.src,
-                  hero.src,
-                  freepik.src,
-                  hero.src,
-                  freepik.src,
                 ],
               }
             ]
@@ -974,11 +1040,10 @@ export const iosSecurityData: DeviceSecurityData = {
                   'Turn on "Download iOS Updates" and "Install iOS Updates"'
                 ],
                 images: [
-                  hero1.src,
-                  hero.src,
-                  freepik.src,
-                  hero.src,
-                  freepik.src,
+                  hero117.src,
+                  hero140.src,
+                  hero141.src,
+                  hero142.src,
                 ],
               },
               {
@@ -989,11 +1054,10 @@ export const iosSecurityData: DeviceSecurityData = {
                   'Settings > General > Software Update'
                 ],
                 images: [
-                  hero1.src,
-                  hero.src,
-                  freepik.src,
-                  hero.src,
-                  freepik.src,
+                  hero117.src,
+                  hero140.src,
+                  hero141.src,
+                  hero143.src,
                 ],
               }
             ]
@@ -1012,11 +1076,12 @@ export const iosSecurityData: DeviceSecurityData = {
                   'Disable "Precise Location" for non-essential apps'
                 ],
                 images: [
-                  hero1.src,
-                  hero.src,
-                  freepik.src,
-                  hero.src,
-                  freepik.src,
+                  hero117.src,
+                  hero144.src,
+                  hero145.src,
+                  hero146.src,
+                  hero147.src,
+                  hero148.src,
                 ],
               },
               {
@@ -1028,11 +1093,10 @@ export const iosSecurityData: DeviceSecurityData = {
                   'Regularly audit app access'
                 ],
                 images: [
-                  hero1.src,
-                  hero.src,
-                  freepik.src,
-                  hero.src,
-                  freepik.src,
+                  hero117.src,
+                  hero144.src,
+                  hero150.src,
+                  hero149.src,
                 ],
               },
               {
@@ -1045,11 +1109,12 @@ export const iosSecurityData: DeviceSecurityData = {
                   'Settings > Privacy > Apple Advertising > turn off "Personalized Ads"'
                 ],
                 images: [
-                  hero1.src,
-                  hero.src,
-                  freepik.src,
-                  hero.src,
-                  freepik.src,
+                  hero117.src,
+                  hero144.src,
+                  hero151.src,
+                  hero152.src,
+                  hero153.src,
+                  hero154.src,
                 ],
               }
             ]
@@ -1069,11 +1134,12 @@ export const iosSecurityData: DeviceSecurityData = {
                   'Block all cookies or only from third parties'
                 ],
                 images: [
-                  hero1.src,
-                  hero.src,
-                  freepik.src,
-                  hero.src,
-                  freepik.src,
+                  hero117.src,
+                  hero155.src,
+                  hero156.src,
+                  hero157.src,
+                  hero159.src,
+                  hero160.src,
                 ],
               },
               {
@@ -1084,11 +1150,9 @@ export const iosSecurityData: DeviceSecurityData = {
                   'Settings > Safari > Clear History and Website Data'
                 ],
                 images: [
-                  hero1.src,
-                  hero.src,
-                  freepik.src,
-                  hero.src,
-                  freepik.src,
+                  hero117.src,
+                  hero155.src,
+                  hero158.src,
                 ],
               }
             ]
@@ -1106,11 +1170,8 @@ export const iosSecurityData: DeviceSecurityData = {
                   'Enable for all networks'
                 ],
                 images: [
-                  hero1.src,
-                  hero.src,
-                  freepik.src,
-                  hero.src,
-                  freepik.src,
+                  hero117.src,
+                  hero161.src,
                 ],
               },
               {
@@ -1121,11 +1182,10 @@ export const iosSecurityData: DeviceSecurityData = {
                   'Settings > Safari > Hide IP Address > Turn on'
                 ],
                 images: [
-                  hero1.src,
-                  hero.src,
-                  freepik.src,
-                  hero.src,
-                  freepik.src,
+                  hero117.src,
+                  hero155.src,
+                  hero162.src,
+                  hero163.src,
                 ],
               },
               {
@@ -1136,11 +1196,9 @@ export const iosSecurityData: DeviceSecurityData = {
                   'Settings > [your name] > iCloud > Private Relay'
                 ],
                 images: [
-                  hero1.src,
-                  hero.src,
-                  freepik.src,
-                  hero.src,
-                  freepik.src,
+                  hero117.src,
+                  hero132.src,
+                  hero164.src,
                 ],
               }
             ]
@@ -1157,11 +1215,9 @@ export const iosSecurityData: DeviceSecurityData = {
                   'Settings > Privacy > review each category'
                 ],
                 images: [
-                  hero1.src,
-                  hero.src,
-                  freepik.src,
-                  hero.src,
-                  freepik.src,
+                  hero117.src,
+                  hero144.src,
+                  hero165.src,
                 ],
               },
               {
@@ -1174,11 +1230,11 @@ export const iosSecurityData: DeviceSecurityData = {
                   'Require password for additional purchases'
                 ],
                 images: [
-                  hero1.src,
-                  hero.src,
-                  freepik.src,
-                  hero.src,
-                  freepik.src,
+                  hero117.src,
+                  hero128.src,
+                  hero166.src,
+                  hero167.src,
+                  hero168.src,
                 ],
               }
             ]
@@ -1202,11 +1258,10 @@ export const iosSecurityData: DeviceSecurityData = {
                   'Enable "iCloud Backup"'
                 ],
                 images: [
-                  hero1.src,
-                  hero.src,
-                  freepik.src,
-                  hero.src,
-                  freepik.src,
+                  hero117.src,
+                  hero132.src,
+                  hero136.src,
+                  hero169.src,
                 ],
               },
               {
@@ -1218,11 +1273,10 @@ export const iosSecurityData: DeviceSecurityData = {
                   'Review and adjust backup content'
                 ],
                 images: [
-                  hero1.src,
-                  hero.src,
-                  freepik.src,
-                  hero.src,
-                  freepik.src,
+                  hero117.src,
+                  hero132.src,
+                  hero136.src,
+                  hero170.src,
                 ],
               }
             ]
@@ -1241,13 +1295,6 @@ export const iosSecurityData: DeviceSecurityData = {
                   'Check "Encrypt local backup" and set strong password',
                   'Store password in secure password manager'
                 ],
-                images: [
-                  hero1.src,
-                  hero.src,
-                  freepik.src,
-                  hero.src,
-                  freepik.src,
-                ],
               }
             ]
           },
@@ -1264,11 +1311,9 @@ export const iosSecurityData: DeviceSecurityData = {
                   'Set unique password different from device passcode'
                 ],
                 images: [
-                  hero1.src,
-                  hero.src,
-                  freepik.src,
-                  hero.src,
-                  freepik.src,
+                  hero171.src,
+                  hero172.src,
+                  hero173.src,
                 ],
               },
               {
@@ -1280,11 +1325,9 @@ export const iosSecurityData: DeviceSecurityData = {
                   'Enable AutoFill Passwords'
                 ],
                 images: [
-                  hero1.src,
-                  hero.src,
-                  freepik.src,
-                  hero.src,
-                  freepik.src,
+                  hero117.src,
+                  hero174.src,
+                  hero175.src,
                 ],
               }
             ]
@@ -1307,11 +1350,9 @@ export const iosSecurityData: DeviceSecurityData = {
                   'Settings > Messages > ensure iMessage is on'
                 ],
                 images: [
-                  hero1.src,
-                  hero.src,
-                  freepik.src,
-                  hero.src,
-                  freepik.src,
+                  hero117.src,
+                  hero176.src,
+                  hero177.src,
                 ],
               },
               {
@@ -1322,11 +1363,9 @@ export const iosSecurityData: DeviceSecurityData = {
                   'Settings > Messages > Filter Unknown Senders'
                 ],
                 images: [
-                  hero1.src,
-                  hero.src,
-                  freepik.src,
-                  hero.src,
-                  freepik.src,
+                  hero117.src,
+                  hero176.src,
+                  hero178.src,
                 ],
               },
               {
@@ -1337,11 +1376,9 @@ export const iosSecurityData: DeviceSecurityData = {
                   'Settings > FaceTime > toggle off "FaceTime" when not in use'
                 ],
                 images: [
-                  hero1.src,
-                  hero.src,
-                  freepik.src,
-                  hero.src,
-                  freepik.src,
+                  hero117.src,
+                  hero179.src,
+                  hero180.src,
                 ],
               }
             ]
@@ -1358,11 +1395,9 @@ export const iosSecurityData: DeviceSecurityData = {
                   'Settings > Mail > toggle off "Load Remote Images"'
                 ],
                 images: [
-                  hero1.src,
-                  hero.src,
-                  freepik.src,
-                  hero.src,
-                  freepik.src,
+                  hero117.src,
+                  hero181.src,
+                  hero182.src,
                 ],
               },
               {
@@ -1374,11 +1409,10 @@ export const iosSecurityData: DeviceSecurityData = {
                   'Don\'t use VIP or notifications for unknown senders'
                 ],
                 images: [
-                  hero1.src,
-                  hero.src,
-                  freepik.src,
-                  hero.src,
-                  freepik.src,
+                  hero117.src,
+                  hero181.src,
+                  hero183.src,
+                  hero184.src,
                 ],
               }
             ]
@@ -1403,11 +1437,10 @@ export const iosSecurityData: DeviceSecurityData = {
                   'Enable only during high-risk periods'
                 ],
                 images: [
-                  hero1.src,
-                  hero.src,
-                  freepik.src,
-                  hero.src,
-                  freepik.src,
+                  hero117.src,
+                  hero144.src,
+                  hero185.src,
+                  hero186.src,
                 ],
               }
             ]
@@ -1426,11 +1459,12 @@ export const iosSecurityData: DeviceSecurityData = {
                   'Deactivate addresses if compromised'
                 ],
                 images: [
-                  hero1.src,
-                  hero.src,
-                  freepik.src,
-                  hero.src,
-                  freepik.src,
+                  hero117.src,
+                  hero132.src,
+                  hero136.src,
+                  hero187.src,
+                  hero188.src,
+                  hero189.src,
                 ],
               }
             ]
@@ -1448,11 +1482,10 @@ export const iosSecurityData: DeviceSecurityData = {
                   'Toggle off "Allow Apps to Request to Track"'
                 ],
                 images: [
-                  hero1.src,
-                  hero.src,
-                  freepik.src,
-                  hero.src,
-                  freepik.src,
+                  hero117.src,
+                  hero144.src,
+                  hero190.src,
+                  hero191.src,
                 ],
               },
               {
@@ -1464,11 +1497,10 @@ export const iosSecurityData: DeviceSecurityData = {
                   'Revoke permissions for apps you no longer use'
                 ],
                 images: [
-                  hero1.src,
-                  hero.src,
-                  freepik.src,
-                  hero.src,
-                  freepik.src,
+                  hero117.src,
+                  hero144.src,
+                  hero190.src,
+                  hero192.src,
                 ],
               }
             ]

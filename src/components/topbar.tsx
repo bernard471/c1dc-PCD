@@ -174,12 +174,6 @@ export default function TopBar({ toggleSidebar, toggleMobileMenu, isSidebarOpen,
                     Your Profile
                   </Link>
                   
-                  <Link 
-                    href="/settings" 
-                    className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
-                  >
-                    Settings
-                  </Link>
                   
                   <button
                     onClick={handleSignOut}

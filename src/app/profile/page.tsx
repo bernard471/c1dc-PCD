@@ -21,13 +21,15 @@ export default function UserProfilePage() {
     socialMedia: 0,
     email: 0,
     identity: 0,
+    recommended: 0,
+    implementationStrategy: 0,
     overall: 0
   });
   const [isLoading, setIsLoading] = useState(true);
   const [activeTab, setActiveTab] = useState('overview');
   const [isPasswordModalOpen, setIsPasswordModalOpen] = useState(false);
   const [userProvider, setUserProvider] = useState<string | null>(null);
-  const [lastPasswordChange] = useState<string>('30 days ago');
+  const [lastPasswordChange, setLastPasswordChange] = useState<string>('Loading...');
 
   // Fetch security scores
   useEffect(() => {
@@ -52,14 +54,16 @@ export default function UserProfilePage() {
       try {
         // Fetch security scores from various endpoints
         const [mobileResponse, wifiResponse, networkResponse, communicationResponse, 
-               socialMediaResponse, emailResponse, identityResponse] = await Promise.all([
+               socialMediaResponse, emailResponse, identityResponse, recommendedResponse, implementationStrategyResponse] = await Promise.all([
           fetch('/api/mobile-security'),
           fetch('/api/wifi-security'),
-          fetch('/api/network-security'),
+          fetch('/api/user-security'),
           fetch('/api/communication-security'),
           fetch('/api/social-media-security'),
           fetch('/api/email-security'),
-          fetch('/api/identity-protection')
+          fetch('/api/identity-protection'),
+          fetch('/api/recommended-security'),
+          fetch('/api/implementation-strategy'),
         ]);
 
         // Process responses
@@ -70,6 +74,8 @@ export default function UserProfilePage() {
         const socialMediaData = socialMediaResponse.ok ? await socialMediaResponse.json() : { score: 0 };
         const emailData = emailResponse.ok ? await emailResponse.json() : { score: 0 };
         const identityData = identityResponse.ok ? await identityResponse.json() : { score: 0 };
+        const recommendedData = recommendedResponse.ok ? await recommendedResponse.json() : { score: 0 };
+        const implementationStrategyData = implementationStrategyResponse.ok ? await implementationStrategyResponse.json() : { score: 0 };
 
         // Calculate overall score
         const scores = {
@@ -79,12 +85,14 @@ export default function UserProfilePage() {
           communication: communicationData.score || 0,
           socialMedia: socialMediaData.score || 0,
           email: emailData.score || 0,
-          identity: identityData.score || 0
+          identity: identityData.score || 0,
+          recommended: recommendedData.score || 0,
+          implementationStrategy: implementationStrategyData.score || 0
         };
         
         const overallScore = Math.round(
           (scores.mobile + scores.wifi + scores.network + scores.communication + 
-           scores.socialMedia + scores.email + scores.identity) / 7
+           scores.socialMedia + scores.email + scores.identity + scores.recommended + scores.implementationStrategy) / 9
         );
 
         setSecurityScores({
@@ -101,6 +109,41 @@ export default function UserProfilePage() {
 
     fetchData();
   }, [status]);
+
+  // Add this useEffect to fetch the last password change date
+useEffect(() => {
+  const fetchLastPasswordChange = async () => {
+    if (status !== 'authenticated') {
+      return;
+    }
+
+    try {
+      const response = await fetch('/api/user/password-change');
+      if (response.ok) {
+        const data = await response.json();
+        setLastPasswordChange(data.lastPasswordChange);
+      }
+    } catch (error) {
+      console.error('Error fetching last password change:', error);
+      setLastPasswordChange('Unknown');
+    }
+  };
+
+  fetchLastPasswordChange();
+}, [status]);
+
+// In the UserProfilePage component
+const refreshLastPasswordChange = async () => {
+  try {
+    const response = await fetch('/api/user/password-change');
+    if (response.ok) {
+      const data = await response.json();
+      setLastPasswordChange(data.lastPasswordChange);
+    }
+  } catch (error) {
+    console.error('Error refreshing last password change:', error);
+  }
+};
 
   if (status === 'loading' || isLoading) {
     return <BubbleLoader message="Loading profile data..." size="medium" />;
@@ -136,6 +179,7 @@ export default function UserProfilePage() {
           isOpen={isPasswordModalOpen} 
           onClose={() => setIsPasswordModalOpen(false)}
           email={session.user.email}
+          onPasswordChanged={refreshLastPasswordChange}
         />
       )}
       {/* Header */}
