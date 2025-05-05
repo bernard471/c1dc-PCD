@@ -15,9 +15,6 @@ import {
     FaBatteryFull 
   } from 'react-icons/fa';
   import { IconType } from 'react-icons';
-  import hero1 from '../images/hero1.jpg';
-  import hero from '../images/hero.webp';
-  import freepik from '../images/freepik.jpeg';
   
   export interface SecurityItem {
     title: string;
@@ -55,13 +52,13 @@ import {
                 "Identify all connected devices on network",
                 "Create inventory document with device name, IP address, MAC address, manufacturer, and purpose"
               ],
-              images: [
-                hero1.src,
-                hero.src,
-                freepik.src,
-                hero.src,
-                freepik.src,
-              ]
+              // images: [
+              //   hero1.src,
+              //   hero.src,
+              //   freepik.src,
+              //   hero.src,
+              //   freepik.src,
+              // ]
             },
             {
               name: "Map network topology",
@@ -69,13 +66,13 @@ import {
                 "Document how devices connect (wired vs. wireless)",
                 "Identify critical infrastructure devices"
               ],
-              images: [
-                hero1.src,
-                hero.src,
-                freepik.src,
-                hero.src,
-                freepik.src,
-              ]
+              // images: [
+              //   hero1.src,
+              //   hero.src,
+              //   freepik.src,
+              //   hero.src,
+              //   freepik.src,
+              // ]
             }
           ]
         }
@@ -92,13 +89,13 @@ import {
                 "Run monthly scans on router and critical devices",
                 "Focus on critical and high-severity findings"
               ],
-              images: [
-                hero1.src,
-                hero.src,
-                freepik.src,
-                hero.src,
-                freepik.src,
-              ]
+              // images: [
+              //   hero1.src,
+              //   hero.src,
+              //   freepik.src,
+              //   hero.src,
+              //   freepik.src,
+              // ]
             },
             {
               name: "Automated scanning options",
@@ -107,13 +104,13 @@ import {
                 "Document and track findings over time",
                 "Create remediation plan for discovered issues"
               ],
-              images: [
-                hero1.src,
-                hero.src,
-                freepik.src,
-                hero.src,
-                freepik.src,
-              ]
+              // images: [
+              //   hero1.src,
+              //   hero.src,
+              //   freepik.src,
+              //   hero.src,
+              //   freepik.src,
+              // ]
             }
           ]
         },
@@ -128,13 +125,13 @@ import {
                 "Check router traffic logs if available",
                 "Look for unusual patterns like unexpected outbound connections, large data transfers at odd hours, or connections to unknown IP addresses"
               ],
-              images: [
-                hero1.src,
-                hero.src,
-                freepik.src,
-                hero.src,
-                freepik.src,
-              ]
+              // images: [
+              //   hero1.src,
+              //   hero.src,
+              //   freepik.src,
+              //   hero.src,
+              //   freepik.src,
+              // ]
             },
             {
               name: "Advanced monitoring",
@@ -142,13 +139,13 @@ import {
                 "Consider dedicated hardware like Firewalla or Bitdefender Box",
                 "Set up alerts for suspicious activities"
               ],
-              images: [
-                hero1.src,
-                hero.src,
-                freepik.src,
-                hero.src,
-                freepik.src,
-              ]
+              // images: [
+              //   hero1.src,
+              //   hero.src,
+              //   freepik.src,
+              //   hero.src,
+              //   freepik.src,
+              // ]
             }
           ]
         }
@@ -172,13 +169,13 @@ import {
                 "Look for security certifications",
                 "Read privacy policy thoroughly"
               ],
-              images: [
-                hero1.src,
-                hero.src,
-                freepik.src,
-                hero.src,
-                freepik.src,
-              ]
+              // images: [
+              //   hero1.src,
+              //   hero.src,
+              //   freepik.src,
+              //   hero.src,
+              //   freepik.src,
+              // ]
             },
             {
               name: "Prioritize features",
@@ -188,13 +185,13 @@ import {
                 "Data encryption",
                 "Local processing (vs. cloud dependency)"
               ],
-              images: [
-                hero1.src,
-                hero.src,
-                freepik.src,
-                hero.src,
-                freepik.src,
-              ]
+              // images: [
+              //   hero1.src,
+              //   hero.src,
+              //   freepik.src,
+              //   hero.src,
+              //   freepik.src,
+              // ]
             }
           ]
         },
@@ -211,13 +208,13 @@ import {
                 "Disable unnecessary features and services",
                 "Register devices with manufacturer for update notifications"
               ],
-              images: [
-                hero1.src,
-                hero.src,
-                freepik.src,
-                hero.src,
-                freepik.src,
-              ]
+              // images: [
+              //   hero1.src,
+              //   hero.src,
+              //   freepik.src,
+              //   hero.src,
+              //   freepik.src,
+              // ]
             },
             {
               name: "Create device-specific credentials",
@@ -226,13 +223,13 @@ import {
                 "Store credentials in password manager",
                 "Set up 2FA where available"
               ],
-              images: [
-                hero1.src,
-                hero.src,
-                freepik.src,
-                hero.src,
-                freepik.src,
-              ]
+              // images: [
+              //   hero1.src,
+              //   hero.src,
+              //   freepik.src,
+              //   hero.src,
+              //   freepik.src,
+              // ]
             }
           ]
         },
@@ -248,13 +245,13 @@ import {
                 "Configure router to isolate from main network",
                 "Prevent IoT devices from accessing personal computers"
               ],
-              images: [
-                hero1.src,
-                hero.src,
-                freepik.src,
-                hero.src,
-                freepik.src,
-              ]
+              // images: [
+              //   hero1.src,
+              //   hero.src,
+              //   freepik.src,
+              //   hero.src,
+              //   freepik.src,
+              // ]
             },
             {
               name: "Implement access controls",
@@ -263,13 +260,13 @@ import {
                 "Block inbound connections to IoT devices",
                 "Configure firewall rules to limit communication"
               ],
-              images: [
-                hero1.src,
-                hero.src,
-                freepik.src,
-                hero.src,
-                freepik.src,
-              ]
+              // images: [
+              //   hero1.src,
+              //   hero.src,
+              //   freepik.src,
+              //   hero.src,
+              //   freepik.src,
+              // ]
             }
           ]
         },
@@ -285,13 +282,13 @@ import {
                 "Create monthly calendar reminder for manual updates",
                 "Check manufacturer websites quarterly for security bulletins"
               ],
-              images: [
-                hero1.src,
-                hero.src,
-                freepik.src,
-                hero.src,
-                freepik.src,
-              ]
+              // images: [
+              //   hero1.src,
+              //   hero.src,
+              //   freepik.src,
+              //   hero.src,
+              //   freepik.src,
+              // ]
             },
             {
               name: "Regular audits",
@@ -300,13 +297,13 @@ import {
                 "Verify security settings haven't changed",
                 "Remove or reset unused devices"
               ],
-              images: [
-                hero1.src,
-                hero.src,
-                freepik.src,
-                hero.src,
-                freepik.src,
-              ]
+              // images: [
+              //   hero1.src,
+              //   hero.src,
+              //   freepik.src,
+              //   hero.src,
+              //   freepik.src,
+              // ]
             }
           ]
         },
@@ -322,13 +319,13 @@ import {
                 "Review and delete voice recordings regularly",
                 "Mute microphones when not in use"
               ],
-              images: [
-                hero1.src,
-                hero.src,
-                freepik.src,
-                hero.src,
-                freepik.src,
-              ]
+              // images: [
+              //   hero1.src,
+              //   hero.src,
+              //   freepik.src,
+              //   hero.src,
+              //   freepik.src,
+              // ]
             },
             {
               name: "Smart cameras",
@@ -338,13 +335,13 @@ import {
                 "Position to avoid sensitive areas",
                 "Consider local storage over cloud"
               ],
-              images: [
-                hero1.src,
-                hero.src,
-                freepik.src,
-                hero.src,
-                freepik.src,
-              ]
+              // images: [
+              //   hero1.src,
+              //   hero.src,
+              //   freepik.src,
+              //   hero.src,
+              //   freepik.src,
+              // ]
             },
             {
               name: "Smart locks and security systems",
@@ -354,13 +351,13 @@ import {
                 "Enable tampering alerts",
                 "Disable remote unlock if not needed"
               ],
-              images: [
-                hero1.src,
-                hero.src,
-                freepik.src,
-                hero.src,
-                freepik.src,
-              ]
+              // images: [
+              //   hero1.src,
+              //   hero.src,
+              //   freepik.src,
+              //   hero.src,
+              //   freepik.src,
+              // ]
             }
           ]
         }
@@ -383,13 +380,13 @@ import {
                 "Consider dedicated hardware firewall for enhanced protection",
                 "Set to block inbound connections by default"
               ],
-              images: [
-                hero1.src,
-                hero.src,
-                freepik.src,
-                hero.src,
-                freepik.src,
-              ]
+              // images: [
+              //   hero1.src,
+              //   hero.src,
+              //   freepik.src,
+              //   hero.src,
+              //   freepik.src,
+              // ]
             },
             {
               name: "Software firewalls",
@@ -398,13 +395,13 @@ import {
                 "Configure application-specific rules",
                 "Block unnecessary outbound connections"
               ],
-              images: [
-                hero1.src,
-                hero.src,
-                freepik.src,
-                hero.src,
-                freepik.src,
-              ]
+              // images: [
+              //   hero1.src,
+              //   hero.src,
+              //   freepik.src,
+              //   hero.src,
+              //   freepik.src,
+              // ]
             },
             {
               name: "Intrusion detection/prevention",
@@ -412,13 +409,13 @@ import {
                 "Consider Suricata or Snort for advanced users",
                 "Look for router models with built-in IDS/IPS"
               ],
-              images: [
-                hero1.src,
-                hero.src,
-                freepik.src,
-                hero.src,
-                freepik.src,
-              ]
+              // images: [
+              //   hero1.src,
+              //   hero.src,
+              //   freepik.src,
+              //   hero.src,
+              //   freepik.src,
+              // ]
             }
           ]
         },
@@ -433,13 +430,13 @@ import {
                 "Configure for internet-facing services if needed",
                 "Never place personal computers in DMZ"
               ],
-              images: [
-                hero1.src,
-                hero.src,
-                freepik.src,
-                hero.src,
-                freepik.src,
-              ]
+              // images: [
+              //   hero1.src,
+              //   hero.src,
+              //   freepik.src,
+              //   hero.src,
+              //   freepik.src,
+              // ]
             },
             {
               name: "Network Address Translation (NAT)",
@@ -447,13 +444,13 @@ import {
                 "Ensure NAT is enabled",
                 "Use as additional security layer"
               ],
-              images: [
-                hero1.src,
-                hero.src,
-                freepik.src,
-                hero.src,
-                freepik.src,
-              ]
+              // images: [
+              //   hero1.src,
+              //   hero.src,
+              //   freepik.src,
+              //   hero.src,
+              //   freepik.src,
+              // ]
             },
             {
               name: "DNS filtering",
@@ -462,13 +459,13 @@ import {
                 "Block malicious domains",
                 "Implement family-friendly filtering if needed"
               ],
-              images: [
-                hero1.src,
-                hero.src,
-                freepik.src,
-                hero.src,
-                freepik.src,
-              ]
+              // images: [
+              //   hero1.src,
+              //   hero.src,
+              //   freepik.src,
+              //   hero.src,
+              //   freepik.src,
+              // ]
             }
           ]
         },
@@ -484,13 +481,13 @@ import {
                 "Configure devices to require encrypted connections",
                 "Disable HTTP access to devices where possible"
               ],  
-              images: [
-                hero1.src,
-                hero.src,
-                freepik.src,
-                hero.src,
-                freepik.src,
-              ]
+              // images: [
+              //   hero1.src,
+              //   hero.src,
+              //   freepik.src,
+              //   hero.src,
+              //   freepik.src,
+              // ]
             },
             {
               name: "VPN considerations",
@@ -499,13 +496,13 @@ import {
                 "Use for secure remote access to home network",
                 "Configure split tunneling appropriately"
               ],
-              images: [
-                hero1.src,
-                hero.src,
-                freepik.src,
-                hero.src,
-                freepik.src,
-              ]
+              // images: [
+              //   hero1.src,
+              //   hero.src,
+              //   freepik.src,
+              //   hero.src,
+              //   freepik.src,
+              // ]
             }
           ]
         }
@@ -528,13 +525,13 @@ import {
                 "Use strong authentication",
                 "Limit admin access to necessary users only"
               ],
-              images: [
-                hero1.src,
-                hero.src,
-                freepik.src,
-                hero.src,
-                freepik.src,
-              ]
+              // images: [
+              //   hero1.src,
+              //   hero.src,
+              //   freepik.src,
+              //   hero.src,
+              //   freepik.src,
+              // ]
             },
             {
               name: "Platform selection criteria",
@@ -544,13 +541,13 @@ import {
                 "Privacy policy transparency",
                 "Local control options (vs. cloud-only)"
               ],
-              images: [
-                hero1.src,
-                hero.src,
-                freepik.src,
-                hero.src,
-                freepik.src,
-              ]
+              // images: [
+              //   hero1.src,
+              //   hero.src,
+              //   freepik.src,
+              //   hero.src,
+              //   freepik.src,
+              // ]
             }
           ]
         },
@@ -566,13 +563,13 @@ import {
                 "Prevent rules that could compromise physical security",
                 "Test fail-safe mechanisms for critical systems"
               ],
-              images: [
-                hero1.src,
-                hero.src,
-                freepik.src,
-                hero.src,
-                freepik.src,
-              ]
+              // images: [
+              //   hero1.src,
+              //   hero.src,
+              //   freepik.src,
+              //   hero.src,
+              //   freepik.src,
+              // ]
             },
             {
               name: "Access controls",
@@ -581,13 +578,13 @@ import {
                 "Limit guest access to viewing, not changing",
                 "Review access permissions quarterly"
               ],
-              images: [
-                hero1.src,
-                hero.src,
-                freepik.src,
-                hero.src,
-                freepik.src,
-              ]
+              // images: [
+              //   hero1.src,
+              //   hero.src,
+              //   freepik.src,
+              //   hero.src,
+              //   freepik.src,
+              // ]
             }
           ]
         },
@@ -603,13 +600,13 @@ import {
                 "Disable purchasing by voice",
                 "Review third-party skill/action permissions"
               ],
-              images: [
-                hero1.src,
-                hero.src,
-                freepik.src,
-                hero.src,
-                freepik.src,
-              ]
+              // images: [
+              //   hero1.src,
+              //   hero.src,
+              //   freepik.src,
+              //   hero.src,
+              //   freepik.src,
+              // ]
             },
             {
               name: "Physical protections",
@@ -617,13 +614,13 @@ import {
                 "Implement mute function when away",
                 "Consider unplugging in highly sensitive situations"
               ],
-              images: [
-                hero1.src,
-                hero.src,
-                freepik.src,
-                hero.src,
-                freepik.src,
-              ]
+              // images: [
+              //   hero1.src,
+              //   hero.src,
+              //   freepik.src,
+              //   hero.src,
+              //   freepik.src,
+              // ]
             }
           ]
         }
@@ -647,13 +644,13 @@ import {
                 "Disable remote access if not needed",
                 "Update firmware regularly"
               ],
-              images: [
-                hero1.src,
-                hero.src,
-                freepik.src,
-                hero.src,
-                freepik.src,
-              ]
+              // images: [
+              //   hero1.src,
+              //   hero.src,
+              //   freepik.src,
+              //   hero.src,
+              //   freepik.src,
+              // ]
             },
             {
               name: "Storage security",
@@ -663,13 +660,13 @@ import {
                 "If using cloud, enable two-factor authentication",
                 "Set appropriate retention periods"
               ],
-              images: [
-                hero1.src,
-                hero.src,
-                freepik.src,
-                hero.src,
-                freepik.src,
-              ]
+              // images: [
+              //   hero1.src,
+              //   hero.src,
+              //   freepik.src,
+              //   hero.src,
+              //   freepik.src,
+              // ]
             }
           ]
         },
@@ -686,13 +683,13 @@ import {
                 "Maintain backup physical key",
                 "Disable remote unlock if not needed"
               ],
-              images: [
-                hero1.src,
-                hero.src,
-                freepik.src,
-                hero.src,
-                freepik.src,
-              ]
+              // images: [
+              //   hero1.src,
+              //   hero.src,
+              //   freepik.src,
+              //   hero.src,
+              //   freepik.src,
+              // ]
             },
             {
               name: "User management",
@@ -702,13 +699,13 @@ import {
                 "Review access logs monthly",
                 "Revoke access immediately when no longer needed"
               ],
-              images: [
-                hero1.src,
-                hero.src,
-                freepik.src,
-                hero.src,
-                freepik.src,
-              ]
+              // images: [
+              //   hero1.src,
+              //   hero.src,
+              //   freepik.src,
+              //   hero.src,
+              //   freepik.src,
+              // ]
             }
           ]
         },
@@ -724,13 +721,13 @@ import {
                 "Configure fail-secure vs. fail-safe appropriately",
                 "Test backup systems quarterly"
               ],
-              images: [
-                hero1.src,
-                hero.src,
-                freepik.src,
-                hero.src,
-                freepik.src,
-              ]
+              // images: [
+              //   hero1.src,
+              //   hero.src,
+              //   freepik.src,
+              //   hero.src,
+              //   freepik.src,
+              // ]
             },
             {
               name: "Recovery procedures",
@@ -738,13 +735,13 @@ import {
                 "Document steps to restore security after power loss",
                 "Test restoration process semi-annually"
               ],
-              images: [
-                hero1.src,
-                hero.src,
-                freepik.src,
-                hero.src,
-                freepik.src,
-              ]
+              // images: [
+              //   hero1.src,
+              //   hero.src,
+              //   freepik.src,
+              //   hero.src,
+              //   freepik.src,
+              // ]
             }
           ]
         }

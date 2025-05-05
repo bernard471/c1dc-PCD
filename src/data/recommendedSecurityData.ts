@@ -23,9 +23,6 @@ import {
     FaTrashAlt
   } from 'react-icons/fa';
   import { IconType } from 'react-icons';
-  import hero1 from '../images/hero1.jpg';
-  import hero from '../images/hero.webp';
-  import freepik from '../images/freepik.jpeg';
   
   export interface SecurityItem {
     title: string;
@@ -72,13 +69,13 @@ import {
                 "Strengths: Light system footprint, advanced heuristics",
                 "Features: Password manager, secure file encryption"
               ],
-              images: [
-                hero1.src,
-                hero.src,
-                freepik.src,
-                hero.src,
-                freepik.src,
-              ]
+              // images: [
+              //   hero1.src,
+              //   hero.src,
+              //   freepik.src,
+              //   hero.src,
+              //   freepik.src,
+              // ]
             },
             {
               name: "Implementation best practices",
@@ -88,13 +85,13 @@ import {
                 "Keep definition databases updated",
                 "Configure heuristic detection levels appropriately"
               ],
-              images: [
-                hero1.src,
-                hero.src,
-                freepik.src,
-                hero.src,
-                freepik.src,
-              ]
+              // images: [
+              //   hero1.src,
+              //   hero.src,
+              //   freepik.src,
+              //   hero.src,
+              //   freepik.src,
+              // ]
             }
           ]
         },
@@ -116,13 +113,13 @@ import {
                 "Strengths: Excellent for malware removal, ransomware protection",
                 "Features: Exploit protection, malicious website blocking"
               ],
-              images: [
-                hero1.src,
-                hero.src,
-                freepik.src,
-                hero.src,
-                freepik.src,
-              ]
+              // images: [
+              //   hero1.src,
+              //   hero.src,
+              //   freepik.src,
+              //   hero.src,
+              //   freepik.src,
+              // ]
             },
             {
               name: "Configuration considerations",
@@ -132,13 +129,13 @@ import {
                 "Enable exploit protection features",
                 "Understand performance implications"
               ],
-              images: [
-                hero1.src,
-                hero.src,
-                freepik.src,
-                hero.src,
-                freepik.src,
-              ]
+              // images: [
+              //   hero1.src,
+              //   hero.src,
+              //   freepik.src,
+              //   hero.src,
+              //   freepik.src,
+              // ]
             }
           ]
         },
@@ -163,13 +160,13 @@ import {
                 "Strengths: Lightweight, excellent detection rates",
                 "Limitations: Minimal configuration options"
               ],
-              images: [
-                hero1.src,
-                hero.src,
-                freepik.src,
-                hero.src,
-                freepik.src,
-              ]
+              // images: [
+              //   hero1.src,
+              //   hero.src,
+              //   freepik.src,
+              //   hero.src,
+              //   freepik.src,
+              // ]
             },
             {
               name: "Free solution limitations",
@@ -179,13 +176,13 @@ import {
                 "Possible privacy concerns",
                 "More frequent upsell prompts"
               ],
-              images: [
-                hero1.src,
-                hero.src,
-                freepik.src,
-                hero.src,
-                freepik.src,
-              ]
+              // images: [
+              //   hero1.src,
+              //   hero.src,
+              //   freepik.src,
+              //   hero.src,
+              //   freepik.src,
+              // ]
             }
           ]
         }
@@ -217,13 +214,13 @@ import {
                 "Strengths: Strong privacy focus, transparent security",
                 "Features: Secure Core servers, built-in Tor support"
               ],
-              images: [
-                hero1.src,
-                hero.src,
-                freepik.src,
-                hero.src,
-                freepik.src,
-              ],
+              // images: [
+              //   hero1.src,
+              //   hero.src,
+              //   freepik.src,
+              //   hero.src,
+              //   freepik.src,
+              // ],
             },
             {
               name: "Selection criteria",
@@ -234,13 +231,13 @@ import {
                 "DNS leak protection",
                 "Jurisdiction (outside 14 Eyes alliance ideal)"
               ],
-              images: [
-                hero1.src,
-                hero.src,
-                freepik.src,
-                hero.src,
-                freepik.src,
-              ],
+              // images: [
+              //   hero1.src,
+              //   hero.src,
+              //   freepik.src,
+              //   hero.src,
+              //   freepik.src,
+              // ],
             }
           ]
         },
@@ -258,13 +255,13 @@ import {
                 "Consider disabling IPv6 if not protected",
                 "Use strongest available encryption"
               ],
-              images: [
-                hero1.src,
-                hero.src,
-                freepik.src,
-                hero.src,
-                freepik.src,
-              ],
+              // images: [
+              //   hero1.src,
+              //   hero.src,
+              //   freepik.src,
+              //   hero.src,
+              //   freepik.src,
+              // ],
             },
             {
               name: "Usage recommendations",
@@ -295,13 +292,13 @@ import {
                 "Strengths: Simplified deployment, security-focused",
                 "Considerations: Limited customization options"
               ],
-              images: [
-                hero1.src,
-                hero.src,
-                freepik.src,
-                hero.src,
-                freepik.src,
-              ],
+              // images: [
+              //   hero1.src,
+              //   hero.src,
+              //   freepik.src,
+              //   hero.src,
+              //   freepik.src,
+              // ],
             },
             {
               name: "Implementation considerations",
@@ -311,13 +308,13 @@ import {
                 "Maintenance responsibility",
                 "Technical expertise needed"
               ],
-              images: [
-                hero1.src,
-                hero.src,
-                freepik.src,
-                hero.src,
-                freepik.src,
-              ],
+              // images: [
+              //   hero1.src,
+              //   hero.src,
+              //   freepik.src,
+              //   hero.src,
+              //   freepik.src,
+              // ],
             }
           ]
         }
@@ -349,13 +346,13 @@ import {
                 "Strengths: Beautiful design, integrated VPN",
                 "Features: Dark web monitoring, automatic password changing"
               ],
-              images: [
-                hero1.src,
-                hero.src,
-                freepik.src,
-                hero.src,
-                freepik.src,
-              ],
+              // images: [
+              //   hero1.src,
+              //   hero.src,
+              //   freepik.src,
+              //   hero.src,
+              //   freepik.src,
+              // ],
             },
             {
               name: "Security considerations",
@@ -365,13 +362,13 @@ import {
                 "Use biometric unlock on devices",
                 "Keep recovery options current"
               ],
-              images: [
-                hero1.src,
-                hero.src,
-                freepik.src,
-                hero.src,
-                freepik.src,
-              ]
+              // images: [
+              //   hero1.src,
+              //   hero.src,
+              //   freepik.src,
+              //   hero.src,
+              //   freepik.src,
+              // ]
             }
           ]
         },
@@ -390,13 +387,13 @@ import {
                 "Strengths: Designed by security expert Bruce Schneier",
                 "Features: Simple interface, YubiKey support"
               ],
-              images: [
-                hero1.src,
-                hero.src,
-                freepik.src,
-                hero.src,
-                freepik.src,
-              ],
+              // images: [
+              //   hero1.src,
+              //   hero.src,
+              //   freepik.src,
+              //   hero.src,
+              //   freepik.src,
+              // ],
             },
             {
               name: "Implementation tips",
@@ -406,13 +403,13 @@ import {
                 "Consider encrypted cloud storage for backups",
                 "Test recovery process periodically"
               ],
-              images: [
-                hero1.src,
-                hero.src,
-                freepik.src,
-                hero.src,
-                freepik.src,
-              ]
+              // images: [
+              //   hero1.src,
+              //   hero.src,
+              //   freepik.src,
+              //   hero.src,
+              //   freepik.src,
+              // ]
             }
           ]
         },
@@ -434,13 +431,13 @@ import {
                 "Strengths: Offline password management",
                 "Features: Touch unlock, encrypted backup"
               ],
-              images: [
-                hero1.src,
-                hero.src,
-                freepik.src,
-                hero.src,
-                freepik.src,
-              ]
+              // images: [
+              //   hero1.src,
+              //   hero.src,
+              //   freepik.src,
+              //   hero.src,
+              //   freepik.src,
+              // ]
             },
             {
               name: "Usage scenarios",
@@ -450,13 +447,13 @@ import {
                 "FIDO2 authentication for supported sites",
                 "Phishing-resistant authentication"
               ],
-              images: [
-                hero1.src,
-                hero.src,
-                freepik.src,
-                hero.src,
-                freepik.src,
-              ]
+              // images: [
+              //   hero1.src,
+              //   hero.src,
+              //   freepik.src,
+              //   hero.src,
+              //   freepik.src,
+              // ]
             }
           ]
         }
@@ -488,13 +485,13 @@ import {
                 "Strengths: No phone number required, decentralized",
                 "Features: Onion routing, group encryption"
               ],
-              images: [
-                hero1.src,
-                hero.src,
-                freepik.src,
-                hero.src,
-                freepik.src,
-              ]
+              // images: [
+              //   hero1.src,
+              //   hero.src,
+              //   freepik.src,
+              //   hero.src,
+              //   freepik.src,
+              // ]
             },
             {
               name: "Security features to utilize",
@@ -504,13 +501,13 @@ import {
                 "Secondary authentication (app lock)",
                 "Message verification codes"
               ],
-              images: [
-                hero1.src,
-                hero.src,
-                freepik.src,
-                hero.src,
-                freepik.src,
-              ]
+              // images: [
+              //   hero1.src,
+              //   hero.src,
+              //   freepik.src,
+              //   hero.src,
+              //   freepik.src,
+              // ]
             }
           ]
         },
@@ -535,13 +532,13 @@ import {
                 "Strengths: Sustainable focus, privacy commitment",
                 "Features: No tracking, anonymous payment"
               ],
-              images: [
-                hero1.src,
-                hero.src,
-                freepik.src,
-                hero.src,
-                freepik.src,
-              ],
+              // images: [
+              //   hero1.src,
+              //   hero.src,
+              //   freepik.src,
+              //   hero.src,
+              //   freepik.src,
+              // ],
             },
             {
               name: "Implementation approach",
@@ -572,13 +569,13 @@ import {
                 "Strengths: Ephemeral messaging, secure rooms",
                 "Features: Video calling, file sharing"
               ],
-              images: [
-                hero1.src,
-                hero.src,
-                freepik.src,
-                hero.src,
-                freepik.src,
-              ],
+              // images: [
+              //   hero1.src,
+              //   hero.src,
+              //   freepik.src,
+              //   hero.src,
+              //   freepik.src,
+              // ],
             },
             {
               name: "Security best practices",
@@ -588,13 +585,13 @@ import {
                 "Be aware of metadata collection",
                 "Consider background privacy during video calls"
               ],
-              images: [
-                hero1.src,
-                hero.src,
-                freepik.src,
-                hero.src,
-                freepik.src,
-              ],
+              // images: [
+              //   hero1.src,
+              //   hero.src,
+              //   freepik.src,
+              //   hero.src,
+              //   freepik.src,
+              // ],
             }
           ]
         },
@@ -626,13 +623,13 @@ import {
                   "Strengths: Mesh capability, advanced parental controls",
                   "Features: Malware filtering, content filtering"
                 ],
-                images: [
-                  hero1.src,
-                  hero.src,
-                  freepik.src,
-                  hero.src,
-                  freepik.src,
-                ],
+                // images: [
+                //   hero1.src,
+                //   hero.src,
+                //   freepik.src,
+                //   hero.src,
+                //   freepik.src,
+                // ],
               },
               {
                 name: "Implementation considerations",
@@ -642,13 +639,13 @@ import {
                   "Technical expertise needed",
                   "Integration with existing equipment"
                 ],
-                images: [
-                  hero1.src,
-                  hero.src,
-                  freepik.src,
-                  hero.src,
-                  freepik.src,
-                ],
+                // images: [
+                //   hero1.src,
+                //   hero.src,
+                //   freepik.src,
+                //   hero.src,
+                //   freepik.src,
+                // ],
               }
             ]
           },
@@ -673,13 +670,13 @@ import {
                   "Strengths: Speed, privacy commitment",
                   "Features: Malware blocking, WARP+ VPN"
                 ],
-                images: [
-                  hero1.src,
-                  hero.src,
-                  freepik.src,
-                  hero.src,
-                  freepik.src,
-                ],
+                // images: [
+                //   hero1.src,
+                //   hero.src,
+                //   freepik.src,
+                //   hero.src,
+                //   freepik.src,
+                // ],
               },
               {
                 name: "Setup guidance",
@@ -689,13 +686,13 @@ import {
                   "Test for DNS leaks after configuration",
                   "Implement DoH (DNS over HTTPS) where possible"
                  ],
-                images: [
-                  hero1.src,
-                  hero.src,
-                  freepik.src,
-                  hero.src,
-                  freepik.src,
-                ]
+                // images: [
+                //   hero1.src,
+                //   hero.src,
+                //   freepik.src,
+                //   hero.src,
+                //   freepik.src,
+                // ]
               }
             ]
           },
@@ -720,13 +717,13 @@ import {
                   "Strengths: Traffic control, application rules",
                   "Features: Connection monitoring, bandwidth limiting"
                 ],
-                images: [
-                  hero1.src,
-                  hero.src,
-                  freepik.src,
-                  hero.src,
-                  freepik.src,
-                ]
+                // images: [
+                //   hero1.src,
+                //   hero.src,
+                //   freepik.src,
+                //   hero.src,
+                //   freepik.src,
+                // ]
               },
               {
                 name: "Implementation strategy",
@@ -736,13 +733,13 @@ import {
                   "Configure alerts for anomalies",
                   "Document authorized applications and connections"
                 ],
-                images: [
-                  hero1.src,
-                  hero.src,
-                  freepik.src,
-                  hero.src,
-                  freepik.src,
-                ]
+                // images: [
+                //   hero1.src,
+                //   hero.src,
+                //   freepik.src,
+                //   hero.src,
+                //   freepik.src,
+                // ]
               }
             ]
           }
@@ -774,13 +771,13 @@ import {
                   "Strengths: Local CDN emulation",
                   "Features: Reduces third-party requests"
                 ],
-                images: [
-                  hero1.src,
-                  hero.src,
-                  freepik.src,
-                  hero.src,
-                  freepik.src,
-                ],
+                // images: [
+                //   hero1.src,
+                //   hero.src,
+                //   freepik.src,
+                //   hero.src,
+                //   freepik.src,
+                // ],
               },
               {
                 name: "Configuration recommendations",
@@ -790,13 +787,13 @@ import {
                   "Regular updates essential",
                   "Test for fingerprinting protection"
                 ],
-                images: [
-                  hero1.src,
-                  hero.src,
-                  freepik.src,
-                  hero.src,
-                  freepik.src,
-                ]
+                // images: [
+                //   hero1.src,
+                //   hero.src,
+                //   freepik.src,
+                //   hero.src,
+                //   freepik.src,
+                // ]
               }
             ]
           },
@@ -821,13 +818,13 @@ import {
                   "Strengths: Google services removed, privacy focus",
                   "Features: Chrome compatibility, reduced tracking"
                 ],
-                images: [
-                  hero1.src,
-                  hero.src,
-                  freepik.src,
-                  hero.src,
-                  freepik.src,
-                ],
+                // images: [
+                //   hero1.src,
+                //   hero.src,
+                //   freepik.src,
+                //   hero.src,
+                //   freepik.src,
+                // ],
               },
               {
                 name: "Implementation approach",
@@ -837,13 +834,13 @@ import {
                   "Regular privacy settings audit",
                   "Private browsing mode usage strategy"
                 ],
-                images: [
-                  hero1.src,
-                  hero.src,
-                  freepik.src,
-                  hero.src,
-                  freepik.src,
-                ]
+                // images: [
+                //   hero1.src,
+                //   hero.src,
+                //   freepik.src,
+                //   hero.src,
+                //   freepik.src,
+                // ]
               }
             ]
           },
@@ -868,13 +865,13 @@ import {
                   "Strengths: Curated recommendations",
                   "Features: Comprehensive tools by category"
                 ],
-                images: [
-                  hero1.src,
-                  hero.src,
-                  freepik.src,
-                  hero.src,
-                  freepik.src,
-                ],
+                // images: [
+                //   hero1.src,
+                //   hero.src,
+                //   freepik.src,
+                //   hero.src,
+                //   freepik.src,
+                // ],
               },
               {
                 name: "Implementation considerations",
@@ -884,13 +881,13 @@ import {
                   "Evaluate performance impacts",
                   "Test functionality after setup"
                 ],
-                images: [
-                  hero1.src,
-                  hero.src,
-                  freepik.src,
-                  hero.src,
-                  freepik.src,
-                ]
+                // images: [
+                //   hero1.src,
+                //   hero.src,
+                //   freepik.src,
+                //   hero.src,
+                //   freepik.src,
+                // ]
               }
             ]
           }
@@ -922,13 +919,13 @@ import {
                   "Strengths: Integrated with many distributions",
                   "Features: Multiple key slots, hibernation protection"
                 ],
-                images: [
-                  hero1.src,
-                  hero.src,
-                  freepik.src,
-                  hero.src,
-                  freepik.src,
-                ],
+                // images: [
+                //   hero1.src,
+                //   hero.src,
+                //   freepik.src,
+                //   hero.src,
+                //   freepik.src,
+                // ],
               },
               {
                 name: "Usage recommendations",
@@ -938,13 +935,13 @@ import {
                   "Consider performance implications",
                   "Test recovery procedures"
                 ],
-                images: [
-                  hero1.src,
-                  hero.src,
-                  freepik.src,
-                  hero.src,
-                  freepik.src,
-                ],
+                // images: [
+                //   hero1.src,
+                //   hero.src,
+                //   freepik.src,
+                //   hero.src,
+                //   freepik.src,
+                // ],
               }
             ]
           },
@@ -969,13 +966,13 @@ import {
                   "Strengths: Open-source, transparent operation",
                   "Features: Virtual disk mounting, filename encryption"
                 ],
-                images: [
-                  hero1.src,
-                  hero.src,
-                  freepik.src,
-                  hero.src,
-                  freepik.src,
-                ],
+                // images: [
+                //   hero1.src,
+                //   hero.src,
+                //   freepik.src,
+                //   hero.src,
+                //   freepik.src,
+                // ],
               },
               {
                 name: "Implementation approach",
@@ -985,13 +982,13 @@ import {
                   "Understand recovery limitations",
                   "Test synchronization across devices"
                 ],
-                images: [
-                  hero1.src,
-                  hero.src,
-                  freepik.src,
-                  hero.src,
-                  freepik.src,
-                ],
+                // images: [
+                //   hero1.src,
+                //   hero.src,
+                //   freepik.src,
+                //   hero.src,
+                //   freepik.src,
+                // ],
               }
             ]
           },
@@ -1016,13 +1013,13 @@ import {
                   "Strengths: Open-source, system cleaner",
                   "Features: Multiple shredding methods, batch processing"
                 ],
-                images: [
-                  hero1.src,
-                  hero.src,
-                  freepik.src,
-                  hero.src,
-                  freepik.src,
-                ],
+                // images: [
+                //   hero1.src,
+                //   hero.src,
+                //   freepik.src,
+                //   hero.src,
+                //   freepik.src,
+                // ],
               },
               {
                 name: "Usage guidelines",
@@ -1032,13 +1029,13 @@ import {
                   "Verify deletion when critical",
                   "Consider full-disk encryption as complementary strategy"
                 ],
-                images: [
-                  hero1.src,
-                  hero.src,
-                  freepik.src,
-                  hero.src,
-                  freepik.src,
-                ],
+                // images: [
+                //   hero1.src,
+                //   hero.src,
+                //   freepik.src,
+                //   hero.src,
+                //   freepik.src,
+                // ],
               }
             ]
           }

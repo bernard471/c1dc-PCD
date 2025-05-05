@@ -18,9 +18,6 @@ import {
     FaClipboardCheck
   } from 'react-icons/fa';
   import { IconType } from 'react-icons';
-  import hero1 from '../images/hero1.jpg';
-  import hero from '../images/hero.webp';
-  import freepik from '../images/freepik.jpeg';
   
   export interface SecurityItem {
     title: string;
@@ -62,13 +59,13 @@ import {
                 "ProtonMail: Settings > Password & recovery > Two-factor authentication",
                 "Use hardware security keys for highest protection"
               ],
-              images: [
-                hero1.src,
-                hero.src,
-                freepik.src,
-                hero.src,
-                freepik.src,
-              ]
+              // images: [
+              //   hero1.src,
+              //   hero.src,
+              //   freepik.src,
+              //   hero.src,
+              //   freepik.src,
+              // ]
             },
             {
               name: "Recovery options",
@@ -78,13 +75,13 @@ import {
                 "Securely store backup codes",
                 "Update recovery information yearly"
               ],
-              images: [
-                hero1.src,
-                hero.src,
-                freepik.src,
-                hero.src,
-                freepik.src,
-              ]
+              // images: [
+              //   hero1.src,
+              //   hero.src,
+              //   freepik.src,
+              //   hero.src,
+              //   freepik.src,
+              // ]
             }
           ]
         },
@@ -104,13 +101,13 @@ import {
                 "Set automatic logout after inactivity",
                 "Check for unauthorized app access"
               ],
-              images: [
-                hero1.src,
-                hero.src,
-                freepik.src,
-                hero.src,
-                freepik.src,
-              ]
+              // images: [
+              //   hero1.src,
+              //   hero.src,
+              //   freepik.src,
+              //   hero.src,
+              //   freepik.src,
+              // ]
             },
             {
               name: "Device security",
@@ -120,13 +117,13 @@ import {
                 "Require re-authentication periodically",
                 "Use email client security features (app lock)"
               ],
-              images: [
-                hero1.src,
-                hero.src,
-                freepik.src,
-                hero.src,
-                freepik.src,
-              ]
+              // images: [
+              //   hero1.src,
+              //   hero.src,
+              //   freepik.src,
+              //   hero.src,
+              //   freepik.src,
+              // ]
             }
           ]
         },
@@ -143,13 +140,13 @@ import {
                 "Monitor for unexpected password reset requests",
                 "Watch for unusual forwarding or filtering rules"
               ],
-              images: [
-                hero1.src,
-                hero.src,
-                freepik.src,
-                hero.src,
-                freepik.src,
-              ]
+              // images: [
+              //   hero1.src,
+              //   hero.src,
+              //   freepik.src,
+              //   hero.src,
+              //   freepik.src,
+              // ]
             },
             {
               name: "Alert configuration",
@@ -159,13 +156,13 @@ import {
                 "Configure email or SMS for security events",
                 "Review notification settings after provider updates"
               ],
-              images: [
-                hero1.src,
-                hero.src,
-                freepik.src,
-                hero.src,
-                freepik.src,
-              ]
+              // images: [
+              //   hero1.src,
+              //   hero.src,
+              //   freepik.src,
+              //   hero.src,
+              //   freepik.src,
+              // ]
             }
           ]
         }
@@ -195,13 +192,13 @@ import {
                 "Install on email clients",
                 "Exchange certificates with contacts"
               ],
-              images: [
-                hero1.src,
-                hero.src,
-                freepik.src,
-                hero.src,
-                freepik.src,
-              ],
+              // images: [
+              //   hero1.src,
+              //   hero.src,
+              //   freepik.src,
+              //   hero.src,
+              //   freepik.src,
+              // ],
             },
             {
               name: "Everyday encryption practices",
@@ -211,13 +208,13 @@ import {
                 "Password-protect sensitive attachments",
                 "Send passwords via different channel (SMS, call)"
               ],
-              images: [
-                hero1.src,
-                hero.src,
-                freepik.src,
-                hero.src,
-                freepik.src,
-              ]
+              // images: [
+              //   hero1.src,
+              //   hero.src,
+              //   freepik.src,
+              //   hero.src,
+              //   freepik.src,
+              // ]
             }
           ]
         },
@@ -234,13 +231,13 @@ import {
                 "Use document viewers instead of full applications when possible",
                 "Consider sandbox environments for suspicious files"
               ],
-              images: [
-                hero1.src,
-                hero.src,
-                freepik.src,
-                hero.src,
-                freepik.src,
-              ]
+              // images: [
+              //   hero1.src,
+              //   hero.src,
+              //   freepik.src,
+              //   hero.src,
+              //   freepik.src,
+              // ]
             },
             {
               name: "Link verification",
@@ -253,13 +250,13 @@ import {
                 "Type URLs directly rather than clicking",
                 "Be cautious of shortened URLs (use unshorteners)"
               ],
-              images: [
-                hero1.src,
-                hero.src,
-                freepik.src,
-                hero.src,
-                freepik.src,
-              ]
+              // images: [
+              //   hero1.src,
+              //   hero.src,
+              //   freepik.src,
+              //   hero.src,
+              //   freepik.src,
+              // ]
             }
           ]
         },
@@ -276,13 +273,13 @@ import {
                 "Consider secure document destruction after use",
                 "Implement information classification system"
               ],
-              images: [
-                hero1.src,
-                hero.src,
-                freepik.src,
-                hero.src,
-                freepik.src,
-              ]
+              // images: [
+              //   hero1.src,
+              //   hero.src,
+              //   freepik.src,
+              //   hero.src,
+              //   freepik.src,
+              // ]
             },
             {
               name: "Self-destructing messages",
@@ -294,13 +291,13 @@ import {
                 "Set appropriate expiration timeframes",
                 "Verify recipient understands expiration limitations"
               ],
-              images: [
-                hero1.src,
-                hero.src,
-                freepik.src,
-                hero.src,
-                freepik.src,
-              ]
+              // images: [
+              //   hero1.src,
+              //   hero.src,
+              //   freepik.src,
+              //   hero.src,
+              //   freepik.src,
+              // ]
             }
           ]
         }
@@ -327,13 +324,13 @@ import {
                 "Use \"plus addressing\" for signups (username+service@domain.com)",
                 "Regularly empty spam folder"
               ],
-              images: [
-                hero1.src,
-                hero.src,
-                freepik.src,
-                hero.src,
-                freepik.src,
-              ]
+              // images: [
+              //   hero1.src,
+              //   hero.src,
+              //   freepik.src,
+              //   hero.src,
+              //   freepik.src,
+              // ]
             },
             {
               name: "Phishing prevention",
@@ -343,13 +340,13 @@ import {
                 "Verify sender email address carefully",
                 "Be suspicious of urgency or threats in messages"
               ],
-              images: [
-                hero1.src,
-                hero.src,
-                freepik.src,
-                hero.src,
-                freepik.src,
-              ]
+              // images: [
+              //   hero1.src,
+              //   hero.src,
+              //   freepik.src,
+              //   hero.src,
+              //   freepik.src,
+              // ]
             }
           ]
         },
@@ -368,13 +365,13 @@ import {
                 "Verify SPF, DKIM, and DMARC status",
                 "Look for mismatched display name and email address"
               ],
-              images: [
-                hero1.src,
-                hero.src,
-                freepik.src,
-                hero.src,
-                freepik.src,
-              ]
+              // images: [
+              //   hero1.src,
+              //   hero.src,
+              //   freepik.src,
+              //   hero.src,
+              //   freepik.src,
+              // ]
             },
             {
               name: "Red flags in headers",
@@ -384,13 +381,13 @@ import {
                 "Failed authentication checks",
                 "Suspicious originating IP addresses"
               ],
-              images: [
-                hero1.src,
-                hero.src,
-                freepik.src,
-                hero.src,
-                freepik.src,
-              ]
+              // images: [
+              //   hero1.src,
+              //   hero.src,
+              //   freepik.src,
+              //   hero.src,
+              //   freepik.src,
+              // ]
             }
           ]
         },
@@ -407,13 +404,13 @@ import {
                 "Domain-based protections (SPF, DKIM, DMARC)",
                 "Email gateway security solutions"
               ],
-              images: [
-                hero1.src,
-                hero.src,
-                freepik.src,
-                hero.src,
-                freepik.src,
-              ]
+              // images: [
+              //   hero1.src,
+              //   hero.src,
+              //   freepik.src,
+              //   hero.src,
+              //   freepik.src,
+              // ]
             },
             {
               name: "Anti-tracking measures",
@@ -425,13 +422,13 @@ import {
                 "Consider email privacy tools (Ugly Email, PixelBlock)",
                 "Be cautious with read receipts"
               ],
-              images: [
-                hero1.src,
-                hero.src,
-                freepik.src,
-                hero.src,
-                freepik.src,
-              ]
+              // images: [
+              //   hero1.src,
+              //   hero.src,
+              //   freepik.src,
+              //   hero.src,
+              //   freepik.src,
+              // ]
             }
           ]
         }
@@ -455,13 +452,13 @@ import {
                 "Professional email (work communications)",
                 "Throwaway accounts (temporary signups)"
               ],
-              images: [
-                hero1.src,
-                hero.src,
-                freepik.src,
-                hero.src,
-                freepik.src,
-              ]
+              // images: [
+              //   hero1.src,
+              //   hero.src,
+              //   freepik.src,
+              //   hero.src,
+              //   freepik.src,
+              // ]
             },
             {
               name: "Isolation practices",
@@ -471,13 +468,13 @@ import {
                 "Don't forward between security levels",
                 "Implement different security measures by account type"
               ],
-              images: [
-                hero1.src,
-                hero.src,
-                freepik.src,
-                hero.src,
-                freepik.src,
-              ]
+              // images: [
+              //   hero1.src,
+              //   hero.src,
+              //   freepik.src,
+              //   hero.src,
+              //   freepik.src,
+              // ]
             }
           ]
         },
@@ -494,13 +491,13 @@ import {
                 "Schedule regular security reviews by account",
                 "Consider account deletion for unused emails"
               ],
-              images: [
-                hero1.src,
-                hero.src,
-                freepik.src,
-                hero.src,
-                freepik.src,
-              ]
+              // images: [
+              //   hero1.src,
+              //   hero.src,
+              //   freepik.src,
+              //   hero.src,
+              //   freepik.src,
+              // ]
             },
             {
               name: "Cross-account protection",
@@ -510,13 +507,13 @@ import {
                 "Use non-email recovery options when possible",
                 "Create unique security questions for each account"
               ],
-              images: [
-                hero1.src,
-                hero.src,
-                freepik.src,
-                hero.src,
-                freepik.src,
-              ]
+              // images: [
+              //   hero1.src,
+              //   hero.src,
+              //   freepik.src,
+              //   hero.src,
+              //   freepik.src,
+              // ]
             }
           ]
         }
@@ -542,13 +539,13 @@ import {
                 "Unusual account settings or filters",
                 "Being locked out of your account"
               ],
-              images: [
-                hero1.src,
-                hero.src,
-                freepik.src,
-                hero.src,
-                freepik.src,
-              ]
+              // images: [
+              //   hero1.src,
+              //   hero.src,
+              //   freepik.src,
+              //   hero.src,
+              //   freepik.src,
+              // ]
             },
             {
               name: "Proactive verification",
@@ -558,13 +555,13 @@ import {
                 "Set up alerts for forwarding rules",
                 "Test account access periodically"
               ],
-              images: [
-                hero1.src,
-                hero.src,
-                freepik.src,
-                hero.src,
-                freepik.src,
-              ]
+              // images: [
+              //   hero1.src,
+              //   hero.src,
+              //   freepik.src,
+              //   hero.src,
+              //   freepik.src,
+              // ]
             }
           ]
         },
@@ -583,13 +580,13 @@ import {
                 "Scan for and remove malware on all devices",
                 "Log out of all sessions",
               ],
-              images: [
-                hero1.src,
-                hero.src,
-                freepik.src,
-                hero.src,
-                freepik.src,
-              ]
+              // images: [
+              //   hero1.src,
+              //   hero.src,
+              //   freepik.src,
+              //   hero.src,
+              //   freepik.src,
+              // ]
             },
             {
               name: "Evidence preservation",
@@ -599,13 +596,13 @@ import {
                 "Document timeline of events",
                 "Preserve login history if available"
               ],
-              images: [
-                hero1.src,
-                hero.src,
-                freepik.src,
-                hero.src,
-                freepik.src,
-              ]
+              // images: [
+              //   hero1.src,
+              //   hero.src,
+              //   freepik.src,
+              //   hero.src,
+              //   freepik.src,
+              // ]
             }
           ]
         },
@@ -622,13 +619,13 @@ import {
                 "Yahoo: account recovery with alternate email/phone",
                 "Follow provider-specific procedures exactly",
               ],
-              images: [
-                hero1.src,
-                hero.src,
-                freepik.src,
-                hero.src,
-                freepik.src,
-              ]
+              // images: [
+              //   hero1.src,
+              //   hero.src,
+              //   freepik.src,
+              //   hero.src,
+              //   freepik.src,
+              // ]
             },
             {
               name: "Post-recovery security",
@@ -639,13 +636,13 @@ import {
                 "Change passwords on linked accounts",
                 "Consider migration to new email if heavily compromised"
               ],
-              images: [
-                hero1.src,
-                hero.src,
-                freepik.src,
-                hero.src,
-                freepik.src,
-              ]
+              // images: [
+              //   hero1.src,
+              //   hero.src,
+              //   freepik.src,
+              //   hero.src,
+              //   freepik.src,
+              // ]
             }
           ]
         }

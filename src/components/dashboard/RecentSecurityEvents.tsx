@@ -90,7 +90,7 @@ export const RecentSecurityEvents: React.FC = () => {
           <Link 
             href={`/blogs/${post.fields.slug}`} 
             key={post.sys.id}
-            className="lg:flex items-center justify-between border-b pb-3 last:border-b-0 last:pb-0 hover:bg-gray-50 rounded-md p-2 transition-colors"
+            className="items-center justify-between border-b pb-3 last:border-b-0 last:pb-0 hover:bg-gray-50 rounded-md p-2 transition-colors"
           >
             <div className="flex items-center">
               <div className="h-10 w-10 relative rounded overflow-hidden">
@@ -111,7 +111,7 @@ export const RecentSecurityEvents: React.FC = () => {
                 <p className="text-sm font-medium text-gray-900 line-clamp-1">{post.fields.title}</p>
               </div>
             </div>
-            <div className="flex items-center text-xs text-gray-500 lg:mt-0 mt-2">
+            <div className="flex items-center text-xs text-gray-500 mt-2">
               <Calendar className="w-3 h-3 mr-1" /> 
               {format(new Date(post.sys.createdAt), 'MMM dd, yyyy')}
             </div>

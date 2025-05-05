@@ -15,6 +15,8 @@ const publicPaths = [
   '/payment/success',
   '/payment/cancel',
   '/legal',
+  '/auth/forgot-password',
+  '/auth/reset-password',
 ];
 
 // Function to check if the path is public

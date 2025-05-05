@@ -15,9 +15,6 @@ import {
     FaSearchPlus
   } from 'react-icons/fa';
   import { IconType } from 'react-icons';
-  import hero1 from '../images/hero1.jpg';
-  import hero from '../images/hero.webp';
-  import freepik from '../images/freepik.jpeg';
   
   export interface SecurityItem {
     title: string;
@@ -57,13 +54,13 @@ import {
                 "Use authenticator apps over SMS where possible",
                 "Consider hardware security keys for highest security"
               ],
-              images: [
-                hero1.src,
-                hero.src,
-                freepik.src,
-                hero.src,
-                freepik.src,
-              ]
+              // images: [
+              //   hero1.src,
+              //   hero.src,
+              //   freepik.src,
+              //   hero.src,
+              //   freepik.src,
+              // ]
             },
             {
               name: "Review account recovery options",
@@ -72,13 +69,13 @@ import {
                 "Disable SMS recovery if other methods available",
                 "Set strong security questions with non-guessable answers"
               ],
-              images: [
-                hero1.src,
-                hero.src,
-                freepik.src,
-                hero.src,
-                freepik.src,
-              ]
+              // images: [
+              //   hero1.src,
+              //   hero.src,
+              //   freepik.src,
+              //   hero.src,
+              //   freepik.src,
+              // ]
             }
           ]
         },
@@ -98,13 +95,13 @@ import {
                 "Google: Security Checkup > Your devices",
                 "Microsoft: Account > Security > Sign-in activity"
               ],
-              images: [
-                hero1.src,
-                hero.src,
-                freepik.src,
-                hero.src,
-                freepik.src,
-              ],
+              // images: [
+              //   hero1.src,
+              //   hero.src,
+              //   freepik.src,
+              //   hero.src,
+              //   freepik.src,
+              // ],
             },
             {
               name: "Set up alerts for new logins",
@@ -114,13 +111,13 @@ import {
                 "Log out suspicious sessions remotely",
                 "Change password after suspicious activity"
               ],
-              images: [
-                hero1.src,
-                hero.src,
-                freepik.src,
-                hero.src,
-                freepik.src,
-              ]
+              // images: [
+              //   hero1.src,
+              //   hero.src,
+              //   freepik.src,
+              //   hero.src,
+              //   freepik.src,
+              // ]
             }
           ]
         },
@@ -140,13 +137,13 @@ import {
                 "Remove unused or suspicious applications",
                 "Limit permissions to minimum necessary"
               ],
-              images: [
-                hero1.src,
-                hero.src,
-                freepik.src,
-                hero.src,
-                freepik.src,
-              ],
+              // images: [
+              //   hero1.src,
+              //   hero.src,
+              //   freepik.src,
+              //   hero.src,
+              //   freepik.src,
+              // ],
             },
             {
               name: "Permission management",
@@ -156,13 +153,13 @@ import {
                 "Set calendar reminder for quarterly audits",
                 "Be cautious when granting new permissions"
               ],
-              images: [
-                hero1.src,
-                hero.src,
-                freepik.src,
-                hero.src,
-                freepik.src,
-              ]
+              // images: [
+              //   hero1.src,
+              //   hero.src,
+              //   freepik.src,
+              //   hero.src,
+              //   freepik.src,
+              // ]
             }
           ]
         },
@@ -179,13 +176,13 @@ import {
                 "Keep screenshot of QR codes for authenticator apps",
                 "Add trusted contacts where available (Facebook)"
               ],
-              images: [
-                hero1.src,
-                hero.src,
-                freepik.src,
-                hero.src,
-                freepik.src,
-              ]
+              // images: [
+              //   hero1.src,
+              //   hero.src,
+              //   freepik.src,
+              //   hero.src,
+              //   freepik.src,
+              // ]
             },
             {
               name: "Recovery kit creation",
@@ -195,13 +192,13 @@ import {
                 "Save original email used for registration",
                 "Keep record of payment methods associated with accounts"
               ],
-              images: [
-                hero1.src,
-                hero.src,
-                freepik.src,
-                hero.src,
-                freepik.src,
-              ],
+              // images: [
+              //   hero1.src,
+              //   hero.src,
+              //   freepik.src,
+              //   hero.src,
+              //   freepik.src,
+              // ],
             }
           ]
         }
@@ -226,13 +223,13 @@ import {
                 "Control tag review and approval",
                 "Manage location tagging permissions"
               ],
-              images: [
-                hero1.src,
-                hero.src,
-                freepik.src,
-                hero.src,
-                freepik.src,
-              ],
+              // images: [
+              //   hero1.src,
+              //   hero.src,
+              //   freepik.src,
+              //   hero.src,
+              //   freepik.src,
+              // ],
             },
             {
               name: "Information restrictions",
@@ -242,13 +239,13 @@ import {
                 "Restrict profile findability through search engines",
                 "Review profile information and remove sensitive details"
               ],
-              images: [
-                hero1.src,
-                hero.src,
-                freepik.src,
-                hero.src,
-                freepik.src,
-              ],
+              // images: [
+              //   hero1.src,
+              //   hero.src,
+              //   freepik.src,
+              //   hero.src,
+              //   freepik.src,
+              // ],
             }
           ]
         },
@@ -265,13 +262,13 @@ import {
                 "Google: Data & Privacy > Ad personalization",
                 "Twitter: Settings > Privacy and safety > Ads preferences"
               ],
-              images: [
-                hero1.src,
-                hero.src,
-                freepik.src,
-                hero.src,
-                freepik.src,
-              ],
+              // images: [
+              //   hero1.src,
+              //   hero.src,
+              //   freepik.src,
+              //   hero.src,
+              //   freepik.src,
+              // ],
             },
             {
               name: "Manage data collection",
@@ -297,13 +294,13 @@ import {
                 "Turn off precise location when approximate is sufficient",
                 "Use temporary location sharing when needed"
               ],
-              images: [
-                hero1.src,
-                hero.src,
-                freepik.src,
-                hero.src,
-                freepik.src,
-              ],
+              // images: [
+              //   hero1.src,
+              //   hero.src,
+              //   freepik.src,
+              //   hero.src,
+              //   freepik.src,
+              // ],
             },
             {
               name: "Post location scrubbing",
@@ -337,13 +334,13 @@ import {
                 "Check for work details or financial information",
                 "Review family information that could aid in identity theft"
               ],
-              images: [
-                hero1.src,
-                hero.src,
-                freepik.src,
-                hero.src,
-                freepik.src,
-              ],
+              // images: [
+              //   hero1.src,
+              //   hero.src,
+              //   freepik.src,
+              //   hero.src,
+              //   freepik.src,
+              // ],
             },
             {
               name: "Use platform tools for bulk review",
@@ -352,13 +349,13 @@ import {
                 "Twitter: Download archive and review",
                 "Instagram: Saved posts and archive"
               ],
-              images: [
-                hero1.src,
-                hero.src,
-                freepik.src,
-                hero.src,
-                freepik.src,
-              ],
+              // images: [
+              //   hero1.src,
+              //   hero.src,
+              //   freepik.src,
+              //   hero.src,
+              //   freepik.src,
+              // ],
             },
             {
               name: "Future posting guidelines",
@@ -368,13 +365,13 @@ import {
                 "Consider timing delays for location-based posts",
                 "Use close friends or private groups for sensitive content"
               ],
-              images: [
-                hero1.src,
-                hero.src,
-                freepik.src,
-                hero.src,
-                freepik.src,
-              ],
+              // images: [
+              //   hero1.src,
+              //   hero.src,
+              //   freepik.src,
+              //   hero.src,
+              //   freepik.src,
+              // ],
             }
           ]
         },
@@ -391,13 +388,13 @@ import {
                 "Check image search results",
                 "Review social media presence in search results"
               ],
-              images: [
-                hero1.src,
-                hero.src,
-                freepik.src,
-                hero.src,
-                freepik.src,
-              ],
+              // images: [
+              //   hero1.src,
+              //   hero.src,
+              //   freepik.src,
+              //   hero.src,
+              //   freepik.src,
+              // ],
             },
             {
               name: "Content removal strategies",
@@ -407,13 +404,13 @@ import {
                 "Contact search engines for removal of sensitive information",
                 "Consider professional reputation management services"
               ],
-              images: [
-                hero1.src,
-                hero.src,
-                freepik.src,
-                hero.src,
-                freepik.src,
-              ],
+              // images: [
+              //   hero1.src,
+              //   hero.src,
+              //   freepik.src,
+              //   hero.src,
+              //   freepik.src,
+              // ],
             }
           ]
         },
@@ -430,13 +427,13 @@ import {
                 "Don't share sensitive information via platform messaging",
                 "Be aware that platform admins may have access to \"private\" messages"
               ],
-              images: [
-                hero1.src,
-                hero.src,
-                freepik.src,
-                hero.src,
-                freepik.src,
-              ],
+              // images: [
+              //   hero1.src,
+              //   hero.src,
+              //   freepik.src,
+              //   hero.src,
+              //   freepik.src,
+              // ],
             },
             {
               name: "Group conversation management",
@@ -446,13 +443,13 @@ import {
                 "Be cautious about what's shared in larger groups",
                 "Leave unused or unnecessary groups"
               ],
-              images: [
-                hero1.src,
-                hero.src,
-                freepik.src,
-                hero.src,
-                freepik.src,
-              ],
+              // images: [
+              //   hero1.src,
+              //   hero.src,
+              //   freepik.src,
+              //   hero.src,
+              //   freepik.src,
+              // ],
             }
           ]
         }
@@ -477,13 +474,13 @@ import {
                 "Profile or setting changes you didn't make",
                 "Unrecognized logins or devices"
               ],
-              images: [
-                hero1.src,
-                hero.src,
-                freepik.src,
-                hero.src,
-                freepik.src,
-              ],
+              // images: [
+              //   hero1.src,
+              //   hero.src,
+              //   freepik.src,
+              //   hero.src,
+              //   freepik.src,
+              // ],
             },
             {
               name: "Automated alerts",
@@ -493,13 +490,13 @@ import {
                 "Monitor for password reset emails you didn't request",
                 "Watch for new device verification requests"
               ],
-              images: [
-                hero1.src,
-                hero.src,
-                freepik.src,
-                hero.src,
-                freepik.src,
-              ],
+              // images: [
+              //   hero1.src,
+              //   hero.src,
+              //   freepik.src,
+              //   hero.src,
+              //   freepik.src,
+              // ],
             }
           ]
         },
@@ -518,13 +515,13 @@ import {
                 "Check for profile changes and revert if necessary",
                 "Scan device for malware"
               ],
-              images: [
-                hero1.src,
-                hero.src,
-                freepik.src,
-                hero.src,
-                freepik.src,
-              ],
+              // images: [
+              //   hero1.src,
+              //   hero.src,
+              //   freepik.src,
+              //   hero.src,
+              //   freepik.src,
+              // ],
             },
             {
               name: "Notification process",
@@ -534,13 +531,13 @@ import {
                 "Document incident with screenshots",
                 "Consider legal reporting if identity theft occurs"
               ],
-              images: [
-                hero1.src,
-                hero.src,
-                freepik.src,
-                hero.src,
-                freepik.src,
-              ],
+              // images: [
+              //   hero1.src,
+              //   hero.src,
+              //   freepik.src,
+              //   hero.src,
+              //   freepik.src,
+              // ],
             }
           ]
         },
@@ -557,13 +554,13 @@ import {
                 "Check linked accounts for security issues",
                 "Review privacy settings after any platform updates"
               ],
-              images: [
-                hero1.src,
-                hero.src,
-                freepik.src,
-                hero.src,
-                freepik.src,
-              ],
+              // images: [
+              //   hero1.src,
+              //   hero.src,
+              //   freepik.src,
+              //   hero.src,
+              //   freepik.src,
+              // ],
             },
             {
               name: "Security posture improvement",
@@ -573,13 +570,13 @@ import {
                 "Consider separate devices for sensitive accounts",
                 "Implement lessons learned"
               ],
-              images: [
-                hero1.src,
-                hero.src,
-                freepik.src,
-                hero.src,
-                freepik.src,
-              ],
+              // images: [
+              //   hero1.src,
+              //   hero.src,
+              //   freepik.src,
+              //   hero.src,
+              //   freepik.src,
+              // ],
             }
           ]
         }

@@ -11,9 +11,6 @@ import {
   FaKey
 } from 'react-icons/fa';
 import { IconType } from 'react-icons';
-import hero1 from '../images/hero1.jpg';
-import hero from '../images/hero.webp';
-import freepik from '../images/freepik.jpeg';
 
 export interface StrategyItem {
   title: string;
@@ -43,13 +40,13 @@ export const implementationStrategyData: StrategyCategory[] = [
         title: "Security Baseline Assessment",
         description: "Evaluate your current security posture and identify priorities",
         icon: FaSearch,
-        images: [
-          hero1.src,
-          hero.src,
-          freepik.src,
-          hero.src,
-          freepik.src,
-        ],
+        // images: [
+        //   hero1.src,
+        //   hero.src,
+        //   freepik.src,
+        //   hero.src,
+        //   freepik.src,
+        // ],
         steps: [
           {
             name: "Personal threat model development",
@@ -75,13 +72,13 @@ export const implementationStrategyData: StrategyCategory[] = [
         title: "Implementation Prioritization",
         description: "Organize security improvements in order of importance",
         icon: FaListOl,
-        images: [
-          hero1.src,
-          hero.src,
-          freepik.src,
-          hero.src,
-          freepik.src,
-        ],
+        // images: [
+        //   hero1.src,
+        //   hero.src,
+        //   freepik.src,
+        //   hero.src,
+        //   freepik.src,
+        // ],
         steps: [
           {
             name: "Critical security fundamentals",
@@ -116,13 +113,13 @@ export const implementationStrategyData: StrategyCategory[] = [
         title: "Documentation Development",
         description: "Create comprehensive records of your security setup",
         icon: FaFileAlt,
-        images: [
-          hero1.src,
-          hero.src,
-          freepik.src,
-          hero.src,
-          freepik.src,
-        ],
+        // images: [
+        //   hero1.src,
+        //   hero.src,
+        //   freepik.src,
+        //   hero.src,
+        //   freepik.src,
+        // ],
         steps: [
           {
             name: "Personal security handbook",
@@ -155,13 +152,13 @@ export const implementationStrategyData: StrategyCategory[] = [
         title: "Regular Security Reviews",
         description: "Establish recurring security maintenance schedules",
         icon: FaCalendarAlt,
-        images: [
-          hero1.src,
-          hero.src,
-          freepik.src,
-          hero.src,
-          freepik.src,
-        ],
+        // images: [
+        //   hero1.src,
+        //   hero.src,
+        //   freepik.src,
+        //   hero.src,
+        //   freepik.src,
+        // ],
         steps: [
           {
             name: "Monthly security tasks",
@@ -187,13 +184,13 @@ export const implementationStrategyData: StrategyCategory[] = [
         title: "Incident Response Plans",
         description: "Prepare for security breaches before they happen",
         icon: FaExclamationTriangle,
-        images: [
-          hero1.src,
-          hero.src,
-          freepik.src,
-          hero.src,
-          freepik.src,
-        ],
+        // images: [
+        //   hero1.src,
+        //   hero.src,
+        //   freepik.src,
+        //   hero.src,
+        //   freepik.src,
+        // ],
         steps: [
           {
             name: "Preparation for common scenarios",
@@ -219,13 +216,13 @@ export const implementationStrategyData: StrategyCategory[] = [
         title: "Continuous Learning",
         description: "Stay informed about evolving security threats and defenses",
         icon: FaGraduationCap,
-        images: [
-          hero1.src,
-          hero.src,
-          freepik.src,
-          hero.src,
-          freepik.src,
-        ],
+        // images: [
+        //   hero1.src,
+        //   hero.src,
+        //   freepik.src,
+        //   hero.src,
+        //   freepik.src,
+        // ],
         steps: [
           {
             name: "Security knowledge development",
@@ -258,13 +255,13 @@ export const implementationStrategyData: StrategyCategory[] = [
         title: "Family Security Planning",
         description: "Extend security practices to protect your entire household",
         icon: FaUsers,
-        images: [
-          hero1.src,
-          hero.src,
-          freepik.src,
-          hero.src,
-          freepik.src,
-        ],
+        // images: [
+        //   hero1.src,
+        //   hero.src,
+        //   freepik.src,
+        //   hero.src,
+        //   freepik.src,
+        // ],
         steps: [
           {
             name: "Multi-user household security",
@@ -290,13 +287,13 @@ export const implementationStrategyData: StrategyCategory[] = [
         title: "Travel Security Protocols",
         description: "Maintain security while away from your normal environment",
         icon: FaPlane,
-        images: [
-          hero1.src,
-          hero.src,
-          freepik.src,
-          hero.src,
-          freepik.src,
-        ],
+        // images: [
+        //   hero1.src,
+        //   hero.src,
+        //   freepik.src,
+        //   hero.src,
+        //   freepik.src,
+        // ],
         steps: [
           {
             name: "Pre-travel preparation",
@@ -322,13 +319,13 @@ export const implementationStrategyData: StrategyCategory[] = [
         title: "Digital Legacy Planning",
         description: "Ensure proper handling of your digital assets in case of emergency",
         icon: FaKey,
-        images: [
-          hero1.src,
-          hero.src,
-          freepik.src,
-          hero.src,
-          freepik.src,
-        ],
+        // images: [
+        //   hero1.src,
+        //   hero.src,
+        //   freepik.src,
+        //   hero.src,
+        //   freepik.src,
+        // ],
         steps: [
           {
             name: "Access continuity planning",

@@ -14,9 +14,6 @@ import {
     FaFile
   } from 'react-icons/fa';
   import { IconType } from 'react-icons';
-  import hero1 from '../images/hero1.jpg';
-  import hero from '../images/hero.webp';
-  import freepik from '../images/freepik.jpeg';
   
   export interface SecurityItem {
     title: string;
@@ -55,13 +52,13 @@ import {
                 "Use RF detector to identify transmitting devices",
                 "Consider professional TSCM (Technical Surveillance Countermeasures) for high-security needs"
               ],
-              images: [
-                hero1.src,
-                hero.src,
-                freepik.src,
-                hero.src,
-                freepik.src,
-              ],
+              // images: [
+              //   hero1.src,
+              //   hero.src,
+              //   freepik.src,
+              //   hero.src,
+              //   freepik.src,
+              // ],
             },
             {
               name: "Environmental security",
@@ -71,13 +68,13 @@ import {
                 "Consider sound-masking devices for sensitive discussions",
                 "Implement clean desk policy during meetings"
               ],
-              images: [
-                hero1.src,
-                hero.src,
-                freepik.src,
-                hero.src,
-                freepik.src,
-              ],
+              // images: [
+              //   hero1.src,
+              //   hero.src,
+              //   freepik.src,
+              //   hero.src,
+              //   freepik.src,
+              // ],
             }
           ]
         },
@@ -94,13 +91,13 @@ import {
                 "Disable smart assistants in meeting room",
                 "Turn off Bluetooth and Wi-Fi when not needed"
               ],
-              images: [
-                hero1.src,
-                hero.src,
-                freepik.src,
-                hero.src,
-                freepik.src,
-              ],
+              // images: [
+              //   hero1.src,
+              //   hero.src,
+              //   freepik.src,
+              //   hero.src,
+              //   freepik.src,
+              // ],
             },
             {
               name: "Jamming considerations",
@@ -109,13 +106,13 @@ import {
                 "Faraday room shielding for critical infrastructure",
                 "Note: Verify legality in your jurisdiction before implementing"
               ],
-              images: [
-                hero1.src,
-                hero.src,
-                freepik.src,
-                hero.src,
-                freepik.src,
-              ]
+              // images: [
+              //   hero1.src,
+              //   hero.src,
+              //   freepik.src,
+              //   hero.src,
+              //   freepik.src,
+              // ]
             }
           ]
         },
@@ -132,13 +129,13 @@ import {
                 "Use watermarks on sensitive documents",
                 "Implement information classification system"
               ],
-              images: [
-                hero1.src,
-                hero.src,
-                freepik.src,
-                hero.src,
-                freepik.src,
-              ]
+              // images: [
+              //   hero1.src,
+              //   hero.src,
+              //   freepik.src,
+              //   hero.src,
+              //   freepik.src,
+              // ]
             },
             {
               name: "Presentation security",
@@ -147,13 +144,13 @@ import {
                 "Use secure presentation modes that hide notifications",
                 "Avoid connecting to unknown projectors/displays"
               ],
-              images: [
-                hero1.src,
-                hero.src,
-                freepik.src,
-                hero.src,
-                freepik.src,
-              ]
+              // images: [
+              //   hero1.src,
+              //   hero.src,
+              //   freepik.src,
+              //   hero.src,
+              //   freepik.src,
+              // ]
             }
           ]
         }
@@ -177,13 +174,13 @@ import {
                 "Avoid discussing highly sensitive information on any call",
                 "Verify recipient identity before sharing sensitive information"
               ],
-              images: [
-                hero1.src,
-                hero.src,
-                freepik.src,
-                hero.src,
-                freepik.src,
-              ],
+              // images: [
+              //   hero1.src,
+              //   hero.src,
+              //   freepik.src,
+              //   hero.src,
+              //   freepik.src,
+              // ],
             },
             {
               name: "Signs of compromise",
@@ -193,13 +190,13 @@ import {
                 "Phone heating up when not in use",
                 "Unexpected screen lighting up"
               ],
-              images: [
-                hero1.src,
-                hero.src,
-                freepik.src,
-                hero.src,
-                freepik.src,
-              ],
+              // images: [
+              //   hero1.src,
+              //   hero.src,
+              //   freepik.src,
+              //   hero.src,
+              //   freepik.src,
+              // ],
             }
           ]
         },
@@ -216,13 +213,13 @@ import {
                 "Verify security codes/keys with important contacts",
                 "Disable cloud backups of messages"
               ],
-              images: [
-                hero1.src,
-                hero.src,
-                freepik.src,
-                hero.src,
-                freepik.src,
-              ],
+              // images: [
+              //   hero1.src,
+              //   hero.src,
+              //   freepik.src,
+              //   hero.src,
+              //   freepik.src,
+              // ],
             },
             {
               name: "Best practices",
@@ -248,13 +245,13 @@ import {
                 "Verify battery compartment is clean",
                 "Inspect SIM card slot for manipulation"
               ],
-              images: [
-                hero1.src,
-                hero.src,
-                freepik.src,
-                hero.src,
-                freepik.src,
-              ],
+              // images: [
+              //   hero1.src,
+              //   hero.src,
+              //   freepik.src,
+              //   hero.src,
+              //   freepik.src,
+              // ],
             },
             {
               name: "Electronic detection",
@@ -264,13 +261,13 @@ import {
                 "Check for unknown apps or processes",
                 "Observe battery performance"
               ],
-              images: [
-                hero1.src,
-                hero.src,
-                freepik.src,
-                hero.src,
-                freepik.src,
-              ]
+              // images: [
+              //   hero1.src,
+              //   hero.src,
+              //   freepik.src,
+              //   hero.src,
+              //   freepik.src,
+              // ]
             }
           ]
         },
@@ -287,13 +284,13 @@ import {
                 "Set up travel-specific accounts if needed",
                 "Consider temporary/burner devices for high-risk travel"
               ],
-              images: [
-                hero1.src,
-                hero.src,
-                freepik.src,
-                hero.src,
-                freepik.src,
-              ],
+              // images: [
+              //   hero1.src,
+              //   hero.src,
+              //   freepik.src,
+              //   hero.src,
+              //   freepik.src,
+              // ],
             },
             {
               name: "During travel",
@@ -303,13 +300,13 @@ import {
                 "Disable Bluetooth and Wi-Fi when not in use",
                 "Avoid public charging stations (use power banks)"
               ],
-              images: [
-                hero1.src,
-                hero.src,
-                freepik.src,
-                hero.src,
-                freepik.src,
-              ]
+              // images: [
+              //   hero1.src,
+              //   hero.src,
+              //   freepik.src,
+              //   hero.src,
+              //   freepik.src,
+              // ]
             }
           ]
         }
@@ -333,13 +330,13 @@ import {
                 "Disable unnecessary connectivity features",
                 "Clear paired devices when selling vehicle"
               ],
-              images: [
-                hero1.src,
-                hero.src,
-                freepik.src,
-                hero.src,
-                freepik.src,
-              ]
+              // images: [
+              //   hero1.src,
+              //   hero.src,
+              //   freepik.src,
+              //   hero.src,
+              //   freepik.src,
+              // ]
             },
             {
               name: "Physical security",
@@ -349,13 +346,13 @@ import {
                 "Look inside interior panels for tracking devices",
                 "Use GPS/RF detector for more thorough checks"
               ],
-              images: [
-                hero1.src,
-                hero.src,
-                freepik.src,
-                hero.src,
-                freepik.src,
-              ]
+              // images: [
+              //   hero1.src,
+              //   hero.src,
+              //   freepik.src,
+              //   hero.src,
+              //   freepik.src,
+              // ]
             }
           ]
         },
@@ -372,13 +369,13 @@ import {
                 "Use \"invisible\" or \"non-discoverable\" mode",
                 "Update infotainment system regularly"
               ],
-              images: [
-                hero1.src,
-                hero.src,
-                freepik.src,
-                hero.src,
-                freepik.src,
-              ]
+              // images: [
+              //   hero1.src,
+              //   hero.src,
+              //   freepik.src,
+              //   hero.src,
+              //   freepik.src,
+              // ]
             },
             {
               name: "Usage best practices",
@@ -387,13 +384,13 @@ import {
                 "Be cautious about what data you sync to car systems",
                 "Use guest mode for passengers when available"
               ],
-              images: [
-                hero1.src,
-                hero.src,
-                freepik.src,
-                hero.src,
-                freepik.src,
-              ]
+              // images: [
+              //   hero1.src,
+              //   hero.src,
+              //   freepik.src,
+              //   hero.src,
+              //   freepik.src,
+              // ]
             }
           ]
         },
@@ -410,13 +407,13 @@ import {
                 "Remember that passengers may be recording",
                 "Have sensitive conversations outside the vehicle"
               ],
-              images: [
-                hero1.src,
-                hero.src,
-                freepik.src,
-                hero.src,
-                freepik.src,
-              ]
+              // images: [
+              //   hero1.src,
+              //   hero.src,
+              //   freepik.src,
+              //   hero.src,
+              //   freepik.src,
+              // ]
             },
             {
               name: "Counter-surveillance",
@@ -425,13 +422,13 @@ import {
                 "Conduct regular sweeps for unauthorized devices",
                 "Be aware of cameras in rideshare vehicles"
               ],
-              images: [
-                hero1.src,
-                hero.src,
-                freepik.src,
-                hero.src,
-                freepik.src,
-              ]
+              // images: [
+              //   hero1.src,
+              //   hero.src,
+              //   freepik.src,
+              //   hero.src,
+              //   freepik.src,
+              // ]
             }
           ]
         }
@@ -456,13 +453,13 @@ import {
                 "Host controls for screen sharing",
                 "Ability to remove participants"
               ],
-              images: [
-                hero1.src,
-                hero.src,
-                freepik.src,
-                hero.src,
-                freepik.src,
-              ]
+              // images: [
+              //   hero1.src,
+              //   hero.src,
+              //   freepik.src,
+              //   hero.src,
+              //   freepik.src,
+              // ]
             },
             {
               name: "Account security",
@@ -472,13 +469,13 @@ import {
                 "Don't reuse meeting IDs for sensitive meetings",
                 "Review third-party app permissions"
               ],
-              images: [
-                hero1.src,
-                hero.src,
-                freepik.src,
-                hero.src,
-                freepik.src,
-              ]
+              // images: [
+              //   hero1.src,
+              //   hero.src,
+              //   freepik.src,
+              //   hero.src,
+              //   freepik.src,
+              // ]
             }
           ]
         },
@@ -495,13 +492,13 @@ import {
                 "Disable \"join before host\"",
                 "Test security settings before important meetings"
               ],
-              images: [
-                hero1.src,
-                hero.src,
-                freepik.src,
-                hero.src,
-                freepik.src,
-              ]
+              // images: [
+              //   hero1.src,
+              //   hero.src,
+              //   freepik.src,
+              //   hero.src,
+              //   freepik.src,
+              // ]
             },
             {
               name: "During meeting",
@@ -511,13 +508,13 @@ import {
                 "Control screen sharing permissions",
                 "Monitor participant list for unexpected users"
               ],
-              images: [
-                hero1.src,
-                hero.src,
-                freepik.src,
-                hero.src,
-                freepik.src,
-              ]
+              // images: [
+              //   hero1.src,
+              //   hero.src,
+              //   freepik.src,
+              //   hero.src,
+              //   freepik.src,
+              // ]
             },
             {
               name: "After meeting",
@@ -526,13 +523,13 @@ import {
                 "Delete any recorded content after use",
                 "Review meeting logs if available"
               ],
-              images: [
-                hero1.src,
-                hero.src,
-                freepik.src,
-                hero.src,
-                freepik.src,
-              ]
+              // images: [
+              //   hero1.src,
+              //   hero.src,
+              //   freepik.src,
+              //   hero.src,
+              //   freepik.src,
+              // ]
             }
           ]
         },
@@ -549,13 +546,13 @@ import {
                 "Consider who can overhear your conversation",
                 "Use headphones for sensitive discussions"
               ],
-              images: [
-                hero1.src,
-                hero.src,
-                freepik.src,
-                hero.src,
-                freepik.src,
-              ]
+              // images: [
+              //   hero1.src,
+              //   hero.src,
+              //   freepik.src,
+              //   hero.src,
+              //   freepik.src,
+              // ]
             },
             {
               name: "Privacy features",
@@ -565,13 +562,13 @@ import {
                 "Mute microphone when not speaking",
                 "Enable in-meeting notifications for recording"
               ],  
-              images: [
-                hero1.src,
-                hero.src,
-                freepik.src,
-                hero.src,
-                freepik.src,
-              ]
+              // images: [
+              //   hero1.src,
+              //   hero.src,
+              //   freepik.src,
+              //   hero.src,
+              //   freepik.src,
+              // ]
             }
           ]
         }
@@ -595,13 +592,13 @@ import {
                 "Disable automatic loading of remote content",
                 "Be cautious with attachments and links"
               ],
-              images: [
-                hero1.src,
-                hero.src,
-                freepik.src,
-                hero.src,
-                freepik.src,
-              ]
+              // images: [
+              //   hero1.src,
+              //   hero.src,
+              //   freepik.src,
+              //   hero.src,
+              //   freepik.src,
+              // ]
             },
             {
               name: "Advanced protection",
@@ -611,13 +608,13 @@ import {
                 "Configure anti-spoofing protections (SPF, DKIM, DMARC)",
                 "Consider secure email gateways for business use"
               ],
-              images: [
-                hero1.src,
-                hero.src,
-                freepik.src,
-                hero.src,
-                freepik.src,
-              ]
+              // images: [
+              //   hero1.src,
+              //   hero.src,
+              //   freepik.src,
+              //   hero.src,
+              //   freepik.src,
+              // ]
             }
           ]
         },
@@ -634,13 +631,13 @@ import {
                 "Add watermarks to track distribution",
                 "Consider digital rights management for highly sensitive content"
               ],
-              images: [
-                hero1.src,
-                hero.src,
-                freepik.src,
-                hero.src,
-                freepik.src,
-              ]
+              // images: [
+              //   hero1.src,
+              //   hero.src,
+              //   freepik.src,
+              //   hero.src,
+              //   freepik.src,
+              // ]
             },
             {
               name: "Metadata removal",
@@ -650,13 +647,13 @@ import {
                 "Verify removal before distribution",
                 "Be aware of hidden tracking in PDFs and other documents"
               ],
-              images: [
-                hero1.src,
-                hero.src,
-                freepik.src,
-                hero.src,
-                freepik.src,
-              ]
+              // images: [
+              //   hero1.src,
+              //   hero.src,
+              //   freepik.src,
+              //   hero.src,
+              //   freepik.src,
+              // ]
             }
           ]
         }

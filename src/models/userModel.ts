@@ -12,6 +12,8 @@ export interface IUser extends Document {
   subscriptionExpiry?: Date;
   hasCompletedPayment: boolean;
   passwordUpdatedAt?: Date; // Add this field to the interface
+  resetPasswordToken?: string;
+  resetPasswordExpires?: Date;
   createdAt: Date;
   updatedAt: Date;
   comparePassword(candidatePassword: string): Promise<boolean>;
@@ -66,6 +68,14 @@ const userSchema = new Schema<IUser>(
       default: false,
     },
     passwordUpdatedAt: { // Add this field to the schema
+      type: Date,
+      default: null,
+    },
+    resetPasswordToken: {
+      type: String,
+      default: null,
+    },
+    resetPasswordExpires: {
       type: Date,
       default: null,
     },
