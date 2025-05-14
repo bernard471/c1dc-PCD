@@ -15,7 +15,37 @@ import {
     FaSearchPlus
   } from 'react-icons/fa';
   import { IconType } from 'react-icons';
-  
+  import hero1 from '../images/insta0.jpg';
+  import hero2 from '../images/insta.jpg';
+  import hero3 from '../images/insta1.jpg';
+  import hero4 from '../images/insta3.jpg';
+  import hero5 from  '../images/insta4.jpg';
+  import hero6 from '../images/x.jpg';
+  import hero7 from '../images/x1.jpg';
+  import hero8 from '../images/x2.jpg';
+  import hero9 from '../images/x3.jpg';
+  import hero10 from '../images/x4.jpg';
+  import hero11 from '../images/x5.jpg';
+  import hero12 from '../images/email.jpg';
+  import hero13 from '../images/email1.jpg';
+  import hero14 from '../images/email2.jpg';
+  import hero15 from '../images/socialmediagoogle.jpg';
+  import hero16 from '../images/socialmediagoogle1.jpg';
+  import hero17 from '../images/linkedin.jpg';
+  import hero18 from '../images/linkedin1.jpg';
+  import hero19 from '../images/linkedin2.jpg';
+  import hero20 from '../images/linkedin3.jpg';
+  import hero21 from '../images/linkedin4.jpg';
+  import hero22 from '../images/linkedin5.jpg';
+  // import hero23 from '../images/fb1.jpg';
+  import hero24 from '../images/fb2.jpg';
+  import hero25 from '../images/fb3.jpg';
+  import hero26 from '../images/fb4.jpg';
+  import hero27 from '../images/fb5.jpg';
+  import hero28 from '../images/fb6.jpg';
+  import hero29 from '../images/fb7.jpg';
+  import hero30 from '../images/fb8.jpg';
+
   export interface SecurityItem {
     title: string;
     description: string;
@@ -95,13 +125,37 @@ import {
                 "Google: Security Checkup > Your devices",
                 "Microsoft: Account > Security > Sign-in activity"
               ],
-              // images: [
-              //   hero1.src,
-              //   hero.src,
-              //   freepik.src,
-              //   hero.src,
-              //   freepik.src,
-              // ],
+              images: [
+                hero29.src,
+                  hero24.src,
+                  hero25.src,
+                  hero26.src,
+                  hero27.src,
+                  hero28.src,
+                  hero30.src,
+                  hero1.src,
+                  hero2.src,
+                  hero3.src,
+                  hero4.src,
+                  hero5.src,
+                  hero6.src,
+                  hero7.src,
+                  hero8.src,
+                  hero9.src,
+                  hero10.src,
+                  hero11.src,
+                  hero17.src,
+                  hero18.src,
+                  hero19.src,
+                  hero20.src,
+                  hero21.src,
+                  hero22.src,
+                  hero12.src,
+                  hero13.src,
+                  hero14.src,
+                  hero15.src,
+                  hero16.src,
+              ],
             },
             {
               name: "Set up alerts for new logins",

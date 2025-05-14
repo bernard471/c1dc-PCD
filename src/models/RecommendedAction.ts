@@ -4,8 +4,8 @@ import mongoose, { Schema } from 'mongoose';
 const recommendedActionSchema = new Schema({
   actionId: {
     type: Number,
-    required: true,
-    unique: true
+    required: true
+    // Remove the unique constraint from here
   },
   title: {
     type: String,
@@ -24,6 +24,9 @@ const recommendedActionSchema = new Schema({
     required: true
   }
 }, { timestamps: true });
+
+// Add a compound index to ensure the combination of actionId and userId is unique
+recommendedActionSchema.index({ actionId: 1, userId: 1 }, { unique: true });
 
 // Create and export the model
 const RecommendedAction = mongoose.models.RecommendedAction || 

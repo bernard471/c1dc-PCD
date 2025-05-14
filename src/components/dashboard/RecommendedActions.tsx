@@ -32,21 +32,21 @@ const RecommendedActions: React.FC = () => {
           setAllActions(data);
           
           // Get only the first 3 actions for the dashboard widget
-          setDashboardActions(data.slice(0, 3));
+          setDashboardActions(data.slice(0, 5));
           
           // Count incomplete actions
             const incomplete: number = data.filter((action: ActionWithCompletionStatus) => !action.isCompleted).length;
           setIncompleteCount(incomplete);
         } else {
           // If API fails, use the original data
-          setDashboardActions(recommendedActionsData.slice(0, 3).map(({ id, title, description, icon }) => ({
+          setDashboardActions(recommendedActionsData.slice(0, 5).map(({ id, title, description, icon }) => ({
             id, title, description, icon
           })));
           setIncompleteCount(recommendedActionsData.length);
         }
       } catch (error) {
         console.error('Error fetching completion status:', error);
-        setDashboardActions(recommendedActionsData.slice(0, 3).map(({ id, title, description, icon }) => ({
+        setDashboardActions(recommendedActionsData.slice(0, 5).map(({ id, title, description, icon }) => ({
           id, title, description, icon
         })));
         setIncompleteCount(recommendedActionsData.length);

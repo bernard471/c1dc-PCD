@@ -48,6 +48,7 @@ export async function POST(req: NextRequest) {
     return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
   }
   
+
   try {
     await connectDB();
     
@@ -82,8 +83,9 @@ export async function POST(req: NextRequest) {
     return NextResponse.json({ success: true, data: updatedAction });
   } catch (error) {
     console.error('Error updating recommended action:', error);
+    const errorMessage = error instanceof Error ? error.message : 'Unknown error';
     return NextResponse.json(
-      { success: false, error: 'Failed to update recommended action' },
+      { success: false, error: 'Failed to update recommended action', details: errorMessage },
       { status: 500 }
     );
   }

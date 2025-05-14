@@ -49,7 +49,7 @@ export default function PaymentPage() {
         },
         body: JSON.stringify({
           email,
-          amount: 1000, // ₵10 in pesewas (Paystack uses the smallest currency unit)
+          amount: 10000, // ₵100 in pesewas (Paystack uses the smallest currency unit)
         }),
       });
 
@@ -121,7 +121,7 @@ export default function PaymentPage() {
             <div className="bg-gradient-to-r from-blue-600 to-indigo-600 rounded-xl p-5 text-white mb-6">
               <div className="flex justify-between items-center mb-2">
                 <h3 className="text-lg font-semibold">Complete Protection</h3>
-                <span className="text-2xl font-bold">₵10</span>
+                <span className="text-2xl font-bold">₵100</span>
               </div>
               <p className="text-sm text-blue-100">Annual subscription</p>
             </div>
@@ -183,7 +183,7 @@ export default function PaymentPage() {
               <div className="pt-4 border-t border-gray-200">
                 <div className="flex justify-between text-sm mb-1">
                   <span className="text-gray-600">Subtotal</span>
-                  <span className="font-medium text-gray-900">₵10.00</span>
+                  <span className="font-medium text-gray-900">₵100.00</span>
                 </div>
                 <div className="flex justify-between text-sm">
                   <span className="text-gray-600">Tax</span>
@@ -191,7 +191,7 @@ export default function PaymentPage() {
                 </div>
                 <div className="flex justify-between text-base font-bold mt-3 pt-3 border-t border-gray-200">
                   <span>Total</span>
-                  <span>₵10.00</span>
+                  <span>₵100.00</span>
                 </div>
               </div>
             </div>
@@ -279,7 +279,7 @@ export default function PaymentPage() {
                   ) : (
                     <>
                       <Lock className="h-5 w-5 mr-2" />
-                      Pay ₵10.00 Now
+                      Pay ₵100.00 Now
                     </>
                   )}
                 </motion.button>

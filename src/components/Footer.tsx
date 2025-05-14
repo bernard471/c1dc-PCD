@@ -1,10 +1,65 @@
 'use client';
 
+import { useState } from 'react';
 import Link from 'next/link';
-import { Mail, Phone, MapPin, ArrowRight, Shield } from 'lucide-react';
+import { Mail, Phone, MapPin, ArrowRight, Shield, CheckCircle, AlertCircle } from 'lucide-react';
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
+  
+  // Newsletter subscription state
+  const [email, setEmail] = useState('');
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [subscriptionStatus, setSubscriptionStatus] = useState<'idle' | 'success' | 'error'>('idle');
+  const [errorMessage, setErrorMessage] = useState('');
+  
+  // Handle newsletter subscription
+  const handleNewsletterSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    
+    // Basic validation
+    if (!email || !/^\S+@\S+\.\S+$/.test(email)) {
+      setSubscriptionStatus('error');
+      setErrorMessage('Please enter a valid email address');
+      setTimeout(() => setSubscriptionStatus('idle'), 3000);
+      return;
+    }
+    
+    setIsSubmitting(true);
+    setSubscriptionStatus('idle');
+    
+    try {
+      const response = await fetch('/api/newsletter', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ email }),
+      });
+      
+      const data = await response.json();
+      
+      if (!response.ok) {
+        throw new Error(data.error || 'Failed to subscribe');
+      }
+      
+      // Success
+      setSubscriptionStatus('success');
+      setEmail('');
+      
+      // Reset status after 5 seconds
+      setTimeout(() => setSubscriptionStatus('idle'), 5000);
+    } catch (error) {
+      console.error('Subscription error:', error);
+      setSubscriptionStatus('error');
+      setErrorMessage(error instanceof Error ? error.message : 'Failed to subscribe');
+      
+      // Reset error after 3 seconds
+      setTimeout(() => setSubscriptionStatus('idle'), 3000);
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
   
   // Footer navigation links
   const footerNavigation = {
@@ -26,10 +81,10 @@ export default function Footer() {
   
   // Social media links
   const socialLinks = [
-    { name: 'Facebook', href: '#', icon: 'facebook.svg' },
-    { name: 'Twitter', href: '#', icon: 'twitter.svg' },
+    { name: 'Facebook', href: 'https://web.facebook.com/cyber1defense', icon: 'facebook.svg' },
+    { name: 'Twitter', href: 'https://x.com/Cyber1Defense', icon: 'twitter.svg' },
     { name: 'LinkedIn', href: '#', icon: 'linkedin.svg' },
-    { name: 'Instagram', href: '#', icon: 'instagram.svg' },
+    { name: 'Instagram', href: 'https://www.instagram.com/cyber1defense/', icon: 'instagram.svg' },
   ];
 
   return (
@@ -48,22 +103,63 @@ export default function Footer() {
               Protecting your digital life with cutting-edge cybersecurity solutions. 
               Stay ahead of threats and secure your online presence.
             </p>
+
+            <p className="text-gray-900 mb-3 max-w-md">
+              Created By <a href="https://cyber1defense.com" className="text-blue-500 font-bold hover:text-blue-700 hover:underline transition-colors" target="_blank" rel="noopener noreferrer">Cyber<span className='text-orange-500'>1</span>defense</a>
+            </p>
+
             
             <h3 className="text-sm font-semibold text-gray-900 uppercase tracking-wider mb-3">
               Subscribe to our newsletter
             </h3>
             
-            <div className="flex max-w-md">
-              <input
-                type="email"
-                placeholder="Your email address"
-                className="min-w-0 flex-1 bg-gray-800 border border-gray-700 rounded-l-md px-4 py-2 text-sm text-gray-300 placeholder-gray-500 focus:outline-none focus:ring-1 focus:ring-blue-500 focus:border-blue-500"
-              />
-              <button className="bg-blue-600 hover:bg-blue-700 text-white rounded-r-md px-4 py-2 text-sm font-medium transition-colors duration-300 flex items-center">
-                Subscribe
-                <ArrowRight className="ml-2 h-4 w-4" />
-              </button>
-            </div>
+            <form onSubmit={handleNewsletterSubmit} className="max-w-md">
+              <div className="flex">
+                <input
+                  type="email"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                  placeholder="Your email address"
+                  className="min-w-0 flex-1 bg-gray-800 border border-gray-700 rounded-l-md px-4 py-2 text-sm text-gray-300 placeholder-gray-500 focus:outline-none focus:ring-1 focus:ring-blue-500 focus:border-blue-500"
+                  disabled={isSubmitting}
+                />
+                <button 
+                  type="submit"
+                  className={`bg-blue-600 hover:bg-blue-700 text-white rounded-r-md px-4 py-2 text-sm font-medium transition-colors duration-300 flex items-center ${isSubmitting ? 'opacity-75 cursor-not-allowed' : ''}`}
+                  disabled={isSubmitting}
+                >
+                  {isSubmitting ? (
+                    <span className="flex items-center">
+                      <svg className="animate-spin -ml-1 mr-2 h-4 w-4 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                        <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
+                        <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                      </svg>
+                      Processing
+                    </span>
+                  ) : (
+                    <>
+                      Subscribe
+                      <ArrowRight className="ml-2 h-4 w-4" />
+                    </>
+                  )}
+                </button>
+              </div>
+              
+              {/* Subscription status messages */}
+              {subscriptionStatus === 'success' && (
+                <div className="mt-2 flex items-center text-green-600 text-sm">
+                  <CheckCircle className="h-4 w-4 mr-1" />
+                  <span>Thank you for subscribing!</span>
+                </div>
+              )}
+              
+              {subscriptionStatus === 'error' && (
+                <div className="mt-2 flex items-center text-red-600 text-sm">
+                  <AlertCircle className="h-4 w-4 mr-1" />
+                  <span>{errorMessage}</span>
+                </div>
+              )}
+            </form>
           </div>
           
           {/* Footer navigation */}

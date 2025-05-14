@@ -18,7 +18,44 @@ import {
     FaClipboardCheck
   } from 'react-icons/fa';
   import { IconType } from 'react-icons';
-  
+  import hero from '../images/email.jpg';
+  import hero1 from '../images/email1.jpg';
+  import hero2 from '../images/email2.jpg';
+  import hero3 from '../images/email3.jpg';
+  import hero4 from '../images/email4.jpg';
+  import hero5 from '../images/email5.jpg';
+  import hero6 from '../images/email55.jpg';
+  import hero7 from '../images/email6.jpg';
+  import hero8 from '../images/google.jpg';
+  import hero9 from '../images/google1.jpg';
+  import hero10 from '../images/google2.jpg';
+  import hero11 from '../images/google3.jpg';
+  import hero12 from '../images/google4.jpg';
+  import hero13 from '../images/contentsec1.jpg';
+  import hero14 from '../images/contentsec2.jpg';
+  import hero15 from '../images/contentsec3.jpg';
+  import hero16 from '../images/contentsec4.jpg';
+  import hero17 from '../images/contentsec5.jpg';
+  import hero18 from '../images/contentsec6.jpg';
+  import hero19 from '../images/contentsec7.jpg';
+  import hero20 from '../images/contentsec8.jpg';
+  // import hero27 from '../images/google19.jpg';
+  // import hero28 from '../images/google20.jpg';
+  // import hero29 from '../images/google21.jpg';
+  // import hero30 from '../images/google22.jpg';
+  // import hero31 from '../images/google23.jpg';
+  // import hero32 from '../images/google24.jpg';
+  // import hero33 from '../images/google25.jpg';
+  // import hero34 from '../images/google26.jpg';
+  // import hero35 from '../images/google27.jpg';
+  // import hero36 from '../images/google28.jpg';
+  // import hero37 from '../images/google29.jpg';
+  // import hero38 from '../images/google30.jpg';
+  // import hero39 from '../images/google31.jpg';
+  // import hero40 from '../images/google32.jpg';
+  // import hero41 from '../images/google33.jpg';
+  // import hero42 from '../images/google34.jpg';
+
   export interface SecurityItem {
     title: string;
     description: string;
@@ -59,13 +96,16 @@ import {
                 "ProtonMail: Settings > Password & recovery > Two-factor authentication",
                 "Use hardware security keys for highest protection"
               ],
-              // images: [
-              //   hero1.src,
-              //   hero.src,
-              //   freepik.src,
-              //   hero.src,
-              //   freepik.src,
-              // ]
+              images: [
+                hero.src,
+                hero1.src,
+                hero2.src,
+                hero3.src,
+                hero4.src,
+                hero5.src,
+                hero6.src,
+                hero7.src,
+              ]
             },
             {
               name: "Recovery options",
@@ -75,13 +115,13 @@ import {
                 "Securely store backup codes",
                 "Update recovery information yearly"
               ],
-              // images: [
-              //   hero1.src,
-              //   hero.src,
-              //   freepik.src,
-              //   hero.src,
-              //   freepik.src,
-              // ]
+              images: [
+                hero8.src,
+                hero9.src,
+                hero10.src,
+                hero11.src,
+                hero12.src
+              ]
             }
           ]
         },
@@ -192,13 +232,16 @@ import {
                 "Install on email clients",
                 "Exchange certificates with contacts"
               ],
-              // images: [
-              //   hero1.src,
-              //   hero.src,
-              //   freepik.src,
-              //   hero.src,
-              //   freepik.src,
-              // ],
+              images: [
+                hero13.src,
+                hero14.src,
+                hero15.src,
+                hero16.src,
+                hero17.src,
+                hero18.src,
+                hero19.src,
+                hero20.src,
+              ],
             },
             {
               name: "Everyday encryption practices",

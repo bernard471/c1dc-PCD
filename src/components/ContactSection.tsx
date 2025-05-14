@@ -24,43 +24,71 @@ export default function ContactSection() {
   // Form field focus states for enhanced UI feedback
   const [focusedField, setFocusedField] = useState<string | null>(null);
   
-  // Handle form submission
-  const handleSubmit = async (e: FormEvent) => {
-    e.preventDefault();
+// Update the handleSubmit function in ContactSection.tsx
+const handleSubmit = async (e: FormEvent) => {
+  e.preventDefault();
+  
+  // Validate form
+  if (!formState.name || !formState.email || !formState.message) {
+    setFormState(prev => ({ ...prev, error: true }));
+    setTimeout(() => setFormState(prev => ({ ...prev, error: false })), 3000);
+    return;
+  }
+  
+  // Set submitting state
+  setFormState(prev => ({ ...prev, submitting: true, error: false }));
+  
+  try {
+    // Send data to API route
+    const response = await fetch('/api/contact', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        name: formState.name,
+        email: formState.email,
+        subject: formState.subject,
+        message: formState.message,
+      }),
+    });
     
-    // Validate form
-    if (!formState.name || !formState.email || !formState.message) {
-      setFormState(prev => ({ ...prev, error: true }));
-      setTimeout(() => setFormState(prev => ({ ...prev, error: false })), 3000);
-      return;
+    const data = await response.json();
+    
+    if (!response.ok) {
+      throw new Error(data.error || 'Failed to send message');
     }
     
-    // Set submitting state
-    setFormState(prev => ({ ...prev, submitting: true }));
+    // Success state
+    setFormState(prev => ({ 
+      ...prev, 
+      submitting: false, 
+      submitted: true 
+    }));
     
-    // Simulate API call with timeout
+    // Reset form after 5 seconds
     setTimeout(() => {
-      // Success state
-      setFormState(prev => ({ 
-        ...prev, 
-        submitting: false, 
-        submitted: true 
-      }));
-      
-      // Reset form after 5 seconds
-      setTimeout(() => {
-        setFormState({
-          name: '',
-          email: '',
-          subject: '',
-          message: '',
-          submitted: false,
-          submitting: false,
-          error: false
-        });
-      }, 5000);
-    }, 2000);
-  };
+      setFormState({
+        name: '',
+        email: '',
+        subject: '',
+        message: '',
+        submitted: false,
+        submitting: false,
+        error: false
+      });
+    }, 5000);
+  } catch (error) {
+    console.error('Error:', error);
+    setFormState(prev => ({ 
+      ...prev, 
+      submitting: false,
+      error: true
+    }));
+    setTimeout(() => setFormState(prev => ({ ...prev, error: false })), 3000);
+  }
+};
+
   
   // Handle input change
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
@@ -124,7 +152,7 @@ export default function ContactSection() {
                     </div>
                     <div>
                     <p className="text-sm text-blue-100">Phone</p>
-                    <p className="font-medium">+233 20 123 4567</p>
+                    <p className="font-medium"> +233 (030) 395 5230</p>
                     </div>
                 </div>
                 
@@ -134,7 +162,7 @@ export default function ContactSection() {
                     </div>
                     <div>
                     <p className="text-sm text-blue-100">Email</p>
-                    <p className="font-medium">support@cybersecure.com</p>
+                    <p className="font-medium">info@cyber1defense.com</p>
                     </div>
                 </div>
                 
@@ -144,7 +172,7 @@ export default function ContactSection() {
                     </div>
                     <div>
                     <p className="text-sm text-blue-100">Address</p>
-                    <p className="font-medium">123 Tech Avenue, Accra, Ghana</p>
+                    <p className="font-medium">Abelemkpe 27 Malm Street, Accra, Ghana</p>
                     </div>
                 </div>
                 
@@ -166,14 +194,14 @@ export default function ContactSection() {
               <div className="flex space-x-3 mb-6">
                     {/* Social media icons */}
                     <a 
-                        href="#" 
+                        href="https://web.facebook.com/cyber1defense" 
                         className="h-10 w-10 rounded-full bg-gray-100 flex items-center justify-center hover:bg-blue-100 transition-colors"
                     >
                         <span className="sr-only">Facebook</span>
                         <Facebook className="h-5 w-5 text-gray-700" />
                     </a>
                     <a 
-                        href="#" 
+                        href="https://x.com/Cyber1Defense" 
                         className="h-10 w-10 rounded-full bg-gray-100 flex items-center justify-center hover:bg-blue-100 transition-colors"
                     >
                         <span className="sr-only">Twitter</span>
@@ -187,7 +215,7 @@ export default function ContactSection() {
                         <Linkedin className="h-5 w-5 text-gray-700" />
                     </a>
                     <a 
-                        href="#" 
+                        href="https://www.instagram.com/cyber1defense/" 
                         className="h-10 w-10 rounded-full bg-gray-100 flex items-center justify-center hover:bg-blue-100 transition-colors"
                     >
                         <span className="sr-only">Instagram</span>
@@ -359,20 +387,25 @@ export default function ContactSection() {
                       />
                     </div>
                     
-                    {/* Error message */}
-                    <AnimatePresence>
-                      {formState.error && (
-                        <motion.div
-                          initial={{ opacity: 0, y: -10 }}
-                          animate={{ opacity: 1, y: 0 }}
-                          exit={{ opacity: 0, y: -10 }}
-                          className="bg-red-50 border border-red-200 text-red-700 px-4 py-3 rounded-lg flex items-center"
-                        >
-                          <AlertCircle className="h-5 w-5 mr-2 flex-shrink-0" />
-                          <p className="text-sm">Please fill out all required fields.</p>
-                        </motion.div>
-                      )}
-                    </AnimatePresence>
+                  {/* Error message */}
+                  <AnimatePresence>
+                    {formState.error && (
+                      <motion.div
+                        initial={{ opacity: 0, y: -10 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        exit={{ opacity: 0, y: -10 }}
+                        className="bg-red-50 border border-red-200 text-red-700 px-4 py-3 rounded-lg flex items-center"
+                      >
+                        <AlertCircle className="h-5 w-5 mr-2 flex-shrink-0" />
+                        <p className="text-sm">
+                          {!formState.name || !formState.email || !formState.message
+                            ? "Please fill out all required fields."
+                            : "Failed to send message. Please try again later."}
+                        </p>
+                      </motion.div>
+                    )}
+                  </AnimatePresence>
+
                     
                     {/* Submit button */}
                     <div>
