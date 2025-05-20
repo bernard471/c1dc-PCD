@@ -15,6 +15,7 @@ import EmailSecurity from '../../components/sections/emailsecurity';
 import IdentityProtection from '../../components/sections/identityprotection';
 import RecommendedSolutions from '../../components/sections/recommendedsolutions';
 import ImplementationStrategy from '../../components/sections/implementationstrategy';
+import ChatButton from '../../components/ChatButton';
 
 export default function Dashboard() {
   const [activeSection, setActiveSection] = useState('dashboard');
@@ -122,6 +123,9 @@ export default function Dashboard() {
           {renderContent()}
         </main>
       </div>
+      
+      {/* Chat Button */}
+      <ChatButton />
     </div>
   );
 }

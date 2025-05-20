@@ -2,7 +2,9 @@
 
 import { useState } from 'react';
 import Link from 'next/link';
-import { Mail, Phone, MapPin, ArrowRight, Shield, CheckCircle, AlertCircle } from 'lucide-react';
+import { Mail, Phone, MapPin, ArrowRight, CheckCircle, AlertCircle } from 'lucide-react';
+import Image from 'next/image';
+import logoImage from '../../public/Logoimage.png';
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
@@ -95,7 +97,13 @@ export default function Footer() {
           {/* Company info and newsletter */}
           <div className="lg:col-span-2">
             <div className="flex items-center mb-4">
-              <Shield className="h-8 w-8 text-blue-500 mr-2" />
+              <Image 
+                src={logoImage} 
+                alt="PCD System Logo" 
+                height={32} 
+                width={32} 
+                className="mr-2" 
+              />
               <span className="text-xl text-blue-500 font-bold">PCD System</span>
             </div>
             

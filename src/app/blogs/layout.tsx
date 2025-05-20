@@ -15,6 +15,7 @@ import EmailSecurity from '../../components/sections/emailsecurity';
 import IdentityProtection from '../../components/sections/identityprotection';
 import RecommendedSolutions from '../../components/sections/recommendedsolutions';
 import ImplementationStrategy from '../../components/sections/implementationstrategy';
+import ChatButton from '@/components/ChatButton';
 
 export default function BlogLayout({ children }: { children: React.ReactNode }) {
   const router = useRouter();
@@ -137,6 +138,9 @@ export default function BlogLayout({ children }: { children: React.ReactNode }) 
           )}
         </main>
       </div>
+
+      {/* Chat Button */}
+      <ChatButton />
     </div>
   );
 }

@@ -347,7 +347,25 @@ const handleImageClick = (itemIndex: number, stepIndex: number, imageIndex: numb
                                     {step.details.map((detail, detailIndex) => (
                                       <li key={detailIndex} className="flex items-start">
                                         <span className="text-blue-500 mr-2 mt-1">•</span>
-                                        <span>{detail}</span>
+                                        <span>
+                                          {typeof detail === 'string' ? detail : (
+                                            <>
+                                              {detail.text}
+                                              {detail.link && (
+                                                <a 
+                                                  href={detail.link.url} 
+                                                  target="_blank" 
+                                                  rel="noopener noreferrer"
+                                                  className="text-blue-600 hover:underline"
+                                                >
+                                                  {detail.link.label}
+                                                </a>
+                                              )}
+                                              {/* Add a space before the additional text */}
+                                              {" with proof of identity"}
+                                            </>
+                                          )}
+                                        </span>
                                       </li>
                                     ))}
                                   </ul>

@@ -9,6 +9,7 @@ import { toast } from "sonner";
 import Link from 'next/link';
 import { RecentActivities } from '@/components/profile/RecentActivities';
 import { PasswordChangeModal } from '@/components/profile/PasswordChangeModal';
+import ChatButton from '@/components/ChatButton';
 
 
 export default function UserProfilePage() {
@@ -299,6 +300,9 @@ const refreshLastPasswordChange = async () => {
           )}
         </div>
       </div>
-    </div>
+      
+          {/* Chat Button */}
+          <ChatButton />
+        </div>
   );
 }

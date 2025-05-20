@@ -4,7 +4,9 @@ import { useState, FormEvent, useEffect } from 'react';
 import Link from 'next/link';
 import { useSearchParams } from 'next/navigation';
 import { toast } from 'sonner';
-import { Shield, Lock, Eye, EyeOff, AlertCircle, ArrowLeft, CheckCircle } from 'lucide-react';
+import { Lock, Eye, EyeOff, AlertCircle, ArrowLeft, CheckCircle } from 'lucide-react';
+import Image from 'next/image';
+import logoImage from '@/images/Logoimage.png';
 
 export default function ResetPasswordPage() {
   const searchParams = useSearchParams();
@@ -115,7 +117,13 @@ export default function ResetPasswordPage() {
     <div className="min-h-screen flex items-center justify-center p-6 bg-gray-50">
       <div className="w-full max-w-md">
         <Link href="/" className="flex items-center justify-center mb-8">
-          <Shield className="h-8 w-8 text-blue-600 mr-2" />
+              <Image 
+                src={logoImage} 
+                alt="PCD System Logo" 
+                height={32} 
+                width={32} 
+                className="mr-2" 
+              />
           <span className="text-xl font-bold text-blue-600">PCD System</span>
         </Link>
         

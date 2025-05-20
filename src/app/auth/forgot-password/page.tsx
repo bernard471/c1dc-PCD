@@ -3,8 +3,9 @@
 import { useState, FormEvent } from 'react';
 import Link from 'next/link';
 import { toast } from 'sonner';
-import { Shield, Mail, AlertCircle, ArrowLeft } from 'lucide-react';
-
+import { Mail, AlertCircle, ArrowLeft } from 'lucide-react';
+import Image from 'next/image';
+import logoImage from '@/images/Logoimage.png';
 export default function ForgotPasswordPage() {
   const [loading, setLoading] = useState(false);
   const [emailSent, setEmailSent] = useState(false);
@@ -62,7 +63,13 @@ export default function ForgotPasswordPage() {
     <div className="min-h-screen flex items-center justify-center p-6 bg-gray-50">
       <div className="w-full max-w-md">
         <Link href="/" className="flex items-center justify-center mb-8">
-          <Shield className="h-8 w-8 text-blue-600 mr-2" />
+              <Image 
+                src={logoImage} 
+                alt="PCD System Logo" 
+                height={32} 
+                width={32} 
+                className="mr-2" 
+              />
           <span className="text-xl font-bold text-blue-600">PCD System</span>
         </Link>
         

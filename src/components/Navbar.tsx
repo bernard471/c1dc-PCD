@@ -2,6 +2,8 @@
 
 import { useState } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
+import logoImage from '../../public/Logoimage.png'
 
 export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -18,7 +20,13 @@ export default function Navbar() {
           <div className="flex-shrink-0 flex items-center">
             <Link href="/" className="flex items-center">
               {/* Replace with your actual logo */}
-              <div className="h-8 w-8 bg-blue-600 rounded-full mr-2"></div>
+              <Image 
+                src={logoImage} 
+                alt="PCD System Logo" 
+                height={32} 
+                width={32} 
+                className="mr-2" 
+              />
               <span className="text-xl font-bold text-gray-900">PCD System</span>
             </Link>
           </div>

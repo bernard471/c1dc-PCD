@@ -4,7 +4,6 @@
 import { useState, useEffect } from 'react';
 import { 
   Menu, 
-  Bell, 
   ChevronLeft, 
   ChevronRight, 
   Shield,
@@ -14,6 +13,8 @@ import { useSession, signOut } from 'next-auth/react';
 import Image from 'next/image';
 import Link from 'next/link';
 import SearchBar from './search/SearchBar';
+import NotificationDropdown from './NotificationDropdown';
+import logoImage from '../../public/Logoimage.png'
 
 interface TopBarProps {
   toggleSidebar: () => void;
@@ -101,7 +102,13 @@ export default function TopBar({ toggleSidebar, toggleMobileMenu, isSidebarOpen,
             {/* Title - always visible when sidebar is closed or on tablet/mobile */}
             {(!isSidebarOpen || isTabletOrMobile) && (
               <div className="ml-2 flex items-center">
-                <Shield className="h-6 w-6 text-blue-600" />
+              <Image 
+                src={logoImage} 
+                alt="PCD System Logo" 
+                height={32} 
+                width={32} 
+                className="mr-2" 
+              />
                 <h1 className="ml-2 text-s font-semibold text-gray-900">PCD System</h1>
               </div>
             )}
@@ -120,12 +127,8 @@ export default function TopBar({ toggleSidebar, toggleMobileMenu, isSidebarOpen,
               <span>Protected</span>
             </div>
             
-            {/* Notification bell */}
-            <button className="p-1 rounded-full text-gray-400 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500">
-              <span className="sr-only">View notifications</span>
-              <Bell className="h-6 w-6" aria-hidden="true" />
-            </button>
-            
+            {/* Notification bell - replaced with our new component */}
+            <NotificationDropdown />
             
             {/* User profile */}
             <div className="ml-3 relative user-menu-container">
@@ -191,3 +194,4 @@ export default function TopBar({ toggleSidebar, toggleMobileMenu, isSidebarOpen,
     </header>
   );
 }
+

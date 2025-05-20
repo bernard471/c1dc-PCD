@@ -93,7 +93,7 @@ export default function PricingSection() {
                     <p className="text-blue-100 text-sm sm:text-base">Full access to all security features</p>
                   </div>
                   <div className="text-right">
-                    <div className="text-3xl sm:text-4xl font-bold">₵00</div>
+                    <div className="text-3xl sm:text-4xl font-bold">₵300</div>
                     <div className="text-blue-100 text-sm">per year</div>
                   </div>
                 </div>

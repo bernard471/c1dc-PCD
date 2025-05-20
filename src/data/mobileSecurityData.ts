@@ -247,7 +247,8 @@ export interface SecurityItem {
                 steps: [
                   'PIN (minimum 6 digits, avoid simple patterns like 123456)',
                   'Pattern (use complex patterns with at least 6 points)',
-                  'Password (mix of uppercase, lowercase, numbers, and symbols)'
+                  'Password (mix of uppercase, lowercase, numbers, and symbols)',
+                  'For passwords use common phrase that are personal to you (e.g., "Yemenisabeautifulcountry@2024").'
                 ],
                 images: [
                   hero2.src,
@@ -331,7 +332,7 @@ export interface SecurityItem {
                 steps: [
                   'Go to Settings > Google > Manage your Google Account > Security',
                   'Turn on 2-Step Verification',
-                  'Configure backup methods (SMS, Authenticator app, backup codes)'
+                  'Configure verification methods (SMS, Authenticator app, backup codes)'
                 ],
                 images: [
                   hero1.src,

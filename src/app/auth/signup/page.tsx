@@ -1,12 +1,14 @@
 'use client';
 
-import { useState, FormEvent } from 'react';
+import { useState, FormEvent, useEffect } from 'react';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 import { toast } from 'sonner';
 import { signIn } from 'next-auth/react';
 import { Shield, Lock, Mail, Eye, EyeOff, AlertCircle, ArrowRight, User } from 'lucide-react';
 import { FcGoogle } from 'react-icons/fc';
+import Image from 'next/image';
+import logoImage from '@/images/Logoimage.png'
 
 export default function SignupPage() {
   const router = useRouter();
@@ -22,6 +24,70 @@ export default function SignupPage() {
     email: '',
     password: '',
   });
+  
+  // Password strength states
+  const [passwordStrength, setPasswordStrength] = useState(0);
+  const [passwordFeedback, setPasswordFeedback] = useState<string[]>([]);
+
+  // Check password strength
+  useEffect(() => {
+    if (!formData.password) {
+      setPasswordStrength(0);
+      setPasswordFeedback([]);
+      return;
+    }
+
+    let currentStrength = 0;
+    const newFeedback: string[] = [];
+
+    // Length check
+    if (formData.password.length >= 8) {
+      currentStrength += 20;
+    } else {
+      newFeedback.push('Use at least 8 characters');
+    }
+
+    // Uppercase check
+    if (/[A-Z]/.test(formData.password)) {
+      currentStrength += 20;
+    } else {
+      newFeedback.push('Include uppercase letters');
+    }
+
+    // Lowercase check
+    if (/[a-z]/.test(formData.password)) {
+      currentStrength += 20;
+    } else {
+      newFeedback.push('Include lowercase letters');
+    }
+
+    // Number check
+    if (/\d/.test(formData.password)) {
+      currentStrength += 20;
+    } else {
+      newFeedback.push('Include numbers');
+    }
+
+    // Special character check
+    if (/[^A-Za-z0-9]/.test(formData.password)) {
+      currentStrength += 20;
+    } else {
+      newFeedback.push('Include special characters');
+    }
+
+    setPasswordStrength(currentStrength);
+    setPasswordFeedback(newFeedback);
+  }, [formData.password]);
+
+  // Get strength label and color
+  const getStrengthLabel = () => {
+    if (passwordStrength === 0) return { label: 'None', color: 'bg-gray-300', textColor: 'text-gray-500' };
+    if (passwordStrength < 40) return { label: 'Weak', color: 'bg-red-500', textColor: 'text-red-500' };
+    if (passwordStrength < 80) return { label: 'Medium', color: 'bg-yellow-500', textColor: 'text-yellow-600' };
+    return { label: 'Strong', color: 'bg-green-500', textColor: 'text-green-600' };
+  };
+
+  const strengthInfo = getStrengthLabel();
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
@@ -55,6 +121,10 @@ export default function SignupPage() {
       valid = false;
     } else if (formData.password.length < 8) {
       newErrors.password = 'Password must be at least 8 characters';
+      valid = false;
+    } else if (passwordStrength < 60) {
+      // Require at least a medium-strength password
+      newErrors.password = 'Password is too weak';
       valid = false;
     }
     
@@ -127,10 +197,16 @@ export default function SignupPage() {
       <div className="flex-1 flex items-center justify-center p-6 md:p-10 bg-gray-50">
         <div className="w-full max-w-md">
           {/* Mobile logo */}
-          <div className="flex items-center justify-center mb-8">
-            <Shield className="h-8 w-8 text-blue-600 mr-2" />
+          <Link href="/" className="flex items-center justify-center mb-8">
+              <Image 
+                src={logoImage} 
+                alt="PCD System Logo" 
+                height={32} 
+                width={32} 
+                className="mr-2" 
+              />
             <span className="text-xl font-bold text-blue-600">PCD System</span>
-          </div>
+          </Link>
           
           <div className="bg-white rounded-xl shadow-xl p-8 border border-gray-100">
             <h2 className="text-2xl text-center font-serif font-bold text-gray-900 mb-2">Create Account</h2>
@@ -236,9 +312,49 @@ export default function SignupPage() {
                     {errors.password}
                   </p>
                 )}
-                <p className="mt-1 text-xs text-gray-500">
-                  Password must be at least 8 characters long
-                </p>
+                
+                {/* Password Strength Indicator */}
+                {formData.password && (
+                  <div className="mt-3 space-y-2">
+                    <div>
+                      <div className="flex justify-between mb-1">
+                        <span className={`text-sm font-medium ${strengthInfo.textColor}`}>
+                          {strengthInfo.label}
+                        </span>
+                        <span className="text-sm font-medium text-gray-700">{passwordStrength}%</span>
+                      </div>
+                      <div className="w-full bg-gray-200 rounded-full h-2 overflow-hidden">
+                        <div 
+                          className={`h-2 rounded-full transition-all duration-500 ${strengthInfo.color}`} 
+                          style={{ width: `${passwordStrength}%` }}
+                        ></div>
+                      </div>
+                    </div>
+
+                    {passwordFeedback.length > 0 && (
+                      <div className="bg-gray-50 p-3 rounded-lg border border-gray-200">
+                        <p className="text-xs font-medium text-gray-700 mb-1">Improve your password:</p>
+                        <ul className="space-y-1">
+                          {passwordFeedback.map((item, index) => (
+                            <li key={index} className="flex items-center text-xs text-gray-600">
+                              <AlertCircle className="h-3 w-3 mr-1 text-amber-500" /> 
+                              <span>{item}</span>
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+                    )}
+
+                    {passwordFeedback.length === 0 && (
+                      <div className="bg-green-50 p-3 rounded-lg border border-green-100">
+                        <div className="flex items-center text-xs text-green-700">
+                          <Shield className="h-3 w-3 mr-1" /> 
+                          <span>Strong password! All security requirements met.</span>
+                        </div>
+                      </div>
+                    )}
+                  </div>
+                )}
               </div>
               
               <div className="flex items-center">
@@ -294,16 +410,16 @@ export default function SignupPage() {
               </div>
               
               <div className="mt-6">
-              <button
-                type="button"
-                onClick={handleGoogleSignup}
-                disabled={loading}
-                className="w-full flex justify-center items-center px-4 py-2 border border-gray-300 shadow-sm text-sm font-medium rounded-md text-gray-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500"
-              >
-                <FcGoogle className="h-5 w-5 mr-2" />
-                Sign up with Google
-              </button>
-            </div>
+                <button
+                  type="button"
+                  onClick={handleGoogleSignup}
+                  disabled={loading}
+                  className="w-full flex justify-center items-center px-4 py-2 border border-gray-300 shadow-sm text-sm font-medium rounded-md text-gray-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500"
+                >
+                  <FcGoogle className="h-5 w-5 mr-2" />
+                  Sign up with Google
+                </button>
+              </div>
             </div>
           </div>
           
@@ -316,8 +432,53 @@ export default function SignupPage() {
             </p>
           </div>
           
+          {/* Password Security Tips */}
+          <div className="mt-8 bg-white p-4 rounded-lg border border-gray-200 shadow-sm">
+            <h3 className="text-sm font-semibold text-gray-700 mb-2 flex items-center">
+              <Shield className="h-4 w-4 mr-1 text-blue-600" /> Password Security Tips
+            </h3>
+            <ul className="grid grid-cols-2 gap-2">
+              <li className="flex items-start text-xs text-gray-600">
+                <div className="bg-blue-100 p-0.5 rounded-full mr-1 mt-0.5">
+                  <ArrowRight className="h-2 w-2 text-blue-600" />
+                </div>
+                <span>At least 8 characters</span>
+              </li>
+              <li className="flex items-start text-xs text-gray-600">
+                <div className="bg-blue-100 p-0.5 rounded-full mr-1 mt-0.5">
+                  <ArrowRight className="h-2 w-2 text-blue-600" />
+                </div>
+                <span>Uppercase letters (A-Z)</span>
+              </li>
+              <li className="flex items-start text-xs text-gray-600">
+                <div className="bg-blue-100 p-0.5 rounded-full mr-1 mt-0.5">
+                  <ArrowRight className="h-2 w-2 text-blue-600" />
+                </div>
+                <span>Lowercase letters (a-z)</span>
+              </li>
+              <li className="flex items-start text-xs text-gray-600">
+                <div className="bg-blue-100 p-0.5 rounded-full mr-1 mt-0.5">
+                  <ArrowRight className="h-2 w-2 text-blue-600" />
+                </div>
+                <span>Numbers (0-9)</span>
+              </li>
+              <li className="flex items-start text-xs text-gray-600">
+                <div className="bg-blue-100 p-0.5 rounded-full mr-1 mt-0.5">
+                  <ArrowRight className="h-2 w-2 text-blue-600" />
+                </div>
+                <span>Special characters (!@#$)</span>
+              </li>
+              <li className="flex items-start text-xs text-gray-600">
+                <div className="bg-blue-100 p-0.5 rounded-full mr-1 mt-0.5">
+                  <ArrowRight className="h-2 w-2 text-blue-600" />
+                </div>
+                <span>Avoid common patterns</span>
+              </li>
+            </ul>
+          </div>
+          
           {/* Security badges */}
-          <div className="mt-10">
+          <div className="mt-6">
             <div className="flex flex-wrap justify-center gap-4">
               <div className="flex items-center bg-white px-3 py-2 rounded-lg shadow-sm border border-gray-100">
                 <div className="bg-green-100 p-1.5 rounded-full mr-2">

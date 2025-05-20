@@ -7,6 +7,8 @@ import { toast } from 'sonner';
 import { signIn } from 'next-auth/react';
 import { Shield, Lock, Mail, Eye, EyeOff, AlertCircle, ArrowRight } from 'lucide-react';
 import { FcGoogle } from 'react-icons/fc';
+import Image from 'next/image';
+import logoImage from '@/images/Logoimage.png';
 
 export default function LoginPage() {
   const router = useRouter();
@@ -99,7 +101,13 @@ export default function LoginPage() {
       <div className="flex-1 flex items-center justify-center p-6 md:p-10 bg-gray-50">
         <div className="w-full max-w-md">
           <Link href="/" className="flex items-center justify-center mb-8">
-            <Shield className="h-8 w-8 text-blue-600 mr-2" />
+              <Image 
+                src={logoImage} 
+                alt="PCD System Logo" 
+                height={32} 
+                width={32} 
+                className="mr-2" 
+              />
             <span className="text-xl font-bold text-blue-600">PCD System</span>
           </Link>
           

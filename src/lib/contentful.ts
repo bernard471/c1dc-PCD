@@ -105,3 +105,31 @@ export async function fetchBlogPostBySlug(slug: string): Promise<BlogPostEntry |
     return null;
   }
 }
+
+// Fetch blog posts published after a specific date
+export async function fetchNewBlogPosts(since: Date): Promise<BlogPostEntry[]> {
+  try {
+    const response = await client.getEntries({
+      content_type: 'securityEventBlog',
+      order: ['-sys.createdAt'],
+      'sys.createdAt[gte]': since.toISOString() as `${number}-${number}-${number}T${number}:${number}:${number}Z`,
+    });
+    
+    return response.items.map((item) => ({
+      sys: {
+        id: item.sys.id,
+        createdAt: item.sys.createdAt,
+      },
+      fields: {
+        title: item.fields.title as string,
+        content: item.fields.content,
+        thumbnail: item.fields.thumbnail,
+        featuredImage: item.fields.featuredImage,
+        slug: item.fields.slug as string,
+      } as BlogPost,
+    })) as BlogPostEntry[];
+  } catch (error) {
+    console.error('Error fetching new blog posts:', error);
+    return [];
+  }
+}

@@ -8,6 +8,7 @@ import PricingSection from '../components/PricingSection';
 import FaqSection from '../components/FaqSection';
 import ContactSection from '../components/ContactSection';
 import Footer from '../components/Footer';
+import PasswordStrengthChecker from '../components/PasswordStrengthChecker';
 
 export default function Home() {
   return (
@@ -17,6 +18,8 @@ export default function Home() {
       <HeroSection />
 
       <FeaturesSection />
+
+      <PasswordStrengthChecker />
 
       <PricingSection />
 

@@ -3,6 +3,8 @@
 import Link from 'next/link';
 import { useState } from 'react';
 import { ShieldCheck, Smartphone, Wifi, Home, MessageCircle, Users, Mail, UserCheck, Package, ChevronRight, ChevronDown, X } from 'lucide-react';
+import Image from 'next/image';
+import logoImage from '../../public/Logoimage.png'
 
 interface SidebarProps {
   isOpen: boolean;
@@ -170,7 +172,13 @@ return (
      <div className="flex items-center justify-between h-16 px-4">
        <div className="flex items-center">
          <div className="flex-shrink-0">
-           <ShieldCheck className="h-8 w-8 text-blue-600" />
+              <Image 
+                src={logoImage} 
+                alt="PCD System Logo" 
+                height={32} 
+                width={32} 
+                className="mr-2" 
+              />
          </div>
          {(isOpen || isTabletOrMobile) && (
            <div className="ml-2 text-xl font-bold text-gray-900">

@@ -1,11 +1,14 @@
 'use client';
 
 import { useState } from 'react';
-import { Shield, ChevronRight, ArrowLeft } from 'lucide-react';
+import { ChevronRight, ArrowLeft } from 'lucide-react';
 import Link from 'next/link';
 import LegalContent from '@/components/LegalContent';
 import { useSearchParams, useRouter } from 'next/navigation';
 import { useEffect } from 'react';
+import Image from 'next/image';
+import logoImage from '@/images/Logoimage.png'
+
 
 export default function LegalDashboard() {
   const [activeTab, setActiveTab] = useState('privacy-policy');
@@ -40,7 +43,13 @@ useEffect(() => {
             </Link>
           </div>
           <div className="flex items-center">
-            <Shield className="h-8 w-8 text-blue-500 mr-2" />
+              <Image 
+                src={logoImage} 
+                alt="PCD System Logo" 
+                height={32} 
+                width={32} 
+                className="mr-2" 
+              />
             <span className="text-xl text-blue-500 font-bold">PCD System</span>
           </div>
         </div>

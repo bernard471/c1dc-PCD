@@ -56,14 +56,24 @@ import {
   // import hero41 from '../images/google33.jpg';
   // import hero42 from '../images/google34.jpg';
 
+
+  export interface SecurityItemDetail {
+  text: string;
+  link?: {
+    url: string;
+    label: string;
+  };
+}
+
   export interface SecurityItem {
     title: string;
     description: string;
     steps: {
       name: string;
-      details: string[];
+      details: (string | SecurityItemDetail)[];
       images?: string[]; // Array of image paths
     }[];
+
     icon: IconType;
   }
   
@@ -568,7 +578,7 @@ import {
       icon: FaExclamationTriangle,
       items: [
         {
-          title: "Detection of Compromise",
+          title: "Indicator of Compromise",
           description: "Recognize when your email account may be compromised",
           icon: FaSearchPlus,
           steps: [
@@ -657,10 +667,31 @@ import {
             {
               name: "Service-specific recovery",
               details: [
-                "Gmail: account recovery page with verification",
-                "Outlook: account recovery with proof of identity",
-                "Yahoo: account recovery with alternate email/phone",
+                {
+                  text: "Gmail: ",
+                  link: {
+                    url: "https://accounts.google.com/signin/recovery",
+                    label: "account recovery page"
+                  }
+                },
+                {
+                  text: "Outlook: ",
+                  link: {
+                    url: "https://account.live.com/resetpassword.aspx",
+                    label: "account recovery"
+                  }
+                },
+                {
+                  text: "Yahoo: ",
+                  link: {
+                    url: "https://login.yahoo.com/forgot",
+                    label: "account recovery"
+                  }
+                },
+
                 "Follow provider-specific procedures exactly",
+                //add recovery links
+
               ],
               // images: [
               //   hero1.src,
