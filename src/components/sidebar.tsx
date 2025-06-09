@@ -2,7 +2,7 @@
 'use client';
 import Link from 'next/link';
 import { useState } from 'react';
-import { ShieldCheck, Smartphone, Wifi, Home, MessageCircle, Users, Mail, UserCheck, Package, ChevronRight, ChevronDown, X } from 'lucide-react';
+import { ShieldCheck, Smartphone, Wifi, Home, MessageCircle, Users, Mail, UserCheck, Package, ChevronRight, ChevronDown, X, Shield } from 'lucide-react';
 import Image from 'next/image';
 import logoImage from '../../public/Logoimage.png'
 
@@ -24,6 +24,7 @@ export default function Sidebar({ isOpen, activeSection, setActiveSection, isTab
     'social-media-security': false,
     'email-security': false,
     'identity-protection': false,
+    'executive-security': false,
     'recommended-solutions': false,
     'implementation-strategy': false,
   });
@@ -128,6 +129,22 @@ export default function Sidebar({ isOpen, activeSection, setActiveSection, isTab
         { id: 'identity-theft-prevention', title: 'Identity Theft Prevention' },
         { id: 'identity-theft-response', title: 'Identity Theft Response' }
       ] 
+    },
+    { 
+      id: 'executive-security', 
+      title: 'Executive Security', 
+      icon: <Shield className="w-5 h-5" />,
+      hasSubmenu: true,
+      subItems: [
+        { id: 'personal-digital-security', title: 'Personal Digital Security' },
+        { id: 'physical-security-measures', title: 'Physical Security Measures' },
+        { id: 'travel-event-security', title: 'Travel and Event Security' },
+        { id: 'intelligence-threat-management', title: 'Threat Management' },
+        { id: 'crisis-management', title: 'Crisis & Incident Response' },
+        { id: 'family-personal-protection', title: 'Family & Personal Protection' },
+        { id: 'advanced-security-technologies', title: 'Advanced Security Tech' },
+        { id: 'training-awareness-programs', title: 'Training Programs' }
+      ]
     },
     { 
       id: 'recommended-solutions', 
@@ -362,6 +379,27 @@ return (
                                 // Dispatch a custom event to expand the corresponding section
                                 const event = new CustomEvent('expandIdentityProtectionCategory', {
                                   detail: { categoryIndex: sectionMap[subItem.id] }  // Change 'section' to 'categoryIndex'
+                                });
+                                window.dispatchEvent(event);
+                              }
+
+                              // Handle Executive Security section navigation
+                              if (item.id === 'executive-security') {
+                                // Map the sidebar subItem.id to the corresponding section in ExecutiveSecurity component
+                                const sectionMap: Record<string, number> = {
+                                  'personal-digital-security': 0,
+                                  'physical-security-measures': 1,
+                                  'travel-event-security': 2,
+                                  'intelligence-threat-management': 3,
+                                  'crisis-management': 4,
+                                  'family-personal-protection': 5,
+                                  'advanced-security-technologies': 6,
+                                  'training-awareness-programs': 7
+                                };
+                                
+                                // Dispatch a custom event to expand the corresponding section
+                                const event = new CustomEvent('expandExecutiveSecurityCategory', {
+                                  detail: { categoryIndex: sectionMap[subItem.id] }
                                 });
                                 window.dispatchEvent(event);
                               }

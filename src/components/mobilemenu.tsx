@@ -1,7 +1,7 @@
 // components/MobileMenu.js
 'use client';
 
-import { X } from 'lucide-react';
+import { Shield, X } from 'lucide-react';
 import { 
   ShieldCheck, 
   Smartphone, 
@@ -34,6 +34,7 @@ export default function MobileMenu({ isOpen, onClose, activeSection, setActiveSe
     { id: 'social-media-security', title: 'Social Media Security', icon: <Users className="w-5 h-5" /> },
     { id: 'email-security', title: 'Email Security', icon: <Mail className="w-5 h-5" /> },
     { id: 'identity-protection', title: 'Identity Protection', icon: <UserCheck className="w-5 h-5" /> },
+    { id: 'executive-security', title: 'Executive Security', icon: <Shield className="w-5 h-5" /> },
     { id: 'recommended-solutions', title: 'Recommended Solutions', icon: <Package className="w-5 h-5" /> },
     { id: 'implementation-strategy', title: 'Implementation Strategy', icon: <Package className="w-5 h-5" /> },
   ];

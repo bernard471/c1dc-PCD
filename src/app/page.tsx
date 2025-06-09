@@ -9,6 +9,7 @@ import FaqSection from '../components/FaqSection';
 import ContactSection from '../components/ContactSection';
 import Footer from '../components/Footer';
 import PasswordStrengthChecker from '../components/PasswordStrengthChecker';
+import DataBreachChecker from '@/components/DataBreachChecker';
 
 export default function Home() {
   return (
@@ -20,6 +21,8 @@ export default function Home() {
       <FeaturesSection />
 
       <PasswordStrengthChecker />
+
+      <DataBreachChecker />
 
       <PricingSection />
 

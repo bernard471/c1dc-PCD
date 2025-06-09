@@ -14,6 +14,7 @@ import SocialMediaSecurity from '../../components/sections/socialmediasecurity';
 import EmailSecurity from '../../components/sections/emailsecurity';
 import IdentityProtection from '../../components/sections/identityprotection';
 import RecommendedSolutions from '../../components/sections/recommendedsolutions';
+import ExecutiveSecurity from '../../components/sections/executivesecurity';
 import ImplementationStrategy from '../../components/sections/implementationstrategy';
 import ChatButton from '../../components/ChatButton';
 
@@ -74,6 +75,8 @@ export default function Dashboard() {
         return <EmailSecurity />;
       case 'identity-protection':
         return <IdentityProtection />;
+      case 'executive-security':
+        return <ExecutiveSecurity />;
       case 'recommended-solutions':
         return <RecommendedSolutions />;
       case 'implementation-strategy':
