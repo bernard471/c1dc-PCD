@@ -1,18 +1,130 @@
 'use client';
 import { useState, useEffect } from 'react';
-import { FaLock, FaCheck, FaTimes, FaShieldAlt, FaInfoCircle } from 'react-icons/fa';
+import { FaLock, FaCheck, FaTimes, FaShieldAlt, FaInfoCircle, FaClock, FaExclamationTriangle } from 'react-icons/fa';
 
 const PasswordStrengthChecker = () => {
   const [password, setPassword] = useState('');
   const [strength, setStrength] = useState(0);
   const [feedback, setFeedback] = useState<string[]>([]);
   const [showPassword, setShowPassword] = useState(false);
+  const [crackTime, setCrackTime] = useState<{
+    time: string;
+    color: string;
+    severity: 'instant' | 'very-weak' | 'weak' | 'moderate' | 'strong' | 'very-strong';
+    description: string;
+  } | null>(null);
 
-  // Check password strength
+  // Check password strength and calculate crack time
   useEffect(() => {
+    // Format crack time function
+    const formatCrackTime = (seconds: number) => {
+      const minute = 60;
+      const hour = minute * 60;
+      const day = hour * 24;
+      const month = day * 30;
+      const year = day * 365;
+      const century = year * 100;
+      const millennium = year * 1000;
+
+      let time: string;
+      let severity: 'instant' | 'very-weak' | 'weak' | 'moderate' | 'strong' | 'very-strong';
+      let color: string;
+      let description: string;
+
+      if (seconds < 1) {
+        time = "Instantly";
+        severity = "instant";
+        color = "text-red-600";
+        description = "This password can be cracked immediately";
+      } else if (seconds < minute) {
+        time = `${Math.ceil(seconds)} seconds`;
+        severity = "very-weak";
+        color = "text-red-600";
+        description = "Extremely vulnerable to attacks";
+      } else if (seconds < hour) {
+        time = `${Math.ceil(seconds / minute)} minutes`;
+        severity = "very-weak";
+        color = "text-red-500";
+        description = "Very weak protection";
+      } else if (seconds < day) {
+        time = `${Math.ceil(seconds / hour)} hours`;
+        severity = "weak";
+        color = "text-orange-500";
+        description = "Weak protection against attacks";
+      } else if (seconds < month) {
+        time = `${Math.ceil(seconds / day)} days`;
+        severity = "weak";
+        color = "text-yellow-600";
+        description = "Limited protection";
+      } else if (seconds < year) {
+        time = `${Math.ceil(seconds / month)} months`;
+        severity = "moderate";
+        color = "text-yellow-500";
+        description = "Moderate protection";
+      } else if (seconds < century) {
+        const years = Math.ceil(seconds / year);
+        time = years === 1 ? "1 year" : `${years} years`;
+        severity = "strong";
+        color = "text-green-500";
+        description = "Good protection against most attacks";
+      } else if (seconds < millennium) {
+        time = `${Math.ceil(seconds / century)} centuries`;
+        severity = "very-strong";
+        color = "text-green-600";
+        description = "Excellent protection";
+      } else {
+        time = "Millions of years";
+        severity = "very-strong";
+        color = "text-green-700";
+        description = "Outstanding protection";
+      }
+
+      return { time, color, severity, description };
+    };
+
+    // Calculate password cracking time
+    const calculateCrackTime = (password: string) => {
+      if (!password) return null;
+
+      // Character set sizes
+      const charSets = {
+        lowercase: 26,
+        uppercase: 26,
+        numbers: 10,
+        symbols: 32, // Common symbols
+        extendedSymbols: 95 // All printable ASCII
+      };
+
+      // Determine character set size
+      let charSetSize = 0;
+      if (/[a-z]/.test(password)) charSetSize += charSets.lowercase;
+      if (/[A-Z]/.test(password)) charSetSize += charSets.uppercase;
+      if (/\d/.test(password)) charSetSize += charSets.numbers;
+      if (/[^A-Za-z0-9]/.test(password)) charSetSize += charSets.symbols;
+
+      // Calculate total possible combinations
+      const totalCombinations = Math.pow(charSetSize, password.length);
+      
+      // Average attempts needed (half of total combinations)
+      const averageAttempts = totalCombinations / 2;
+
+      // Estimated attempts per second for different attack scenarios
+      const attackSpeeds = {
+        online: 1000, // 1,000 attempts per second (online attack with rate limiting)
+        offline: 1000000000, // 1 billion attempts per second (offline attack with modern hardware)
+        distributed: 100000000000 // 100 billion attempts per second (distributed/GPU attack)
+      };
+
+      // Use offline attack speed as baseline (more realistic for stolen hash scenarios)
+      const secondsToCrack = averageAttempts / attackSpeeds.offline;
+
+      return formatCrackTime(secondsToCrack);
+    };
+
     if (!password) {
       setStrength(0);
       setFeedback([]);
+      setCrackTime(null);
       return;
     }
 
@@ -56,6 +168,7 @@ const PasswordStrengthChecker = () => {
 
     setStrength(currentStrength);
     setFeedback(newFeedback);
+    setCrackTime(calculateCrackTime(password));
   }, [password]);
 
   // Get strength label and color
@@ -92,11 +205,11 @@ const PasswordStrengthChecker = () => {
           </h2>
           <p className="text-xl text-gray-600 max-w-2xl mx-auto">
             Ensure your digital security with our password strength analyzer. 
-            Test your passwords against industry standards.
+            Test your passwords against industry standards and see how long it would take hackers to crack them.
           </p>
         </div>
 
-        <div className="max-w-xl mx-auto  rounded-2xl shadow-xl overflow-hidden backdrop-blur-sm bg-white/90">
+        <div className="max-w-xl mx-auto rounded-2xl shadow-xl overflow-hidden backdrop-blur-sm bg-white/90">
           <div className="p-8 md:p-10">
             <div className="mb-6">
               <label htmlFor="password" className="block text-lg font-semibold text-gray-700 mb-3">
@@ -136,6 +249,38 @@ const PasswordStrengthChecker = () => {
                     ></div>
                   </div>
                 </div>
+
+                {/* Crack Time Display */}
+                {crackTime && (
+                  <div className={`p-5 rounded-lg border ${
+                    crackTime.severity === 'instant' || crackTime.severity === 'very-weak' 
+                      ? 'bg-red-50 border-red-200' 
+                      : crackTime.severity === 'weak' 
+                      ? 'bg-orange-50 border-orange-200'
+                      : crackTime.severity === 'moderate'
+                      ? 'bg-yellow-50 border-yellow-200'
+                      : 'bg-green-50 border-green-200'
+                  }`}>
+                    <h3 className="text-lg font-semibold mb-3 flex items-center">
+                      <FaClock className="mr-2" />
+                      <span className={crackTime.color}>Time to Crack</span>
+                      {(crackTime.severity === 'instant' || crackTime.severity === 'very-weak') && (
+                        <FaExclamationTriangle className="ml-2 text-red-500" />
+                      )}
+                    </h3>
+                    <div className="space-y-2">
+                      <p className={`text-2xl font-bold ${crackTime.color}`}>
+                        {crackTime.time}
+                      </p>
+                      <p className="text-sm text-gray-600">
+                        {crackTime.description}
+                      </p>
+                      <p className="text-xs text-gray-500">
+                        *Estimated time for offline brute-force attack using modern hardware
+                      </p>
+                    </div>
+                  </div>
+                )}
 
                 {feedback.length > 0 && (
                   <div className="bg-red-50 p-5 rounded-lg border border-red-100">
@@ -206,6 +351,28 @@ const PasswordStrengthChecker = () => {
                   <span className="text-gray-700">Avoid common patterns</span>
                 </li>
               </ul>
+            </div>
+
+            {/* Additional Security Information */}
+            <div className="mt-6 p-6 bg-gray-50 rounded-lg border border-gray-200">
+              <h3 className="text-lg font-semibold text-gray-800 mb-3 flex items-center">
+                <FaInfoCircle className="mr-2" /> How Crack Time is Calculated
+              </h3>
+              <div className="text-sm text-gray-600 space-y-2">
+                <p>
+                  <strong>Attack Method:</strong> Offline brute-force attack using modern hardware
+                </p>
+                <p>
+                  <strong>Attack Speed:</strong> ~1 billion attempts per second
+                </p>
+                <p>
+                  <strong>Calculation:</strong> Based on character set size and password length
+                </p>
+                <p className="text-xs text-gray-500 mt-3">
+                  Note: Real-world attacks may use dictionary attacks, rainbow tables, or social engineering, 
+                  which could significantly reduce crack time for weak passwords.
+                </p>
+              </div>
             </div>
           </div>
         </div>

@@ -1,6 +1,6 @@
 import Navbar from '../components/Navbar';
 import HeroSection from '../components/HeroSection';
-import ClientVideoSection from '@/components/ClientVideoSection';
+// import ClientVideoSection from '@/components/ClientVideoSection';
 import FeaturesSection from '../components/FeaturesSection';
 import AboutSection from '../components/AboutSection';
 import TestimonialsSection from '../components/TestimonialsSection';
@@ -23,11 +23,11 @@ export default function Home() {
 
       <PricingSection />
 
-      <ClientVideoSection 
+      {/* <ClientVideoSection 
         videoId="dQw4w9WgXcQ" // Replace with your actual tutorial video ID
         title="Master Our Platform in Minutes"
         description="Watch this quick tutorial to see how our platform can transform your workflow"
-      />
+      /> */}
       
       <AboutSection />
 
