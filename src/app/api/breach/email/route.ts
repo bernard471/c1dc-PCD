@@ -24,13 +24,22 @@ interface BreachResponse {
 export async function POST(request: NextRequest) {
   try {
     const body = await request.json();
-    const { email, apiKey } = body;
+    const { email } = body;
 
     // Validate required fields
-    if (!email || !apiKey) {
+    if (!email) {
       return NextResponse.json(
-        { message: 'Email and API key are required' },
+        { message: 'Email is required' },
         { status: 400 }
+      );
+    }
+
+    // Check if API key is configured
+    const apiKey = process.env.HIBP_API_KEY;
+    if (!apiKey) {
+      return NextResponse.json(
+        { message: 'API key not configured on server' },
+        { status: 500 }
       );
     }
 
@@ -47,7 +56,7 @@ export async function POST(request: NextRequest) {
       `https://haveibeenpwned.com/api/v3/breachedaccount/${encodeURIComponent(email)}?truncateResponse=false`,
       {
         headers: {
-          'hibp-api-key': apiKey.trim(),
+          'hibp-api-key': apiKey,
           'User-Agent': 'DataBreachChecker/1.0'
         }
       }
@@ -61,15 +70,15 @@ export async function POST(request: NextRequest) {
 
     if (response.status === 401) {
       return NextResponse.json(
-        { message: 'Invalid API key' },
-        { status: 401 }
+        { message: 'Invalid API key configuration' },
+        { status: 500 }
       );
     }
 
     if (response.status === 403) {
       return NextResponse.json(
-        { message: 'Access forbidden - check your API key permissions' },
-        { status: 403 }
+        { message: 'API access forbidden - check API key permissions' },
+        { status: 500 }
       );
     }
 
@@ -83,8 +92,8 @@ export async function POST(request: NextRequest) {
     if (!response.ok) {
       console.error(`HIBP API error: ${response.status} ${response.statusText}`);
       return NextResponse.json(
-        { message: `API Error: ${response.status} ${response.statusText}` },
-        { status: response.status }
+        { message: `Service temporarily unavailable` },
+        { status: 503 }
       );
     }
 

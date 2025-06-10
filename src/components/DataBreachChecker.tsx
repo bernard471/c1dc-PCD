@@ -1,6 +1,6 @@
 'use client';
 import { useState } from 'react';
-import { FaShieldAlt, FaExclamationTriangle, FaCheckCircle, FaSearch, FaEye, FaEyeSlash, FaInfoCircle, FaClock, FaUsers, FaDatabase, FaKey } from 'react-icons/fa';
+import { FaShieldAlt, FaExclamationTriangle, FaCheckCircle, FaSearch, FaEye, FaEyeSlash, FaInfoCircle, FaClock, FaUsers, FaDatabase } from 'react-icons/fa';
 
 interface BreachData {
   Name: string;
@@ -34,9 +34,7 @@ interface PasteData {
 const DataBreachChecker = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  const [apiKey, setApiKey] = useState('');
   const [showPassword, setShowPassword] = useState(false);
-  const [showApiKey, setShowApiKey] = useState(false);
   const [emailBreaches, setEmailBreaches] = useState<BreachData[]>([]);
   const [emailPastes, setEmailPastes] = useState<PasteData[]>([]);
   const [passwordBreaches, setPasswordBreaches] = useState<number | null>(null);
@@ -51,11 +49,6 @@ const DataBreachChecker = () => {
       return;
     }
 
-    if (!apiKey.trim()) {
-      setError(prev => ({ ...prev, email: 'API key is required for email breach checking' }));
-      return;
-    }
-
     setLoading(prev => ({ ...prev, email: true }));
     setError(prev => ({ ...prev, email: '' }));
 
@@ -66,7 +59,7 @@ const DataBreachChecker = () => {
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify({ email, apiKey: apiKey.trim() }),
+        body: JSON.stringify({ email }),
       });
 
       if (breachResponse.ok) {
@@ -74,10 +67,10 @@ const DataBreachChecker = () => {
         setEmailBreaches(breaches);
       } else {
         const errorData = await breachResponse.json();
-        if (breachResponse.status === 401) {
-          setError(prev => ({ ...prev, email: 'Invalid API key. Please check your HIBP API key.' }));
-        } else if (breachResponse.status === 429) {
+        if (breachResponse.status === 429) {
           setError(prev => ({ ...prev, email: 'Rate limit exceeded. Please try again later.' }));
+        } else if (breachResponse.status === 503) {
+          setError(prev => ({ ...prev, email: 'Service temporarily unavailable. Please try again later.' }));
         } else {
           setError(prev => ({ ...prev, email: errorData.message || 'Failed to check email breaches' }));
         }
@@ -92,7 +85,7 @@ const DataBreachChecker = () => {
           headers: {
             'Content-Type': 'application/json',
           },
-          body: JSON.stringify({ email, apiKey: apiKey.trim() }),
+          body: JSON.stringify({ email }),
         });
 
         if (pasteResponse.ok) {
@@ -213,62 +206,6 @@ const DataBreachChecker = () => {
         </div>
 
         <div className="max-w-4xl mx-auto space-y-8">
-          {/* API Key Input */}
-          <div className="rounded-2xl shadow-xl overflow-hidden backdrop-blur-sm bg-white/90">
-            <div className="p-8 md:p-10">
-              <h3 className="text-2xl font-bold text-gray-800 mb-6 flex items-center">
-                <FaKey className="mr-3 text-blue-600" />
-                API Configuration
-              </h3>
-              
-              <div className="mb-6">
-                <label htmlFor="apiKey" className="block text-lg font-semibold text-gray-700 mb-3">
-                  HaveIBeenPwned API Key (Required for email checking)
-                </label>
-                <div className="relative">
-                  <input
-                    type={showApiKey ? "text" : "password"}
-                    id="apiKey"
-                    value={apiKey}
-                    onChange={(e) => setApiKey(e.target.value)}
-                    className="w-full px-5 py-4 text-lg border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 transition-all pr-12"
-                    placeholder="Enter your HIBP API key..."
-                  />
-                  <button 
-                    onClick={() => setShowApiKey(!showApiKey)}
-                    className="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-500 hover:text-gray-700"
-                  >
-                    {showApiKey ? <FaEyeSlash /> : <FaEye />}
-                  </button>
-                </div>
-                <p className="text-sm text-gray-600 mt-2">
-                  Get your API key from{' '}
-                  <a 
-                    href="https://haveibeenpwned.com/API/Key" 
-                    target="_blank" 
-                    rel="noopener noreferrer"
-                    className="text-blue-600 hover:text-blue-800 underline"
-                  >
-                    HaveIBeenPwned API Key page
-                  </a>
-                </p>
-              </div>
-
-              <div className="p-4 bg-blue-50 rounded-lg border border-blue-200">
-                <h4 className="font-semibold text-blue-800 mb-2 flex items-center">
-                  <FaInfoCircle className="mr-2" />
-                  About API Keys
-                </h4>
-                <ul className="text-sm text-blue-700 space-y-1">
-                  <li>• API key is required for email breach and paste checking</li>
-                  <li>• Password checking is free and doesn&apos;t require an API key</li>
-                  <li>• Your API key is only used for this session and not stored</li>
-                  <li>• API keys are subscription-based with different rate limits</li>
-                </ul>
-              </div>
-            </div>
-          </div>
-
           {/* Email Breach Checker */}
           <div className="rounded-2xl shadow-xl overflow-hidden backdrop-blur-sm bg-white/90">
             <div className="p-8 md:p-10">
@@ -287,13 +224,13 @@ const DataBreachChecker = () => {
                     id="email"
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
-                    className="flex-1 px-5 py-4 text-lg border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-red-500 transition-all"
-                    placeholder="your.email@example.com"
+                    className="w-full px-5 py-4 text-lg border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500 transition-all pr-12"
+                    placeholder="email@example.com"
                     onKeyPress={(e) => e.key === 'Enter' && checkEmailBreaches()}
                   />
                   <button
                     onClick={checkEmailBreaches}
-                    disabled={loading.email || !apiKey.trim()}
+                    disabled={loading.email}
                     className="px-6 py-4 bg-red-600 text-white rounded-lg hover:bg-red-700 disabled:opacity-50 disabled:cursor-not-allowed transition-all flex items-center"
                   >
                     {loading.email ? (
@@ -307,12 +244,6 @@ const DataBreachChecker = () => {
                   <p className="text-red-600 mt-2 flex items-center">
                     <FaExclamationTriangle className="mr-2" />
                     {error.email}
-                  </p>
-                )}
-                {!apiKey.trim() && (
-                  <p className="text-orange-600 mt-2 flex items-center">
-                    <FaKey className="mr-2" />
-                    Please enter your API key above to check email breaches
                   </p>
                 )}
               </div>
@@ -475,9 +406,6 @@ const DataBreachChecker = () => {
               <h3 className="text-2xl font-bold text-gray-800 mb-6 flex items-center">
                 <FaShieldAlt className="mr-3 text-orange-600" />
                 Password Breach Check
-                <span className="ml-3 px-2 py-1 bg-green-100 text-green-700 text-sm rounded-full">
-                  No API Key Required
-                </span>
               </h3>
               
               <div className="mb-6">
@@ -828,7 +756,7 @@ const DataBreachChecker = () => {
           </div>
 
           {/* Security Best Practices */}
-          {/* <div className="rounded-2xl shadow-xl overflow-hidden backdrop-blur-sm bg-white/90">
+          <div className="rounded-2xl shadow-xl overflow-hidden backdrop-blur-sm bg-white/90">
             <div className="p-8 md:p-10">
               <h3 className="text-2xl font-bold text-gray-800 mb-6 flex items-center">
                 <FaShieldAlt className="mr-3 text-green-600" />
@@ -842,7 +770,7 @@ const DataBreachChecker = () => {
                     <li>• At least 12 characters long</li>
                     <li>• Mix of letters, numbers, symbols</li>
                     <li>• Avoid dictionary words</li>
-                    <li>• Don't use personal information</li>
+                    <li>• Don&apos;t use personal information</li>
                   </ul>
                 </div>
                 
@@ -897,54 +825,7 @@ const DataBreachChecker = () => {
                 </div>
               </div>
             </div>
-          </div> */}
-
-          {/* Implementation Notes */}
-          {/* <div className="rounded-2xl shadow-xl overflow-hidden backdrop-blur-sm bg-yellow-50/90 border border-yellow-200">
-            <div className="p-8 md:p-10">
-              <h3 className="text-2xl font-bold text-yellow-800 mb-4 flex items-center">
-                <FaExclamationTriangle className="mr-3" />
-                Implementation Notes
-              </h3>
-              <div className="space-y-4 text-yellow-700">
-                <div>
-                  <h4 className="font-semibold mb-2">API Requirements:</h4>
-                  <ul className="list-disc list-inside space-y-1 ml-4">
-                    <li>HaveIBeenPwned API key required for email breach checking</li>
-                    <li>API keys are subscription-based with different rate limits</li>
-                    <li>Password checking uses the free Pwned Passwords API</li>
-                  </ul>
-                </div>
-                
-                <div>
-                  <h4 className="font-semibold mb-2">CORS Solution:</h4>
-                  <ul className="list-disc list-inside space-y-1 ml-4">
-                    <li>Email checking uses Next.js API routes to proxy requests</li>
-                    <li>Password checking works directly (CORS-enabled endpoint)</li>
-                    <li>API routes handle authentication and error responses</li>
-                  </ul>
-                </div>
-                
-                <div>
-                  <h4 className="font-semibold mb-2">Security Features:</h4>
-                  <ul className="list-disc list-inside space-y-1 ml-4">
-                    <li>k-anonymity for password checking (only hash prefix sent)</li>
-                    <li>API keys processed server-side only</li>
-                    <li>No sensitive data stored or logged</li>
-                    <li>Client-side password hashing using Web Crypto API</li>
-                  </ul>
-                </div>
-                
-                <div className="p-4 bg-yellow-100 rounded-lg border border-yellow-300 mt-4">
-                  <p className="text-sm">
-                    <strong>Production Deployment:</strong> Ensure you have created the API routes 
-                    (<code>/api/breach/email.ts</code> and <code>/api/breach/pastes.ts</code>) 
-                    for the email checking functionality to work properly.
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div> */}
+          </div>
         </div>
       </div>
     </section>
@@ -952,5 +833,4 @@ const DataBreachChecker = () => {
 };
 
 export default DataBreachChecker;
-
 
