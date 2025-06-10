@@ -416,7 +416,7 @@ const DataBreachChecker = () => {
                   <div className="flex-1 relative">
                     <input
                       type={showPassword ? "text" : "password"}
-                      id="password"
+                      id="password1"
                       value={password}
                       onChange={(e) => setPassword(e.target.value)}
                       className="w-full px-5 py-4 text-lg border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500 transition-all pr-12"
