@@ -14,6 +14,9 @@ import {
   Package
 } from 'lucide-react';
 import Link from 'next/link';
+import Image from 'next/image';
+import logoImage from '../../public/Logoimage.png'
+
 
 interface MobileMenuProps {
   isOpen: boolean;
@@ -52,8 +55,17 @@ export default function MobileMenu({ isOpen, onClose, activeSection, setActiveSe
         {/* Header */}
         <div className="flex-shrink-0 flex justify-between items-center px-4 h-16 border-b border-gray-200">
           <div className="flex items-center">
-            <ShieldCheck className="h-8 w-8 text-blue-600" />
-            <span className="ml-2 text-xl font-bold text-gray-900">PCD System</span>
+                <Link href="/" className="flex items-center">
+              {/* Replace with your actual logo */}
+              <Image 
+                src={logoImage} 
+                alt="PCD System Logo" 
+                height={32} 
+                width={32} 
+                className="mr-2" 
+              />
+              <span className="text-xl font-bold text-gray-900">PCD System</span>
+            </Link>
           </div>
           <button 
             onClick={onClose}

@@ -101,7 +101,7 @@ export default function TopBar({ toggleSidebar, toggleMobileMenu, isSidebarOpen,
             
             {/* Title - always visible when sidebar is closed or on tablet/mobile */}
             {(!isSidebarOpen || isTabletOrMobile) && (
-              <div className="ml-2 flex items-center">
+              <Link href="/" className="ml-2 flex items-center">
               <Image 
                 src={logoImage} 
                 alt="PCD System Logo" 
@@ -110,7 +110,7 @@ export default function TopBar({ toggleSidebar, toggleMobileMenu, isSidebarOpen,
                 className="mr-2" 
               />
                 <h1 className="ml-2 text-s font-semibold text-gray-900">PCD System</h1>
-              </div>
+              </Link>
             )}
           </div>
           
